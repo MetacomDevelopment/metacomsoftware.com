@@ -1,0 +1,31 @@
+// Import custom variables (overrides Bootstrap default variables)
+@import './sass/variables';
+
+// Import font awesome
+@import '~@fortawesome/fontawesome-free/css/all.css';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+// Import Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Import global styling
+@import './sass/global/animations';
+@import './sass/global/backgrounds';
+@import './sass/global/bootstrap-components';
+@import './sass/global/effects';
+@import './sass/global/html-elements';
+@import './sass/global/typography';
+@import './sass/global/utilities';
+
+@import './sass/seo-blog';
+@import './sass/pages/Blog';
+
+// Import component styling
+@import './components/layouts/Navbar/Navbar';
+@import './components/layouts/Footer/Footer';
+@import './components/common/Buttons/Styles/Buttons';
+@import './components/views/Home/HeroHome';
+@import './components/views/Home/AboutHome';
+@import './components/views/Home/ServicesHome';
+@import './components/common/Forms/FormHomePage/FormHomePage';
+@import './components/views/Blog/Blog';

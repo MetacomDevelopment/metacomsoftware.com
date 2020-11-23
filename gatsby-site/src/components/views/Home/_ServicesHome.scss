@@ -1,0 +1,74 @@
+.service-hover-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  right: 0;
+  background-color: $primary;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.container:hover .service-hover-overlay {
+  width: 100%;
+  left: 0;
+}
+
+.service-hover-text {
+  display: inline;
+  color: white;
+  font-size: 3em;
+  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.service-hide-text {
+  display: none;
+}
+
+// .modal {
+//   top: 50%;
+//   left: 50%;
+//   right: auto;
+//   bottom: auto;
+//   margin-right: -50%;
+//   transform: translate(-50%, -50%);
+// }
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 9998;
+}
+
+.modal-content {
+  display: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #ccc;
+  background: $white;
+  border: 1.5px solid rgb(45, 45, 45);
+  overflow: auto;
+  border-radius: 1px;
+  outline: none;
+  z-index: 9999;
+  width: auto;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 24px;
+  line-height: 16px;
+}

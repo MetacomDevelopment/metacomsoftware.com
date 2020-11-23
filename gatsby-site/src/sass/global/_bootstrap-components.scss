@@ -1,0 +1,41 @@
+.accordion {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.accordionText {
+  &:hover {
+    color: $primary;
+    cursor: pointer;
+  }
+}
+
+.accordionIcon {
+  &:hover {
+    color: $secondary !important;
+    cursor: pointer;
+  }
+}
+
+.accordion-animation {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.ril__toolbar {
+  top: 75px !important;
+  height: 50px;
+}
+
+.ril__toolbarItem {
+  margin-bottom: 0px !important;
+}
+
+.ril__captionContent {
+  margin: auto;
+}

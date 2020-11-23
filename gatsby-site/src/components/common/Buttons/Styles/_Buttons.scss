@@ -1,0 +1,90 @@
+.btn,
+.btn-primary {
+  background: $btnSolidBgColor !important;
+  background-color: $btnSolidBgColor !important;
+  color: $btnSolidTextColor !important;
+  font-family: $font-family-sans-serif !important;
+  transition: all 0.3s ease-in-out !important;
+  border: $btnSolidBorder !important;
+
+  &:hover {
+    background: $btnSolidBgColorHover !important;
+    background-color: $btnSolidBgColorHover !important;
+    color: $btnSolidTextColorHover !important;
+    transform: scale(1.2) !important;
+    border: $btnSolidBorderHover !important;
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5)) !important;
+  }
+}
+
+.btn-xl {
+  padding: 1rem 1.5rem !important;
+  font-size: $btnSolidFontSize !important;
+  font-weight: $btnSolidFontWeight !important;
+  text-transform: uppercase !important;
+  border: $btnSolidBorder !important;
+  border-radius: $btnSolidBorderRadius !important;
+
+  &:hover {
+    background-color: $btnSolidBgColorHover !important;
+    color: $btnSolidTextColorHover !important;
+    transform: scale(1.2) !important;
+    border: $btnSolidBorderHover !important;
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5)) !important;
+  }
+}
+
+.btn-outline-light {
+  background: $btnOutlineBgColor !important;
+  background-color: $btnOutlineBgColor !important;
+  color: $btnOutlineTextColor !important;
+  font-family: $font-family-sans-serif !important;
+  transition: all 0.3s ease-in-out !important;
+  border: $btnOutlineBorder !important;
+  filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)) !important;
+
+  &:hover {
+    background: $btnOutlineBgColorHover !important;
+    background-color: $btnOutlineBgColorHover !important;
+    color: $btnOutlineTextColorHover !important;
+    transform: scale(1.2) !important;
+    border: $btnOutlineBorderHover !important;
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5)) !important;
+    position: relative !important;
+    z-index: 99 !important;
+  }
+  span {
+    filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)) !important;
+  }
+}
+
+.btn-xl-outline {
+  padding: 1rem 1.5rem !important;
+  font-size: $btnOutlineFontSize !important;
+  font-weight: $btnOutlineFontWeight !important;
+  text-transform: uppercase !important;
+  border: $btnOutlineBorder !important;
+  border-radius: $btnOutlineBorderRadius !important;
+
+  &:hover {
+    background-color: $btnOutlineBgColorHover !important;
+    color: $btnOutlineTextColorHover !important;
+    transform: scale(1.2) !important;
+    border: $btnOutlineBorderHover !important;
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5)) !important;
+  }
+}
+
+.btn-nav {
+  background-color: $btnSolidBgColor !important;
+  color: $btnSolidTextColor !important;
+  font-weight: $btnSolidFontWeight !important;
+  text-transform: uppercase !important;
+  border: $btnSolidBorder !important;
+  border-radius: $btnSolidBorderRadius !important;
+  &:active,
+  &:hover {
+    background-color: $btnSolidBgColorHover !important;
+    color: $btnSolidTextColorHover !important;
+  }
+}

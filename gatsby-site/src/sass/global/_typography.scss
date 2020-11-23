@@ -1,0 +1,185 @@
+main {
+  color: $pageTextColor;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 1em;
+}
+
+h1 {
+  color: $h1Color;
+  text-align: $h1Alignment;
+}
+
+h2 {
+  color: $h2Color;
+  text-align: $h2Alignment;
+}
+
+h3 {
+  color: $h3Color;
+  text-align: $h3Alignment;
+}
+
+a {
+  &:hover {
+    color: $secondary !important;
+  }
+  i {
+    &:hover {
+      color: $white !important;
+    }
+  }
+}
+
+p {
+  a {
+    cursor: pointer !important;
+    text-decoration: dotted underline !important;
+    color: $pageLinkColor;
+    font-weight: bolder;
+    &:hover {
+      text-decoration: underline !important;
+      text-decoration-color: $primary !important;
+    }
+  }
+}
+
+.no-decoration {
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+.dotted-underline {
+  text-decoration: dotted !important;
+  &:hover {
+    color: $secondary !important;
+    text-decoration: underline !important;
+  }
+}
+
+.underline {
+  text-decoration: underline !important;
+  &:hover {
+    color: $secondary !important;
+    text-decoration: underline !important;
+  }
+}
+
+.hover-primary > a {
+  &:hover {
+    color: $primary !important;
+  }
+}
+
+nav-link.active > h3 {
+  color: white !important;
+}
+
+.fa-mobile-4x {
+  font-size: 3em;
+}
+
+.text-sans-serif {
+  font-family: $font-family-sans-serif;
+}
+
+.text-white-link {
+  color: white;
+  &:hover {
+    color: $primary;
+  }
+}
+
+.text-link-on-white {
+  color: $purple;
+  font-weight: 600;
+  font-style: italic;
+  border-bottom: 3px solid $primary;
+  cursor: pointer;
+  &:active,
+  &:hover {
+    color: $purple;
+    text-decoration: underline;
+  }
+}
+
+.text-white-75 {
+  color: fade-out($white, 0.25);
+}
+
+.text-brown {
+  color: $h2Color;
+}
+
+.text-green {
+  color: $green;
+}
+
+.breadcrumb {
+  background-color: #778899;
+  margin: 0;
+  border-radius: 0;
+  justify-content: center;
+}
+
+.breadcrumb__list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb__separator {
+  padding: 0 0.5em;
+}
+
+.breadcrumb__link {
+  color: white;
+  &:hover {
+    color: $primary !important;
+    text-decoration: underline !important;
+  }
+}
+
+.breadcrumb__link__active {
+  color: $primary;
+  &:hover {
+    color: white !important;
+    text-decoration: underline !important;
+    text-decoration-color: $primary !important;
+  }
+}
+
+.body-banner-text {
+  color: white;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.display-5 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+@include media-breakpoint-up(lg) {
+  .fa-mobile-4x {
+    font-size: 4em;
+  }
+  .body-banner-text {
+    font-size: 2.4em;
+  }
+  .display-5 {
+    font-size: calc(0.5rem + 1.5vw);
+  }
+}

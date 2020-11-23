@@ -1,0 +1,102 @@
+.clip-triangle-down {
+  clip-path: polygon(0 90%, 0 0, 500% 0, 50vw 100%);
+}
+
+.solid-shadow-primary-top-left {
+  filter: drop-shadow(-10px -10px 0px $primary);
+  & img {
+    filter: drop-shadow(-10px -10px 0px $primary);
+  }
+}
+
+.solid-shadow-primary-bottom-right {
+  filter: drop-shadow(10px 10px 0px $primary);
+  & img {
+    filter: drop-shadow(10px 10px 0px $primary);
+  }
+}
+
+.solid-shadow-secondary-top-left {
+  filter: drop-shadow(-10px -10px 0px $secondary);
+  & img {
+    filter: drop-shadow(-10px -10px 0px $secondary);
+  }
+}
+
+.solid-shadow-secondary-bottom-right {
+  filter: drop-shadow(10px 10px 0px $secondary);
+  & img {
+    filter: drop-shadow(10px 10px 0px $secondary);
+  }
+}
+
+.no-drop-shadow {
+  filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)) !important;
+  & img {
+    filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)) !important;
+  }
+  & p {
+    filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)) !important;
+  }
+  & span {
+    filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)) !important;
+  }
+}
+
+.drop-shadow {
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.3));
+  & img {
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.3));
+  }
+}
+
+.drop-shadow-dark {
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+  & img {
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+  }
+}
+
+.drop-shadow-darker {
+  filter: drop-shadow(5px 5px 3px rgba(0, 0, 0, 1));
+  & img {
+    filter: drop-shadow(5px 5px 3px rgba(0, 0, 0, 1));
+  }
+}
+
+.glow {
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.3));
+  & img {
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.3));
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .solid-shadow-primary-top-left {
+    filter: drop-shadow(-20px -20px 0px $primary);
+    & img {
+      filter: drop-shadow(-20px -20px 0px $primary);
+    }
+  }
+
+  .solid-shadow-primary-bottom-right {
+    filter: drop-shadow(20px 20px 0px $primary);
+    & img {
+      filter: drop-shadow(20px 20px 0px $primary);
+    }
+  }
+
+  .solid-shadow-secondary-top-left {
+    filter: drop-shadow(-20px -20px 0px $secondary);
+    & img {
+      filter: drop-shadow(-20px -20px 0px $secondary);
+    }
+  }
+
+  .solid-shadow-secondary-bottom-right {
+    filter: drop-shadow(20px 20px 0px $secondary);
+    & img {
+      filter: drop-shadow(20px 20px 0px $secondary);
+    }
+  }
+}

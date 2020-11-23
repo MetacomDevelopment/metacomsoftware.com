@@ -1,0 +1,93 @@
+.bg-img-footer-contact {
+  background: linear-gradient(
+    to bottom,
+    #{fade-out($imageOverlay, 0.7)} 0%,
+    #{fade-out($imageOverlay, 0.7)} 100%
+  );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  opacity: 1 !important;
+}
+
+// .bg-img-contact-section {
+//   background: linear-gradient(
+//     to bottom,
+//     #{fade-out($purple, 0.1)} 0%,
+//     #{fade-out($purple, 0.1)} 100%
+//   ) !important;
+//   background-position: center !important;
+//   background-repeat: repeat !important;
+//   background-attachment: scroll !important;
+//   background-size: inherit !important;
+//   opacity: 1 !important;
+
+//   @include media-breakpoint-up(md) {
+//     background-position: center !important;
+//     background-repeat: no-repeat !important;
+//     background-attachment: scroll !important;
+//     background-size: cover !important;
+//   }
+// }
+
+.footer-contact-info-section {
+  background: linear-gradient(
+    to bottom,
+    #{fade-out($imageOverlay, 0.4)} 0%,
+    #{fade-out($imageOverlay, 0.4)} 100%
+  );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  opacity: 1 !important;
+  .w-fit {
+    width: fit-content;
+  }
+}
+
+.footer-link {
+  color: $white;
+  font-family: $font-family-sans-serif;
+  padding: 0.75rem 0;
+  &:hover,
+  &:active {
+    color: $primary;
+  }
+}
+
+.footer-bg {
+  background-color: $footerBg;
+}
+
+.footer-heading {
+  color: $footerHeadingTextColor;
+}
+
+footer {
+  h5 {
+    color: $footerHeadingTextColor;
+    text-align: left;
+  }
+  a {
+    color: $footerLinkColor !important;
+    &:hover,
+    &:active {
+      color: $footerLinkHoverColor !important;
+    }
+  }
+  p {
+    color: $footerTextColor;
+  }
+  i {
+    color: $footerIconColor;
+  }
+  td {
+    color: $footerTextColor;
+  }
+  .py-12 {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}

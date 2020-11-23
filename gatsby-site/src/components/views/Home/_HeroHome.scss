@@ -1,0 +1,57 @@
+.bg-img-hero-home {
+  padding-top: 8rem;
+  padding-bottom: calc(10rem - #{$navbar-height});
+  background: radial-gradient(
+    #{fade-out($imageOverlay, 0.2)} 0%,
+    #{fade-out($imageOverlay, 0.8)} 100%
+  );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  opacity: 1 !important;
+  h1 {
+    font-family: 'Oswald';
+    font-size: 2.5rem;
+    color: $heroMainTextColor;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-weight: 900 !important;
+  }
+  p {
+    font-size: 1.3rem;
+    color: $heroSubTextColor;
+  }
+
+  @include media-breakpoint-up(md) {
+    .bg-img-hero-full {
+      padding-bottom: calc(11rem - #{$navbar-height});
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: 100vh;
+    min-height: 40rem;
+    padding-top: 8rem;
+    padding-bottom: 10rem;
+    p {
+      font-size: 1rem;
+    }
+    h1 {
+      font-size: 3rem;
+    }
+    h2 {
+      font-size: 3rem;
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    h1 {
+      font-size: 4.5rem;
+      margin-bottom: 0;
+    }
+    p {
+      font-size: 2rem;
+      margin-bottom: 0;
+    }
+  }
+}

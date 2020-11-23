@@ -1,0 +1,39 @@
+.bg-img-blog {
+  background: linear-gradient(
+    to bottom,
+    #{fade-out($purple, 0.1)} 0%,
+    #{fade-out($purple, 0.1)} 100%
+  );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  opacity: 1 !important;
+}
+
+.bg-img-blog-section {
+  background: linear-gradient(
+    to bottom,
+    #{fade-out($gray, 0.1)} 0%,
+    #{fade-out($gray, 0.1)} 100%
+  );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  opacity: 1 !important;
+
+  @include media-breakpoint-up(md) {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+  }
+}
+
+.seo-blog {
+  h3 {
+    font-size: 1.25rem !important;
+  }
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.3));
+}

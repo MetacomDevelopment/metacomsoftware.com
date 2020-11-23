@@ -1,0 +1,162 @@
+body {
+  background-color: $pageBackground;
+}
+
+// .bg-texture-1 {
+//   background: linear-gradient(
+//     to bottom,
+//     #{fade-out($white, 0.9)} 0%,
+//     #{fade-out($white, 0.9)} 100%
+//   );
+//   background-repeat: repeat !important;
+//   background-size: 50px 50px !important;
+//   width: 100% !important;
+//   opacity: 1 !important;
+// }
+
+// .bg-texture-2 {
+//   background-color: $white;
+//   background-image: url('../images/textures/brilliant.png');
+//   width: 100%;
+// }
+
+// .bg-texture-3 {
+//   background-color: $white;
+//   background-image: url('https://www.transparenttextures.com/patterns/diamond-eyes.png');
+//   width: 100%;
+//   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+// }
+
+.bg-headline-bar {
+  background-color: $bgHeadlineBarColor;
+}
+
+.bg-contact-bar {
+  background-color: $bgContactBarColor;
+}
+
+.bg-breadcrumb-bar {
+  background-color: $bgBreadcrumbBarColor;
+}
+
+.bg-dark-blue {
+  background-color: $darkBlue;
+}
+
+.bg-light-gray {
+  background-color: $lightGray;
+}
+
+.bg-dark-gray {
+  background-color: $darkGray;
+}
+
+.body-banner-img-gradient {
+  background: linear-gradient(
+    to bottom,
+    #{fade-out(#3a2300, 0.2)} 0%,
+    #{fade-out(#3a2300, 0.2)} 100%
+  ) !important;
+  background-position: center !important;
+  background-repeat: repeat !important;
+  background-attachment: scroll !important;
+  background-size: inherit !important;
+  opacity: 1 !important;
+
+  @include media-breakpoint-up(md) {
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+    background-size: cover !important;
+  }
+}
+
+.bg-img-dark-gradient {
+  background: linear-gradient(
+    to bottom,
+    #{fade-out(#000000, 0.4)} 0%,
+    #{fade-out(#000000, 0.4)} 100%
+  ) !important;
+  background-position: center !important;
+  background-repeat: repeat !important;
+  background-attachment: scroll !important;
+  background-size: inherit !important;
+  opacity: 1 !important;
+
+  @include media-breakpoint-up(md) {
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+    background-size: cover !important;
+  }
+}
+
+.bg-img-dark-gradient-20 {
+  background: linear-gradient(
+    to bottom,
+    #{fade-out(#000000, 0.8)} 0%,
+    #{fade-out(#000000, 0.8)} 100%
+  ) !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll !important;
+  background-size: cover !important;
+  opacity: 1 !important;
+
+  @include media-breakpoint-up(md) {
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+    background-size: cover !important;
+  }
+}
+
+.bg-img-page-top {
+  height: 50%;
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - #{$navbar-height});
+  background: linear-gradient(
+    to bottom,
+    #{fade-out($imageOverlay, 0.7)} 0%,
+    #{fade-out($imageOverlay, 0.7)} 100%
+  );
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  opacity: 1 !important;
+  h1 {
+    font-size: 2.5rem;
+    color: $pageBannerH1Color;
+    margin-bottom: 5px;
+  }
+  h2 {
+    font-size: 1.3rem;
+    color: $pageBannerH2Color;
+  }
+
+  @include media-breakpoint-up(lg) {
+    p {
+      font-size: 1.15rem;
+    }
+    h1 {
+      font-size: 3rem;
+      color: $pageBannerH1Color;
+    }
+    h2 {
+      font-size: 1.3rem;
+      color: $pageBannerH2Color;
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    h1 {
+      font-size: 3.8rem;
+      color: $pageBannerH1Color;
+    }
+    h2 {
+      font-size: 1.8rem;
+      color: $pageBannerH2Color;
+    }
+  }
+}

@@ -1,0 +1,128 @@
+// Variables
+
+// Color overrides
+
+// Set a custom color
+$beige: #fff8dc;
+$blue: #00c7ff;
+$black: #000000;
+$yellow: #c9c265;
+
+$green: #20a000 !default;
+$teal: #62c6c3;
+$blueIce: #c2e7da;
+$greenFlower: #f1ffe7;
+$purple: #1a1b41 !default;
+$darkBlue: #011627;
+$light: #f8f9fa;
+$lightGray: #e8e8e8;
+$bronze: #b08d57;
+$silver: #aaa9ad;
+$gold: #d4af37;
+$gray: #343a40;
+$darkGray: #212529;
+$white: #ffffff;
+
+$primary: $blue !default;
+$secondary: $yellow !default;
+
+// Header - Hero Section
+
+$imageOverlay: $black;
+$heroMainTextColor: $beige;
+$heroSubTextColor: white;
+$pageBannerH1Color: #fff8dc;
+$pageBannerH2Color: white;
+
+// Navigation Menu
+
+$navBarBgDesktop: $gray;
+$navLinkColor: white;
+$navLinkActive: $primary;
+$navLinkHover: $primary;
+$navButtonColor: $primary;
+$navButtonText: white;
+$navButtonActive: $primary;
+$navButtonHover: $primary;
+$navDropdownText: white;
+$navDropdownTextBg: $primary;
+$navDropdownTextHover: $primary;
+$navDropdownTextBgHover: $lightGray;
+$navDropdownBg: $secondary;
+$navDropdownBorder: solid 1px lightgray;
+$navBurgerLinesColor: $primary;
+$navBurgerBgColor: $secondary;
+$navBurgerBorder: none;
+
+// Main Content
+
+$pageBackground: $light;
+$pageTextColor: hsl(0, 0, 23);
+$pageLinkColor: $primary;
+$h1Color: hsl(30, 100, 13);
+$h1Alignment: center;
+$h2Color: $darkGray;
+$h2Alignment: center;
+$h3Color: $secondary;
+$h3Alignment: center;
+$bgHeadlineBarColor: #008000;
+$bgContactBarColor: #1e90ff;
+$bgBreadcrumbBarColor: #778899;
+
+// Prefooter
+
+$preFooterBg: hsl(0, 0, 71);
+$preFooterTextColor: white;
+
+// Footer
+
+$footerBg: $darkGray;
+$footerTextColor: white;
+$footerLinkColor: white;
+$footerLinkHoverColor: $primary;
+$footerHeadingTextColor: $primary;
+$footerIconColor: $primary;
+
+// Button Solid
+
+$btnSolidBgColor: $primary;
+$btnSolidBgColorHover: $secondary;
+$btnSolidTextColor: $white;
+$btnSolidTextColorHover: $primary;
+$btnSolidBorder: 2px $secondary solid;
+$btnSolidBorderHover: 2px white solid;
+$btnSolidBorderRadius: 2em;
+$btnSolidFontSize: 1.1em;
+$btnSolidFontWeight: 900;
+
+// Button Outline
+
+$btnOutlineBgColor: none;
+$btnOutlineBgColorHover: $secondary;
+$btnOutlineTextColor: $primary;
+$btnOutlineTextColorHover: $primary;
+$btnOutlineBorder: 2px $primary solid;
+$btnOutlineBorderHover: 2px white solid;
+$btnOutlineBorderRadius: 0.1em;
+$btnOutlineFontSize: 1.1em;
+$btnOutlineFontWeight: 00;
+
+// Font overrides
+$font-family-sans-serif: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+  'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
+
+$font-family-serif: 'Merriweather', -apple-system, BlinkMacSystemFont,
+  'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
+
+$font-family-base: $font-family-serif !default;
+
+$headings-font-family: $font-family-sans-serif !default;
+
+// Custom variables
+$navbar-height: 72px;
+
+$enable-responsive-font-sizes: true;
+$enable-shadows: true;
+$enable-gradients: true;

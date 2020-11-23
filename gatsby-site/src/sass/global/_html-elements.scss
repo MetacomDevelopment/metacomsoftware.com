@@ -1,0 +1,38 @@
+*:focus {
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+hr.divider {
+  max-width: 3.25rem;
+  border-width: 0.2rem;
+  border-color: $primary;
+}
+
+hr.divider-long {
+  max-width: 25vw;
+  border-width: 0.2rem;
+  border-color: $primary;
+}
+
+hr.light {
+  border-color: $secondary;
+  width: 16rem;
+}
+
+hr.primary {
+  border-color: $primary;
+}
+
+hr.secondary {
+  border-color: $secondary;
+}
+
+@include media-breakpoint-up(lg) {
+  hr.light {
+    width: 12rem;
+  }
+}
