@@ -17,7 +17,7 @@ module.exports = {
     title: `Metacom Development`,
     description: `Metacom Development`,
     author: `John Grattan`,
-    image: `src/components/images/Logos/img-angels-logo.jsx`,
+    image: `src/assets/logos/metacom-development-software-company-logo.png`,
     siteUrl,
   },
   plugins: [
