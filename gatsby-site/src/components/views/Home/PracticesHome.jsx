@@ -28,7 +28,7 @@ const PracticesHome = () => {
   const practices = data.allSanityHome;
 
   return (
-    <section className="bg-light">
+    <section id="practicesHome" className="bg-light">
       <Container className="bg-light py-5 text-center">
         <Row className="mb-5">
           <Col>

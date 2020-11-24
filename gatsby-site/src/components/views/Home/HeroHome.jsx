@@ -1,7 +1,9 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
 import { Container, Row, Col } from 'react-bootstrap';
 import BackgroundImage from 'gatsby-background-image';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 import ButtonInternalLink from '../../common/Buttons/ButtonInternalLink/ButtonInternalLink';
 
@@ -20,6 +22,14 @@ const HeroHome = ({ className }) => {
         }
       }
       sanityHome {
+        heroLogoImage {
+          asset {
+            fluid {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+        heroLogoImageAlt
         heroHeadline
         heroSubheadline
         heroCtaText
@@ -43,17 +53,30 @@ const HeroHome = ({ className }) => {
       <Container id="home-banner-section" className="h-100">
         <Row className="h-100 align-items-center justify-content-center text-center">
           <Col className="align-self-center">
-            <h1 className="px-sm-5 px-3 p-lg-3 mb-2 mb-lg-0 drop-shadow-darker font-weight-bold">
-              {hero.heroHeadline}
-            </h1>
-            <p className="px-sm-5 mx-0 mx-lg-5 p-3 mb-3 mb-lg-0 drop-shadow-darker font-weight-bold">
-              {hero.heroSubheadline}
-            </p>
-            <Container className="mt-5">
-              <ButtonInternalLink
-                btnLabel={hero.heroCtaText}
-                btnLink={`${hero.heroCtaLink}`}
+            <Col xs={12} md={4} className="mx-auto mb-4">
+              <Img
+                fluid={hero.heroLogoImage.asset.fluid}
+                alt={hero.heroLogoImageAlt}
               />
+            </Col>
+            <Col xs={12} md={10} className="mx-auto mb-4">
+              <h1 className="drop-shadow-darker font-weight-bold">
+                {hero.heroHeadline}
+              </h1>
+            </Col>
+            <Col xs={12} md={8} className="mx-auto mb-4">
+              <p className="drop-shadow-darker font-weight-bold">
+                {hero.heroSubheadline}
+              </p>
+            </Col>
+            <Container className="mt-5 mx-auto">
+              <AnchorLink
+                className="btn-nav btn-xl nav-link text-uppercase py-2 ml-4 drop-shadow pointer width-fit-content mx-auto"
+                to="#practicesHome"
+                title="Our Practices"
+              >
+                See Our Practices
+              </AnchorLink>
             </Container>
           </Col>
         </Row>

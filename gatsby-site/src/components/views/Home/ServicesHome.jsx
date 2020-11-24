@@ -35,7 +35,7 @@ const ServicesHome = () => {
   const services = data.allSanityHome;
 
   return (
-    <section className="bg-light">
+    <section id="servicesHome" className="bg-light">
       <Container className="bg-light-gray py-5 text-center">
         <Row className="mb-5">
           <Col>
@@ -49,7 +49,13 @@ const ServicesHome = () => {
           {services.nodes.map((node) => {
             return node.services.map((service) => {
               return (
-                <Col xs={12} md={2} lg={4} key={service._key} className="mb-5">
+                <Col
+                  xs={12}
+                  md={2}
+                  lg={4}
+                  key={service._key}
+                  className="mb-5 mx-auto"
+                >
                   <CardImage
                     title={service.serviceTitle}
                     description={service.serviceDescription}

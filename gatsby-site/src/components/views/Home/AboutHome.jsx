@@ -25,7 +25,7 @@ const AboutHome = () => {
   const about = data.sanityHome;
 
   return (
-    <section>
+    <section id="aboutHome">
       <Container fluid className="mx-0 px-0">
         <Row noGutters className="mb-5">
           <Col xs={12} md={6}>

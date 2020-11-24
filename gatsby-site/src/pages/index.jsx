@@ -6,6 +6,7 @@ import AboutHome from '../components/views/Home/AboutHome';
 import PracticesHome from '../components/views/Home/PracticesHome';
 import ServicesHome from '../components/views/Home/ServicesHome';
 import TeamHome from '../components/views/Home/TeamHome';
+import TechHome from '../components/views/Home/TechHome';
 
 const IndexPage = () => {
   return (
@@ -19,6 +20,7 @@ const IndexPage = () => {
       <PracticesHome />
       <AboutHome />
       <ServicesHome />
+      <TechHome />
       <TeamHome />
     </>
   );

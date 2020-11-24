@@ -13,6 +13,7 @@ import author from './documents/author'
 import practice from './objects/practice'
 import service from './objects/service'
 import teamMember from './objects/teamMember'
+import techWeUseLogo from './objects/techWeUseLogo'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -32,6 +33,7 @@ export default createSchema({
     practice,
     service,
     teamMember,
+    techWeUseLogo,
     blockContent,
   ]),
 })

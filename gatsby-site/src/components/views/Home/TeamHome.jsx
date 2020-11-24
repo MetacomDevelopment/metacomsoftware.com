@@ -35,7 +35,7 @@ const TeamHome = () => {
   const teamMembers = data.allSanityHome;
 
   return (
-    <section>
+    <section id="teamHome">
       <Container className="bg-light-gray py-5 text-center">
         <Row className="mb-5">
           <Col>

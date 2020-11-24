@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
+
 import { Navbar, Nav, NavDropdown, Container, Row, Col } from 'react-bootstrap';
 import ImgMetacomLogo from '../../images/Logos/img-metacom-logo';
 
@@ -27,12 +29,12 @@ export default class Header extends React.Component {
           collapseOnSelect={true}
         >
           <Container className="align-content-center">
-            <Link
+            <AnchorLink
               to="/"
               className="svg-size-logo js-scroll-trigger text-secondary text-uppercase align-content-center pointer"
             >
               <ImgMetacomLogo />
-            </Link>
+            </AnchorLink>
             <Navbar.Toggle
               aria-label="Toggle navigation"
               aria-controls="navbarResponsive"
@@ -45,37 +47,54 @@ export default class Header extends React.Component {
               <Nav className="navbar-nav ml-auto mt-2 my-lg-0 ">
                 {/* Desktop Menu */}
                 <li className="nav-item d-none d-lg-inline nav-li-m-top">
-                  <Link className="nav-link text-uppercase" to="/">
+                  <AnchorLink
+                    className="nav-link text-uppercase"
+                    to="#practicesHome"
+                    title="Our Practices"
+                  >
                     Practices
-                  </Link>
+                  </AnchorLink>
                 </li>
                 <li className="nav-item d-none d-lg-inline nav-li-m-top">
-                  <Link className="nav-link text-uppercase" to="/">
+                  <AnchorLink
+                    className="nav-link text-uppercase"
+                    to="#servicesHome"
+                    title="Our Services"
+                  >
                     Services
-                  </Link>
+                  </AnchorLink>
                 </li>
                 <li className="nav-item d-none d-lg-inline nav-li-m-top">
-                  <Link className="nav-link text-uppercase" to="/">
+                  <AnchorLink
+                    className="nav-link text-uppercase"
+                    to="#aboutHome"
+                    title="About Us"
+                  >
                     About
-                  </Link>
+                  </AnchorLink>
                 </li>
                 <li className="nav-item d-none d-lg-inline nav-li-m-top">
-                  <Link className="nav-link text-uppercase" to="/">
+                  <AnchorLink
+                    className="nav-link text-uppercase"
+                    to="#teamHome"
+                    title="Our Team"
+                  >
                     Team
-                  </Link>
+                  </AnchorLink>
                 </li>
                 <li className="nav-item d-none d-lg-inline nav-li-m-top">
-                  <Link className="nav-link text-uppercase" to="/blog/">
+                  <AnchorLink className="nav-link text-uppercase" to="/">
                     Blog
-                  </Link>
+                  </AnchorLink>
                 </li>
                 <li className="nav-item my-auto d-none d-lg-inline">
-                  <a
+                  <AnchorLink
                     className="btn-nav nav-link text-uppercase py-2 ml-4 drop-shadow pointer"
-                    href="tel:+17819363974"
+                    to="#contactHome"
+                    title="Contact Us"
                   >
                     Contact
-                  </a>
+                  </AnchorLink>
                 </li>
                 {/* Mobile Menu */}
                 <Link to="/">
@@ -83,89 +102,68 @@ export default class Header extends React.Component {
                     <Container className="mt-5 bg-secondary border-menu-item-top">
                       <div className="d-flex">
                         <i className="fas fa-home mt-3 mr-3 text-white"></i>
-                        <span
-                          className="nav-button text-uppercase drop-shadow"
-                          to="/"
-                        >
+                        <span className="nav-button text-uppercase" to="/">
                           Home
                         </span>
                       </div>
                     </Container>
                   </li>
                 </Link>
-                {/* <Link to="/who-we-are/">
+                <AnchorLink to="#practicesHome">
                   <li className="nav-item mx-3 d-lg-none">
                     <Container className="bg-secondary border-menu-item">
                       <div className="d-flex">
                         <i className="fas fa-address-card mt-3 mr-3 text-white"></i>
-                        <span className="nav-button text-uppercase drop-shadow">
-                          About
+                        <span className="nav-button text-uppercase">
+                          Practices
                         </span>
                       </div>
                     </Container>
                   </li>
-                </Link>
-                <Link to="/services/">
+                </AnchorLink>
+                <AnchorLink to="#servicesHome">
                   <li className="nav-item mx-3 d-lg-none">
                     <Container className="bg-secondary border-menu-item">
                       <div className="d-flex">
                         <i className="fas fa-tools mt-3 mr-3 text-white"></i>
-                        <span className="nav-button text-uppercase drop-shadow">
+                        <span className="nav-button text-uppercase">
                           Services
                         </span>
                       </div>
                     </Container>
                   </li>
-                </Link>
-                <Link to="/gallery/">
+                </AnchorLink>
+                <AnchorLink to="#aboutHome">
                   <li className="nav-item mx-3 d-lg-none">
                     <Container className="bg-secondary border-menu-item">
                       <div className="d-flex">
                         <i className="fas fa-camera mt-3 mr-3 text-white"></i>
-                        <span className="nav-button text-uppercase drop-shadow">
-                          Gallery
-                        </span>
+                        <span className="nav-button text-uppercase">About</span>
                       </div>
                     </Container>
                   </li>
-                </Link>
-                <Link to="/testimonials/">
+                </AnchorLink>
+                <AnchorLink to="#teamHome">
                   <li className="nav-item mx-3 d-lg-none">
                     <Container className="bg-secondary border-menu-item">
                       <div className="d-flex">
                         <i className="fas fa-medal mt-3 mr-3 text-white"></i>
-                        <span className="nav-button text-uppercase drop-shadow">
-                          Testimonials
-                        </span>
+                        <span className="nav-button text-uppercase">Team</span>
                       </div>
                     </Container>
                   </li>
-                </Link>
-                <Link to="/employment/">
-                  <li className="nav-item mx-3 d-lg-none">
-                    <Container className="bg-secondary border-menu-item">
-                      <div className="d-flex">
-                        <i className="fas fa-hard-hat mt-3 mr-3 text-white"></i>
-                        <span className="nav-button text-uppercase drop-shadow">
-                          Employment
-                        </span>
-                      </div>
-                    </Container>
-                  </li>
-                </Link>
+                </AnchorLink>
                 <Link to="/blog/">
                   <li className="nav-item mx-3 d-lg-none">
                     <Container className="bg-secondary border-menu-item">
                       <div className="d-flex">
                         <i className="fas fa-pencil-alt mt-3 mr-3 text-white"></i>
-                        <span className="nav-button text-uppercase drop-shadow">
-                          Blog
-                        </span>
+                        <span className="nav-button text-uppercase">Blog</span>
                       </div>
                     </Container>
                   </li>
-                </Link> */}
-                <Link to="/contact-us/">
+                </Link>
+                <AnchorLink to="#contactHome">
                   <li className="nav-item mx-3 d-lg-none">
                     <Row>
                       <Container>
@@ -182,7 +180,7 @@ export default class Header extends React.Component {
                       </Container>
                     </Row>
                   </li>
-                </Link>
+                </AnchorLink>
                 <li className="nav-item mx-3 d-lg-none">
                   <Row>
                     <Container>
@@ -191,8 +189,8 @@ export default class Header extends React.Component {
                         className="bg-secondary py-3 text-center justify-content-center align-items-center border-menu-item-bottom-left"
                       >
                         <a
-                          className="nav-button text-uppercase drop-shadow-dark"
-                          href="tel:+17742696002"
+                          className="nav-button text-uppercase"
+                          href="tel:+11231231234"
                         >
                           <i className="fas fa-phone mr-3 text-white"></i>Call
                         </a>
@@ -202,8 +200,8 @@ export default class Header extends React.Component {
                         className="bg-secondary py-3 text-center justify-content-center align-items-center border-menu-item-bottom-right"
                       >
                         <a
-                          className="nav-button text-uppercase drop-shadow-dark"
-                          href="mailto:michael.maher@mdhconstruction.com?Subject=Important%20Email%20From%20Website"
+                          className="nav-button text-uppercase"
+                          href="mailto:sales@metcomsoftware.com?Subject=Important%20Email%20From%20Website"
                           target="_blank"
                         >
                           <i className="fas fa-envelope mr-3 text-white"></i>
