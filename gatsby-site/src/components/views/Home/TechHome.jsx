@@ -52,7 +52,6 @@ const TechHome = () => {
                         fluid={logo.techWeUseLogoImage.asset.fluid}
                         alt={logo.techWeUseLogoImage.asset.originalFilename}
                         className="svg-max-100 mb-3 mb-lg-0"
-                        key={logo._key}
                       />
                     </Col>
                   );

@@ -8,7 +8,7 @@ const PostHeader = ({ className, hOne, author, date, timeToRead }) => {
     query PostHeaderQ {
       masthead: file(
         relativePath: {
-          eq: "assets/images/pages/blog/blog-pencils-pens-tools-mdh-construction-general-contractor-plymouth-massachusetts.jpg"
+          eq: "assets/images/pages/blog/software-application-blog-metacom-development.jpg"
         }
       ) {
         childImageSharp {
@@ -32,7 +32,7 @@ const PostHeader = ({ className, hOne, author, date, timeToRead }) => {
       author={author}
       date={date}
       timeToRead={timeToRead}
-      alt="John Grattan SEO & Web Design Blog post background in header - light bulb with web development icons and keywords"
+      alt="Metacom Development Blog"
     >
       <div className="container">
         <div className="row align-items-center justify-content-center text-center">

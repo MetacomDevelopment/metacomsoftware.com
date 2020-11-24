@@ -9,7 +9,7 @@ const BlogPage = ({ pageContext, location }) => {
     query BlogPageQ {
       masthead: file(
         relativePath: {
-          eq: "assets/images/pages/blog/junk-car-removal-blog-angels-towing-junk-car-mass.jpg"
+          eq: "assets/images/pages/blog/software-application-blog-metacom-development.jpg"
         }
       ) {
         childImageSharp {
@@ -26,16 +26,16 @@ const BlogPage = ({ pageContext, location }) => {
   return (
     <>
       <SEO
-        title="Junk Car Removal Blog - Everything About Cash For Cars | Angels Towing - Junk Car Mass"
-        description="Thinking about scrapping your junk car for cash? Before you lose out on money, check out our blog posts to learn tips, tricks, and guides to selling your car"
-        canonicalLink="https://junkcarsmass.com/blog/"
+        title="Metacom Development Blog"
+        description="Metacom Development Blog"
+        canonicalLink="https://www.metacomsoftware.com/blog/"
       />
       <Header
         Tag="header"
         className="bg-img-page-top"
         fluid={imageDataHeader}
-        textMain="Junk Car Removal Blog"
-        textSecondary="Everything you need to know cash for cars"
+        textMain="Software Development Blog"
+        textSecondary="Everything you need to know about software development"
       />
       <Body />
     </>

@@ -36,7 +36,9 @@ const Blog__Section = ({ className }) => {
 
   return (
     <Container className="mt-5 pt-5">
-      <h2 className="text-center mt-0 mb-5">Latest Construction Blog Posts</h2>
+      <h2 className="text-center mt-0 mb-5">
+        Latest Software Development Blog Posts
+      </h2>
       <Row className="justify-content-center align-items-baseline">
         {data.allMdx.edges.map((post) => (
           <Col xs={12} md={6} lg={6} key={post.node.id}>
@@ -45,7 +47,7 @@ const Blog__Section = ({ className }) => {
                 <Img
                   className="mb-2"
                   fluid={post.node.frontmatter.image.childImageSharp.fluid}
-                  alt="MDH Construction blog post thumbnail"
+                  alt="Metacom Development blog post thumbnail"
                 />
               </Link>
               <div>

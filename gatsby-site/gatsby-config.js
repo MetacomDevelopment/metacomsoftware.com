@@ -35,7 +35,7 @@ module.exports = {
       resolve: 'gatsby-plugin-anchor-links',
       options: {
         offset: -75,
-        duration: 1500,
+        duration: 1000,
       },
     },
     // {
@@ -70,14 +70,6 @@ module.exports = {
         extensions: ['.mdx', '.md'],
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-breadcrumb`,
-    //   options: {
-    //     useAutoGen: true,
-    //     usePathPrefix: '/',
-    //     trailingSlashes: true,
-    //   },
-    // },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
@@ -127,7 +119,7 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#fff`,
         display: `minimal-ui`,
-        icon: `src/assets/logos/angels-towing-junk-car-mass-favicon.png`,
+        icon: `src/assets/logos/metacom-development-software-company-favicon.png`,
       },
     },
     {

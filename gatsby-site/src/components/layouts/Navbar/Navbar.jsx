@@ -49,7 +49,7 @@ export default class Header extends React.Component {
                 <li className="nav-item d-none d-lg-inline nav-li-m-top">
                   <AnchorLink
                     className="nav-link text-uppercase"
-                    to="#practicesHome"
+                    to="/#practicesHome"
                     title="Our Practices"
                   >
                     Practices
@@ -58,7 +58,7 @@ export default class Header extends React.Component {
                 <li className="nav-item d-none d-lg-inline nav-li-m-top">
                   <AnchorLink
                     className="nav-link text-uppercase"
-                    to="#servicesHome"
+                    to="/#servicesHome"
                     title="Our Services"
                   >
                     Services
@@ -67,7 +67,7 @@ export default class Header extends React.Component {
                 <li className="nav-item d-none d-lg-inline nav-li-m-top">
                   <AnchorLink
                     className="nav-link text-uppercase"
-                    to="#aboutHome"
+                    to="/#aboutHome"
                     title="About Us"
                   >
                     About
@@ -76,21 +76,21 @@ export default class Header extends React.Component {
                 <li className="nav-item d-none d-lg-inline nav-li-m-top">
                   <AnchorLink
                     className="nav-link text-uppercase"
-                    to="#teamHome"
+                    to="/#teamHome"
                     title="Our Team"
                   >
                     Team
                   </AnchorLink>
                 </li>
                 <li className="nav-item d-none d-lg-inline nav-li-m-top">
-                  <AnchorLink className="nav-link text-uppercase" to="/">
+                  <Link className="nav-link text-uppercase" to="/blog/">
                     Blog
-                  </AnchorLink>
+                  </Link>
                 </li>
                 <li className="nav-item my-auto d-none d-lg-inline">
                   <AnchorLink
                     className="btn-nav nav-link text-uppercase py-2 ml-4 drop-shadow pointer"
-                    to="#contactHome"
+                    to="/#contactHome"
                     title="Contact Us"
                   >
                     Contact
@@ -109,7 +109,7 @@ export default class Header extends React.Component {
                     </Container>
                   </li>
                 </Link>
-                <AnchorLink to="#practicesHome">
+                <AnchorLink to="/#practicesHome">
                   <li className="nav-item mx-3 d-lg-none">
                     <Container className="bg-secondary border-menu-item">
                       <div className="d-flex">
@@ -121,7 +121,7 @@ export default class Header extends React.Component {
                     </Container>
                   </li>
                 </AnchorLink>
-                <AnchorLink to="#servicesHome">
+                <AnchorLink to="/#servicesHome">
                   <li className="nav-item mx-3 d-lg-none">
                     <Container className="bg-secondary border-menu-item">
                       <div className="d-flex">
@@ -133,7 +133,7 @@ export default class Header extends React.Component {
                     </Container>
                   </li>
                 </AnchorLink>
-                <AnchorLink to="#aboutHome">
+                <AnchorLink to="/#aboutHome">
                   <li className="nav-item mx-3 d-lg-none">
                     <Container className="bg-secondary border-menu-item">
                       <div className="d-flex">
@@ -143,7 +143,7 @@ export default class Header extends React.Component {
                     </Container>
                   </li>
                 </AnchorLink>
-                <AnchorLink to="#teamHome">
+                <AnchorLink to="/#teamHome">
                   <li className="nav-item mx-3 d-lg-none">
                     <Container className="bg-secondary border-menu-item">
                       <div className="d-flex">
@@ -163,7 +163,7 @@ export default class Header extends React.Component {
                     </Container>
                   </li>
                 </Link>
-                <AnchorLink to="#contactHome">
+                <AnchorLink to="/#contactHome">
                   <li className="nav-item mx-3 d-lg-none">
                     <Row>
                       <Container>
