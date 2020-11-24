@@ -51,7 +51,7 @@ const ServicesHome = () => {
               return (
                 <Col
                   xs={12}
-                  md={2}
+                  md={6}
                   lg={4}
                   key={service._key}
                   className="mb-5 mx-auto"

@@ -8,7 +8,7 @@ const NotFoundPage = () => {
     query NotFoundPageQ {
       masthead: file(
         relativePath: {
-          eq: "assets/images/pages/page-missing/page-missing-404-error-scrap-metal-angels-towing-junk-car-mass.jpg"
+          eq: "assets/images/pages/page-missing/page-missing-404-error-meatcom-development-software-company.jpg"
         }
       ) {
         childImageSharp {
@@ -25,9 +25,9 @@ const NotFoundPage = () => {
   return (
     <>
       <SEO
-        title="Something Went Wrong! Page Cannot Be Found | Angels Towing - Junk Car Mass"
+        title="Something Went Wrong! Page Cannot Be Found | Metacom Development"
         description="Something Went Wrong! This page cannot be found"
-        canonicalLink="https://junkcarsmass.com/404/"
+        canonicalLink="https://www.metacomdevelopment.com/404/"
       />
       <Header
         Tag="header"

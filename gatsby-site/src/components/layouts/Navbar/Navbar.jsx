@@ -99,9 +99,9 @@ export default class Header extends React.Component {
                 {/* Mobile Menu */}
                 <Link to="/">
                   <li className="nav-item mx-3 d-lg-none">
-                    <Container className="mt-5 bg-secondary border-menu-item-top">
+                    <Container className="mt-5 bg-white border-menu-item-top">
                       <div className="d-flex">
-                        <i className="fas fa-home mt-3 mr-3 text-white"></i>
+                        <i className="fas fa-home mt-3 mr-3 text-secondary"></i>
                         <span className="nav-button text-uppercase" to="/">
                           Home
                         </span>
@@ -111,9 +111,9 @@ export default class Header extends React.Component {
                 </Link>
                 <AnchorLink to="/#practicesHome">
                   <li className="nav-item mx-3 d-lg-none">
-                    <Container className="bg-secondary border-menu-item">
+                    <Container className="bg-white border-menu-item">
                       <div className="d-flex">
-                        <i className="fas fa-address-card mt-3 mr-3 text-white"></i>
+                        <i className="fas fa-toolbox mt-3 mr-3 text-secondary"></i>
                         <span className="nav-button text-uppercase">
                           Practices
                         </span>
@@ -123,9 +123,9 @@ export default class Header extends React.Component {
                 </AnchorLink>
                 <AnchorLink to="/#servicesHome">
                   <li className="nav-item mx-3 d-lg-none">
-                    <Container className="bg-secondary border-menu-item">
+                    <Container className="bg-white border-menu-item">
                       <div className="d-flex">
-                        <i className="fas fa-tools mt-3 mr-3 text-white"></i>
+                        <i className="fas fa-tools mt-3 mr-3 text-secondary"></i>
                         <span className="nav-button text-uppercase">
                           Services
                         </span>
@@ -135,9 +135,9 @@ export default class Header extends React.Component {
                 </AnchorLink>
                 <AnchorLink to="/#aboutHome">
                   <li className="nav-item mx-3 d-lg-none">
-                    <Container className="bg-secondary border-menu-item">
+                    <Container className="bg-white border-menu-item">
                       <div className="d-flex">
-                        <i className="fas fa-camera mt-3 mr-3 text-white"></i>
+                        <i className="fas fa-address-card mt-3 mr-3 text-secondary"></i>
                         <span className="nav-button text-uppercase">About</span>
                       </div>
                     </Container>
@@ -145,9 +145,9 @@ export default class Header extends React.Component {
                 </AnchorLink>
                 <AnchorLink to="/#teamHome">
                   <li className="nav-item mx-3 d-lg-none">
-                    <Container className="bg-secondary border-menu-item">
+                    <Container className="bg-white border-menu-item">
                       <div className="d-flex">
-                        <i className="fas fa-medal mt-3 mr-3 text-white"></i>
+                        <i className="fas fa-users mt-3 mr-3 text-secondary"></i>
                         <span className="nav-button text-uppercase">Team</span>
                       </div>
                     </Container>
@@ -155,9 +155,9 @@ export default class Header extends React.Component {
                 </AnchorLink>
                 <Link to="/blog/">
                   <li className="nav-item mx-3 d-lg-none">
-                    <Container className="bg-secondary border-menu-item">
+                    <Container className="bg-white border-menu-item">
                       <div className="d-flex">
-                        <i className="fas fa-pencil-alt mt-3 mr-3 text-white"></i>
+                        <i className="fas fa-pencil-alt mt-3 mr-3 text-secondary"></i>
                         <span className="nav-button text-uppercase">Blog</span>
                       </div>
                     </Container>

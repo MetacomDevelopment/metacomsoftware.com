@@ -44,7 +44,7 @@ const PracticesHome = () => {
               return (
                 <Col
                   xs={12}
-                  md={2}
+                  md={6}
                   lg={4}
                   key={practice._key}
                   className="mb-5 mb-lg-0"

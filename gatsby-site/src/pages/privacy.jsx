@@ -9,7 +9,7 @@ const PrivacyPage = ({ pageContext, location }) => {
     query PrivacyPageQ {
       masthead: file(
         relativePath: {
-          eq: "assets/images/pages/privacy/privacy-policy-padlock-angels-towing-junk-car-mass.jpg"
+          eq: "assets/images/pages/privacy/privacy-policy-padlock-metacom-development-software-company.jpg"
         }
       ) {
         childImageSharp {
@@ -26,9 +26,9 @@ const PrivacyPage = ({ pageContext, location }) => {
   return (
     <>
       <SEO
-        title="Privacy Policy - Your Privacy Is Critically Important To Us | Angels Towing - Junk Car Mass"
-        description=""
-        canonicalLink="https://junkcarsmass.com/privacy/"
+        title="Metacom Development"
+        description="Metacom Development"
+        canonicalLink="https://www.metacomsoftware.com/privacy/"
       />
       <Header
         Tag="header"
@@ -36,7 +36,7 @@ const PrivacyPage = ({ pageContext, location }) => {
         fluid={imageDataHeader}
         textMain="Privacy Policy"
         textSecondary="Please Read Our Privacy Policy Before Using Our Site"
-        alt="Metal padlock signifying privacy among our users"
+        alt="Metacom Development"
       />
       <section id="privacy-page">
         <Container className="p-lg-5">
@@ -50,15 +50,15 @@ const PrivacyPage = ({ pageContext, location }) => {
             Your privacy is critically important to us.
           </h3>
           <p>
-            It is Angels Towing - Junk Car Mass's policy to respect your privacy
-            regarding any information We may collect while operating Our
-            website. This Privacy Policy applies to{' '}
+            It is Metacom Development's policy to respect your privacy regarding
+            any information We may collect while operating Our website. This
+            Privacy Policy applies to{' '}
             <Link to="/" className="text-link-on-white">
-              https://junkcarsmass.com
+              https://www.metacomsoftware.com
             </Link>{' '}
             (hereinafter, "We", "Us", "Our" or "
             <Link to="/" className="text-link-on-white">
-              https://junkcarsmass.com
+              https://www.metacomsoftware.com
             </Link>
             "). We respect your privacy and We're committed to protecting
             personally identifiable information you may provide Us through the
@@ -77,23 +77,23 @@ const PrivacyPage = ({ pageContext, location }) => {
           </p>
           <h3 className="text-left mt-5 mb-4">Website Visitors</h3>
           <p>
-            Like most website operators, Angels Towing - Junk Car Mass collects
+            Like most website operators, Metacom Development collects
             non-personally-identifying information of the sort that web browsers
             and servers typically make available, such as the browser type,
             language preference, referring site, and the date and time of each
-            visitor request. Angels Towing - Junk Car Mass's purpose in
-            collecting non-personally identifying information is to better
-            understand how Angels Towing - Junk Car Mass's visitors use Our
-            website. From time to time, MDH Construction may release
-            non-personally-identifying information in the aggregate, e.g., by
-            publishing a report on trends in the usage of its website.
+            visitor request. Metacom Development's purpose in collecting
+            non-personally identifying information is to better understand how
+            Metacom Development's visitors use Our website. From time to time,
+            MDH Construction may release non-personally-identifying information
+            in the aggregate, e.g., by publishing a report on trends in the
+            usage of its website.
           </p>
           <p>
-            Angels Towing - Junk Car Mass also collects potentially
-            personally-identifying information like Internet Protocol (IP)
-            addresses for logged in users and for users leaving comments on{' '}
+            Metacom Development also collects potentially personally-identifying
+            information like Internet Protocol (IP) addresses for logged in
+            users and for users leaving comments on{' '}
             <Link to="/" className="text-link-on-white">
-              https://junkcarsmass.com
+              https://www.metacomsoftware.com
             </Link>{' '}
             blog posts. MDH Construction only discloses logged in user and
             commenter IP addresses under the same circumstances that it uses and
@@ -103,14 +103,14 @@ const PrivacyPage = ({ pageContext, location }) => {
             Gathering of Personally-Identifying Information
           </h3>
           <p>
-            Certain visitors to Angels Towing - Junk Car Mass's website choose
-            to interact with Angels Towing - Junk Car Mass in ways that require
-            Angels Towing - Junk Car Mass to gather personally-identifying
-            information. The amount and type of information that Angels Towing -
-            Junk Car Mass gathers depends on the nature of the interaction. For
-            example, We ask visitors who sign up for a blog at{' '}
+            Certain visitors to Metacom Development's website choose to interact
+            with Metacom Development in ways that require Metacom Development to
+            gather personally-identifying information. The amount and type of
+            information that Angels Towing - Junk Car Mass gathers depends on
+            the nature of the interaction. For example, We ask visitors who sign
+            up for a blog at{' '}
             <Link to="/" className="text-link-on-white">
-              https://junkcarsmass.com
+              https://www.metacomsoftware.com
             </Link>{' '}
             to provide a username and email address.
           </p>
@@ -140,7 +140,7 @@ const PrivacyPage = ({ pageContext, location }) => {
           </h3>
           <p>
             <Link to="/" className="text-link-on-white">
-              https://junkcarsmass.com
+              https://www.metacomsoftware.com
             </Link>{' '}
             uses the remarketing services to advertise on third party websites
             (including Google) to previous visitors to Our site. It could mean
@@ -160,11 +160,11 @@ const PrivacyPage = ({ pageContext, location }) => {
           </p>
           <h3 className="text-left mt-5 mb-4">Aggregated Statistics</h3>
           <p>
-            Angels Towing - Junk Car Mass may collect statistics about the
-            behavior of visitors to our website. Angels Towing - Junk Car Mass
-            may display this information publicly or provide it to others.
-            However, MDH Construction does not disclose your
-            personally-identifying information.
+            Metacom Development may collect statistics about the behavior of
+            visitors to our website. Metacom Development may display this
+            information publicly or provide it to others. However, MDH
+            Construction does not disclose your personally-identifying
+            information.
           </p>
           <h3 className="text-left mt-5 mb-4">Cookies</h3>
           <p>
@@ -176,18 +176,18 @@ const PrivacyPage = ({ pageContext, location }) => {
           <p>
             A cookie is a string of information that a website stores on a
             visitor's computer, and that the visitor's browser provides to the
-            website each time the visitor returns. Angels Towing - Junk Car Mass
-            uses cookies to help Angels Towing - Junk Car Mass identify and
-            track visitors, their usage of{' '}
+            website each time the visitor returns. Metacom Development uses
+            cookies to help Metacom Development identify and track visitors,
+            their usage of{' '}
             <Link to="/" className="text-link-on-white">
-              https://junkcarsmass.com
+              https://www.metacomsoftware.com
             </Link>
             , and their website access preferences. Angels Towing - Junk Car
             Mass visitors who do not wish to have cookies placed on their
             computers should set their browsers to refuse cookies before using
-            Angels Towing - Junk Car Mass's websites, with the drawback that
-            certain features of Angels Towing - Junk Car Mass's websites may not
-            function properly without the aid of cookies.
+            Metacom Development's websites, with the drawback that certain
+            features of Metacom Development's websites may not function properly
+            without the aid of cookies.
           </p>
           <p>
             By continuing to navigate Our website without changing your cookie
@@ -198,100 +198,16 @@ const PrivacyPage = ({ pageContext, location }) => {
           <p>
             Although most changes are likely to be minor, Angels Towing - Junk
             Car Mass may change its Privacy Policy from time to time, and in MDH
-            Construction's sole discretion. Angels Towing - Junk Car Mass
-            encourages visitors to frequently check this page for any changes to
-            its Privacy Policy. Your continued use of this site after any change
-            in this Privacy Policy will constitute your acceptance of such
-            change.
+            Construction's sole discretion. Metacom Development encourages
+            visitors to frequently check this page for any changes to its
+            Privacy Policy. Your continued use of this site after any change in
+            this Privacy Policy will constitute your acceptance of such change.
           </p>
           <Container className="pt-5 px-0 px-lg-5">
             <p className="text-center mb-5 lead font-weight-bold">
-              If you have any questions about this Privacy Policy, please
-              contact us.
+              If you have any questions about this Privacy Policy, please{' '}
+              <Link to="/">contact us</Link>.
             </p>
-            <Col xs={12} md={8} lg={6} className="mx-auto">
-              <Container className="bg-dark border border-primary p-3 p-lg-3">
-                <h3 className="text-center bg-contact-bar text-white p-2">
-                  <span className="drop-shadow">Contact Us Today</span>
-                </h3>
-                <h4 className="text-left text-white">Address:</h4>
-                <Container className="text-sans-serif d-flex mb-4 ml-3">
-                  <i className="text-primary fas fa-2x fa-home mb-3"></i>
-                  <a
-                    className="ml-1-25 text-white"
-                    href="https://goo.gl/maps/MZFJ1hR87hQpDgK16"
-                    target="_blank"
-                  >
-                    87 County Rd
-                    <br />
-                    Plympton, MA 02367
-                  </a>
-                </Container>
-                <h4 className="text-left text-white">Call Us:</h4>
-                <Container className="text-sans-serif d-flex mb-4 ml-3">
-                  <i className="text-primary fas fa-2x fa-phone mb-3"></i>
-                  <a className="ml-3 text-white" href="tel:+17819363974">
-                    (781) 936-3974
-                  </a>
-                </Container>
-                <h4 className="text-left text-white">Email Us:</h4>
-                <Container className="text-sans-serif d-flex mb-4 ml-3">
-                  <i className="text-primary fas fa-2x fa-envelope mb-3"></i>
-                  <a
-                    className="ml-3 text-white"
-                    href="mailto:angelstowing@hotmail.com?Subject=Important%20Email%20From%20Website"
-                    target="_blank"
-                    rel="nofollow"
-                  >
-                    angelstowing
-                    <wbr />
-                    @hotmail.com
-                    <wbr />
-                    .com
-                  </a>
-                </Container>
-                <h4 className="text-left text-white">Hours of Operation:</h4>
-                <Container className="text-sans-serif d-flex ml-3">
-                  <i className="text-primary fas fa-2x fa-clock mt-2"></i>
-                  <Table
-                    className="ml-2 font-weight-bold text-white nap-text"
-                    borderless
-                    size="sm"
-                  >
-                    <tbody>
-                      <tr>
-                        <td>Monday</td>
-                        <td>7AM–5PM</td>
-                      </tr>
-                      <tr>
-                        <td>Tuesday</td>
-                        <td>7AM–5PM</td>
-                      </tr>
-                      <tr>
-                        <td>Wednesday</td>
-                        <td>7AM–5PM</td>
-                      </tr>
-                      <tr>
-                        <td>Thursday</td>
-                        <td>7AM–5PM</td>
-                      </tr>
-                      <tr>
-                        <td>Friday</td>
-                        <td>7AM–5PM</td>
-                      </tr>
-                      <tr>
-                        <td>Saturday</td>
-                        <td>7AM–2PM</td>
-                      </tr>
-                      <tr>
-                        <td>Sunday</td>
-                        <td className="text-primary">Closed</td>
-                      </tr>
-                    </tbody>
-                  </Table>
-                </Container>
-              </Container>
-            </Col>
           </Container>
         </Container>
       </section>

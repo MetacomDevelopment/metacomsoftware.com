@@ -28,13 +28,13 @@ const AboutHome = () => {
     <section id="aboutHome">
       <Container fluid className="mx-0 px-0">
         <Row noGutters className="mb-5">
-          <Col xs={12} md={6}>
+          <Col xs={12} lg={6}>
             <Img
               fluid={about.aboutImage.asset.fluid}
               alt={about.aboutImageAlt}
             />
           </Col>
-          <Col xs={12} md={6} className="bg-dark p-3 p-lg-5">
+          <Col xs={12} lg={6} className="bg-dark py-5 py-lg-0 p-3 p-lg-5">
             <h2 className="font-weight-bold text-primary mb-4">
               {about.aboutHeadline}
             </h2>

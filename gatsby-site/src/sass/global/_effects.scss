@@ -64,6 +64,13 @@
   }
 }
 
+.drop-shadow-solid-white-outline {
+  filter: drop-shadow(0.1px 0.1px 0px white) !important;
+  & img {
+    filter: drop-shadow(0.1px 0.1px 0px white) !important;
+  }
+}
+
 .glow {
   filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.3));
   & img {

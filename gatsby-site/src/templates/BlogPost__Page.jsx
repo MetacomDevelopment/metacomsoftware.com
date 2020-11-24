@@ -150,32 +150,25 @@ const BlogPostTemplate = ({ data }) => {
             <p className="lead mb-5 py-1 text-dark bg-secondary rounded drop-shadow text-center">
               <strong className="text-white">About the author</strong>
             </p>
-            <Col className="mx-auto" xs={12} md={8} lg={12}>
+            {/* <Col className="mx-auto" xs={12} md={8} lg={12}>
               <ImgAngelsLogo className="no-drop-shadow" />
-            </Col>
+            </Col> */}
             <div className="text-center text-dark mt-3">
               <strong className="">{post.frontmatter.author}</strong>
-              <small className="d-block mt-0">Owner</small>
+              <small className="d-block mt-0">CEO/Founder</small>
             </div>
             <hr className="light" />
             <p className="text-left text-dark">
-              Michael Maher is the owner of MDH Construction and currently
-              resides in Plymouth, MA.
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit
+              eligendi et aspernatur. A expedita, minima exercitationem odio
+              dolorum, velit soluta beatae animi incidunt nemo molestias ab
+              nulla doloribus cum culpa?
             </p>
             <p className="text-left text-dark">
-              He is a licensed home improvement contractor and construction
-              supervisor.
-            </p>
-            <p className="text-left text-dark">
-              Michael specializes in home remodeling, seamless gutter
-              installations, and home insulation projects.
-            </p>
-            <p className="text-left text-dark">
-              If you are interested in speaking with Michael, please call{' '}
-              <a className="" href="tel:+17742696002">
-                (774) 269-6002
-              </a>
-              .
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit
+              eligendi et aspernatur. A expedita, minima exercitationem odio
+              dolorum, velit soluta beatae animi incidunt nemo molestias ab
+              nulla doloribus cum culpa?
             </p>
             <div className="text-center mb-3 mt-4">
               <ButtonInternalLink btnLabel="Learn More" btnLink="/" />

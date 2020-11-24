@@ -35,7 +35,7 @@ const TechHome = () => {
     <section id="techHome">
       <Container fluid className="mx-0 px-0">
         <Row noGutters className="mb-5">
-          <Col className="bg-dark p-3 p-lg-5">
+          <Col className="bg-dark px-3 py-5 p-lg-5 ">
             <h2 className="font-weight-bold text-primary mb-4">
               {headlines.techHeadline}
             </h2>
