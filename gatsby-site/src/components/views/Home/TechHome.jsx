@@ -1,8 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
-import { Container, Row, Col, Carousel } from 'react-bootstrap';
-import CarouselAutoScroll from '../../common/Carousel/carouselAutoScroll';
+import { Container, Row, Col } from 'react-bootstrap';
 
 const TechHome = () => {
   const data = useStaticQuery(graphql`
@@ -60,23 +59,6 @@ const TechHome = () => {
                 });
               })}
             </Row>
-
-            {/* <Carousel indicators={false} controls={false} interval={500}>
-              {tech.nodes.map((node) => {
-                return node.techWeUseLogos.map((logo) => {
-                  return (
-                    <Carousel.Item key={logo._key}>
-                      <Container className="svg-max-100">
-                        <Img
-                          fluid={logo.techWeUseLogoImage.asset.fluid}
-                          alt={logo.techWeUseLogoImage.asset.originalFilename}
-                        />
-                      </Container>
-                    </Carousel.Item>
-                  );
-                });
-              })}
-            </Carousel> */}
           </Col>
         </Row>
       </Container>
