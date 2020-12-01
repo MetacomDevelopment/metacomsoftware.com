@@ -218,7 +218,7 @@ const FormFooter = ({ className }) => {
               type="submit"
               value="Submit"
             >
-              <span>Contact Us</span>
+              <span>Submit Inquiry</span>
             </Button>
           </div>
         </Form>

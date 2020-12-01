@@ -5,8 +5,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 import BackgroundImage from 'gatsby-background-image';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
-import ButtonInternalLink from '../../common/Buttons/ButtonInternalLink/ButtonInternalLink';
-
 const HeroHome = ({ className }) => {
   const data = useStaticQuery(graphql`
     query HeroHomeQ {
@@ -58,6 +56,9 @@ const HeroHome = ({ className }) => {
                 fluid={hero.heroLogoImage.asset.fluid}
                 alt={hero.heroLogoImageAlt}
               />
+              {/* <span className="display-2 text-primary company-font font-weight-bold">
+                METACOM DEVELOPMENT
+              </span> */}
             </Col>
             <Col xs={12} md={10} className="mx-auto mb-4">
               <h1 className="drop-shadow-darker font-weight-bold">
@@ -72,10 +73,10 @@ const HeroHome = ({ className }) => {
             <Container className="mt-5 mx-auto">
               <AnchorLink
                 className="btn-nav btn-xl nav-link text-uppercase py-2 ml-4 drop-shadow pointer width-fit-content mx-auto"
-                to="#practicesHome"
-                title="Our Practices"
+                to={`${hero.heroCtaLink}`}
+                title="See Our Practices"
               >
-                See Our Practices
+                {hero.heroCtaText}
               </AnchorLink>
             </Container>
           </Col>

@@ -126,7 +126,11 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Roboto:300;400;700;900', 'Oswald:300,400,500,600,700'],
+          families: [
+            'Roboto:300;400;700;900',
+            'Oswald:300,400,500,600,700',
+            'Bilbo',
+          ],
         },
       },
     },

@@ -151,10 +151,10 @@
     background-color: $navDropdownBg;
     border: $navDropdownBorder;
     z-index: 1;
-    width: 100%;
-    left: 0;
+    min-width: 15em;
     opacity: 0;
     a {
+      text-transform: none !important;
       color: $navDropdownText !important;
       background-color: $navDropdownTextBg !important;
       &:hover {
@@ -163,9 +163,6 @@
       }
       img {
         transition: all 0.2s ease-in-out !important;
-        &:hover {
-          transform: scale(1.2) !important;
-        }
       }
     }
   }

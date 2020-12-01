@@ -20,7 +20,7 @@ const CardStackedIcons = ({
       </Container>
       <Container>
         <h3>{title}</h3>
-        <p>{description}</p>
+        <div>{description}</div>
       </Container>
     </Container>
   );
@@ -33,7 +33,6 @@ CardStackedIcons.defaultProps = {
   iconTop: 'fas fa-comments',
   iconTopColor: 'text-white',
   title: 'Title',
-  description: 'Description',
 };
 
 CardStackedIcons.propTypes = {
@@ -43,7 +42,7 @@ CardStackedIcons.propTypes = {
   iconTop: PropTypes.string,
   iconTopColor: PropTypes.string,
   title: PropTypes.string,
-  description: PropTypes.string,
+  description: PropTypes.object,
 };
 
 export default CardStackedIcons;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Container, Row, Col } from 'react-bootstrap';
+import BlockContent from '@sanity/block-content-to-react';
 
 import CardStackedIcons from '../../common/Cards/CardStackedIcons';
 
@@ -14,9 +15,9 @@ const PracticesHome = () => {
       allSanityHome {
         nodes {
           practices {
+            _rawPracticeDescription
             _key
             practiceTitle
-            practiceDescription
             practiceIcon
           }
         }
@@ -28,17 +29,19 @@ const PracticesHome = () => {
   const practices = data.allSanityHome;
 
   return (
-    <section id="practicesHome" className="bg-light">
-      <Container className="bg-light py-5 text-center">
-        <Row className="mb-5">
+    <section id="practicesHome" className="bg-light section-no-margin">
+      <Container fluid className="bg-dark py-5 text-center">
+        <Row className="pt-5 mb-5">
           <Col>
-            <h2 className="font-weight-bold mb-4">
+            <h2 className="text-white font-weight-bold display-4 mb-4">
               {headlines.practiceHeadline}
             </h2>
-            <p className="lead font-italic">{headlines.practiceSubheadline}</p>
+            <p className="lead text-secondary font-italic">
+              {headlines.practiceSubheadline}
+            </p>
           </Col>
         </Row>
-        <Row>
+        <Row className="py-5">
           {practices.nodes.map((node) => {
             return node.practices.map((practice) => {
               return (
@@ -47,7 +50,7 @@ const PracticesHome = () => {
                   md={6}
                   lg={4}
                   key={practice._key}
-                  className="mb-5 mb-lg-0"
+                  className="mb-5 mb-lg-0 text-white"
                 >
                   <CardStackedIcons
                     iconSize="fa-4x"
@@ -56,7 +59,9 @@ const PracticesHome = () => {
                     iconTop={practice.practiceIcon}
                     iconTopColor="text-white"
                     title={practice.practiceTitle}
-                    description={practice.practiceDescription}
+                    description={
+                      <BlockContent blocks={practice._rawPracticeDescription} />
+                    }
                   />
                 </Col>
               );

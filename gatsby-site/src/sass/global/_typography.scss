@@ -59,6 +59,10 @@ p {
   }
 }
 
+.no-transformation {
+  text-transform: none !important;
+}
+
 .dotted-underline {
   text-decoration: dotted !important;
   &:hover {

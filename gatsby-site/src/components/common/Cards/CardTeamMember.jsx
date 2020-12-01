@@ -9,7 +9,7 @@ const CardTeamMember = ({ children, name, position }) => {
       {children}
       <Container>
         <h3>{name}</h3>
-        <p>{position}</p>
+        <div>{position}</div>
       </Container>
     </Container>
   );

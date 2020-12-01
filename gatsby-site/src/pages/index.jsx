@@ -17,8 +17,8 @@ const IndexPage = () => {
         canonicalLink="https://www.metacomsoftware.com/"
       />
       <HeroHome className="bg-img-hero-home" />
-      <PracticesHome />
       <AboutHome />
+      <PracticesHome />
       <ServicesHome />
       <TechHome />
       <TeamHome />

@@ -5,6 +5,8 @@
 // Set a custom color
 $beige: #fff8dc;
 $blue: #00c7ff;
+$blueDark: #2ab4da;
+$blueDarker: #004d63;
 $black: #000000;
 $yellow: #c9c265;
 
@@ -13,7 +15,6 @@ $teal: #62c6c3;
 $blueIce: #c2e7da;
 $greenFlower: #f1ffe7;
 $purple: #1a1b41 !default;
-$darkBlue: #011627;
 $light: #f8f9fa;
 $lightGray: #e8e8e8;
 $bronze: #b08d57;
@@ -44,11 +45,11 @@ $navButtonColor: $primary;
 $navButtonText: white;
 $navButtonActive: $primary;
 $navButtonHover: $primary;
-$navDropdownText: white;
-$navDropdownTextBg: $primary;
+$navDropdownText: $darkGray;
+$navDropdownTextBg: $light;
 $navDropdownTextHover: $primary;
-$navDropdownTextBgHover: $lightGray;
-$navDropdownBg: $secondary;
+$navDropdownTextBgHover: $light;
+$navDropdownBg: $light;
 $navDropdownBorder: solid 1px lightgray;
 $navBurgerLinesColor: $primary;
 $navBurgerBgColor: $secondary;

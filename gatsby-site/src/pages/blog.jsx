@@ -2,9 +2,9 @@ import React from 'react';
 import { graphql, useStaticQuery, Link } from 'gatsby';
 import SEO from '../components/common/SEO/seo';
 import Header from '../components/layouts/Header/Header';
-import Body from '../components/views/Blog/Body';
+import BodyBlog from '../components/views/Blog/BodyBlog';
 
-const BlogPage = ({ pageContext, location }) => {
+const BlogPage = () => {
   const data = useStaticQuery(graphql`
     query BlogPageQ {
       masthead: file(
@@ -37,7 +37,7 @@ const BlogPage = ({ pageContext, location }) => {
         textMain="Software Development Blog"
         textSecondary="Everything you need to know about software development"
       />
-      <Body />
+      <BodyBlog />
     </>
   );
 };

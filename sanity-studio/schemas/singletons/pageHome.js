@@ -89,7 +89,8 @@ export default {
       name: 'aboutText',
       title: 'About Section - Main Text',
       description: 'Add text within the "About" section',
-      type: 'text',
+      type: 'array',
+      of: [{type: 'block'}],
       validation: Rule => Rule.required()
     },
     {

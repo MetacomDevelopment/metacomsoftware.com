@@ -28,7 +28,7 @@ const CardImage = ({ children, title, description }) => {
 
       <Container className="p-3">
         <h3>{title}</h3>
-        <p>{description}</p>
+        <div>{description}</div>
       </Container>
     </Container>
   );
@@ -36,12 +36,11 @@ const CardImage = ({ children, title, description }) => {
 
 CardImage.defaultProps = {
   title: 'Title',
-  description: 'Description',
 };
 
 CardImage.propTypes = {
   title: PropTypes.string,
-  description: PropTypes.string,
+  description: PropTypes.object,
 };
 
 export default CardImage;

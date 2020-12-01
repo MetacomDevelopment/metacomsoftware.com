@@ -15,7 +15,8 @@ export default {
       name: 'serviceDescription',
       title: 'Service Description',
       description: 'Add a short description to your service',
-      type: 'text',
+      type: 'array',
+      of: [{type: 'block'}],
       validation: Rule => Rule.required()
     },
     {

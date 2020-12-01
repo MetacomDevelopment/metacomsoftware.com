@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import { Container, Row, Col } from 'react-bootstrap';
+import BlockContent from '@sanity/block-content-to-react';
 
 import CardImage from '../../common/Cards/CardImage';
 
@@ -15,9 +16,9 @@ const ServicesHome = () => {
       allSanityHome {
         nodes {
           services {
+            _rawServiceDescription
             _key
             serviceTitle
-            serviceDescription
             serviceImage {
               asset {
                 fluid {
@@ -39,7 +40,7 @@ const ServicesHome = () => {
       <Container className="bg-light-gray py-5 text-center">
         <Row className="mb-5">
           <Col>
-            <h2 className="font-weight-bold mb-4">
+            <h2 className="display-4 font-weight-bold mb-4">
               {headlines.serviceHeadline}
             </h2>
             <p className="lead font-italic">{headlines.serviceSubheadline}</p>
@@ -58,7 +59,9 @@ const ServicesHome = () => {
                 >
                   <CardImage
                     title={service.serviceTitle}
-                    description={service.serviceDescription}
+                    description={
+                      <BlockContent blocks={service._rawServiceDescription} />
+                    }
                   >
                     <Img
                       fluid={service.serviceImage.asset.fluid}

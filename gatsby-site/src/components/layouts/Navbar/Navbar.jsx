@@ -4,6 +4,7 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 import { Navbar, Nav, NavDropdown, Container, Row, Col } from 'react-bootstrap';
 import ImgMetacomLogo from '../../images/Logos/img-metacom-logo';
+import ImgSurgeconLogo from '../../images/Logos/img-surgecon-logo';
 
 export default class Header extends React.Component {
   constructor(props) {
@@ -49,8 +50,17 @@ export default class Header extends React.Component {
                 <li className="nav-item d-none d-lg-inline nav-li-m-top">
                   <AnchorLink
                     className="nav-link text-uppercase"
+                    to="/#aboutHome"
+                    title="About Metacom Development"
+                  >
+                    About
+                  </AnchorLink>
+                </li>
+                <li className="nav-item d-none d-lg-inline nav-li-m-top">
+                  <AnchorLink
+                    className="nav-link text-uppercase"
                     to="/#practicesHome"
-                    title="Our Practices"
+                    title="See our software practices"
                   >
                     Practices
                   </AnchorLink>
@@ -59,25 +69,34 @@ export default class Header extends React.Component {
                   <AnchorLink
                     className="nav-link text-uppercase"
                     to="/#servicesHome"
-                    title="Our Services"
+                    title="See our development services"
                   >
                     Services
                   </AnchorLink>
                 </li>
-                <li className="nav-item d-none d-lg-inline nav-li-m-top">
-                  <AnchorLink
-                    className="nav-link text-uppercase"
-                    to="/#aboutHome"
-                    title="About Us"
-                  >
-                    About
-                  </AnchorLink>
+                <li className="nav-item my-dropdown d-none d-lg-inline nav-li-m-top">
+                  <span className="nav-link text-uppercase">
+                    Applications <i className="fas fa-angle-down ml-1"></i>
+                  </span>
+                  <Row className="my-dropdown-menu p-1 mt-0 drop-shadow text-left">
+                    <Col>
+                      <Link
+                        className="nav-link p-1 text-uppercase text-left"
+                        to="/surgecon-healthcare-software/"
+                      >
+                        <ImgSurgeconLogo className="no-drop-shadow" />
+                        <span className="mt-2 d-block font-weight-normal">
+                          SurgeCon Healthcare Software
+                        </span>
+                      </Link>
+                    </Col>
+                  </Row>
                 </li>
                 <li className="nav-item d-none d-lg-inline nav-li-m-top">
                   <AnchorLink
                     className="nav-link text-uppercase"
                     to="/#teamHome"
-                    title="Our Team"
+                    title="Learn about our team"
                   >
                     Team
                   </AnchorLink>
@@ -109,6 +128,16 @@ export default class Header extends React.Component {
                     </Container>
                   </li>
                 </Link>
+                <AnchorLink to="/#aboutHome">
+                  <li className="nav-item mx-3 d-lg-none">
+                    <Container className="bg-white border-menu-item">
+                      <div className="d-flex">
+                        <i className="fas fa-address-card mt-3 mr-3 text-secondary"></i>
+                        <span className="nav-button text-uppercase">About</span>
+                      </div>
+                    </Container>
+                  </li>
+                </AnchorLink>
                 <AnchorLink to="/#practicesHome">
                   <li className="nav-item mx-3 d-lg-none">
                     <Container className="bg-white border-menu-item">
@@ -133,16 +162,18 @@ export default class Header extends React.Component {
                     </Container>
                   </li>
                 </AnchorLink>
-                <AnchorLink to="/#aboutHome">
+                <Link to="/surgecon-healthcare-software/">
                   <li className="nav-item mx-3 d-lg-none">
                     <Container className="bg-white border-menu-item">
                       <div className="d-flex">
-                        <i className="fas fa-address-card mt-3 mr-3 text-secondary"></i>
-                        <span className="nav-button text-uppercase">About</span>
+                        <i className="fas fa-tablet-alt mt-3 mr-3 text-secondary"></i>
+                        <span className="nav-button text-uppercase">
+                          Applications
+                        </span>
                       </div>
                     </Container>
                   </li>
-                </AnchorLink>
+                </Link>
                 <AnchorLink to="/#teamHome">
                   <li className="nav-item mx-3 d-lg-none">
                     <Container className="bg-white border-menu-item">

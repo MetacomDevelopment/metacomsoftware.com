@@ -14,5 +14,14 @@ export default () =>
             .schemaType("home")
             .documentId("singleton-home")
         ),
-        ...S.documentTypeListItems().filter(listItem => !['home'].includes(listItem.getId()))
+      S.listItem()
+        .title("Page - SurgeCon")
+        .icon(icon)
+        .child(
+          S.editor()
+            .id('surgecon')
+            .schemaType("surgecon")
+            .documentId("singleton-surgecon")
+        ),
+        ...S.documentTypeListItems().filter(listItem => !['home','surgecon'].includes(listItem.getId()))
     ]);

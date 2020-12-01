@@ -2,10 +2,22 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import { Container, Row, Col } from 'react-bootstrap';
+import BackgroundImage from 'gatsby-background-image';
 
 const TechHome = () => {
   const data = useStaticQuery(graphql`
     query TechHomeQ {
+      masthead: file(
+        relativePath: {
+          eq: "assets/images/pages/home/technologies-we-use-software-metacom-development.jpg"
+        }
+      ) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1920) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
       sanityHome {
         techHeadline
         techSubheadline
@@ -28,22 +40,35 @@ const TechHome = () => {
     }
   `);
 
+  const imageData = data.masthead.childImageSharp.fluid;
   const headlines = data.sanityHome;
   const tech = data.allSanityHome;
 
   return (
-    <section id="techHome">
+    <BackgroundImage
+      Tag="section"
+      id="techHome"
+      className="bg-img-light-gradient section-no-margin"
+      fluid={imageData}
+      backgroundColor={`#040e18`}
+      alt="Forest with code - Metacom Development homepage background"
+    >
+      {/* <section id="techHome"> */}
       <Container fluid className="mx-0 px-0">
-        <Row noGutters className="mb-5">
-          <Col className="bg-dark px-3 py-5 p-lg-5 ">
-            <h2 className="font-weight-bold text-primary mb-4">
+        <Row
+          noGutters
+          className="mb-5 border-top border-bottom border-secondary"
+        >
+          <Col className="px-3 py-5 p-lg-5 ">
+            <h2 className="display-4 font-weight-bold mb-4">
               {headlines.techHeadline}
             </h2>
-            <p className="text-center text-secondary lead font-italic mb-5">
+            <hr className="divider" />
+            {/* <p className="font-weight-bold text-center lead font-italic mb-5">
               {headlines.techSubheadline}
-            </p>
+            </p> */}
 
-            <Row>
+            <Row className="pt-5">
               {tech.nodes.map((node) => {
                 return node.techWeUseLogos.map((logo) => {
                   return (
@@ -61,7 +86,8 @@ const TechHome = () => {
           </Col>
         </Row>
       </Container>
-    </section>
+      {/* </section> */}
+    </BackgroundImage>
   );
 };
 
