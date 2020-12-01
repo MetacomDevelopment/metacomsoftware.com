@@ -50,28 +50,6 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      name: 'practiceHeadline',
-      title: 'Practices Section - Headline',
-      description: 'Add a headline within the "Practices" section',
-      type: 'string',
-      validation: Rule => Rule.required()
-    },
-    {
-      name: 'practiceSubheadline',
-      title: 'Practices Section - Subheadline',
-      description: 'Add a subheadline within the "Practices" section',
-      type: 'string',
-      validation: Rule => Rule.required()
-    },
-    {
-      name: 'practices',
-      title: 'Practices Section - List of Practices',
-      description: 'Add a practice within the "Practices" section',
-      type: 'array',
-      of: [{type: 'practice'}],
-      validation: Rule => Rule.required()
-    },
-    {
       name: 'aboutHeadline',
       title: 'About Section - Headline',
       description: 'Add a headline within the "About" section',
@@ -108,6 +86,28 @@ export default {
       title: 'About Section - Image Alt Text',
       description: 'Add alt text to your image',
       type: 'string',
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'practiceHeadline',
+      title: 'Practices Section - Headline',
+      description: 'Add a headline within the "Practices" section',
+      type: 'string',
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'practiceSubheadline',
+      title: 'Practices Section - Subheadline',
+      description: 'Add a subheadline within the "Practices" section',
+      type: 'string',
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'practices',
+      title: 'Practices Section - List of Practices',
+      description: 'Add a practice within the "Practices" section',
+      type: 'array',
+      of: [{type: 'practice'}],
       validation: Rule => Rule.required()
     },
     {

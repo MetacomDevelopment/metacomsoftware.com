@@ -4,10 +4,6 @@ import Img from 'gatsby-image';
 import { Container, Row, Col, Table } from 'react-bootstrap';
 import BlockContent from '@sanity/block-content-to-react';
 import BackgroundImage from 'gatsby-background-image';
-// import IconCashPayments from '../../../assets/svg/big-cash-payments-junk-cars-angels-auto-towing.svg';
-// import IconTowTruck from '../../../assets/svg/same-day-pick-up-angels-auto-towing-boston-ma.svg';
-// import IconExperience from '../../../assets/svg/experience-professional-angels-auto-towing-plympton-ma.svg';
-// import IconSatisfaction from '../../../assets/svg/custom-satisfaction-angels-auto-towing-plymouth-county-ma.svg';
 
 const AboutHome = ({ className }) => {
   const data = useStaticQuery(graphql`
