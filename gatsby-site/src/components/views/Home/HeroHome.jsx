@@ -20,14 +20,6 @@ const HeroHome = ({ className }) => {
         }
       }
       sanityHome {
-        heroLogoImage {
-          asset {
-            fluid {
-              ...GatsbySanityImageFluid
-            }
-          }
-        }
-        heroLogoImageAlt
         heroHeadline
         heroSubheadline
         heroCtaText
@@ -51,14 +43,10 @@ const HeroHome = ({ className }) => {
       <Container id="home-banner-section" className="h-100">
         <Row className="h-100 align-items-center justify-content-center text-center">
           <Col className="align-self-center">
-            <Col xs={12} md={4} className="mx-auto mb-4">
-              <Img
-                fluid={hero.heroLogoImage.asset.fluid}
-                alt={hero.heroLogoImageAlt}
-              />
-              {/* <span className="display-2 text-primary company-font font-weight-bold">
+            <Col xs={12} className="mx-auto mb-4">
+              <span className="display-5 text-secondary font-weight-bold drop-shadow-darker">
                 METACOM DEVELOPMENT
-              </span> */}
+              </span>
             </Col>
             <Col xs={12} md={10} className="mx-auto mb-4">
               <h1 className="drop-shadow-darker font-weight-bold">

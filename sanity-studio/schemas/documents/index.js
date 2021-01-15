@@ -1,4 +1,3 @@
-export {default as author} from './author'
-export {default as blockContent} from './blockContent'
-export {default as category} from './category'
-export {default as post} from './post'
+export { default as author } from './author';
+export { default as tag } from './tag';
+export { default as post } from './post';

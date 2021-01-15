@@ -9,8 +9,8 @@ export default {
       title: 'SurgeCon Covid Benefit Description',
       description: 'Add a short description to your benefit',
       type: 'array',
-      of: [{type: 'block'}],
-      validation: Rule => Rule.required()
+      of: [{ type: 'block' }],
+      validation: (Rule) => Rule.required(),
     },
   ],
-}
+};

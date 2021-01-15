@@ -9,15 +9,15 @@ export default {
       title: 'Service Title',
       description: 'Add a title to your service',
       type: 'string',
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'serviceDescription',
       title: 'Service Description',
       description: 'Add a short description to your service',
       type: 'array',
-      of: [{type: 'block'}],
-      validation: Rule => Rule.required()
+      of: [{ type: 'block' }],
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'serviceImage',
@@ -27,7 +27,7 @@ export default {
       options: {
         hotspot: true,
       },
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
   ],
-}
+};

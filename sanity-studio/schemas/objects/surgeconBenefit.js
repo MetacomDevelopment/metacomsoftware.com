@@ -9,8 +9,8 @@ export default {
       title: 'SurgeCon Benefit Description',
       description: 'Add a short description to your feature',
       type: 'array',
-      of: [{type: 'block'}],
-      validation: Rule => Rule.required()
+      of: [{ type: 'block' }],
+      validation: (Rule) => Rule.required(),
     },
   ],
-}
+};

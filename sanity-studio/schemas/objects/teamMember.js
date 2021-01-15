@@ -9,14 +9,14 @@ export default {
       title: 'Name',
       description: 'Add a name to your team member',
       type: 'string',
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'teamMemberPosition',
       title: 'Position',
       description: 'Add a position to your team member',
       type: 'string',
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'teamMemberImage',
@@ -26,7 +26,7 @@ export default {
       options: {
         hotspot: true,
       },
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
   ],
-}
+};

@@ -9,21 +9,21 @@ export default {
       title: 'Practice Title',
       description: 'Add a title to your practice',
       type: 'string',
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'practiceDescription',
       title: 'Practice Description',
       description: 'Add a short description to your practice',
       type: 'array',
-      of: [{type: 'block'}],
-      validation: Rule => Rule.required()
+      of: [{ type: 'block' }],
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'practiceIcon',
       title: 'Practice Icon',
       type: 'string',
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
   ],
-}
+};

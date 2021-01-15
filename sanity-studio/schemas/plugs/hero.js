@@ -27,28 +27,28 @@ export default {
       title: 'Heading',
       type: 'string',
       description: 'Add a heading within the "Hero" section',
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'subheading',
       title: 'Subheading',
       type: 'text',
       description: 'Add a subheading within the "Hero" section',
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'ctaLabel',
       title: 'CTA Label',
       type: 'string',
       description: 'Add a label to the CTA button within the "Hero" section',
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'ctataLink',
       title: 'CTA Link',
       description: 'Add a link to the CTA button within the "Hero" section',
       type: 'string',
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
   ],
-}
+};

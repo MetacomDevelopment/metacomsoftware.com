@@ -14,4 +14,4 @@ export default {
       description: 'Add an alt text to the image',
     },
   ],
-}
+};

@@ -9,7 +9,7 @@ export default {
       title: 'Tech We Use Logo Title',
       description: 'Add a title to your logo',
       type: 'string',
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'techWeUseLogoImage',
@@ -19,7 +19,7 @@ export default {
       options: {
         hotspot: true,
       },
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
   ],
-}
+};
