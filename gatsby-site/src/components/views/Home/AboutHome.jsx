@@ -66,7 +66,7 @@ const AboutHome = ({ className }) => {
           <Col xs={12} lg={6} className="p-3 p-lg-5">
             <Col
               lg={9}
-              className="bg-dark-gray-trasparent drop-shadow-dark p-5 mx-auto"
+              className="bg-dark-gray-trasparent drop-shadow-dark p-3 p-lg-5 mx-auto"
             >
               <h3 className="text-white mb-2">{about.uspHeadline}</h3>
               <hr className="divider mb-5" />
@@ -74,8 +74,8 @@ const AboutHome = ({ className }) => {
                 return node.usps.map((usp) => {
                   return (
                     <Row
-                      key={usps._key}
-                      className="d-flex text-white ml-2 mt-3"
+                      key={usp._key}
+                      className="d-flex text-white ml-2 mt-3 flex-nowrap"
                     >
                       <div className="flex justify-content-end">
                         <i

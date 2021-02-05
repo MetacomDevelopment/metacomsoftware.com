@@ -36,7 +36,7 @@ const ServicesHome = () => {
   const services = data.allSanityHome;
 
   return (
-    <section id="servicesHome" className="bg-light">
+    <section id="servicesHome" className="bg-light my-0 my-lg-5 py-0 py-lg-5">
       <Container className="bg-light-gray py-5 text-center">
         <Row className="mb-5">
           <Col>

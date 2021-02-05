@@ -43,7 +43,7 @@ const HeroHome = ({ className }) => {
       <Container id="home-banner-section" className="h-100">
         <Row className="h-100 align-items-center justify-content-center text-center">
           <Col className="align-self-center">
-            <Col xs={12} className="mx-auto mb-4">
+            <Col xs={12} className="mx-auto my-4">
               <span className="display-5 text-secondary font-weight-bold drop-shadow-darker">
                 METACOM DEVELOPMENT
               </span>
