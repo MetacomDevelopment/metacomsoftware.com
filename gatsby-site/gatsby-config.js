@@ -4,7 +4,7 @@ require('dotenv').config({
 
 const {
   NODE_ENV,
-  URL: NETLIFY_SITE_URL = `https://iwanttoseemysite.com`,
+  URL: NETLIFY_SITE_URL = `https://www.metacomsoftware.com`,
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV,
 } = process.env;
@@ -78,10 +78,7 @@ module.exports = {
         resolveEnv: () => NETLIFY_ENV,
         env: {
           production: {
-            policy: [
-              // REMOVE DISALLOW WHEN GOING LIVE
-              { userAgent: '*', disallow: ['/'] },
-            ],
+            policy: [{ userAgent: '*' }],
           },
           'branch-deploy': {
             policy: [{ userAgent: '*', disallow: ['/'] }],
