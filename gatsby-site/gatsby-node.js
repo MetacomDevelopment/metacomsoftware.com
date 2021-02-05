@@ -1,10 +1,15 @@
-import path from 'path';
+/**
+ * Implement Gatsby's Node APIs in this file.
+ *
+ * See: https://www.gatsbyjs.org/docs/node-apis/
+ */
 
-async function turnPostsIntoPages({ graphql, actions }) {
-  // 1. Get template for posts
-  const postTemplate = path.resolve('./src/templates/Post.jsx');
-  // 2. Query all posts
-  const { data } = await graphql(`
+/**
+ * Create all the project pages.
+ */
+const createBlogPages = async (graphql, actions, reporter) => {
+  const { createPage } = actions;
+  const getBlogResult = await graphql(`
     query {
       posts: allSanityPost(filter: { slug: { current: { ne: "null" } } }) {
         nodes {
@@ -16,21 +21,21 @@ async function turnPostsIntoPages({ graphql, actions }) {
       }
     }
   `);
-  console.log(data);
-  // 3. Loop over each post and create a page for them
-  data.posts.nodes.forEach((post) => {
-    actions.createPage({
-      path: `blog/${post.slug.current}`,
-      component: postTemplate,
+  if (getBlogResult.errors) {
+    throw getBlogResult.errors;
+  }
+  const blogs = getBlogResult.data.posts.nodes;
+  blogs.forEach((post) => {
+    const path = `/blog/${post.slug.current}`;
+    createPage({
+      path,
+      component: require.resolve('./src/templates/Post.jsx'),
       context: { slug: post.slug.current },
     });
   });
-}
+};
 
-export async function createPages(params) {
-  // Create pages dynamically
-  // 1. Posts
-  await turnPostsIntoPages(params);
-  // 2. Services
-  // 3. Service Areas
-}
+// You can delete this file if you're not using it
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  await createBlogPages(graphql, actions, reporter);
+};

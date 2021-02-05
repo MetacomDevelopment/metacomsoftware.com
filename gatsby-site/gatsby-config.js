@@ -38,14 +38,14 @@ module.exports = {
         duration: 1000,
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-google-tagmanager',
-    //   options: {
-    //     id: 'GTM-W8D3WTB',
-    //     includeInDevelopment: false,
-    //     defaultDataLayer: { platform: 'gatsby' },
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: {
+        id: 'GTM-K8MR3CQ',
+        includeInDevelopment: false,
+        defaultDataLayer: { platform: 'gatsby' },
+      },
+    },
     {
       resolve: 'gatsby-source-sanity',
       options: {
