@@ -39,7 +39,7 @@ const Footer = () => {
                   Metacom Development
                 </Link>
               </Container>
-              <Container className="px-0 text-sans-serif pt-2 d-flex mb-2">
+              {/* <Container className="px-0 text-sans-serif pt-2 d-flex mb-2">
                 <a href="tel:+11231231234">
                   <i className="fas fa-phone mt-1" />
                 </a>
@@ -47,7 +47,7 @@ const Footer = () => {
                 <a className="ml-3" href="tel:+11231231234">
                   (123) 123-1234
                 </a>
-              </Container>
+              </Container> */}
               <Container className="px-0 text-sans-serif pt-2 d-flex mb-2">
                 <a
                   href="mailto:sales@metacomsoftware.com?Subject=Important%20Email%20From%20Website"

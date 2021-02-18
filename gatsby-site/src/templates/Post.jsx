@@ -180,20 +180,13 @@ const Post = () => {
             </Col>
             <div className="text-center text-dark mt-3">
               <strong className="">{post.author.name}</strong>
-              <small className="d-block mt-0">CEO/Founder</small>
+              <small className="d-block mt-0">VP Sales</small>
             </div>
             <hr className="light" />
             <p className="text-left text-dark">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit
-              eligendi et aspernatur. A expedita, minima exercitationem odio
-              dolorum, velit soluta beatae animi incidunt nemo molestias ab
-              nulla doloribus cum culpa?
-            </p>
-            <p className="text-left text-dark">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit
-              eligendi et aspernatur. A expedita, minima exercitationem odio
-              dolorum, velit soluta beatae animi incidunt nemo molestias ab
-              nulla doloribus cum culpa?
+              Ned Dashner is the VP of Sales at Metacom Development. If you are
+              interested in our services or have any questions, please fill out
+              our form below.
             </p>
             <div className="text-center mb-3 mt-4">
               <ButtonInternalLink btnLabel="Learn More" btnLink="/" />
