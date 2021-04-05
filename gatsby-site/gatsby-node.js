@@ -26,7 +26,7 @@ const createBlogPages = async (graphql, actions, reporter) => {
   }
   const blogs = getBlogResult.data.posts.nodes;
   blogs.forEach((post) => {
-    const path = `/blog/${post.slug.current}`;
+    const path = `/blog/${post.slug.current}/`;
     createPage({
       path,
       component: require.resolve('./src/templates/Post.jsx'),
