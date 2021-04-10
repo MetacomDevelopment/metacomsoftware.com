@@ -180,13 +180,18 @@ const Post = () => {
             </Col>
             <div className="text-center text-dark mt-3">
               <strong className="">{post.author.name}</strong>
-              <small className="d-block mt-0">VP Sales</small>
+              <small className="d-block mt-0">Customer Service Manager</small>
             </div>
             <hr className="light" />
             <p className="text-left text-dark">
-              Ned Dashner is the VP of Sales at Metacom Development. If you are
-              interested in our services or have any questions, please fill out
-              our form below.
+              Brian McAuliffe is the Custom Service Manager at Metacom
+              Development. Brian is originally from Providence, Rhode Island and
+              now resides in Cape Cod. He has a passion for technology and
+              writing.
+            </p>
+            <p className="text-left text-dark">
+              If you are interested in our services or have any questions,
+              please fill out our form below.
             </p>
             <div className="text-center mb-3 mt-4">
               <ButtonInternalLink btnLabel="Learn More" btnLink="/" />
