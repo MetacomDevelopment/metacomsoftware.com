@@ -3,6 +3,12 @@ import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import BlockContent from '@sanity/block-content-to-react';
+
+import useSanitySettingsCompany from '../../../hooks/useSanitySettingsCompany';
+import useSanitySettingsSocials from '../../../hooks/useSanitySettingsSocials';
+import useSanitySettingsColors from '../../../hooks/useSanitySettingsColors';
+import useSanitySettingsMetadata from '../../../hooks/useSanitySettingsMetadata';
 
 const CompanyHome = () => {
   const settings = {
@@ -13,19 +19,23 @@ const CompanyHome = () => {
 
   const data = useStaticQuery(graphql`
     query CompanyHomeQ {
-      site {
-        siteMetadata {
-          company
-          cityState
+      allSanityPageHome {
+        nodes {
+          _key
+          _rawCompanyBio
         }
       }
-      sanitySettingsCompany {
-        name
-        cityState
+      sanityPageHome {
+        companyImg {
+          alt
+          asset {
+            gatsbyImageData(fit: FILLMAX, placeholder: BLURRED)
+          }
+        }
       }
       imgCompany: file(
         relativePath: {
-          eq: "assets/images/home/landscaping-contractor-brick-walkway-braven-landscape-construction-plympton-ma.jpg"
+          eq: "assets/images/home/interview-engineering-job-recruiter-agency-all-star-connections.jpg"
         }
       ) {
         childImageSharp {
@@ -35,9 +45,14 @@ const CompanyHome = () => {
     }
   `);
 
-  const company = data.sanitySettingsCompany;
+  const sanity = data.sanityPageHome;
+  const allSanity = data.allSanityPageHome;
 
-  const metadata = data.site.siteMetadata;
+  const { ...allCompany } = useSanitySettingsCompany();
+  const { ...allSocials } = useSanitySettingsSocials();
+  const { ...allColors } = useSanitySettingsColors();
+  const { ...allMetadata } = useSanitySettingsMetadata();
+
   const imgCompany = data.imgCompany.childImageSharp.gatsbyImageData;
 
   const containerVariants = {
@@ -70,7 +85,7 @@ const CompanyHome = () => {
     <motion.div
       ref={ref}
       variants={containerVariants}
-      initial={'hidden'}
+      initial="hidden"
       animate={controls}
       transition={{ duration: 0.5, delay: 0 }}
       className="relative bg-white py-16 sm:py-24"
@@ -81,16 +96,13 @@ const CompanyHome = () => {
             <motion.div
               ref={ref}
               variants={itemVariants}
-              className="relative rounded-lg shadow-lg overflow-hidden"
+              className="relative rounded-lg overflow-hidden"
             >
-              <div>
-                <GatsbyImage
-                  image={imgCompany}
-                  className="z-10 lg:h-full h-96 w-full object-cover object-center"
-                  imgClassName="absolute inset-0 sm:h-full h-64 w-full object-cover object-center"
-                  alt="Braven Landscaping & Construction contractor laying down bricks and stone for a walkway to a backyard patio."
-                />
-              </div>
+              <GatsbyImage
+                image={sanity.companyImg.asset.gatsbyImageData}
+                alt={sanity.companyImg.alt}
+                className="lg:h-full h-96 w-full object-cover object-center rounded-lg"
+              />
             </motion.div>
           </div>
         </div>
@@ -101,57 +113,114 @@ const CompanyHome = () => {
           className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0"
         >
           {/* <!-- Content area --> */}
-          <div className="pt-12 sm:pt-16 lg:pt-20">
-            <h2 className="text-3xl text-primary font-extrabold tracking-tight sm:text-4xl">
-              {company.name}: Designing And Building Environmentally Friendly
-              Outdoor Spaces
-            </h2>
-            <div className="mt-10 text-gray-500 space-y-6">
-              <p className="text-lg">
-                {company.name} is a gardening, landscaping, and construction
-                company located in {company.cityState}. Our landscaping
-                contractors service residential homes and commercial businesses,
-                focusing on outdoor living spaces, landscape design, lawn care,
-                and yard maintenance.
-              </p>
-              <h3 className="text-gray-800 font-semibold">
-                Licensed Professionals
-              </h3>
-              <p className="text-base leading-7">
-                We employ a team of licensed professionals who take pride in
-                their work and the expertise they offer. They can help identify
-                your needs then work to make sure you have a space that's
-                perfect for the way you live.
-              </p>
-              <h3 className="text-gray-800 font-semibold">
-                Environmentally Friendly
-              </h3>
-              <p className="text-base leading-7">
-                We believe it's important to be environmentally friendly as we
-                design and build outdoor spaces. We use sustainable materials,
-                energy-efficient lighting, and water-saving irrigation systems
-                that are considered low-flow or even drought tolerant.
-              </p>
-              <h3 className="text-gray-800 font-semibold">
-                Quality Workmanship
-              </h3>
-              <p className="text-base leading-7">
-                Quality workmanship has always been a cornerstone of our
-                landscaping business. We're committed to building a relationship
-                with each customer, and making sure they feel included every
-                step of the way as we build and design their dream space.
-              </p>
-            </div>
-            <div className="mt-20">
-              <Link
-                to="/about/"
-                className="text-lg font-medium text-accent hover:text-primary"
-              >
-                {' '}
-                Learn more about {company.name}{' '}
-                <span aria-hidden="true">&rarr;</span>{' '}
-              </Link>
-            </div>
+          {/* <div className="pt-12 sm:pt-16 lg:pt-20 space-y-6">
+            {allSanity.nodes.map((node) => (
+              <BlockContent
+                key={node._key}
+                blocks={node._rawCompanyBio}
+                className="space-y-6 text-gray-600 text-lg list-check"
+              />
+            ))}
+          </div> */}
+
+          <div className="pt-12 sm:pt-16 lg:pt-20 space-y-6 text-gray-600 text-lg">
+            <h2>Hire Top Talent On-Demand</h2>
+            <p>
+              Scaling your company and{' '}
+              <strong>finding the right employees</strong> is never easy,
+              especially when you've tried using other staffing agencies before
+              and they failed to deliver.
+            </p>
+            <p>
+              Imagine having access to thousands of qualified candidates who are
+              eager to work at your company. We'll help you find the right
+              people that fit into your culture, so you can{' '}
+              <strong>focus on running your business</strong> instead of looking
+              for new hires.
+            </p>
+            <p>
+              All-Star Connections is a staffing agency that helps companies
+              like yours{' '}
+              <strong>find top talent and high-quality candidates</strong>.
+              Since 2016, we've had extensive experience in helping businesses
+              just like yours grow their workforce with ease and efficiency.
+            </p>
+
+            <h3>Our Goal Is Your Success</h3>
+            <p>
+              <em>
+                Placement sustainability within your organization is our #1
+                goal.
+              </em>
+            </p>
+            <p>How do we maintain our 96.7% sustainability rating?</p>
+            <ul className="fa-ul">
+              <li>
+                <span className="fa-li">
+                  <i className="fas fa-check text-primary" />
+                </span>
+                Only dealing with reliable, driven, and talented candidates
+              </li>
+              <li>
+                <span className="fa-li">
+                  <i className="fas fa-check text-primary" />
+                </span>
+                Integrating Our proprietary vetting process includes a vast
+                degree of psychology
+              </li>
+              <li>
+                <span className="fa-li">
+                  <i className="fas fa-check text-primary" />
+                </span>
+                Reason #3
+              </li>
+            </ul>
+
+            <h3>Engineering Is Our Primary Focus</h3>
+            <ul className="fa-ul">
+              <li>
+                <span className="fa-li">
+                  <i className="fas fa-check text-primary" />
+                </span>
+                <strong>Medical Device & Biotechnology</strong> (Pre-Market and
+                Post-Market)
+              </li>
+              <li>
+                <span className="fa-li">
+                  <i className="fas fa-check text-primary" />
+                </span>
+                <strong>IT/Technology</strong> (Software Engineers, Firmware
+                Engineers, Hardware Engineers, Database Development/Admin,
+                Front/Back End Development, IoT, and Project Management)
+              </li>
+              <li>
+                <span className="fa-li">
+                  <i className="fas fa-check text-primary" />
+                </span>
+                <strong>Civil/Structural</strong> (Professional Engineers,
+                Forensics, Construction Management, Project Management,
+                Operations)
+              </li>
+              <li>
+                <span className="fa-li">
+                  <i className="fas fa-check text-primary" />
+                </span>
+                <strong>Manufacturing</strong> (Quality Engineers, Mechanical
+                Engineers, Electrical Engineers, Manufacturing Engineers,
+                Process Engineers, OpEx, EHS, and more)
+              </li>
+            </ul>
+          </div>
+
+          <div className="mt-20">
+            <Link
+              to="/about/"
+              className="text-2xl font-medium text-accent hover:text-primary"
+            >
+              {' '}
+              Learn more about {allCompany.name}{' '}
+              <span aria-hidden="true">&rarr;</span>{' '}
+            </Link>
           </div>
         </motion.div>
       </div>

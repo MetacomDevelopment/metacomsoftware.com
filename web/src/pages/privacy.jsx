@@ -1,38 +1,19 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 
+import useSanitySettingsCompany from '../hooks/useSanitySettingsCompany';
+import useSanitySettingsSocials from '../hooks/useSanitySettingsSocials';
+import useSanitySettingsColors from '../hooks/useSanitySettingsColors';
+import useSanitySettingsMetadata from '../hooks/useSanitySettingsMetadata';
+
 import Layout from '../components/layout';
 import SEO from '../components/common/Seo';
 import HeaderPage from '../components/layouts/HeroPage';
 import Container from '../components/layouts/Container';
 
-const PrivacyPage = () => {
+const PrivacyPage = ({ location }) => {
   const data = useStaticQuery(graphql`
     query PrivacyPageQ {
-      sanitySettingsCompany {
-        address
-        cityState
-        email
-        emailHref
-        hours
-        name
-        owner
-        phone
-        phoneHref
-        street
-        website
-        zip
-      }
-      sanitySettingsSocials {
-        youTube
-        twitter
-        linkedIn
-        instagram
-        gmbShare
-        gmbEmbed
-        gmbCid
-        facebook
-      }
       imgHeroBg: file(
         relativePath: {
           eq: "assets/images/privacy/privacy-policy-landscaping-services-braven-landscape-construction-plympton-ma.jpg"
@@ -45,15 +26,23 @@ const PrivacyPage = () => {
     }
   `);
 
-  const company = data.sanitySettingsCompany;
-  const socials = data.sanitySettingsSocials;
+  const { ...allCompany } = useSanitySettingsCompany();
+  const { ...allSocials } = useSanitySettingsSocials();
+  const { ...allColors } = useSanitySettingsColors();
+  const { ...allMetadata } = useSanitySettingsMetadata();
+
   const imgHeroBg = data.imgHeroBg.childImageSharp.gatsbyImageData;
 
   const seo = {
-    title: 'Landscaping, Lawn Care, Construction Services',
-    description:
-      'We offer landscaping, lawn care, construction services in Plymouth County. Call today for a free estimate to achieve your vision for your home or business!',
-    slug: '/privacy/',
+    title: `NEED TO COMPLETE`,
+    description: 'NEED TO COMPLETE',
+    slug: location.pathname,
+  };
+
+  const hero = {
+    header: 'Our Privacy Policy',
+    subheader: 'This is going to be a short description',
+    alt: 'NEED TO COMPLETE',
   };
 
   return (
@@ -63,14 +52,14 @@ const PrivacyPage = () => {
           {`{
             '@context': 'https://schema.org',
 						'@type': 'Organization',
-						'@id': ${company.website}${seo.slug},
+						'@id': ${allCompany.website}${seo.slug},
             'address': {
               '@type': 'PostalAddress',
-              'addressLocality': ${company.cityState},
-              'postalCode': ${company.zip},
-              'streetAddress': ${company.street}
+              'addressLocality': ${allCompany.cityState},
+              'postalCode': ${allCompany.zip},
+              'streetAddress': ${allCompany.street}
             },
-            'email': ${company.email},
+            'email': ${allCompany.email},
             'member': [
               {
                 '@type': 'Organization'
@@ -82,42 +71,42 @@ const PrivacyPage = () => {
             'alumni': [
               {
                 '@type': 'Person',
-                'name': ${company.owner}
+                'name': ${allCompany.owner}
               },
             ],
-            'name': ${company.name},
-            'telephone': ${company.phone}
+            'name': ${allCompany.name},
+            'telephone': ${allCompany.phone}
           }`}
         </script>
       </SEO>
       <HeaderPage
         imgHeroBg={imgHeroBg}
-        headerText="Our Privacy Policy"
-        subheaderText="Check our policy to understand your rights to privacy"
-        buttonLabel="Schedule Appointment"
+        altText={hero.alt}
+        headerText={hero.header}
+        subheaderText={hero.subheader}
       />
       <Container type="sm">
-        <div className="py-10 lg:max-w-3xl mx-auto">
-          <h2 className="text-center py-5">
+        <div className="py-10 space-y-8 lg:max-w-3xl mx-auto">
+          <h2 className="text-center">
             <span className="text-base text-gray-500 uppercase break-normal">
-              {company.name}
+              {allCompany.name}
               <br />
             </span>
             <span className="break-normal text-3xl">Privacy Policy</span>
           </h2>
-          <p className="py-3">
-            {company.name} (the &quot;
+          <p>
+            {allCompany.name} (the &quot;
             <span className="font-bold italic">Company</span>
             &quot;) respects the privacy of its online visitors and customers of
             its products and services (including, but not limited to{' '}
-            {company.name}) and complies with applicable laws for the protection
-            of your privacy, including, without limitation, the European Union
-            General Data Protection Regulation (&quot;
+            {allCompany.name}) and complies with applicable laws for the
+            protection of your privacy, including, without limitation, the
+            European Union General Data Protection Regulation (&quot;
             <span className="font-bold italic">GDPR</span>&quot;) and the Swiss
             and EU Privacy Shield Frameworks.
           </p>
-          <h3 className="py-5 font-bold">1. Definitions</h3>
-          <p className="py-3">
+          <h3 className="font-bold">1. Definitions</h3>
+          <p>
             Wherever we talk about Personal Data below (&quot;
             <span className="font-bold italic">Personal Data</span>&quot;), we
             mean any information that can either itself identify you as an
@@ -128,44 +117,42 @@ const PrivacyPage = () => {
             &quot;) or that can be connected to you indirectly by linking it to
             Personally Identifying Information, for example:
           </p>
-          <p className="py-3">
+          <p>
             (i) your account registration information on our website and in our
             App;
           </p>
-          <p className="py-3">
+          <p>
             (ii) when you request any support from us or report any problem to
             us;
           </p>
-          <p className="py-3">
+          <p>
             (iii) information provided from using certain services or features;
           </p>
-          <p className="py-3">
-            (iv) information from completion of survey or questionnaire;
-          </p>
-          <p className="py-3">
+          <p>(iv) information from completion of survey or questionnaire;</p>
+          <p>
             (v) technical information, including the Internet protocol (IP)
             address used
           </p>
-          <p className="py-3">
+          <p>
             (vi) and your log-in information, browser, time zone setting,
             browser plug-in types and versions, operating system and platform;
           </p>
-          <p className="py-3">
+          <p>
             (vii) details of any transactions, purchases and payments you made;
           </p>
-          <p className="py-3">
+          <p>
             (viii) your general interaction with the website, including the full
             Uniform Resource Locators (URLs), clickstream to, through and from
             our site, products you viewed or searched for, page response times,
             download errors, length of visits to certain pages, page interaction
             information;
           </p>
-          <p className="py-3">
+          <p>
             (ix) information received from third parties, such as business
             partners, sub-contractors, payment and delivery services, referral
             by other users.
           </p>
-          <p className="py-3">
+          <p>
             The Company also processes anonymous data, aggregated or not, to
             analyze and produce statistics related to the habits, usage
             patterns, and demographics of customers as a group or as
@@ -179,65 +166,59 @@ const PrivacyPage = () => {
             applicable privacy policy of such party when providing personally
             identifiable information.
           </p>
-          <p className="py-3">
+          <p>
             By using the Company's website, you signify your assent to the
             Company's privacy policy. If you do not agree to this policy, please
             do not use the Company's website(s).
           </p>
-          <h3 className="py-5 font-bold">
+          <h3 className="font-bold">
             2. Why the Company Collects and Processes Data
           </h3>
-          <p className="py-3">
+          <p>
             The Company collects and processes Personal Data for the following
             reasons:
           </p>
-          <p className="py-3">
+          <p>
             (a) performing our agreement with you to provide content and
             services, including providing, improving and developing our
             services;
           </p>
-          <p className="py-3">
+          <p>
             (b) researching, designing and launching new features or products;
           </p>
-          <p className="py-3">
+          <p>
             (c) providing you with alerts, updates, materials or information
             about our services or other types of information that you requested
             or signed up to;
           </p>
-          <p className="py-3">(d) collecting overdue amounts;</p>
-          <p className="py-3">
+          <p>(d) collecting overdue amounts;</p>
+          <p>
             (e) responding or taking part in legal proceedings, including
             seeking professional advice, or for the purposes of the legitimate
             and legal interests of the Company or a third party (e.g. the
             interests of our other customers);
           </p>
-          <p className="py-3">
-            (f) compliance with legal obligations that we are subject to;
-          </p>
-          <p className="py-3">
+          <p>(f) compliance with legal obligations that we are subject to;</p>
+          <p>
             (g) communicating with you and responding to your questions or
             requests;
           </p>
-          <p className="py-3">
+          <p>
             (h) direct marketing - we require your consent specifically for this
             purpose and you may opt out any time;
           </p>
-          <p className="py-3">
-            (i) purposes directly related or incidental to the above; or
-          </p>
-          <p className="py-3">(j) where you have given consent to it.</p>
-          <p className="py-3">
+          <p>(i) purposes directly related or incidental to the above; or</p>
+          <p>(j) where you have given consent to it.</p>
+          <p>
             These reasons for collecting and processing Personal Data determine
             and limit what Personal Data we collect and how we use it (section
             3. below), how long we store it (section 4. below), who has access
             to it (section 5. below) and what rights and other control
             mechanisms are available to you as a user (section 6. below).
           </p>
-          <h3 className="py-5 font-bold">
-            3. What Data We Collect and Process
-          </h3>
-          <h4 className="py-5 font-bold">3.1 Basic Account Data</h4>
-          <p className="py-3">
+          <h3 className="font-bold">3. What Data We Collect and Process</h3>
+          <h4 className="font-bold">3.1 Basic Account Data</h4>
+          <p>
             When setting up an Account, the Company will collect your email
             address and country of residence. You are also required to choose a
             user name and a password. The provision of this information is
@@ -245,14 +226,14 @@ const PrivacyPage = () => {
             keeping this password confidential. We ask you not to share a
             password with anyone.
           </p>
-          <p className="py-3">
+          <p>
             During setup of your account, the account is automatically assigned
             a number (the &quot;<span className="font-bold italic">ID</span>
             &quot;) that is later used to reference your user account without
             directly exposing Personally Identifying Information about you.
           </p>
-          <h4 className="py-5 font-bold">3.2 Transaction and Payment Data</h4>
-          <p className="py-3">
+          <h4 className="font-bold">3.2 Transaction and Payment Data</h4>
+          <p>
             In order to make a transaction online, you may need to provide
             payment data to the Company to enable the transaction. If you pay by
             credit card, you need to provide typical credit card information
@@ -263,33 +244,31 @@ const PrivacyPage = () => {
             will receive data from your payment service provider for the same
             reasons.
           </p>
-          <h4 className="py-5 font-bold">
-            3.3 Other Data You Explicitly Submit
-          </h4>
-          <p className="py-3">
+          <h4 className="font-bold">3.3 Other Data You Explicitly Submit</h4>
+          <p>
             We will collect and process Personal Data whenever you explicitly
             provide it to us or send it as part of communication with others,
             e.g. in forums, chats, or when you provide feedback or other user
             generated content. This data includes:
           </p>
-          <p className="py-3">
+          <p>
             (a) Information that you post, comment or follow in any of our
             Content and Services;
           </p>
-          <p className="py-3">(b) Information sent through chat;</p>
-          <p className="py-3">
+          <p>(b) Information sent through chat;</p>
+          <p>
             (c) Information you provide when you request information or support
             from us or purchase Content and Services from us, including
             information necessary to process your orders with the relevant
             payment merchant or, in case of physical goods, shipping providers;
           </p>
-          <p className="py-3">
+          <p>
             (d) Information you provide to us when participating in
             competitions, contests and tournaments or responding to surveys,
             e.g. your contact details.
           </p>
-          <h4 className="py-5 font-bold">3.4 Your Use of the Websites</h4>
-          <p className="py-3">
+          <h4 className="font-bold">3.4 Your Use of the Websites</h4>
+          <p>
             We collect a variety of information through your general interaction
             with the websites, Content and Services offered by us. Personal Data
             we collect may include, but is not limited to, browser and device
@@ -298,10 +277,10 @@ const PrivacyPage = () => {
             your process across your websites and applications to verify that
             you are not a bot and to optimize our services.
           </p>
-          <h4 className="py-5 font-bold">
+          <h4 className="font-bold">
             3.5 Your Use of Services and other Subscriptions
           </h4>
-          <p className="py-3">
+          <p>
             In order to provide you with services, we need to collect, store and
             use various information about your activity in our Content and
             Services. &quot;Content-Related Information&quot; includes your ID,
@@ -310,8 +289,8 @@ const PrivacyPage = () => {
             what operating system you are using, device settings, unique device
             identifiers, and crash data.
           </p>
-          <h4 className="py-5 font-bold">3.6 Tracking Data and Cookies</h4>
-          <p className="py-3">
+          <h4 className="font-bold">3.6 Tracking Data and Cookies</h4>
+          <p>
             We use &quot;Cookies&quot;, which are text files placed on your
             computer, to help us analyze how users use our services, and similar
             technologies (e.g. web beacons, pixels, ad tags and device
@@ -330,8 +309,8 @@ const PrivacyPage = () => {
             which is a number that is automatically assigned to the network your
             computer is part of.
           </p>
-          <h4 className="py-5 font-bold">3.7 Third Party Services</h4>
-          <p className="py-3">
+          <h4 className="font-bold">3.7 Third Party Services</h4>
+          <p>
             This website uses Google Analytics, Google Search Console, Google
             Tag Manager, Google Maps, Facebook Pixel (&quot;
             <span className="font-bold italic">Third Party Service</span>
@@ -344,29 +323,29 @@ const PrivacyPage = () => {
             use of cookies or the resulting information by the Third Party
             Service.
           </p>
-          <p className="py-3">
+          <p>
             On behalf of the website operator, Third Party Service will use this
             information for the purpose of evaluating the website / location /
             credentials for its users, in order to compile reports on website
             activity, and to provide other services relating to website activity
             and internet usage for website operators.
           </p>
-          <p className="py-3">
+          <p>
             Third Party Service will not associate the IP address transferred
             any other data held by the Company. You may refuse the use of
             cookies by selecting the appropriate settings on your browser.
             However, please note that in this case you may not be able to use
             the full functionality of this website.
           </p>
-          <h4 className="py-5 font-bold">3.8 Content Recommendations</h4>
-          <p className="py-3">
+          <h4 className="font-bold">3.8 Content Recommendations</h4>
+          <p>
             We may process information collected under this section 3 so that
             content, products and services shown on the pages and in update
             messages displayed when launching the service can be tailored to
             meet your needs and populated with relevant recommendations and
             offers. This is done to improve your customer experience.
           </p>
-          <p className="py-3">
+          <p>
             Subject to your separate consent or where explicitly permitted under
             applicable laws on email marketing, the Company may send you
             marketing messages about products and services offered by the
@@ -375,7 +354,7 @@ const PrivacyPage = () => {
             as collect information on whether you opened such messages and which
             links in their text you followed.
           </p>
-          <p className="py-3">
+          <p>
             You can opt out or withdraw your consent to receive marketing emails
             at any time by either withdrawing the consent on the same page where
             you previously provided it or clicking the "unsubscribe" link
@@ -385,10 +364,10 @@ const PrivacyPage = () => {
             and other matters relevant to the underlying service and/or the
             information collected.
           </p>
-          <h4 className="py-5 font-bold">
+          <h4 className="font-bold">
             3.9 Information Required to Detect Violations
           </h4>
-          <p className="py-3">
+          <p>
             We collect certain data that is required for our detection,
             investigation and prevention of fraud, cheating and other violations
             of the applicable laws (&quot;
@@ -404,9 +383,9 @@ const PrivacyPage = () => {
             disclosure will compromise the mechanism through which we detect,
             investigate and prevent such Violations.
           </p>
-          <h3 className="py-5 font-bold">4. How We Store Data</h3>
-          <h4 className="py-5 font-bold">4.1 Period of Storage</h4>
-          <p className="py-3">
+          <h3 className="font-bold">4. How We Store Data</h3>
+          <h4 className="font-bold">4.1 Period of Storage</h4>
+          <p>
             We will store your information as long as necessary to fulfil the
             purposes for which the information is collected and processed or —
             where the applicable law provides for longer storage and retention
@@ -416,8 +395,8 @@ const PrivacyPage = () => {
             or other prevailing legitimate purposes dictate a longer storage.
             All your data and credits will be lost after deletion.
           </p>
-          <h4 className="py-5 font-bold">4.2 Deletion of Data</h4>
-          <p className="py-3">
+          <h4 className="font-bold">4.2 Deletion of Data</h4>
+          <p>
             In cases where Personal Data cannot be completely deleted in order
             to ensure the consistency of the system, the user experience or the
             community, your information will be permanently anonymized. Please
@@ -425,13 +404,13 @@ const PrivacyPage = () => {
             data under statutory commercial and tax law for a period of up to
             ten (10) years.
           </p>
-          <p className="py-3">
+          <p>
             If you withdraw your consent on which a processing of your Personal
             Data, we will delete your Personal Data without undue delay to the
             extent that the collection and processing of the Personal Data was
             based on the withdrawn consent.
           </p>
-          <p className="py-3">
+          <p>
             If you exercise a right to object to the processing of your Personal
             Data, we will review your objection and delete your Personal Data
             that we processed for the purpose to which you objected without
@@ -439,8 +418,8 @@ const PrivacyPage = () => {
             this data exists or unless applicable law requires us to retain the
             data.
           </p>
-          <h4 className="py-5 font-bold">4.3 Location of Storage</h4>
-          <p className="py-3">
+          <h4 className="font-bold">4.3 Location of Storage</h4>
+          <p>
             The data that we collect from you may be transferred to, and stored
             at United States, or a destination outside of your jurisdiction. It
             may also be processed by third parties who operate outside of your
@@ -450,8 +429,8 @@ const PrivacyPage = () => {
             that your data is treated securely in accordance with this privacy
             policy.
           </p>
-          <h3 className="py-5 font-bold">5. Who Has Access to Data</h3>
-          <p className="py-3">
+          <h3 className="font-bold">5. Who Has Access to Data</h3>
+          <p>
             5.1 The Company and its subsidiaries may share your Personal Data
             with each other and use it to the degree necessary to achieve the
             purposes listed in section 2 above. This includes our overseas
@@ -461,14 +440,14 @@ const PrivacyPage = () => {
             transferees of our operations (or a substantial part thereof) in any
             part of the world.
           </p>
-          <p className="py-3">
+          <p>
             5.2 We may also share your Personal Data with our third party
             providers that provide customer support services in connection with
             goods, Content and Services distributed via us. Your Personal Data
             will be used in accordance with this Privacy Policy and only as far
             as this is necessary for performing customer support services.
           </p>
-          <p className="py-3">
+          <p>
             5.3 We may also share your information with our personnel, agents,
             advisers, auditors, contractors, financial institutions, and service
             providers in connection with our operations or services (for example
@@ -478,7 +457,7 @@ const PrivacyPage = () => {
             make disclosure under applicable laws and  regulations in any part
             of the world.
           </p>
-          <p className="py-3">
+          <p>
             5.4 In accordance with internet standards, we may also share certain
             information (including your IP address and the identification of
             content you wish to access) with our third party network providers
@@ -488,7 +467,7 @@ const PrivacyPage = () => {
             system of distributed servers that deliver the content to you, based
             on your geographic location.
           </p>
-          <p className="py-3">
+          <p>
             5.5 The Company may allow you to link your User Account to an
             account offered by a third party. If you consent to link the
             accounts, the Company may collect and combine information you
@@ -502,12 +481,12 @@ const PrivacyPage = () => {
             information will be subject to the third party's privacy policy,
             which we encourage you to review.
           </p>
-          <p className="py-3">
+          <p>
             5.6 The Company may release Personal Data to comply with court
             orders or laws and regulations that require us to disclose such
             information.
           </p>
-          <p className="py-3">
+          <p>
             5.7 We make certain data related to your User Account available to
             other users. This information can be accessed by anyone by querying
             your ID. At a minimum, the public persona name you have chosen to
@@ -520,7 +499,7 @@ const PrivacyPage = () => {
             public profile can be accessed, including information that may make
             you identifiable.
           </p>
-          <p className="py-3">
+          <p>
             5.8 The community includes message boards, forums and/or chat areas,
             where users can exchange ideas and communicate with each other. When
             posting a message to a board, forum or chat area, please be aware
@@ -533,21 +512,15 @@ const PrivacyPage = () => {
             will, please use the reporting function and the help site to request
             its removal.
           </p>
-          <h3 className="py-5 font-bold">
-            6. Your Rights and Control Mechanisms
-          </h3>
-          <p className="py-3">You have the right to:</p>
-          <p className="py-3">
-            (a) check whether we hold personal data about you;
-          </p>
-          <p className="py-3">
-            (b) access any personal data we hold about you;
-          </p>
-          <p className="py-3">
+          <h3 className="font-bold">6. Your Rights and Control Mechanisms</h3>
+          <p>You have the right to:</p>
+          <p>(a) check whether we hold personal data about you;</p>
+          <p>(b) access any personal data we hold about you;</p>
+          <p>
             (c) require us to correct any inaccuracy or error in any personal
             data we hold about you;
           </p>
-          <p className="py-3">
+          <p>
             (d) request for the deletion of your personal data through the
             deletion of user account. The data protection laws of the European
             Economic Area and other territories grant their citizens certain
@@ -556,12 +529,12 @@ const PrivacyPage = () => {
             tools designed to exercise such rights available to our customers
             worldwide.
           </p>
-          <p className="py-3">
+          <p>
             As a resident of the European Economic Area you have the following
             rights in relation to your Personal Data:
           </p>
-          <h4 className="py-5 font-bold">6.1 Right of Access</h4>
-          <p className="py-3">
+          <h4 className="font-bold">6.1 Right of Access</h4>
+          <p>
             You have the right to access your Personal Data that we hold about
             you, i.e. the right to require free of charge (i) information
             whether your Personal Data is retained, (ii) access to and/or (iii)
@@ -573,27 +546,27 @@ const PrivacyPage = () => {
             information or communication or taking the action requested) or
             refuse to act on the request.
           </p>
-          <h4 className="py-5 font-bold">6.2 Right to Rectification</h4>
-          <p className="py-3">
+          <h4 className="font-bold">6.2 Right to Rectification</h4>
+          <p>
             If we process your Personal Data, we shall endeavor to ensure by
             implementing suitable measures that your Personal Data is accurate
             and up-to-date for the purposes for which it was collected. If your
             Personal Data is inaccurate or incomplete, you can change the
             information you provided via the Privacy Dashboard.
           </p>
-          <h4 className="py-5 font-bold">6.3. Right to Erasure</h4>
-          <p className="py-3">
+          <h4 className="font-bold">6.3. Right to Erasure</h4>
+          <p>
             You have the right to obtain deletion by us of Personal Data
             concerning you by deleting your User Account via the support page.
           </p>
-          <p className="py-3">
+          <p>
             As a result of deleting your User Account, you will lose access to
             services, including the User Account, Subscriptions and
             service-related information linked to the User Account and the
             possibility to access other services you are using the User Account
             for.
           </p>
-          <p className="py-3">
+          <p>
             We allow you to restore your User Account during a grace period of
             30 (thirty) days from the moment you request deletion of your User
             Account. This functionality allows you not to lose your account by
@@ -604,14 +577,14 @@ const PrivacyPage = () => {
             Personal Data associated with your account will be deleted subject
             to section 4. above.
           </p>
-          <p className="py-3">
+          <p>
             In some cases, deletion of your User Account, and therefore Personal
             Data deletion, is complicated. In some cases, considering the
             complexity and number of the requests, the period for Personal Data
             erasure may be extended, but for no longer than two further months.
           </p>
-          <h4 className="py-5 font-bold">6.4 Right to Object</h4>
-          <p className="py-3">
+          <h4 className="font-bold">6.4 Right to Object</h4>
+          <p>
             When our processing of your Personal Data is based on legitimate
             interests according to Article 6(1)(f) of the GDPR / section 2.c) of
             this Privacy Policy, you have the right to object to this
@@ -622,8 +595,8 @@ const PrivacyPage = () => {
             or defense of legal claims. You also have the right to lodge a
             complaint at a supervisory authority.
           </p>
-          <h3 className="py-5 font-bold">7. Children</h3>
-          <p className="py-3">
+          <h3 className="font-bold">7. Children</h3>
+          <p>
             The minimum age to create a User Account is 18. the Company will not
             knowingly collect Personal Data from children under this age.
             Insofar as certain countries apply a higher age of consent for the
@@ -632,23 +605,23 @@ const PrivacyPage = () => {
             with it collected. The Company encourages parents to instruct their
             children to never give out personal information when online.
           </p>
-          <h3 className="py-5 font-bold">8. Contact Info</h3>
-          <p className="py-3">
+          <h3 className="font-bold">8. Contact Info</h3>
+          <p>
             You can contact the Company's data protection officer at the address
             below.
           </p>
-          <p className="py-3">
+          <p>
             While we review any request sent by mail, please be aware that to
             combat fraud, harassment and identity theft, the only way to access,
             rectify or delete your data is through logging in with your User
             Account or contacting us at{' '}
-            <a href={company.emailHref} target="_blank" rel="noreferrer">
-              {company.email}
+            <a href={allCompany.emailHref} target="_blank" rel="noreferrer">
+              {allCompany.email}
             </a>
             .
           </p>
-          <h3 className="py-5 font-bold">9. Revision Date</h3>
-          <p className="py-3">
+          <h3 className="font-bold">9. Revision Date</h3>
+          <p>
             This privacy policy was last updated on 21 May 2021 (&quot;
             <span className="font-bold italic">Revision Date</span>&quot;). If
             you were a user before the Revision Date, it replaces the existing

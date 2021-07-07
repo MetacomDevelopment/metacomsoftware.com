@@ -1,5 +1,9 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+
+import useSanitySettingsCompany from '../hooks/useSanitySettingsCompany';
+import useSanitySettingsSocials from '../hooks/useSanitySettingsSocials';
+import useSanitySettingsColors from '../hooks/useSanitySettingsColors';
+import useSanitySettingsMetadata from '../hooks/useSanitySettingsMetadata';
 
 import Layout from '../components/layout';
 import SEO from '../components/common/Seo';
@@ -8,75 +12,18 @@ import CompanyHome from '../components/views/home/CompanyHome';
 import FeaturesHome from '../components/views/home/FeaturesHome';
 import CtaHome from '../components/views/home/CtaHome';
 import ServiceOneHome from '../components/views/home/ServiceOneHome';
+import BenefitsHome from '../components/views/home/BenefitsHome';
 
-const IndexPage = () => {
-  const data = useStaticQuery(graphql`
-    query IndexPageQ {
-      sanitySettingsCompany {
-        address
-        cityState
-        email
-        emailHref
-        hours
-        name
-        owner
-        phone
-        phoneHref
-        street
-        website
-        zip
-      }
-      sanitySettingsSocials {
-        youTube
-        twitter
-        linkedIn
-        instagram
-        gmbShare
-        gmbEmbed
-        gmbCid
-        facebook
-      }
-      sanitySettingsColors {
-        primaryColor {
-          hex
-        }
-        primaryColorLight {
-          hex
-        }
-        primaryColorDark {
-          hex
-        }
-        secondaryColor {
-          hex
-        }
-        secondaryColorLight {
-          hex
-        }
-        secondaryColorDark {
-          hex
-        }
-        accentColor {
-          hex
-        }
-        accentColorLight {
-          hex
-        }
-        accentColorDark {
-          hex
-        }
-      }
-    }
-  `);
-
-  const company = data.sanitySettingsCompany;
-  const socials = data.sanitySettingsSocials;
-  const colors = data.sanitySettingsColors;
+const IndexPage = ({ location }) => {
+  const { ...allCompany } = useSanitySettingsCompany();
+  const { ...allSocials } = useSanitySettingsSocials();
+  const { ...allColors } = useSanitySettingsColors();
+  const { ...allMetadata } = useSanitySettingsMetadata();
 
   const seo = {
-    title: 'Landscaping, Lawn Care, Construction Services - Plympton, MA',
-    description:
-      'We offer landscaping, lawn care, construction services in Plymouth County. Call today for a free estimate to achieve your vision for your home or business!',
-    slug: '/',
+    title: `NEED TO COMPLETE`,
+    description: 'NEED TO COMPLETE',
+    slug: location.pathname,
   };
 
   return (
@@ -86,14 +33,14 @@ const IndexPage = () => {
           {`{
             '@context': 'https://schema.org',
 						'@type': 'Organization',
-						'@id': ${company.website}${seo.slug},
+						'@id': ${allCompany.website}${seo.slug},
             'address': {
               '@type': 'PostalAddress',
-              'addressLocality': ${company.cityState},
-              'postalCode': ${company.zip},
-              'streetAddress': ${company.street}
+              'addressLocality': ${allCompany.cityState},
+              'postalCode': ${allCompany.zip},
+              'streetAddress': ${allCompany.street}
             },
-            'email': ${company.email},
+            'email': ${allCompany.email},
             'member': [
               {
                 '@type': 'Organization'
@@ -105,19 +52,20 @@ const IndexPage = () => {
             'alumni': [
               {
                 '@type': 'Person',
-                'name': ${company.owner}
+                'name': ${allCompany.owner}
               },
             ],
-            'name': ${company.name},
-            'telephone': ${company.phone}
+            'name': ${allCompany.name},
+            'telephone': ${allCompany.phone}
           }`}
         </script>
       </SEO>
       <HeroHome />
+      <BenefitsHome />
       <CompanyHome />
       <FeaturesHome />
       <CtaHome />
-      <ServiceOneHome />
+      {/* <ServiceOneHome /> */}
     </Layout>
   );
 };

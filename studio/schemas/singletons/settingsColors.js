@@ -58,5 +58,17 @@ export default {
       description: `Add the dark version of the accent color. Example: "#eab308"`,
       type: `color`,
     },
+    {
+      name: `heroHeadlineColor`,
+      title: `Text Color: Hero Headline`,
+      description: `Add the text color for all hero headlines. Example: "#eab308"`,
+      type: `color`,
+    },
+    {
+      name: `heroSubheadlineColor`,
+      title: `Text Color: Hero Subheadline`,
+      description: `Add the text color for all hero subheadlines. Example: "#eab308"`,
+      type: `color`,
+    },
   ],
 };

@@ -1,54 +1,19 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 
+import useSanitySettingsCompany from '../hooks/useSanitySettingsCompany';
+import useSanitySettingsSocials from '../hooks/useSanitySettingsSocials';
+import useSanitySettingsColors from '../hooks/useSanitySettingsColors';
+import useSanitySettingsMetadata from '../hooks/useSanitySettingsMetadata';
+
 import Layout from '../components/layout';
 import SEO from '../components/common/Seo';
 import HeaderPage from '../components/layouts/HeroPage';
 import Container from '../components/layouts/Container';
 
-const AccessibilityPage = () => {
+const AccessibilityPage = ({ location }) => {
   const data = useStaticQuery(graphql`
     query AccessibilityPageQ {
-      site {
-        siteMetadata {
-          company
-          emailDisplay
-          emailHref
-          address
-          phoneDisplay
-          phoneHref
-          siteUrl
-          gmbCID
-          street
-          cityState
-          zip
-          owner
-        }
-      }
-      sanitySettingsCompany {
-        address
-        cityState
-        email
-        emailHref
-        hours
-        name
-        owner
-        phone
-        phoneHref
-        street
-        website
-        zip
-      }
-      sanitySettingsSocials {
-        youTube
-        twitter
-        linkedIn
-        instagram
-        gmbShare
-        gmbEmbed
-        gmbCid
-        facebook
-      }
       imgHeroBg: file(
         relativePath: {
           eq: "assets/images/accessibility/web-accessibility-landscaping-services-braven-landscape-construction-plympton-ma.jpg"
@@ -61,15 +26,23 @@ const AccessibilityPage = () => {
     }
   `);
 
-  const company = data.sanitySettingsCompany;
-  const socials = data.sanitySettingsSocials;
+  const { ...allCompany } = useSanitySettingsCompany();
+  const { ...allSocials } = useSanitySettingsSocials();
+  const { ...allColors } = useSanitySettingsColors();
+  const { ...allMetadata } = useSanitySettingsMetadata();
+
   const imgHeroBg = data.imgHeroBg.childImageSharp.gatsbyImageData;
 
   const seo = {
-    title: 'Landscaping, Lawn Care, Construction Services',
-    description:
-      'We offer landscaping, lawn care, construction services in Plymouth County. Call today for a free estimate to achieve your vision for your home or business!',
-    slug: '/accessibility/',
+    title: `NEED TO COMPLETE`,
+    description: 'NEED TO COMPLETE',
+    slug: location.pathname,
+  };
+
+  const hero = {
+    header: 'Accessibility',
+    subheader: 'This is going to be a short description',
+    alt: 'NEED TO COMPLETE',
   };
 
   return (
@@ -79,14 +52,14 @@ const AccessibilityPage = () => {
           {`{
             '@context': 'https://schema.org',
 						'@type': 'Organization',
-						'@id': ${company.website}${seo.slug},
+						'@id': ${allCompany.website}${seo.slug},
             'address': {
               '@type': 'PostalAddress',
-              'addressLocality': ${company.cityState},
-              'postalCode': ${company.zip},
-              'streetAddress': ${company.street}
+              'addressLocality': ${allCompany.cityState},
+              'postalCode': ${allCompany.zip},
+              'streetAddress': ${allCompany.street}
             },
-            'email': ${company.email},
+            'email': ${allCompany.email},
             'member': [
               {
                 '@type': 'Organization'
@@ -98,54 +71,54 @@ const AccessibilityPage = () => {
             'alumni': [
               {
                 '@type': 'Person',
-                'name': ${company.owner}
+                'name': ${allCompany.owner}
               },
             ],
-            'name': ${company.name},
-            'telephone': ${company.phone}
+            'name': ${allCompany.name},
+            'telephone': ${allCompany.phone}
           }`}
         </script>
       </SEO>
       <HeaderPage
         imgHeroBg={imgHeroBg}
-        headerText="Our Website Accessibility Policy"
-        subheaderText="Website ADA & WCAG compliance"
-        buttonLabel="Schedule Appointment"
+        altText={hero.alt}
+        headerText={hero.header}
+        subheaderText={hero.subheader}
       />
       <Container type="sm">
-        <div className="py-10 lg:max-w-3xl mx-auto">
-          <h2 className="text-center py-5">
+        <div className="py-10 lg:max-w-3xl mx-auto space-y-8">
+          <h2 className="text-center">
             <span className="text-base text-gray-500 uppercase break-normal">
-              {company.name}
+              {allCompany.name}
               <br />
             </span>
             <span className="break-normal text-3xl">
               Accessibility Statement
             </span>
           </h2>
-          <p className="py-3">
-            {company.name} is committed to ensuring digital accessibility for
+          <p>
+            {allCompany.name} is committed to ensuring digital accessibility for
             people with disabilities. We are continually improving the user
             experience for everyone, and applying the relevant accessibility
             standards.
           </p>
-          <h3 className="py-5 font-bold capitalize">
+          <h3 className="font-bold capitalize">
             Measures to support accessibility
           </h3>
-          <p className="py-3">
-            {company.name} takes the following measures to ensure accessibility
-            of our website (&quot;
+          <p>
+            {allCompany.name} takes the following measures to ensure
+            accessibility of our website (&quot;
             <a
               className="italic"
-              href={company.website}
+              href={allCompany.website}
               target="_blank"
               rel="noreferrer"
             >
-              {company.website}
+              {allCompany.website}
             </a>
             &quot;):
           </p>
-          <ul className="py-5 list-disc list-inside">
+          <ul className="list-disc list-inside">
             <li>Include accessibility as part of our mission statement.</li>
             <li>Integrate accessibility into our procurement practices.</li>
             <li>Integrate accessibility into our procurement practices.</li>
@@ -153,8 +126,8 @@ const AccessibilityPage = () => {
             <li>Include people with disabilities in our design personas.</li>
           </ul>
 
-          <h3 className="py-5 font-bold capitalize">Conformance status</h3>
-          <p className="py-3">
+          <h3 className="font-bold capitalize">Conformance status</h3>
+          <p>
             The{' '}
             <a
               target="_blank"
@@ -174,101 +147,91 @@ const AccessibilityPage = () => {
           <h4 className="py-5 font-bold capitalize">
             Additional accessibility considerations
           </h4>
-          <p className="py-3">
+          <p>
             Although our goal is WCAG 2.1 Level AA conformance, we have also
             applied some Level AAA Success Criteria: Images of text are only
             used for decorative purposes. Re-authentication after a session
             expires does not cause loss of data. Some videos have sign language
             interpretation.
           </p>
-          <h3 className="py-5 font-bold">Feedback</h3>
-          <p className="py-3">
+          <h3 className="font-bold">Feedback</h3>
+          <p>
             We welcome your feedback on the accessibility of our website. Please
             let us know if you encounter accessibility barriers on{' '}
             <a
               className="italic"
-              href={company.website}
+              href={allCompany.website}
               target="_blank"
               rel="noreferrer"
             >
-              {company.website}
+              {allCompany.website}
             </a>
             .
           </p>
-          <ul className="py-5 list-disc list-inside">
+          <ul className="list-disc list-inside">
             <li>
               Phone:{' '}
-              <a href={company.phoneHref} target="_blank" rel="noreferrer">
-                {company.phone}
+              <a href={allCompany.phoneHref} target="_blank" rel="noreferrer">
+                {allCompany.phone}
               </a>
             </li>
             <li>
               Email:{' '}
-              <a href={company.emailHref} target="_blank" rel="noreferrer">
-                {company.email}
+              <a href={allCompany.emailHref} target="_blank" rel="noreferrer">
+                {allCompany.email}
               </a>
             </li>
             <li>
               Address:{' '}
-              <a href={socials.gmbCid} target="_blank" rel="noreferrer">
-                {company.address}
+              <a href={allSocials.gmbCid} target="_blank" rel="noreferrer">
+                {allCompany.address}
               </a>
             </li>
           </ul>
-          <p className="py-3">
-            We try to respond to feedback within 5 business days.
-          </p>
-          <h3 className="py-5 font-bold capitalize">
+          <p>We try to respond to feedback within 5 business days.</p>
+          <h3 className="font-bold capitalize">
             Compatibility with browsers and assistive technology
           </h3>
-          <p className="py-3">
-            {company.name}'s website is designed to be compatible with the
+          <p>
+            {allCompany.name}'s website is designed to be compatible with the
             following assistive technologies:
           </p>
-          <ul className="py-5 list-disc list-inside">
+          <ul className="list-disc list-inside">
             <li>
               &quot;browser X with assistive technology Y on operating system
               Z&quot;
             </li>
           </ul>
-          <p className="py-3">
-            {company.name}'s website is not compatible with:
-          </p>
-          <ul className="py-5 list-disc list-inside">
+          <p>{allCompany.name}'s website is not compatible with:</p>
+          <ul className="list-disc list-inside">
             <li>
               &quot;browsers older than 3 major versions&quot; or &quot;Mobile
               operating systems older than 5 year&quot;
             </li>
           </ul>
-          <h3 className="py-5 font-bold capitalize">
-            Technical specifications
-          </h3>
-          <p className="py-3">
+          <h3 className="font-bold capitalize">Technical specifications</h3>
+          <p>
             Accessibility of Citylights WebStore relies on the following
             technologies to work with the particular combination of web browser
             and any assistive technologies or plugins installed on your
             computer:
           </p>
-          <ul className="py-5 list-disc list-inside">
+          <ul className="list-disc list-inside">
             <li>HTML</li>
             <li>WAI-ARIA</li>
             <li>CSS</li>
             <li>JavaScript</li>
           </ul>
 
-          <h3 className="py-5 font-bold capitalize">
-            Limitations and alternatives
-          </h3>
-          <p className="py-3">
+          <h3 className="font-bold capitalize">Limitations and alternatives</h3>
+          <p>
             Despite our best efforts to ensure accessibility of Citylights
             WebStore, there may be some limitations. Below is a description of
             known limitations, and potential solutions. Please contact us if you
             observe an issue not listed below.
           </p>
-          <p className="py-3">
-            Known limitations for {company.name}'s website:
-          </p>
-          <ol className="py-5 list-decimal list-inside">
+          <p>Known limitations for {allCompany.name}'s website:</p>
+          <ol className="list-decimal list-inside">
             <li>
               <span className="font-bold">Comments from users</span>: uploaded
               images may not have text alternatives because we cannot ensure the
@@ -284,25 +247,25 @@ const AccessibilityPage = () => {
               Please contact documents@example.org for support.
             </li>
           </ol>
-          <h3 className="py-5 font-bold capitalize">Assessment approach</h3>
-          <p className="py-3">
-            {company.name} assessed the accessibility of our website by the
+          <h3 className="font-bold capitalize">Assessment approach</h3>
+          <p>
+            {allCompany.name} assessed the accessibility of our website by the
             following approaches:
           </p>
-          <ul className="py-5 list-disc list-inside">
+          <ul className="list-disc list-inside">
             <li>External evaluation</li>
           </ul>
-          <h3 className="py-5 font-bold capitalize">
+          <h3 className="font-bold capitalize">
             Formal approval of this accessibility statement
           </h3>
-          <p className="py-3">This Accessibility Statement is approved by:</p>
-          <ul className="py-5 list-inside">
-            <li>{company.name}</li>
+          <p>This Accessibility Statement is approved by:</p>
+          <ul className="list-inside">
+            <li>{allCompany.name}</li>
             <li className="italic">Communication Department</li>
             <li className="italic">Director of Communication</li>
           </ul>
-          <h3 className="py-5 font-bold capitalize">Formal complaints</h3>
-          <p className="py-3">
+          <h3 className="font-bold capitalize">Formal complaints</h3>
+          <p>
             We aim to respond to accessibility feedback within 5 business days,
             and to propose a solution within 10 business days. You are entitled
             to escalate a complaint to the national authority, should you be

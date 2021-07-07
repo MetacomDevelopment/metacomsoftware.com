@@ -31,10 +31,7 @@ export default {
     {
       name: 'mainImage',
       title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      type: 'imageAlt',
     },
     {
       name: 'tags',
@@ -51,7 +48,7 @@ export default {
       name: 'body',
       title: 'Body',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: [{ type: 'block' }, { type: 'imageAlt' }],
     },
   ],
 

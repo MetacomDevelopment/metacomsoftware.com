@@ -10,44 +10,38 @@ const FeaturesHome = () => {
     query FeaturesHomeQ {
       imgFeatureOne: file(
         relativePath: {
-          eq: "assets/images/home/features-gardening-braven-landscape-construction-plympton-ma.jpg"
+          eq: "assets/images/home/industries-medical-device-biotechnology-job-recruiter-agency-all-star-connections.jpg"
         }
       ) {
         childImageSharp {
-          gatsbyImageData(
-            quality: 90
-            width: 300
-            layout: FIXED
-            placeholder: BLURRED
-          )
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH, placeholder: BLURRED)
         }
       }
       imgFeatureTwo: file(
         relativePath: {
-          eq: "assets/images/home/features-landscaping-braven-landscape-construction-plympton-ma.jpg"
+          eq: "assets/images/home/industries-information-technology-job-recruiter-agency-all-star-connections.jpg"
         }
       ) {
         childImageSharp {
-          gatsbyImageData(
-            quality: 90
-            width: 300
-            layout: FIXED
-            placeholder: BLURRED
-          )
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH, placeholder: BLURRED)
         }
       }
       imgFeatureThree: file(
         relativePath: {
-          eq: "assets/images/home/features-construction-braven-landscape-construction-plympton-ma.jpg"
+          eq: "assets/images/home/industries-manufacturing-job-recruiter-agency-all-star-connections.jpg"
         }
       ) {
         childImageSharp {
-          gatsbyImageData(
-            quality: 90
-            width: 300
-            layout: FIXED
-            placeholder: BLURRED
-          )
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH, placeholder: BLURRED)
+        }
+      }
+      imgFeatureFour: file(
+        relativePath: {
+          eq: "assets/images/home/industries-civil-structural-engineering-job-recruiter-agency-all-star-connections.jpg"
+        }
+      ) {
+        childImageSharp {
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH, placeholder: BLURRED)
         }
       }
     }
@@ -56,31 +50,39 @@ const FeaturesHome = () => {
   const imgFeatureOne = data.imgFeatureOne.childImageSharp.gatsbyImageData;
   const imgFeatureTwo = data.imgFeatureTwo.childImageSharp.gatsbyImageData;
   const imgFeatureThree = data.imgFeatureThree.childImageSharp.gatsbyImageData;
+  const imgFeatureFour = data.imgFeatureFour.childImageSharp.gatsbyImageData;
 
   const features = [
     {
-      name: 'Gardening Services',
+      name: 'Medical Device & Biotechnology',
       image: imgFeatureOne,
       alt: 'Gardening services for front yard and backyard of residential homes and commercial businesses.',
-      description:
-        'Our gardening services will make your yard looks great and help it be more environmentally friendly. We know what plants and flowers to use, how many trees to plant, where they should be situated, and how to nurture them with fertilizers and compost. Turn your yard into a beautiful garden today.',
-      link: '/landscaping-services/',
+      description: 'Regulatory, Quality, Research, Laboratory, Engineering',
+      link: '/medical-device-biotechnology/',
     },
     {
-      name: 'Landscaping Services',
+      name: 'Information Technology (IT)',
       image: imgFeatureTwo,
       alt: 'Landscaping services for front yard and backyard of residential homes and commercial businesses.',
       description:
-        'Our landscaping services will make your yard the envy of the neighborhood. We offer a variety of services including design, installation, and maintenance to ensure that your landscape is always picture perfect. Our designers will work with you to create an outdoor oasis that reflects your personal style and tastes.',
-      link: '/landscaping-services/',
+        "Mobile, UI, Front/Back End Developers, SWE's, Network Engineers, Embedded/Firmware Engineers, Database Admins/Engineers, DevOps/Cloud Developers, Project Management",
+      link: '/it-technology/',
     },
     {
-      name: 'Construction Services',
+      name: 'Civil & Structural Engineering',
+      image: imgFeatureFour,
+      alt: 'Construction services for front yard and backyard of residential homes and commercial businesses.',
+      description:
+        'Structural, Transportation, Geotechnical, Water Resource, Forensics, Surveying, Construction/Project Management, Environmental Health & Safety',
+      link: '/civil-structural-engineering/',
+    },
+    {
+      name: 'Manufacturing',
       image: imgFeatureThree,
       alt: 'Construction services for front yard and backyard of residential homes and commercial businesses.',
       description:
-        'Our construction services will turn your property into your own personal paradise. From designing the perfect outdoor living space to installing a cozy fire pit, we’ve got you covered. Porches, patios, and stone walkways are our specialty. Let us build the outdoor living space of your dreams!',
-      link: '/construction-services/',
+        'Quality Engineering, Mechanical Engineering, Electrical Engineering, Manufacturing Engineering, Process Engineering, Operations Excellence, Chemical Engineering, Industrial Engineering, Aerospace Engineering, Environmental Health & Safety',
+      link: '/manufacturing/',
     },
   ];
 
@@ -110,66 +112,71 @@ const FeaturesHome = () => {
     }
   }, [controls, inView]);
   return (
-    <motion.div
-      ref={ref}
-      variants={containerVariants}
-      initial={'hidden'}
-      animate={controls}
-      className="relative bg-green-50 py-16 sm:py-24 lg:py-32"
-    >
-      <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
+    <div className="relative bg-gray-200 py-16 sm:py-24 lg:py-32">
+      <motion.div
+        ref={ref}
+        variants={containerVariants}
+        initial="hidden"
+        animate={controls}
+        className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl"
+      >
         <h3 className="text-base font-semibold tracking-wider text-primary uppercase">
-          Gardening, Landscaping, Construction
+          Industries We Work In
         </h3>
         <h2 className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
-          Landscaping Services in Massachusetts
+          Job Recruiting Industries
         </h2>
-        <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500">
-          We offer a variety of landscaping & construction services. Our
-          landscaping team is highly experienced and will work with you to
-          design a custom landscape that fits your needs. We also offer
-          construction services for residential or commercial clients, including
-          porches, patios, and walkways.
+        <p className="mt-5 max-w-prose mx-auto text-xl text-gray-600">
+          What's the best way for you to grow your company? Add some new talent!
+        </p>
+        <p className="mt-5 max-w-prose mx-auto text-xl text-gray-600">
+          With a little focus, the next hire can help your business be more
+          efficient and profitable. That's why we specialize in certain
+          industries so that we deliver the best results to our clients.
         </p>
         <div className="mt-12">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 grid-flow-row auto-rows-fr">
             {features.map((feature) => (
-              <div key={feature.name} className="pt-6">
+              <div key={feature.name} className="pt-6 h-full">
                 <motion.div
                   ref={ref}
                   variants={itemVariants}
-                  className="flow-root bg-gray-50 rounded-lg shadow-lg px-6 pb-8"
+                  className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full"
                 >
-                  <div className="-mt-6">
-                    <div>
-                      <span className="inline-flex items-center justify-center p-1 bg-primary rounded-md shadow-lg">
-                        <GatsbyImage
-                          image={feature.image}
-                          className="rounded-sm overflow-hidden"
-                          alt={feature.alt}
-                        />
-                      </span>
+                  <div className="relative py-24 px-4 bg-primary rounded-xl shadow-2xl overflow-hidden lg:px-8 flex md:h-full lg:flex-col justify-between">
+                    <div className="absolute inset-0 opacity-20 filter saturate-0 mix-blend-multiply">
+                      <GatsbyImage
+                        image={feature.image}
+                        className="w-full h-full object-cover"
+                        alt={feature.alt}
+                      />
                     </div>
-                    <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">
-                      {feature.name}
-                    </h3>
-                    <p className="my-5 text-base text-gray-500">
-                      {feature.description}
-                    </p>
-                    <Link
-                      to={feature.link}
-                      className="text-lg font-medium text-accent hover:text-primary"
-                    >
-                      Learn More <span aria-hidden="true">&rarr;</span>{' '}
-                    </Link>
+                    <div className="relative z-10">
+                      <h3 className="my-8 text-3xl font-medium text-white drop-shadow-text-darker">
+                        <span className="drop-shadow-text-darker">
+                          {feature.name}
+                        </span>
+                      </h3>
+                      {/* <p className="mt-5 mb-8 text-base text-gray-50 drop-shadow-text-darker">
+                        <span className="drop-shadow-text-darker">
+                          {feature.description}
+                        </span>
+                      </p> */}
+                      <Link
+                        to={feature.link}
+                        className="text-xl font-medium text-accent hover:text-gray-300"
+                      >
+                        Learn More <span aria-hidden="true">&rarr;</span>{' '}
+                      </Link>
+                    </div>
                   </div>
                 </motion.div>
               </div>
             ))}
           </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 };
 

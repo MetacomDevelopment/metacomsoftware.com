@@ -10,6 +10,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@headlessui/react": "^0.3.2-5ff5225",
     "@heroicons/react": "^1.0.0",
+    "@sanity/block-content-to-react": "^3.0.0",
     "@tailwindcss/aspect-ratio": "^0.2.0",
     "@tailwindcss/forms": "^0.2.1",
     "@tailwindcss/typography": "^0.4.0",

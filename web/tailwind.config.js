@@ -2,47 +2,60 @@
 const colors = require('tailwindcss/colors');
 
 const primary = {
-  light: '#adff2f',
-  default: '#166534',
-  dark: '#166534',
+  light: '#ABC8FE',
+  default: '#133980',
+  dark: '#011B4A',
 };
 
 const secondary = {
-  light: '#18181b',
-  default: '#18181b',
-  dark: '#18181b',
+  light: '#CDCDCD',
+  default: '#3E3E3E',
+  dark: '#1D1D1D',
 };
 
 const accent = {
-  light: '#eab308',
-  default: '#eab308',
-  dark: '#eab308',
+  light: '#F2F1A8',
+  default: '#EAB308',
+  dark: '#7C7A08',
 };
 
 const heroHeadline = {
   light: '#faebd7',
-  default: '#faebd7',
+  default: '#fff',
   dark: '#faebd7',
 };
 
 module.exports = {
   future: {},
   // purge: ["./src/**/*.js", "./src/**/*.jsx", "./src/**/*.ts", "./src/**/*.tsx"],
-  purge: ['./src/**/*.html', './src/**/*.vue', './src/**/*.jsx'],
+  purge: ['./public/**/*.html', './src/**/*.{js,jsx,ts,tsx,vue}'],
   theme: {
     colors: {
       current: 'currentColor',
       transparent: 'transparent',
-
       white: colors.white,
+      blueGray: colors.blueGray,
+      coolGray: colors.coolGray,
       gray: colors.gray,
+      trueGray: colors.trueGray,
+      warmGray: colors.warmGray,
       red: colors.red,
+      orange: colors.orange,
+      amber: colors.amber,
       yellow: colors.yellow,
+      lime: colors.lime,
       green: colors.green,
+      emerald: colors.emerald,
+      teal: colors.teal,
+      cyan: colors.cyan,
+      lightBlue: colors.lightBlue,
       blue: colors.blue,
       indigo: colors.indigo,
+      violet: colors.violet,
       purple: colors.purple,
+      fuchsia: colors.fuchsia,
       pink: colors.pink,
+      rose: colors.rose,
       primary: {
         light: primary.light,
         DEFAULT: primary.default,

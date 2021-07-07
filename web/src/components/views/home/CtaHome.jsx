@@ -17,7 +17,7 @@ const CtaHome = () => {
       }
       imgCta: file(
         relativePath: {
-          eq: "assets/images/home/gardening-contractor-landscaping-contractor-braven-landscape-construction-plympton-ma.jpg"
+          eq: "assets/images/home/staffing-request-talent-send-resume-engineering-job-recruiter-agency-all-star-connections.jpg"
         }
       ) {
         childImageSharp {
@@ -51,7 +51,7 @@ const CtaHome = () => {
     <motion.div
       ref={ref}
       variants={variants}
-      initial={'hidden'}
+      initial="hidden"
       animate={controls}
       transition={{ duration: 0.5, delay: 0 }}
       className="relative bg-gray-800"
@@ -59,7 +59,7 @@ const CtaHome = () => {
       <motion.div
         ref={ref}
         variants={variants}
-        initial={'hidden'}
+        initial="hidden"
         animate={controls}
         transition={{ duration: 0.5, delay: 0.2 }}
         className="h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2"
@@ -74,57 +74,61 @@ const CtaHome = () => {
         <motion.div
           ref={ref}
           variants={variants}
-          initial={'hidden'}
+          initial="hidden"
           animate={controls}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="md:ml-auto md:w-1/2 md:pl-10"
         >
           <h3 className="text-base font-semibold uppercase tracking-wider text-gray-300">
-            High Quality Landscaping Services
+            Professional Recruitment
           </h3>
           <h2 className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">
-            Schedule Your Free Quote Today
+            Staff Your Organization Today
           </h2>
-          <p className="mt-3 text-lg text-gray-300">
-            Scheduling your free estimate is easy! Just fill out the online form
-            below and we will contact you to schedule a time.
-          </p>
-          <p className="mt-3 text-lg text-gray-300">
-            Can't wait? Call us at{' '}
+          <div className="space-y-6 mt-6">
+            <p className="text-lg text-gray-300">
+              All-Star Connections prides itself on being leaders when it comes
+              to helping companies like yours find people who are great culture
+              fits, specifically tailored to your needs.
+            </p>
+            <p className="text-lg text-gray-300">
+              We know that finding the right type of employee can be an
+              expensive and time consuming process but we try to make it as easy
+              as possible so you can get back to what's important, running your
+              business!
+            </p>
+          </div>
+          <p className="mt-12 text-lg text-gray-300">
+            Call:{' '}
             <a
               href={company.phoneHref}
               target="_blank"
               className="text-yellow-500 hover:text-yellow-300 font-bold"
+              rel="noreferrer"
             >
               {company.phone}
             </a>
             .
           </p>
-          <p className="mt-3 text-lg text-gray-300">
-            Hate contact forms? Email us at{' '}
+          <p className="text-lg text-gray-300">
+            Email:{' '}
             <a
               href={company.emailHref}
               target="_blank"
               className="text-yellow-500 hover:text-yellow-300 font-bold"
+              rel="noreferrer"
             >
               {company.email}
             </a>
             .
           </p>
-          <div className="mt-8">
-            <div className="inline-flex rounded-md shadow">
-              <Button type="internal" />
-            </div>
+          <div className="mt-8 inline-flex rounded-md shadow">
+            <Button
+              type="internal"
+              btnLink="/clients/"
+              btnLabel="Request Talent"
+            />
           </div>
-          <p className="mt-14 text-sm text-green-100">
-            * The free estimate is usually scheduled within one day of
-            completing, submitting and receiving your information. As a courtesy
-            to our clients we schedule these estimates as quickly as possible.
-          </p>
-          <p className="mt-3 text-sm text-green-100">
-            * If you'd like to cancel or change your appointment, please give us
-            24 hours notice.
-          </p>
         </motion.div>
       </div>
     </motion.div>

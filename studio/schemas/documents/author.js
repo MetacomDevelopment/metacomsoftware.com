@@ -2,7 +2,7 @@ import { FaUserEdit as icon } from 'react-icons/fa';
 
 export default {
   name: 'author',
-  title: 'Author',
+  title: 'Authors',
   type: 'document',
   icon,
   fields: [
@@ -23,23 +23,13 @@ export default {
     {
       name: 'image',
       title: 'Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      type: 'imageAlt',
     },
     {
       name: 'bio',
       title: 'Bio',
       type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          styles: [{ title: 'Normal', value: 'normal' }],
-          lists: [],
-        },
-      ],
+      of: [{ type: 'block' }, { type: 'imageAlt' }],
     },
   ],
   preview: {

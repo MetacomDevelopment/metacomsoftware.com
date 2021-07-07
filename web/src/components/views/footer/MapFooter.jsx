@@ -26,7 +26,7 @@ const MapFooter = () => {
   const socials = data.sanitySettingsSocials;
 
   return (
-    <div className="bg-green-900 py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+    <div className="bg-primary py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
       <div className="max-w-7xl mx-auto lg:grid lg:grid-cols-2 lg:gap-12">
         <div className="space-y-8 lg:col-span-1">
           <iframe
@@ -36,9 +36,9 @@ const MapFooter = () => {
             style={{ border: 0 }}
             allowFullScreen=""
             loading="lazy"
-          ></iframe>
+          />
         </div>
-        <div className="space-y-8 lg:col-span-1 text-white">
+        <div className="space-y-8 lg:col-span-1 text-white mt-6 lg:mt-0">
           <h2 className="text-3xl font-bold text-accent">
             {company.name} Is Located In {company.cityState}
           </h2>
@@ -48,36 +48,42 @@ const MapFooter = () => {
             South Coast, and Cape Cod areas.
           </p>
           <p>
-            Looking for directions to our central office at {company.address}?
-            Use the Google Map or the directions provided from surrounding
-            towns.
+            Are you looking for directions to our central office at{' '}
+            {company.address}? Use the Google Map or the directions provided
+            from surrounding towns.
           </p>
           <div className="w-full p-2 mx-auto rounded-2xl">
             <Disclosure>
               {({ open }) => (
                 <>
-                  <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-green-900 bg-green-100 rounded-lg hover:bg-green-200 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75">
-                    <h3 className="">Directions From Plymouth, MA</h3>
+                  <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-blue-900 bg-blue-100 rounded-lg hover:bg-blue-200 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
+                    <h3 className="">Directions From Logan Airport</h3>
                     <ChevronUpIcon
                       className={`${
                         open ? 'transform rotate-180' : ''
-                      } w-5 h-5 text-green-500`}
+                      } w-5 h-5 text-blue-500`}
                     />
                   </Disclosure.Button>
                   <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-50">
-                    From PYM-Plymouth Municipal Airport, 246 S Meadow Rd,
-                    Plymouth, MA 02360, Follow S Meadow Rd and Pond St to Center
-                    St in Carver, 6 min (3.0 mi), Head northeast (0.1 mi), Turn
-                    left toward S Meadow Rd (0.1 mi), Turn left onto S Meadow Rd
-                    (1.6 mi), Turn right onto Pond St (1.2 mi), Continue on
-                    Center St. Take MA-58 N to Main St in Plympton (9 min) (5.2
-                    mi), Turn right onto Center St (0.5 mi), Turn left to stay
-                    on Center St (1.2 mi), Continue onto Plymouth St (0.8 mi),
-                    Turn right onto MA-58 N (2.7 mi), Follow Main St to MA-106 W
-                    (4 min) (2.3 mi), Turn right onto Main St (2.3 mi), Continue
-                    straight (102 ft), Turn left onto MA-106 W, Destination will
-                    be on the right (5 s) (49 ft), 87 County Rd, Plympton, MA
-                    02367.
+                    From Boston Logan International Airport, Boston, MA 02128,
+                    Get on I-90 W from Transportation Way, 2 min (0.7 mi), Head
+                    southeast, 20 ft, Slight right, 0.1 mi, Use any lane to turn
+                    slightly left onto Transportation Way, 0.2 mi, Turn left
+                    onto the Williams Tunnel ramp to I-90 W/I-93, Toll road, 0.3
+                    mi, Continue on I-90 W. Take Exit 24 to John F Fitzgerald
+                    Surface Rd. Take exit 17 from I-93 N 6 min (3.7 mi), Merge
+                    onto I-90 W, Toll road, 1.5 mi, Take the I-93 exit toward
+                    South Boston, Toll road, 0.3 mi, Keep left to continue on
+                    Exit 24, follow signs for I-93 N and merge onto I-93 N, 1.7
+                    mi, Take exit 17 for Government Center toward Quincy Market,
+                    0.3 mi, Use the left lane to keep left at the fork and
+                    follow signs for Financial Dist/Gov't Ctr, 151 ft, Continue
+                    on John F Fitzgerald Surface Rd. Take Mercantile St to
+                    Commercial Street, 3 min (0.3 mi), Turn left onto John F
+                    Fitzgerald Surface Rd, 0.1 mi, Turn left onto Mercantile St,
+                    0.1 mi, Turn left onto Richmond St, 213 ft, Turn left onto
+                    Commercial Street, Destination will be on the left, 203 ft,
+                    All-Star Connections, 111 Atlantic Ave, Boston, MA 02110
                   </Disclosure.Panel>
                 </>
               )}
@@ -85,31 +91,29 @@ const MapFooter = () => {
             <Disclosure as="div" className="mt-2">
               {({ open }) => (
                 <>
-                  <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-green-900 bg-green-100 rounded-lg hover:bg-green-200 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75">
-                    <h3 className="">Directions From Brockton, MA</h3>
+                  <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-blue-900 bg-blue-100 rounded-lg hover:bg-blue-200 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
+                    <h3 className="">Directions From Museum of Science</h3>
                     <ChevronUpIcon
                       className={`${
                         open ? 'transform rotate-180' : ''
-                      } w-5 h-5 text-green-500`}
+                      } w-5 h-5 text-blue-500`}
                     />
                   </Disclosure.Button>
                   <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-50">
-                    From Massachusetts Registry of Motor Vehicles 490 Forest
-                    Ave, Brockton, MA 02301, Take Ash St and Southworth St to
-                    Copeland St (6 min) (2.9 mi), Head southeast on Forest Ave
-                    toward Memorial Dr (0.2 mi), Turn right onto Gordon St (0.1
-                    mi), Turn right onto Ash St (0.8 mi), Turn left onto W
-                    Chestnut St (0.4 mi), Turn right onto Southworth St (0.5
-                    mi), Turn right onto Copeland St (0.8 mi), Slight left to
-                    stay on Copeland St (2 min) (0.9 mi), Take Matfield St and
-                    East St to Union St (2 min) (1.3 mi), Turn right onto MA-28
-                    S (0.1 mi), Turn left onto Matfield St (0.6 mi), Slight
-                    right toward East St (135 ft), Continue onto East St (0.5
-                    mi), Turn left onto Union St (3 min) (1.6 mi), Take Plymouth
-                    St to MA-106 E in Plympton (17 min) (9.5 mi), Turn right
-                    onto Central St (0.4 mi), Turn right onto Plymouth St (8.3
-                    mi), Continue onto MA-106 E, Destination will be on the left
-                    (0.8 mi), 87 County Rd Plympton, MA 02367
+                    From Museum of Science, 1 Museum Of Science Driveway,
+                    Boston, MA 02114, Take I-93 S and Exits 17 A-17 B-17 B-A to
+                    Richmond St in Boston, 4 min (1.4 mi), Head southeast on
+                    MA-28 S/Charles River Dam Rd toward Museum Of Science
+                    Driveway, 0.2 mi, Continue straight onto Leverett Cir, 207
+                    ft, Take the ramp to I-93 S/Airport/Quincy/Logan Airport,
+                    0.5 mi, Merge onto I-93 S, 0.3 mi, Use the right 2 lanes to
+                    take exit 17 A-17 B-17 B-A toward Gov't Center, 0.3 mi, Use
+                    the left 2 lanes to turn left onto John F Fitzgerald Surface
+                    Rd, 157 ft, Turn left onto Mercantile St, 0.1 mi, Continue
+                    on Richmond St. Drive to Commercial Street, 52 s (417 ft),
+                    Turn left onto Richmond St, 213 ft, Turn left onto
+                    Commercial Street, Destination will be on the left, 203 ft,
+                    All-Star Connections, 111 Atlantic Ave, Boston, MA 02110.
                   </Disclosure.Panel>
                 </>
               )}
@@ -117,26 +121,31 @@ const MapFooter = () => {
             <Disclosure as="div" className="mt-2">
               {({ open }) => (
                 <>
-                  <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-green-900 bg-green-100 rounded-lg hover:bg-green-200 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75">
-                    <h3 className="">Directions From Taunton, MA</h3>
+                  <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-blue-900 bg-blue-100 rounded-lg hover:bg-blue-200 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
+                    <h3 className="">Directions From Prudential Center</h3>
                     <ChevronUpIcon
                       className={`${
                         open ? 'transform rotate-180' : ''
-                      } w-5 h-5 text-green-500`}
+                      } w-5 h-5 text-blue-500`}
                     />
                   </Disclosure.Button>
                   <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-50">
-                    From Taunton Municipal Airport-Tan Westcoat Dr, East
-                    Taunton, MA 02718, Head north on Westcoat Dr toward
-                    Middleboro Ave (1 min) (0.3 mi), Take US-44 E to Main St in
-                    Plympton (22 min) (14.7 mi), Turn right onto Middleboro Ave
-                    (2.1 mi), Continue onto Taunton St (1.4 mi), Turn left onto
-                    MA-18 N (0.8 mi), At the traffic circle, take the 2nd exit
-                    onto US-44 E (7.8 mi), Exit onto MA-58 N toward Plympton
-                    (2.6 mi), Follow Main St to MA-106 W (4 min) (2.3 mi), Turn
-                    right onto Main St (2.3 mi), Continue straight (102 ft),
-                    Turn left onto MA-106 W Destination will be on the right (5
-                    s) (49 ft), 87 County Rd Plympton, MA 02367
+                    From Prudential Center, 800 Boylston St, Boston, MA 02199,
+                    Take Boylston St, Berkeley St, MA-28 N and Exits 17 A-17
+                    B-17 B-A to Richmond St, 10 min (2.8 mi), Head east on
+                    Boylston St toward Ring Rd, 0.4 mi, Turn left onto Berkeley
+                    St, 0.5 mi, Merge onto Embankment Rd/Storrow Dr, 390 ft,
+                    Continue onto MA-28 N/Embankment Rd/Storrow Dr, 0.5 mi, Use
+                    the right 2 lanes to take the MA-28 N exit, 404 ft, Merge
+                    onto MA-3 S, 0.1 mi, Take the exit onto I-93 S toward
+                    Quincy/Logan Airport, 0.7 mi, Use the right 2 lanes to take
+                    exit 17 A-17 B-17 B-A toward Gov't Center, 0.3 mi, Use the
+                    left 2 lanes to turn left onto John F Fitzgerald Surface Rd,
+                    157 ft, Turn left onto Mercantile St, 0.1 mi, Continue on
+                    Richmond St. Drive to Commercial Street, 52 s (417 ft), Turn
+                    left onto Richmond St, 213 ft, Turn left onto Commercial
+                    Street, Destination will be on the left, 203 ft, All-Star
+                    Connections, 111 Atlantic Ave, Boston, MA 02110.
                   </Disclosure.Panel>
                 </>
               )}
@@ -144,21 +153,30 @@ const MapFooter = () => {
             <Disclosure as="div" className="mt-2">
               {({ open }) => (
                 <>
-                  <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-green-900 bg-green-100 rounded-lg hover:bg-green-200 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75">
-                    <h3 className="">Directions From Wareham, MA</h3>
+                  <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-blue-900 bg-blue-100 rounded-lg hover:bg-blue-200 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
+                    <h3 className="">
+                      Directions From Boston Convention and Exhibition Center
+                    </h3>
                     <ChevronUpIcon
                       className={`${
                         open ? 'transform rotate-180' : ''
-                      } w-5 h-5 text-green-500`}
+                      } w-5 h-5 text-blue-500`}
                     />
                   </Disclosure.Button>
                   <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-50">
-                    From Wareham District Court 2200 Cranberry Hwy, West
-                    Wareham, MA 02576, Head west toward MA-58 S (397 ft), Turn
-                    right onto MA-58 N (2.8 mi), Turn left to stay on MA-58 N
-                    (9.7 mi), Turn right onto Main St (2.3 mi), Continue
-                    straight (102 ft), Turn left onto MA-106 W, Destination will
-                    be on the right (49 ft), 87 County Rd Plympton, MA 02367
+                    From Boston Convention and Exhibition Center, 415 Summer St,
+                    Boston, MA 02210, Take Congress St to Sleeper St, 6 min (0.9
+                    mi), Head southeast on Summer St toward World Trade Center
+                    Ave, 0.1 mi, Turn left onto D St, 0.2 mi, Turn left onto
+                    Congress St, 0.6 mi, Turn right onto Sleeper St, 53 s (0.1
+                    mi), Take Atlantic Ave to Richmond St, 4 min (0.7 mi), Turn
+                    left onto Seaport Blvd, 0.2 mi, Use the right 2 lanes to
+                    turn right onto Atlantic Ave, 0.5 mi, Turn right onto
+                    Atlantic Ave/Mercantile St, 367 ft, Continue on Richmond St.
+                    Drive to Commercial Street, 52 s (417 ft), Turn left onto
+                    Richmond St, 213 ft, Turn left onto Commercial Street,
+                    Destination will be on the left, 203 ft, All-Star
+                    Connections, 111 Atlantic Ave, Boston, MA 02110.
                   </Disclosure.Panel>
                 </>
               )}

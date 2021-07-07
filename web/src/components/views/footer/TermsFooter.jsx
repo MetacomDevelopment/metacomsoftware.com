@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 
 const settings = {
-  footerBgColor: 'bg-gray-600',
+  footerBgColor: 'bg-gray-800',
 };
 
 const TermsFooter = () => {

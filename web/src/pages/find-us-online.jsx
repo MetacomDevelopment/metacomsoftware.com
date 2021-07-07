@@ -1,53 +1,19 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 
+import useSanitySettingsCompany from '../hooks/useSanitySettingsCompany';
+import useSanitySettingsSocials from '../hooks/useSanitySettingsSocials';
+import useSanitySettingsColors from '../hooks/useSanitySettingsColors';
+import useSanitySettingsMetadata from '../hooks/useSanitySettingsMetadata';
+
 import Layout from '../components/layout';
 import SEO from '../components/common/Seo';
 import HeaderPage from '../components/layouts/HeroPage';
 import Container from '../components/layouts/Container';
 
-const FindUsOnlinePage = () => {
+const FindUsOnlinePage = ({ location }) => {
   const data = useStaticQuery(graphql`
     query FindUsOnlinePageQ {
-      site {
-        siteMetadata {
-          company
-          emailDisplay
-          emailHref
-          company
-          siteUrl
-          address
-          street
-          cityState
-          zip
-          owner
-          phoneDisplay
-        }
-      }
-      sanitySettingsCompany {
-        address
-        cityState
-        email
-        emailHref
-        hours
-        name
-        owner
-        phone
-        phoneHref
-        street
-        website
-        zip
-      }
-      sanitySettingsSocials {
-        youTube
-        twitter
-        linkedIn
-        instagram
-        gmbShare
-        gmbEmbed
-        gmbCid
-        facebook
-      }
       imgHeroBg: file(
         relativePath: {
           eq: "assets/images/find-us-online/find-us-online-landscaping-services-braven-landscape-construction-plympton-ma.jpg"
@@ -60,15 +26,23 @@ const FindUsOnlinePage = () => {
     }
   `);
 
-  const company = data.sanitySettingsCompany;
-  const socials = data.sanitySettingsSocials;
+  const { ...allCompany } = useSanitySettingsCompany();
+  const { ...allSocials } = useSanitySettingsSocials();
+  const { ...allColors } = useSanitySettingsColors();
+  const { ...allMetadata } = useSanitySettingsMetadata();
+
   const imgHeroBg = data.imgHeroBg.childImageSharp.gatsbyImageData;
 
   const seo = {
-    title: 'Landscaping, Lawn Care, Construction Services',
-    description:
-      'We offer landscaping, lawn care, construction services in Plymouth County. Call today for a free estimate to achieve your vision for your home or business!',
-    slug: '/find-us-online/',
+    title: `NEED TO COMPLETE`,
+    description: 'NEED TO COMPLETE',
+    slug: location.pathname,
+  };
+
+  const hero = {
+    header: `Find ${allCompany.name} Online`,
+    subheader: 'This is going to be a short description',
+    alt: 'NEED TO COMPLETE',
   };
 
   return (
@@ -78,14 +52,14 @@ const FindUsOnlinePage = () => {
           {`{
             '@context': 'https://schema.org',
 						'@type': 'Organization',
-						'@id': ${company.website}${seo.slug},
+						'@id': ${allCompany.website}${seo.slug},
             'address': {
               '@type': 'PostalAddress',
-              'addressLocality': ${company.cityState},
-              'postalCode': ${company.zip},
-              'streetAddress': ${company.street}
+              'addressLocality': ${allCompany.cityState},
+              'postalCode': ${allCompany.zip},
+              'streetAddress': ${allCompany.street}
             },
-            'email': ${company.email},
+            'email': ${allCompany.email},
             'member': [
               {
                 '@type': 'Organization'
@@ -97,31 +71,31 @@ const FindUsOnlinePage = () => {
             'alumni': [
               {
                 '@type': 'Person',
-                'name': ${company.owner}
+                'name': ${allCompany.owner}
               },
             ],
-            'name': ${company.name},
-            'telephone': ${company.phone}
+            'name': ${allCompany.name},
+            'telephone': ${allCompany.phone}
           }`}
         </script>
       </SEO>
       <HeaderPage
         imgHeroBg={imgHeroBg}
-        headerText="Find Us Online"
-        subheaderText="Find out more about us by visiting our social media accounts"
-        buttonLabel="Schedule Appointment"
+        altText={hero.alt}
+        headerText={hero.header}
+        subheaderText={hero.subheader}
       />
       <Container type="sm">
         <div className="py-10 lg:max-w-3xl mx-auto">
           <h2 className="text-center py-5">
             <span className="text-base text-gray-500 uppercase break-normal">
-              {company.name}
+              {allCompany.name}
               <br />
             </span>
             <span className="break-normal text-3xl">Find Us Online</span>
           </h2>
           <p className="py-5">
-            You can find {company.name} online by visiting the links below.
+            You can find {allCompany.name} online by visiting the links below.
             Check out our social media accounts and directory listings for more
             information on who we are, what we do, and how we can work together.
             We're excited to meet new people and share our work!

@@ -4,53 +4,21 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
+import useSanitySettingsCompany from '../hooks/useSanitySettingsCompany';
+import useSanitySettingsSocials from '../hooks/useSanitySettingsSocials';
+import useSanitySettingsColors from '../hooks/useSanitySettingsColors';
+import useSanitySettingsMetadata from '../hooks/useSanitySettingsMetadata';
+
 import Layout from '../components/layout';
 import SEO from '../components/common/Seo';
 import HeaderPage from '../components/layouts/HeroPage';
 
-const AboutPage = () => {
+const AboutPage = ({ location }) => {
   const data = useStaticQuery(graphql`
     query AboutPageQ {
-      site {
-        siteMetadata {
-          company
-          siteUrl
-          address
-          street
-          cityState
-          zip
-          emailDisplay
-          owner
-          phoneDisplay
-        }
-      }
-      sanitySettingsCompany {
-        address
-        cityState
-        email
-        emailHref
-        hours
-        name
-        owner
-        phone
-        phoneHref
-        street
-        website
-        zip
-      }
-      sanitySettingsSocials {
-        youTube
-        twitter
-        linkedIn
-        instagram
-        gmbShare
-        gmbEmbed
-        gmbCid
-        facebook
-      }
       imgHeroBg: file(
         relativePath: {
-          eq: "assets/images/about/about-us-landscaping-contractor-braven-landscape-construction-plympton-ma.jpg"
+          eq: "assets/images/about/boston-massachusetts-job-recruiter-agency-all-star-connections.jpg"
         }
       ) {
         childImageSharp {
@@ -69,10 +37,25 @@ const AboutPage = () => {
     }
   `);
 
-  const company = data.sanitySettingsCompany;
-  const socials = data.sanitySettingsSocials;
+  const { ...allCompany } = useSanitySettingsCompany();
+  const { ...allSocials } = useSanitySettingsSocials();
+  const { ...allColors } = useSanitySettingsColors();
+  const { ...allMetadata } = useSanitySettingsMetadata();
+
   const imgHeroBg = data.imgHeroBg.childImageSharp.gatsbyImageData;
   const imgCompany = data.imgCompany.childImageSharp.gatsbyImageData;
+
+  const seo = {
+    title: `NEED TO COMPLETE`,
+    description: 'NEED TO COMPLETE',
+    slug: location.pathname,
+  };
+
+  const hero = {
+    header: `About ${allCompany.name}`,
+    subheader: 'This is going to be a short description',
+    alt: 'NEED TO COMPLETE',
+  };
 
   const variants = {
     hidden: { opacity: 0, scale: 0.8, x: -100 },
@@ -91,13 +74,6 @@ const AboutPage = () => {
     }
   }, [controls, inView]);
 
-  const seo = {
-    title: `Learn More About ${company.name}`,
-    description:
-      'We offer landscaping, lawn care, construction services in Plymouth County. Call today for a free estimate to achieve your vision for your home or business!',
-    slug: '/about/',
-  };
-
   return (
     <Layout>
       <SEO title={seo.title} description={seo.description} canonical={seo.slug}>
@@ -105,14 +81,14 @@ const AboutPage = () => {
           {`{
             '@context': 'https://schema.org',
 						'@type': 'Organization',
-						'@id': ${company.website}${seo.slug},
+						'@id': ${allCompany.website}${seo.slug},
             'address': {
               '@type': 'PostalAddress',
-              'addressLocality': ${company.cityState},
-              'postalCode': ${company.zip},
-              'streetAddress': ${company.street}
+              'addressLocality': ${allCompany.cityState},
+              'postalCode': ${allCompany.zip},
+              'streetAddress': ${allCompany.street}
             },
-            'email': ${company.email},
+            'email': ${allCompany.email},
             'member': [
               {
                 '@type': 'Organization'
@@ -124,19 +100,19 @@ const AboutPage = () => {
             'alumni': [
               {
                 '@type': 'Person',
-                'name': ${company.owner}
+                'name': ${allCompany.owner}
               },
             ],
-            'name': ${company.name},
-            'telephone': ${company.phone}
+            'name': ${allCompany.name},
+            'telephone': ${allCompany.phone}
           }`}
         </script>
       </SEO>
       <HeaderPage
         imgHeroBg={imgHeroBg}
-        headerText={`About ${company.name}`}
-        subheaderText="Meet the team and learn about who we are"
-        buttonLabel="Schedule Appointment"
+        altText={hero.alt}
+        headerText={hero.header}
+        subheaderText={hero.subheader}
       />
       <div className="bg-white overflow-hidden">
         <div className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
@@ -154,7 +130,7 @@ const AboutPage = () => {
                 Business Owner
               </h2>
               <h3 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                Meet {company.owner}
+                Meet {allCompany.owner}
               </h3>
             </div>
           </motion.div>

@@ -4,7 +4,7 @@ import NavbarSecondary from '../common/navbars/NavbarSecondary';
 
 const Navbar = () => {
   return (
-    <nav className="fixed z-50 w-full">
+    <nav className="fixed z-50 w-full shadow-lg">
       <NavbarSecondary />
       <NavbarMain />
     </nav>

@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "braven-landscape"
-  },
   "api": {
-    "projectId": "js07p57t",
+    "projectId": "01zxde2p",
     "dataset": "production"
+  },
+  "project": {
+    "name": "all-star-connections"
   },
   "plugins": [
     "@sanity/base",
@@ -22,7 +22,8 @@
     "dashboard-widget-notes",
     "icon-picker",
     "@sanity/color-input",
-    "order-documents"
+    "order-documents",
+    "@sanity/code-input"
   ],
   "env": {
     "development": {
@@ -38,7 +39,7 @@
     },
     {
       "name": "part:@sanity/desk-tool/structure",
-      "path": "./parts/sanity-structure.js"
+      "path": "./parts/deskStructure.js"
     },
     {
       "implements": "part:@sanity/dashboard/config",
