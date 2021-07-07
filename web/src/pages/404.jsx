@@ -18,7 +18,7 @@ const NotFoundPage = ({ location }) => {
     query NotFoundPageQ {
       imgHeroBg: file(
         relativePath: {
-          eq: "assets/images/home/hair-design-aristocracy-salon-day-spa-plymouth-ma.jpg"
+          eq: "assets/images/home/technology-engineering-job-recruiter-agency-all-star-connections.jpg"
         }
       ) {
         childImageSharp {
@@ -134,7 +134,7 @@ const NotFoundPage = ({ location }) => {
           >
             <div className="relative lg:row-start-1 lg:col-start-2">
               <div className="relative text-base mx-auto max-w-prose lg:max-w-none">
-                <div className="aspect-w-12 aspect-h-7">
+                {/* <div className="aspect-w-12 aspect-h-7">
                   <GatsbyImage
                     image={imgCompany}
                     className="rounded-2xl shadow-xl"
@@ -142,7 +142,7 @@ const NotFoundPage = ({ location }) => {
                     alt="Company"
                     loading="lazy"
                   />
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="mt-8 lg:mt-0">
