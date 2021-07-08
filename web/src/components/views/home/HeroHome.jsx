@@ -91,7 +91,7 @@ const HeroHome = () => {
             initial="hidden"
             animate={controls}
             transition={{ duration: 0.5, delay: 0 }}
-            className="text-4xl font-extrabold tracking-tight drop-shadow-text-darker sm:text-5xl lg:text-6xl capitalize mb-10 text-rose-50"
+            className="text-4xl font-extrabold tracking-tight drop-shadow-text-darker sm:text-5xl lg:text-6xl capitalize mb-10 text-amber-100"
             // style={{ color: allColors.heroHeadlineColor.hex }}
           >
             {sanity.heading}

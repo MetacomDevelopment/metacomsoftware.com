@@ -53,7 +53,7 @@ const HeroPage = ({ imgHeroBg, altText, headerText, subheaderText }) => {
           initial="hidden"
           animate={controls}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl"
+          className="text-4xl font-extrabold tracking-tight text-amber-100 sm:text-5xl lg:text-6xl"
         >
           {headerText}
         </motion.h1>
@@ -63,7 +63,7 @@ const HeroPage = ({ imgHeroBg, altText, headerText, subheaderText }) => {
           initial="hidden"
           animate={controls}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-6 text-xl mx-auto text-center text-indigo-100 max-w-xl"
+          className="mt-6 text-2xl drop-shadow-darker mx-auto text-center text-white max-w-xl"
         >
           {subheaderText}
         </motion.p>

@@ -146,7 +146,7 @@ const TestimonialsPage = ({ location }) => {
   const hero = {
     header: '5-Star Recruiting Agency Testimonials',
     subheader:
-      'Providing skilled candidates to Civil & Structural Engineering companies when you need it',
+      'Read our 5-star reviews on LinkedIn and Google Reviews from satisfied clients',
     alt: 'NEED TO COMPLETE',
   };
 
