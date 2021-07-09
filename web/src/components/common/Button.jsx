@@ -54,7 +54,7 @@ const Button = ({
 Button.defaultProps = {
   type: `internal`,
   btnLink: `/contact-us/`,
-  btnLabel: `Request Talent`,
+  btnLabel: `Request Expert Talent`,
   bgWidth: `px-6`,
   bgHeight: `py-3`,
   bgColor: `bg-accent`,

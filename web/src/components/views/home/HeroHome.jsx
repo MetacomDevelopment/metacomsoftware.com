@@ -142,12 +142,7 @@ const HeroHome = () => {
             className="flex mt-10"
           >
             <div className="">
-              <Button
-                type="internal"
-                btnLabel="Request Talent"
-                btnLink="/clients/"
-                bgColor="bg-accent"
-              />
+              <Button type="internal" />
             </div>
           </motion.div>
         </div>

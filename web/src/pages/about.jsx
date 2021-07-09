@@ -53,7 +53,7 @@ const AboutPage = ({ location }) => {
 
   const hero = {
     header: `About ${allCompany.name}`,
-    subheader: 'This is going to be a short description',
+    subheader: 'Learn who we are, what we offer, and how we can help',
     alt: 'NEED TO COMPLETE',
   };
 

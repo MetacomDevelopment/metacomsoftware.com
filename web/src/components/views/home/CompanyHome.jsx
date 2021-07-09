@@ -123,93 +123,100 @@ const CompanyHome = () => {
             ))}
           </div> */}
 
-          <div className="pt-12 sm:pt-16 lg:pt-20 space-y-6 text-gray-600 text-lg">
-            <h2>Hire Top Talent On-Demand</h2>
-            <p>
-              Scaling your company and{' '}
-              <strong>finding the right employees</strong> is never easy,
-              especially when you've tried using other staffing agencies before
-              and they failed to deliver.
-            </p>
-            <p>
-              Imagine having access to thousands of qualified candidates who are
-              eager to work at your company. We'll help you find the right
-              people that fit into your culture, so you can{' '}
-              <strong>focus on running your business</strong> instead of looking
-              for new hires.
-            </p>
-            <p>
-              All-Star Connections is a staffing agency that helps companies
-              like yours{' '}
-              <strong>find top talent and high-quality candidates</strong>.
-              Since 2016, we've had extensive experience in helping businesses
-              just like yours grow their workforce with ease and efficiency.
-            </p>
+          <div className="pt-12 sm:pt-16 lg:pt-20 space-y-12 text-gray-600 text-lg">
+            <div className="space-y-6">
+              <h2>Hire Top Talent On-Demand</h2>
+              <p>
+                Scaling your company and{' '}
+                <strong>finding the right employees</strong> is never easy,
+                especially when you've tried using other staffing agencies
+                before and they failed to deliver.
+              </p>
+              <p>
+                Imagine having access to thousands of qualified candidates who
+                are eager to work at your company. We'll help you find the right
+                people that fit into your culture, so you can{' '}
+                <strong>focus on running your business</strong> instead of
+                looking for new hires.
+              </p>
+              <p>
+                All-Star Connections is a staffing agency that helps companies
+                like yours{' '}
+                <strong>find top talent and high-quality candidates</strong>.
+                Since 2016, we've had extensive experience in helping businesses
+                just like yours grow their workforce with ease and efficiency.
+              </p>
+            </div>
 
-            <h3>Our Goal Is Your Success</h3>
-            <p>
-              <em>
-                Placement sustainability within your organization is our #1
-                goal.
-              </em>
-            </p>
-            <p>How do we maintain our 96.7% sustainability rating?</p>
-            <ul className="fa-ul">
-              <li>
-                <span className="fa-li">
-                  <i className="fas fa-check text-primary" />
-                </span>
-                Only dealing with reliable, driven, and talented candidates
-              </li>
-              <li>
-                <span className="fa-li">
-                  <i className="fas fa-check text-primary" />
-                </span>
-                Integrating Our proprietary vetting process includes a vast
-                degree of psychology
-              </li>
-              <li>
-                <span className="fa-li">
-                  <i className="fas fa-check text-primary" />
-                </span>
-                Reason #3
-              </li>
-            </ul>
+            <div className="space-y-6">
+              <h3>Placement Sustainability is Our #1 Goal</h3>
+              <p>How do we maintain our 96.7% sustainability rating?</p>
+              <ul className="fa-ul">
+                <li>
+                  <span className="fa-li">
+                    <i className="fas fa-check text-primary" />
+                  </span>
+                  Only dealing with reliable, driven, and talented candidates
+                </li>
+                <li>
+                  <span className="fa-li">
+                    <i className="fas fa-check text-primary" />
+                  </span>
+                  Integrating our proprietary vetting process using psychology
+                  and behavioral analysis
+                </li>
+                <li>
+                  <span className="fa-li">
+                    <i className="fas fa-check text-primary" />
+                  </span>
+                  Utilizing custom tests and interviews that are designed to
+                  assess a candidate's skills, competencies, work personality,
+                  cognitive abilities (IQ), and emotional intelligence
+                </li>
+              </ul>
+              <p>
+                <strong>The result?</strong> You get an elevated standard for
+                technical talent – proven by our track record of client
+                satisfaction.
+              </p>
+            </div>
 
-            <h3>Engineering Is Our Primary Focus</h3>
-            <ul className="fa-ul">
-              <li>
-                <span className="fa-li">
-                  <i className="fas fa-check text-primary" />
-                </span>
-                <strong>Medical Device & Biotechnology</strong> (Pre-Market and
-                Post-Market)
-              </li>
-              <li>
-                <span className="fa-li">
-                  <i className="fas fa-check text-primary" />
-                </span>
-                <strong>IT/Technology</strong> (Software Engineers, Firmware
-                Engineers, Hardware Engineers, Database Development/Admin,
-                Front/Back End Development, IoT, and Project Management)
-              </li>
-              <li>
-                <span className="fa-li">
-                  <i className="fas fa-check text-primary" />
-                </span>
-                <strong>Civil/Structural</strong> (Professional Engineers,
-                Forensics, Construction Management, Project Management,
-                Operations)
-              </li>
-              <li>
-                <span className="fa-li">
-                  <i className="fas fa-check text-primary" />
-                </span>
-                <strong>Manufacturing</strong> (Quality Engineers, Mechanical
-                Engineers, Electrical Engineers, Manufacturing Engineers,
-                Process Engineers, OpEx, EHS, and more)
-              </li>
-            </ul>
+            <div className="space-y-6">
+              <h3>Engineering Is Our Primary Focus</h3>
+              <ul className="fa-ul">
+                <li>
+                  <span className="fa-li">
+                    <i className="fas fa-check text-primary" />
+                  </span>
+                  <strong>Medical Device & Biotechnology</strong> (Pre-Market
+                  and Post-Market)
+                </li>
+                <li>
+                  <span className="fa-li">
+                    <i className="fas fa-check text-primary" />
+                  </span>
+                  <strong>IT/Technology</strong> (Software Engineers, Firmware
+                  Engineers, Hardware Engineers, Database Development/Admin,
+                  Front/Back End Development, IoT, and Project Management)
+                </li>
+                <li>
+                  <span className="fa-li">
+                    <i className="fas fa-check text-primary" />
+                  </span>
+                  <strong>Civil/Structural</strong> (Professional Engineers,
+                  Forensics, Construction Management, Project Management,
+                  Operations)
+                </li>
+                <li>
+                  <span className="fa-li">
+                    <i className="fas fa-check text-primary" />
+                  </span>
+                  <strong>Manufacturing</strong> (Quality Engineers, Mechanical
+                  Engineers, Electrical Engineers, Manufacturing Engineers,
+                  Process Engineers, OpEx, EHS, and more)
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div className="mt-20">

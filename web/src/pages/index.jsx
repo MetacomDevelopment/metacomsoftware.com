@@ -9,6 +9,7 @@ import Layout from '../components/layout';
 import SEO from '../components/common/Seo';
 import HeroHome from '../components/views/home/HeroHome';
 import CompanyHome from '../components/views/home/CompanyHome';
+import CallOutHome from '../components/views/home/CallOutHome';
 import FeaturesHome from '../components/views/home/FeaturesHome';
 import CtaHome from '../components/views/home/CtaHome';
 import ServiceOneHome from '../components/views/home/ServiceOneHome';
@@ -63,6 +64,7 @@ const IndexPage = ({ location }) => {
       <HeroHome />
       <BenefitsHome />
       <CompanyHome />
+      <CallOutHome />
       <FeaturesHome />
       <CtaHome />
       {/* <ServiceOneHome /> */}

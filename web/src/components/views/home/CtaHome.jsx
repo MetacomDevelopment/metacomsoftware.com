@@ -123,11 +123,7 @@ const CtaHome = () => {
             .
           </p>
           <div className="mt-8 inline-flex rounded-md shadow">
-            <Button
-              type="internal"
-              btnLink="/clients/"
-              btnLabel="Request Talent"
-            />
+            <Button type="internal" />
           </div>
         </motion.div>
       </div>
