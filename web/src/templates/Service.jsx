@@ -46,7 +46,7 @@ const ServiceTemplate = ({ data }) => {
   const seo = {
     title: sanity.title,
     description: sanity.title,
-    slug: sanity.slug.current,
+    slug: `${allCompany.website}/${sanity.slug.current}/`,
   };
 
   const { ...allCompany } = useSanitySettingsCompany();

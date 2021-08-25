@@ -46,7 +46,7 @@ const PostTemplate = ({ data }) => {
   const seo = {
     title: sanity.title,
     description: sanity.title,
-    slug: sanity.slug.current,
+    slug: `${allCompany.website}/blog/${sanity.slug.current}/`,
   };
 
   const { ...allCompany } = useSanitySettingsCompany();
