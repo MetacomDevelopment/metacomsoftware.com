@@ -9,7 +9,7 @@ const FormFooter = () => {
     email: '',
     phone: '',
     company: '',
-    service: '',
+    industry: '',
     findUs: '',
     message: '',
   });
@@ -20,7 +20,7 @@ const FormFooter = () => {
     email,
     phone,
     company,
-    service,
+    industry,
     findUs,
     message,
   } = contact;
@@ -105,9 +105,9 @@ const FormFooter = () => {
         </Col>
         <Col>
           <select
-            name="service"
+            name="industry"
             as="select"
-            value={service}
+            value={industry}
             onChange={handleChange}
             required
             className="shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md"
