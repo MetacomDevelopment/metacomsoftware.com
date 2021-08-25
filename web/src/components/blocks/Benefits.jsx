@@ -6,49 +6,49 @@ import Container from '../layouts/Container';
 import Grid from '../layouts/Grid';
 import Col from '../layouts/Col';
 
-const Benefits = ({ block, raw, index }) => (
-  // const data = useStaticQuery(graphql`
-  //   query BenefitsHomeQ {
-  //     allSa
-  //   }
-  // `);
+const Benefits = ({ block, raw, index }) => {
+  const { headline } = block;
 
-  // const { headline } = block;
+  return (
+    /*   const data = useStaticQuery(graphql`
+    query BenefitsHomeQ {
+      allSa
+    }
+  `);
+  const benefits = {
+    col1: [
+      {
+        icon: sanity.benefits,
+        headline: sanity.benefits,
+        description: sanity.benefits,
+        author: sanity.benefits,
+        company: sanity.benefits,
+      },
+    ],
+    col2: [
+      {
+        icon: sanity.benefits,
+        headline: sanity.benefits,
+        description: sanity.benefits,
+        author: sanity.benefits,
+        company: sanity.benefits,
+      },
+    ],
+    col3: [
+      {
+        icon: sanity.benefits,
+        headline: sanity.benefits,
+        description: sanity.benefits,
+        author: sanity.benefits,
+        company: sanity.benefits,
+      },
+    ],
+  }; */
 
-  // const benefits = {
-  //   col1: [
-  //     {
-  //       icon: sanity.benefits,
-  //       headline: sanity.benefits,
-  //       description: sanity.benefits,
-  //       author: sanity.benefits,
-  //       company: sanity.benefits,
-  //     },
-  //   ],
-  //   col2: [
-  //     {
-  //       icon: sanity.benefits,
-  //       headline: sanity.benefits,
-  //       description: sanity.benefits,
-  //       author: sanity.benefits,
-  //       company: sanity.benefits,
-  //     },
-  //   ],
-  //   col3: [
-  //     {
-  //       icon: sanity.benefits,
-  //       headline: sanity.benefits,
-  //       description: sanity.benefits,
-  //       author: sanity.benefits,
-  //       company: sanity.benefits,
-  //     },
-  //   ],
-  // };
-
-  <Section>
-    <Container>
-      <h2>{headline}</h2>
-      {/* <Grid cols={3} gapXs={8} gapLg={8}>
+    <Section>
+      <Container>
+        <h2>{headline}</h2>
+        {/* <Grid cols={3} gapXs={8} gapLg={8}>
           {benefits.map((benefit) => (
             <Col>
               <div className="">
@@ -73,7 +73,8 @@ const Benefits = ({ block, raw, index }) => (
             </Col>
           ))}
         </Grid> */}
-    </Container>
-  </Section>
-);
+      </Container>
+    </Section>
+  );
+};
 export default Benefits;
