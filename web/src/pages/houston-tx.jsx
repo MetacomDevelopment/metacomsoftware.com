@@ -40,7 +40,7 @@ const HoustonPage = ({ location }) => {
     title: `Houston Recruitment Agency for Engineering Companies`,
     description:
       'Does your company need a recruitment agency that focuses on permanent placements for engineering & technical roles? Contact All-Star Connections today!',
-    slug: 'https://www.allstarconnections.com/houston-t/',
+    slug: 'https://www.allstarconnections.com/houston-tx/',
   };
 
   const hero = {
