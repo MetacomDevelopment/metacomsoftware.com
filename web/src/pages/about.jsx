@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 
 import useSanitySettingsCompany from '../hooks/useSanitySettingsCompany';
 import useSanitySettingsSocials from '../hooks/useSanitySettingsSocials';
@@ -12,6 +10,10 @@ import useSanitySettingsMetadata from '../hooks/useSanitySettingsMetadata';
 import Layout from '../components/layout';
 import SEO from '../components/common/Seo';
 import HeaderPage from '../components/layouts/HeroPage';
+import Section from '../components/layouts/Section';
+import Container from '../components/layouts/Container';
+import Grid from '../components/layouts/Grid';
+import Col from '../components/layouts/Col';
 
 const AboutPage = ({ location }) => {
   const data = useStaticQuery(graphql`
@@ -25,9 +27,45 @@ const AboutPage = ({ location }) => {
           gatsbyImageData(quality: 90, layout: FULL_WIDTH, placeholder: BLURRED)
         }
       }
-      imgCompany: file(
+      imgRich: file(
         relativePath: {
-          eq: "assets/images/home/landscaping-contractor-brick-walkway-braven-landscape-construction-plympton-ma.jpg"
+          eq: "assets/images/about/rich-jeffery-job-recruiter-staffing-agency-all-star-connections.jpg"
+        }
+      ) {
+        childImageSharp {
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH, placeholder: BLURRED)
+        }
+      }
+      imgResume: file(
+        relativePath: {
+          eq: "assets/images/about/resume-job-recruiter-staffing-agency-all-star-connections.jpg"
+        }
+      ) {
+        childImageSharp {
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH, placeholder: BLURRED)
+        }
+      }
+      imgHiring: file(
+        relativePath: {
+          eq: "assets/images/about/hiring-job-recruiter-staffing-agency-all-star-connections.jpg"
+        }
+      ) {
+        childImageSharp {
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH, placeholder: BLURRED)
+        }
+      }
+      imgNegotiations: file(
+        relativePath: {
+          eq: "assets/images/about/negotiations-job-recruiter-staffing-agency-all-star-connections.jpg"
+        }
+      ) {
+        childImageSharp {
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH, placeholder: BLURRED)
+        }
+      }
+      imgTalent: file(
+        relativePath: {
+          eq: "assets/images/about/talent-job-recruiter-staffing-agency-all-star-connections.jpg"
         }
       ) {
         childImageSharp {
@@ -43,36 +81,25 @@ const AboutPage = ({ location }) => {
   const { ...allMetadata } = useSanitySettingsMetadata();
 
   const imgHeroBg = data.imgHeroBg.childImageSharp.gatsbyImageData;
-  const imgCompany = data.imgCompany.childImageSharp.gatsbyImageData;
+  const imgRich = data.imgRich.childImageSharp.gatsbyImageData;
+  const imgResume = data.imgResume.childImageSharp.gatsbyImageData;
+  const imgHiring = data.imgHiring.childImageSharp.gatsbyImageData;
+  const imgNegotiations = data.imgNegotiations.childImageSharp.gatsbyImageData;
+  const imgTalent = data.imgTalent.childImageSharp.gatsbyImageData;
 
   const seo = {
-    title: `NEED TO COMPLETE`,
-    description: 'NEED TO COMPLETE',
-    slug: location.pathname,
+    title: `Learn About Our Engineering Recruiting & Staffing Agency`,
+    description:
+      'We focus on helping companies find the best candidates for open engineering positions. We maintain a strong network of qualified candidates. Contact us today.',
+    slug: 'https://www.allstarconnections.com/about/',
   };
 
   const hero = {
     header: `About ${allCompany.name}`,
-    subheader: 'Learn who we are, what we offer, and how we can help',
-    alt: 'NEED TO COMPLETE',
+    subheader:
+      'Learn who we are, what we offer, and how we can help your company hire top talent today',
+    alt: 'All-Star Connections is an engineering staffing agency for companies.',
   };
-
-  const variants = {
-    hidden: { opacity: 0, scale: 0.8, x: -100 },
-    visible: { opacity: 1, scale: 1, x: 0 },
-  };
-
-  const controls = useAnimation();
-  const { ref, inView } = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    }
-    if (!inView) {
-      controls.start('hidden');
-    }
-  }, [controls, inView]);
 
   return (
     <Layout>
@@ -114,76 +141,166 @@ const AboutPage = ({ location }) => {
         headerText={hero.header}
         subheaderText={hero.subheader}
       />
-      <div className="bg-white overflow-hidden">
-        <div className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-          <div className="hidden lg:block bg-gray-50 absolute top-0 bottom-0 left-3/4 w-screen" />
-          <motion.div
-            ref={ref}
-            variants={variants}
-            initial="hidden"
-            animate={controls}
-            transition={{ duration: 0.5, delay: 0 }}
-            className="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none"
-          >
-            <div>
-              <h2 className="text-base text-primary font-semibold tracking-wide uppercase">
-                Business Owner
-              </h2>
-              <h3 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                Meet {allCompany.owner}
-              </h3>
-            </div>
-          </motion.div>
-          <motion.div
-            ref={ref}
-            variants={variants}
-            initial="hidden"
-            animate={controls}
-            transition={{ duration: 0.5, delay: 0 }}
-            className="mt-8 lg:grid lg:grid-cols-2 lg:gap-8"
-          >
-            <div className="relative lg:row-start-1 lg:col-start-2">
-              <div className="relative text-base mx-auto max-w-prose lg:max-w-none">
-                <div className="aspect-w-12 aspect-h-7">
-                  <GatsbyImage
-                    image={imgCompany}
-                    className="rounded-2xl shadow-xl"
-                    imgClassName="rounded-2xl shadow-xl"
-                    alt="Company"
-                    loading="lazy"
-                  />
+      <Section classes="bg-white">
+        <Container>
+          <Grid cols={2} gapY={32}>
+            <Col lg={2}>
+              <Container type="img">
+                <GatsbyImage
+                  image={imgRich}
+                  className="rounded-2xl shadow-xl"
+                  imgClassName="w-full h-full object-center object-cover"
+                  alt="Company"
+                  loading="lazy"
+                />
+              </Container>
+            </Col>
+            <Col lg={1}>
+              <div className="text-lg text-gray-500 max-w-prose mx-auto lg:max-w-none space-y-10">
+                <div className="space-y-6">
+                  <h2 className="text-3xl text-primary font-extrabold tracking-wide capitalize">
+                    Who We Are
+                  </h2>
+                  <p>
+                    All-Star Connections focuses on helping companies find the
+                    best candidates for open engineering positions. We maintain
+                    a strong network of qualified candidates and are able to
+                    present them to your company in a professional manner.
+                  </p>
+                  <p>
+                    We have been in business since 2016, and know exactly how to
+                    match people with the right roles to ensure all parties
+                    involved are happy with the final outcome. All-Star
+                    Connections focuses our efforts within the engineering &
+                    technical industries and we're committed to finding your
+                    company only the best candidates.
+                  </p>
                 </div>
               </div>
-            </div>
-            <div className="mt-8 lg:mt-0">
-              <div className="text-base max-w-prose mx-auto lg:max-w-none">
-                <p className="text-lg text-gray-500">
-                  Sagittis scelerisque nulla cursus in enim consectetur quam.
-                  Dictum urna sed consectetur neque tristique pellentesque.
-                  Blandit amet, sed aenean erat arcu morbi.
-                </p>
+            </Col>
+            <Col lg={3}>
+              <Container type="img">
+                <GatsbyImage
+                  image={imgResume}
+                  className="rounded-2xl shadow-xl"
+                  imgClassName="w-full h-full object-center object-cover"
+                  alt="Company"
+                  loading="lazy"
+                />
+              </Container>
+            </Col>
+            <Col lg={4}>
+              <div className="text-lg text-gray-500 max-w-prose mx-auto lg:max-w-none space-y-10">
+                <div className="space-y-6">
+                  <h2 className="text-3xl text-primary font-extrabold tracking-wide capitalize">
+                    Our Mission
+                  </h2>
+                  <p>
+                    The mission of All-Star Connections is to hold the highest
+                    standards of customer service by exceeding your expectations
+                    and always going above and beyond what's expected of us!
+                  </p>
+                  <p>
+                    Our recruiting firm will become a dedicated partner with
+                    your company to me your manpower and HR needs. Our team of
+                    experts will search nationwide to find you the best talent
+                    possible, while always applying the most advanced
+                    recruitment technologies available on the market.
+                  </p>
+                  <p>
+                    All-Star Connections is a professional organization founded
+                    by a true believer in putting people first!
+                  </p>
+                </div>
               </div>
-              <div className="mt-5 prose prose-indigo text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1">
-                <p>
-                  Sollicitudin tristique eros erat odio sed vitae, consequat
-                  turpis elementum. Lorem nibh vel, eget pretium arcu vitae.
-                  Eros eu viverra donec ut volutpat donec laoreet quam urna.
-                </p>
-                <p>
-                  Bibendum eu nulla feugiat justo, elit adipiscing. Ut tristique
-                  sit nisi lorem pulvinar. Urna, laoreet fusce nibh leo. Dictum
-                  et et et sit. Faucibus sed non gravida lectus dignissim
-                  imperdiet a.
-                </p>
-                <p>
-                  Dictum magnis risus phasellus vitae quam morbi. Quis lorem
-                  lorem arcu, metus, egestas netus cursus. In.
-                </p>
+            </Col>
+            <Col lg={6}>
+              <Container type="img">
+                <GatsbyImage
+                  image={imgHiring}
+                  className="rounded-2xl shadow-xl"
+                  imgClassName="w-full h-full object-center object-cover"
+                  alt="Company"
+                  loading="lazy"
+                />
+              </Container>
+            </Col>
+            <Col lg={5}>
+              <div className="text-lg text-gray-500 max-w-prose mx-auto lg:max-w-none space-y-10">
+                <div className="space-y-6">
+                  <h2 className="text-3xl text-primary font-extrabold tracking-wide capitalize">
+                    What We Offer
+                  </h2>
+                  <p>
+                    All-Star Connections offers a range of services to assist
+                    companies during their hiring process.
+                  </p>
+                  <ul className="list-disc list-indent">
+                    <li>
+                      <span className="font-bold">Talent Search</span>: All-Star
+                      Connections works with companies and candidates alike to
+                      help find that perfect match. If you are looking for a
+                      full-time position with permanent placement, we can help.
+                    </li>
+                    <li>
+                      <span className="font-bold">Candidate Referrals</span>:
+                      Having trouble finding the right candidates? If so, let
+                      All-Star Connections take some of the weight off your
+                      shoulders! We have relationships with thousands of
+                      qualified engineers and will be able to connect you with
+                      an appropriate candidate for your role.
+                    </li>
+                    <li>
+                      <span className="font-bold">Interviewing</span>: All-Star
+                      Connections has developed an interview process that is
+                      guaranteed to minimize the chances of making a bad hiring
+                      choice. We work with you and your team to set your company
+                      up for success when bringing on new employees.
+                    </li>
+                    <li>
+                      <span className="font-bold">Employment Screening</span>:
+                      All-Star Connections will review resumes and perform
+                      background checks on candidates before they are presented
+                      to companies. This ensures that all candidates have the
+                      required skill set for your open role.
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
-          </motion.div>
-        </div>
-      </div>
+            </Col>
+            <Col lg={7}>
+              <Container type="img">
+                <GatsbyImage
+                  image={imgNegotiations}
+                  className="rounded-2xl shadow-xl"
+                  imgClassName="w-full h-full object-center object-cover"
+                  alt="Company"
+                  loading="lazy"
+                />
+              </Container>
+            </Col>
+            <Col lg={8}>
+              <div className="text-lg text-gray-500 max-w-prose mx-auto lg:max-w-none space-y-10">
+                <div className="space-y-6">
+                  <h2 className="text-3xl text-primary font-extrabold tracking-wide capitalize">
+                    Request Expert Talent
+                  </h2>
+                  <p>
+                    If you are interested in learning more about our recruiting
+                    services how we can fill your engineering or technical
+                    positions, please do not hesitate to contact us!
+                  </p>
+                  <p>
+                    Give us a call today or fill out our contact form below to
+                    schedule a free consultation. We look forward to building
+                    your team and helping your company grow.
+                  </p>
+                </div>
+              </div>
+            </Col>
+          </Grid>
+        </Container>
+      </Section>
     </Layout>
   );
 };

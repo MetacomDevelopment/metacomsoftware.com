@@ -83,7 +83,7 @@ const CallOutHome = () => {
           initial="hidden"
           animate={controls}
           transition={{ duration: 0.5, delay: 0 }}
-          className="text-4xl font-extrabold tracking-tight text-amber-100 sm:text-5xl lg:text-6xl drop-shadow-darker capitalize"
+          className="text-4xl font-extrabold tracking-tight text-lightBlue-200 sm:text-5xl lg:text-6xl drop-shadow-darker capitalize"
         >
           {content.headline}
         </motion.h2>
@@ -93,16 +93,9 @@ const CallOutHome = () => {
           initial="hidden"
           animate={controls}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-5 text-3xl font-semibold text-white max-w-3xl mx-auto drop-shadow-darker"
+          className="mt-12 text-3xl font-semibold text-white max-w-3xl mx-auto drop-shadow-darker"
         >
-          {content.subHeadline}{' '}
-          <a
-            href={allCompany.phoneHref}
-            className="text-accent hover:text-primary"
-          >
-            {allCompany.phone}
-          </a>{' '}
-          or fill out our form.
+          Schedule your free consultation by filling out our form.
         </motion.p>
         <motion.div
           ref={ref}

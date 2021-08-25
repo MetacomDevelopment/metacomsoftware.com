@@ -1,0 +1,110 @@
+import React, { useEffect } from 'react';
+import { graphql, Link, useStaticQuery } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
+import Button from '../../common/Button';
+
+const CtaHalfBoston = () => {
+  const data = useStaticQuery(graphql`
+    query CtaHalfBostonQ {
+      sanitySettingsCompany {
+        email
+        emailHref
+        phone
+        phoneHref
+      }
+      imgCta: file(
+        relativePath: {
+          eq: "assets/images/boston-ma/boston-ma-staffing-request-talent-send-resume-engineering-job-recruiter-agency-all-star-connections.jpg"
+        }
+      ) {
+        childImageSharp {
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH, placeholder: BLURRED)
+        }
+      }
+    }
+  `);
+
+  const company = data.sanitySettingsCompany;
+  const imgCta = data.imgCta.childImageSharp.gatsbyImageData;
+
+  const variants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1 },
+  };
+
+  const controls = useAnimation();
+  const { ref, inView } = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+    if (!inView) {
+      controls.start('hidden');
+    }
+  }, [controls, inView]);
+
+  return (
+    <motion.div
+      ref={ref}
+      variants={variants}
+      initial="hidden"
+      animate={controls}
+      transition={{ duration: 0.5, delay: 0 }}
+      className="relative bg-gray-800"
+    >
+      <motion.div
+        ref={ref}
+        variants={variants}
+        initial="hidden"
+        animate={controls}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2"
+      >
+        <GatsbyImage
+          image={imgCta}
+          className="w-full h-full object-cover"
+          alt="Gardening services, planting flowers by Braven Landscape & Construction"
+        />
+      </motion.div>
+      <div className="relative max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <motion.div
+          ref={ref}
+          variants={variants}
+          initial="hidden"
+          animate={controls}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="md:ml-auto md:w-1/2 md:pl-10"
+        >
+          <h3 className="text-base font-semibold uppercase tracking-wider text-gray-300">
+            Professional Boston Recruitment
+          </h3>
+          <h2 className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">
+            Staff Your Organization Today
+          </h2>
+          <div className="space-y-6 mt-6">
+            <p className="text-lg text-gray-300">
+              All-Star Connections prides itself on being Boston's leader when
+              it comes to helping companies like yours find talented people who
+              are great culture fits, specifically tailored to your needs.
+            </p>
+            <p className="text-lg text-gray-300">
+              We know that finding the right type of employee can be an
+              expensive and time consuming process but we try to make it as easy
+              as possible so you can get back to what's important, running your
+              business!
+            </p>
+          </div>
+          <div className="mt-12 inline-flex rounded-md shadow">
+            <Button type="internal" />
+          </div>
+        </motion.div>
+      </div>
+    </motion.div>
+  );
+};
+
+export default CtaHalfBoston;

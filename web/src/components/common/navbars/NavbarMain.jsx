@@ -2,6 +2,7 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import { motion } from 'framer-motion';
 import { Disclosure, Menu, Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
@@ -28,36 +29,29 @@ const settings = {
 
 const navLinksDesktop = [
   { name: 'About Us', to: '/about/' },
-  { name: 'Request Talent', to: '/clients/' },
   { name: 'Testimonials', to: '/testimonials/' },
+  { name: 'Locations', to: '/locations/' },
   { name: 'Blog', to: '/blog/' },
 ];
 
 const navLinksIndustries = [
   {
     name: 'Medical Device & Biotechnology',
-    description: 'Regulatory, Quality, Research, Laboratory, Engineering',
     to: '/medical-device-biotechnology/',
     icon: 'fas fa-laptop-medical',
   },
   {
     name: 'Information Technology',
-    description:
-      "Mobile, UI, Front/Back End Developers, SWE's, Network Engineers, Embedded/Firmware Engineers, Database Admins/Engineers, DevOps/Cloud Developers, Project Management",
     to: '/it-technology/',
     icon: 'fas fa-network-wired',
   },
   {
     name: 'Civil & Structural Engineering',
-    description:
-      'Structural, Transportation, Geotechnical, Water Resource, Forensics, Surveying, Construction/Project Management, Environmental Health & Safety',
     to: '/civil-structural-engineering/',
     icon: 'fas fa-drafting-compass',
   },
   {
     name: 'Manufacturing',
-    description:
-      'Quality Engineering, Mechanical Engineering, Electrical Engineering, Manufacturing Engineering, Process Engineering, Operations Excellence, Chemical Engineering, Industrial Engineering, Aerospace Engineering, Environmental Health & Safety',
     to: '/manufacturing/',
     icon: 'fas fa-city',
   },
@@ -115,6 +109,18 @@ const NavbarMain = () => {
     return classes.filter(Boolean).join(' ');
   }
 
+  const variants = {
+    initial: { opacity: 0, scale: 0.8 },
+    animate: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        delay: 0,
+      },
+    },
+  };
+
   return (
     <Disclosure as="nav" className={settings.bg}>
       {({ open }) => (
@@ -139,7 +145,12 @@ const NavbarMain = () => {
                 </Disclosure.Button>
               </div>
               <div className="flex-1 flex items-center justify-start sm:items-stretch sm:justify-start">
-                <div className="flex-shrink-0 flex items-center">
+                <motion.div
+                  className="flex-shrink-0 flex items-center"
+                  variants={variants}
+                  initial="initial"
+                  animate="animate"
+                >
                   <NavLogo>
                     <GatsbyImage
                       image={imgLogo}
@@ -147,20 +158,10 @@ const NavbarMain = () => {
                       loading="eager"
                     />
                   </NavLogo>
-                </div>
+                </motion.div>
 
                 <div className="hidden sm:block sm:ml-6 lg:mx-auto self-center">
                   <div className="flex space-x-6">
-                    <div className={dryClasses.navItem}>
-                      <Link
-                        to={navLinksDesktop[0].to}
-                        className={dryClasses.navItem}
-                        activeClassName={dryClasses.activeNavItem}
-                      >
-                        {navLinksDesktop[0].name}
-                      </Link>
-                    </div>
-
                     <Popover className="z-0 relative">
                       {({ open }) => (
                         <div>
@@ -196,18 +197,18 @@ const NavbarMain = () => {
                           >
                             <Popover.Panel
                               static
-                              className="fixed mx-auto z-10 inset-x-0 transform shadow-2xl rounded-2xl w-max"
+                              className="absolute mx-auto z-10 inset-x-0 transform shadow-2xl rounded-2xl w-max"
                             >
                               <div className="bg-white">
-                                <div className="max-w-6xl mx-auto grid gap-y-6 px-4 py-6 sm:grid-cols-2 sm:gap-8 sm:px-6 sm:py-8 lg:grid-cols-2 lg:px-8 lg:py-8 xl:py-8">
+                                <div className="max-w-max mx-auto grid gap-y-6 px-4 py-6 sm:grid-cols-1 sm:gap-8 sm:px-6 sm:py-8 lg:grid-cols-1 lg:px-8 lg:py-8 xl:py-8">
                                   {navLinksIndustries.map((item) => (
                                     <Link
                                       key={item.name}
                                       to={item.to}
-                                      className="-m-3 p-3 flex flex-col justify-between rounded-lg hover:bg-gray-100 transition ease-in-out duration-150"
+                                      className="-m-3 p-3 grid grid-cols-1 justify-between rounded-lg hover:bg-gray-100 transition ease-in-out duration-150"
                                     >
-                                      <div className="flex md:h-full lg:flex-col">
-                                        <div className="flex-shrink-0">
+                                      <div className="grid grid-cols-5 gap-4">
+                                        <div className="col-span-1">
                                           <div className="inline-flex items-center justify-center h-10 w-10 rounded-md bg-primary text-white sm:h-12 sm:w-12">
                                             <i
                                               className={`${item.icon} text-xl`}
@@ -215,21 +216,18 @@ const NavbarMain = () => {
                                             />
                                           </div>
                                         </div>
-                                        <div className="ml-4 md:flex-1 md:flex md:flex-col md:justify-between lg:ml-0 lg:mt-4">
+                                        <div className="col-span-4">
                                           <div>
                                             <p className="text-base font-medium text-gray-900">
                                               {item.name}
                                             </p>
-                                            <p className="mt-1 text-sm text-gray-500 max-w-2xl">
-                                              {item.description}
+                                            <p className="mb-2 text-sm font-medium text-accent lg:mb-4">
+                                              Learn more{' '}
+                                              <span aria-hidden="true">
+                                                &rarr;
+                                              </span>
                                             </p>
                                           </div>
-                                          <p className="my-2 text-sm font-medium text-accent lg:my-4">
-                                            Learn more{' '}
-                                            <span aria-hidden="true">
-                                              &rarr;
-                                            </span>
-                                          </p>
                                         </div>
                                       </div>
                                     </Link>
@@ -265,6 +263,16 @@ const NavbarMain = () => {
 
                     <div className={dryClasses.navItem}>
                       <Link
+                        to={navLinksDesktop[0].to}
+                        className={dryClasses.navItem}
+                        activeClassName={dryClasses.activeNavItem}
+                      >
+                        {navLinksDesktop[0].name}
+                      </Link>
+                    </div>
+
+                    <div className={dryClasses.navItem}>
+                      <Link
                         to={navLinksDesktop[1].to}
                         className={dryClasses.navItem}
                         activeClassName={dryClasses.activeNavItem}
@@ -295,10 +303,15 @@ const NavbarMain = () => {
                   </div>
                 </div>
 
-                <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:pr-0">
+                <motion.div
+                  className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:pr-0"
+                  variants={variants}
+                  initial="initial"
+                  animate="animate"
+                >
                   <div className="hidden sm:flex sm:items-center text-3xl font-bold">
-                    {/* <Button type="internal" btnLink={settings.btnLink} /> */}
-                    <a
+                    <Button type="internal" btnLink={settings.btnLink} />
+                    {/* <a
                       href={allCompany.phoneHref}
                       target="_blank"
                       rel="noreferrer noopener"
@@ -307,9 +320,9 @@ const NavbarMain = () => {
                       <span className="text-primary hover:text-accent italic tracking-tight">
                         {allCompany.phone}
                       </span>
-                    </a>
+                    </a> */}
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>

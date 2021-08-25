@@ -34,15 +34,16 @@ const FindUsOnlinePage = ({ location }) => {
   const imgHeroBg = data.imgHeroBg.childImageSharp.gatsbyImageData;
 
   const seo = {
-    title: `NEED TO COMPLETE`,
-    description: 'NEED TO COMPLETE',
-    slug: location.pathname,
+    title: `Find Us Online! Check Our Profiles & Social Accounts`,
+    description:
+      'All-Star Connections can be found all over the internet via business profiles & social media accounts. Contact us today for quality recruitment services!',
+    slug: 'https://www.allstarconnections.com/find-us-online/',
   };
 
   const hero = {
     header: `Find ${allCompany.name} Online`,
     subheader: 'This is going to be a short description',
-    alt: 'NEED TO COMPLETE',
+    alt: 'All-Star Connections is a professional staffing & recruitment agency that focuses on assisting engineering & technical companies with permanent placements.',
   };
 
   return (

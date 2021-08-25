@@ -143,7 +143,10 @@ const FeaturesHome = () => {
                   variants={itemVariants}
                   className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full"
                 >
-                  <div className="relative py-24 px-4 bg-primary rounded-xl shadow-2xl overflow-hidden lg:px-8 flex md:h-full lg:flex-col justify-between">
+                  <Link
+                    to={feature.link}
+                    className="relative py-24 px-4 bg-primary hover:bg-blueGray-800 transition-all ease-in-out rounded-xl shadow-2xl overflow-hidden lg:px-8 flex md:h-full lg:flex-col justify-between"
+                  >
                     <div className="absolute inset-0 opacity-20 filter saturate-0 mix-blend-multiply">
                       <GatsbyImage
                         image={feature.image}
@@ -169,7 +172,7 @@ const FeaturesHome = () => {
                         Learn More <span aria-hidden="true">&rarr;</span>{' '}
                       </Link>
                     </div>
-                  </div>
+                  </Link>
                 </motion.div>
               </div>
             ))}

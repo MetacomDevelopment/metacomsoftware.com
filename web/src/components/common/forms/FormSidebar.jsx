@@ -4,6 +4,8 @@ import useSanitySettingsCompany from '../../../hooks/useSanitySettingsCompany';
 import useSanitySettingsSocials from '../../../hooks/useSanitySettingsSocials';
 import useSanitySettingsColors from '../../../hooks/useSanitySettingsColors';
 import useSanitySettingsMetadata from '../../../hooks/useSanitySettingsMetadata';
+import Grid from '../../layouts/Grid';
+import Col from '../../layouts/Col';
 
 const FormSidebar = () => {
   const [contact, setContact] = useState({
@@ -59,8 +61,8 @@ const FormSidebar = () => {
       </div>
       <input type="hidden" name="form-name" value="form-sidebar" />
 
-      <div className="grid grid-cols-1 grid-rows-6 gap-y-6 gap-x-4 sm:grid-cols-2 sm:grid-rows-4">
-        <div>
+      <Grid cols={2} gapX={4} gapY={6} gapXs={8} gapLg={2}>
+        <Col>
           <input
             name="firstName"
             type="text"
@@ -70,8 +72,8 @@ const FormSidebar = () => {
             required
             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
           />
-        </div>
-        <div>
+        </Col>
+        <Col>
           <input
             name="lastName"
             type="text"
@@ -81,8 +83,8 @@ const FormSidebar = () => {
             required
             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
           />
-        </div>
-        <div>
+        </Col>
+        <Col>
           <input
             name="email"
             type="email"
@@ -92,8 +94,8 @@ const FormSidebar = () => {
             required
             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
           />
-        </div>
-        <div>
+        </Col>
+        <Col>
           <input
             name="phone"
             type="tel"
@@ -103,8 +105,8 @@ const FormSidebar = () => {
             required
             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
           />
-        </div>
-        <div>
+        </Col>
+        <Col>
           <input
             name="company"
             type="text"
@@ -114,8 +116,8 @@ const FormSidebar = () => {
             required
             className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
           />
-        </div>
-        <div>
+        </Col>
+        <Col>
           <select
             name="industry"
             as="select"
@@ -139,8 +141,8 @@ const FormSidebar = () => {
             </option>
             <option value="Manufacturing">Manufacturing</option>
           </select>
-        </div>
-        <div className="col-span-2">
+        </Col>
+        <Col classes="col-span-2">
           <select
             name="findUs"
             as="select"
@@ -169,8 +171,19 @@ const FormSidebar = () => {
               Other
             </option>
           </select>
-        </div>
-      </div>
+        </Col>
+        <Col classes="col-span-2">
+          <textarea
+            name="message"
+            rows="3"
+            value={message}
+            onChange={handleChange}
+            placeholder="Message"
+            required
+            className="shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md"
+          />
+        </Col>
+      </Grid>
 
       <div className="text-gray-100 text-sm my-10">
         <p className="italic">
@@ -183,7 +196,7 @@ const FormSidebar = () => {
       </div>
       <div className="text-center mt-10 mb-6">
         <button
-          className="inline-flex items-center py-3 px-6 bg-accent hover:bg-gray-700 text-lg font-medium text-white hover:text-white border border-transparent hover:border-gray-100 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform"
+          className="inline-flex items-center py-3 px-6 bg-accent hover:bg-gray-700 text-lg font-medium text-white hover:text-white border border-white hover:border-gray-100 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform"
           type="submit"
           value="Submit"
         >

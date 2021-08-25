@@ -12,7 +12,6 @@ import CompanyHome from '../components/views/home/CompanyHome';
 import CallOutHome from '../components/views/home/CallOutHome';
 import FeaturesHome from '../components/views/home/FeaturesHome';
 import CtaHome from '../components/views/home/CtaHome';
-import ServiceOneHome from '../components/views/home/ServiceOneHome';
 import BenefitsHome from '../components/views/home/BenefitsHome';
 
 const IndexPage = ({ location }) => {
@@ -22,9 +21,10 @@ const IndexPage = ({ location }) => {
   const { ...allMetadata } = useSanitySettingsMetadata();
 
   const seo = {
-    title: `NEED TO COMPLETE`,
-    description: 'NEED TO COMPLETE',
-    slug: location.pathname,
+    title: `Engineering Recruitment Agency - Job Staffing Agency`,
+    description:
+      'All-Star Connections is a recruitment agency that focuses on providing permanent placements for companies in engineering & technical industries. Call us today!',
+    slug: 'https://www.allstarconnections.com/',
   };
 
   return (
@@ -67,7 +67,6 @@ const IndexPage = ({ location }) => {
       <CallOutHome />
       <FeaturesHome />
       <CtaHome />
-      {/* <ServiceOneHome /> */}
     </Layout>
   );
 };

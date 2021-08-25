@@ -46,12 +46,40 @@ const NavbarSecondary = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-end align-items-center h-12">
           <div className="flex my-auto px-6">
+            <a
+              href="https://www.google.com/maps/place/1544+W+23rd+St,+Houston,+TX+77008/@29.8065431,-95.4296898,17z/data=!3m1!4b1!4m5!3m4!1s0x8640c70523ab679f:0xb5ac230d9ab01f4f!8m2!3d29.8065431!4d-95.4275011"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <i className="fas fa-map-marker-alt mr-3 text-accent hover:text-gray-50" />
+              <span
+                className={`${settings.textColor} ${settings.textColorHover} ${settings.textSize} ${settings.textWeight}`}
+              >
+                Houston, TX
+              </span>
+            </a>
+          </div>
+          <div className="flex my-auto px-6">
+            <a
+              href="https://www.google.com/maps/place/3093+C+St+%231,+San+Diego,+CA+92102/@32.7165796,-117.1298589,17z/data=!3m1!4b1!4m5!3m4!1s0x80d95378b9eec2af:0xfb3c142aff5ead4e!8m2!3d32.7165796!4d-117.1276702"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <i className="fas fa-map-marker-alt mr-3 text-accent hover:text-gray-50" />
+              <span
+                className={`${settings.textColor} ${settings.textColorHover} ${settings.textSize} ${settings.textWeight}`}
+              >
+                San Diego, CA
+              </span>
+            </a>
+          </div>
+          <div className="flex my-auto px-6">
             <a href={socials.gmbCid} target="_blank" rel="noreferrer noopener">
               <i className="fas fa-map-marker-alt mr-3 text-accent hover:text-gray-50" />
               <span
                 className={`${settings.textColor} ${settings.textColorHover} ${settings.textSize} ${settings.textWeight}`}
               >
-                {company.address}
+                Boston, MA
               </span>
             </a>
           </div>
@@ -69,7 +97,7 @@ const NavbarSecondary = () => {
               </span>
             </a>
           </div>
-          {/* <div className="flex my-auto px-6">
+          <div className="flex my-auto px-6">
             <a
               href={company.phoneHref}
               target="_blank"
@@ -82,7 +110,7 @@ const NavbarSecondary = () => {
                 {company.phone}
               </span>
             </a>
-          </div> */}
+          </div>
 
           <div className="flex my-auto pl-6">
             <a
@@ -120,7 +148,7 @@ const NavbarSecondary = () => {
               <span
                 className={`${settings.textColor} ${settings.textColorHover} ${settings.textSize} ${settings.textWeight} sr-only`}
               >
-                LinedIn
+                LinkedIn
               </span>
             </a>
           </div>

@@ -55,7 +55,7 @@ const MapFooter = () => {
           <div className="w-full p-2 mx-auto rounded-2xl">
             <Disclosure>
               {({ open }) => (
-                <>
+                <div>
                   <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-blue-900 bg-blue-100 rounded-lg hover:bg-blue-200 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
                     <h3 className="">Directions From Logan Airport</h3>
                     <ChevronUpIcon
@@ -85,12 +85,12 @@ const MapFooter = () => {
                     Commercial Street, Destination will be on the left, 203 ft,
                     All-Star Connections, 111 Atlantic Ave, Boston, MA 02110
                   </Disclosure.Panel>
-                </>
+                </div>
               )}
             </Disclosure>
             <Disclosure as="div" className="mt-2">
               {({ open }) => (
-                <>
+                <div>
                   <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-blue-900 bg-blue-100 rounded-lg hover:bg-blue-200 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
                     <h3 className="">Directions From Museum of Science</h3>
                     <ChevronUpIcon
@@ -115,12 +115,12 @@ const MapFooter = () => {
                     Commercial Street, Destination will be on the left, 203 ft,
                     All-Star Connections, 111 Atlantic Ave, Boston, MA 02110.
                   </Disclosure.Panel>
-                </>
+                </div>
               )}
             </Disclosure>
             <Disclosure as="div" className="mt-2">
               {({ open }) => (
-                <>
+                <div>
                   <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-blue-900 bg-blue-100 rounded-lg hover:bg-blue-200 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
                     <h3 className="">Directions From Prudential Center</h3>
                     <ChevronUpIcon
@@ -147,12 +147,12 @@ const MapFooter = () => {
                     Street, Destination will be on the left, 203 ft, All-Star
                     Connections, 111 Atlantic Ave, Boston, MA 02110.
                   </Disclosure.Panel>
-                </>
+                </div>
               )}
             </Disclosure>
             <Disclosure as="div" className="mt-2">
               {({ open }) => (
-                <>
+                <div>
                   <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-blue-900 bg-blue-100 rounded-lg hover:bg-blue-200 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
                     <h3 className="">
                       Directions From Boston Convention and Exhibition Center
@@ -178,7 +178,7 @@ const MapFooter = () => {
                     Destination will be on the left, 203 ft, All-Star
                     Connections, 111 Atlantic Ave, Boston, MA 02110.
                   </Disclosure.Panel>
-                </>
+                </div>
               )}
             </Disclosure>
           </div>

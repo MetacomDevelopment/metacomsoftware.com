@@ -34,15 +34,17 @@ const AccessibilityPage = ({ location }) => {
   const imgHeroBg = data.imgHeroBg.childImageSharp.gatsbyImageData;
 
   const seo = {
-    title: `NEED TO COMPLETE`,
-    description: 'NEED TO COMPLETE',
-    slug: location.pathname,
+    title: `Read Our Accessibility Statement - WCAG Compliance`,
+    description:
+      'Website accessibility is important to us. We make sure our website is compliant with WCAG standards & meets all recommendations for proper user experience.',
+    slug: 'https://www.allstarconnections.com/accessibility/',
   };
 
   const hero = {
     header: 'Accessibility',
-    subheader: 'This is going to be a short description',
-    alt: 'NEED TO COMPLETE',
+    subheader:
+      'Website accessibility is important to us. Our goal is to be WCAG compliant',
+    alt: 'All-Star Connections is a recruitment agency that is WCAG compliant with website accessibility standards.',
   };
 
   return (

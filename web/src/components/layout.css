@@ -1,9 +1,6 @@
 @tailwind base;
 
 @layer base {
-  main {
-    @apply pt-24 lg:pt-36;
-  }
   h1 {
     @apply capitalize text-2xl;
   }
@@ -16,20 +13,41 @@
   h4 {
     @apply capitalize text-lg text-secondary font-semibold tracking-tight sm:text-xl;
   }
+  /* ul {
+    @apply list-disc !important;
+    margin-left: 40px !important;
+    text-indent: -1em !important;
+  }
+  ul > li {
+    list-style-position: inside !important;
+    text-indent: -1.5em !important;
+  } */
 }
 
 @tailwind components;
 @tailwind utilities;
 
 @layer utilities {
+  .sanity-list ul {
+    list-style-type: disc !important;
+    margin-left: 40px !important;
+    text-indent: -1em !important;
+  }
+
+  .sanity-list > ul > li {
+    list-style-position: inside !important;
+    text-indent: -1.5em !important;
+  }
+
   .list-indent {
+    margin-left: 40px;
     text-indent: -1em;
-    margin-left: 1em;
+    /* margin-left: 1em; */
   }
 
   .list-indent > li {
     list-style-position: inside;
-    text-indent: -1em;
+    text-indent: -1.5em;
   }
 
   .drop-shadow-text {

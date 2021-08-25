@@ -98,31 +98,7 @@ const CtaHome = () => {
               business!
             </p>
           </div>
-          <p className="mt-12 text-lg text-gray-300">
-            Call:{' '}
-            <a
-              href={company.phoneHref}
-              target="_blank"
-              className="text-yellow-500 hover:text-yellow-300 font-bold"
-              rel="noreferrer"
-            >
-              {company.phone}
-            </a>
-            .
-          </p>
-          <p className="text-lg text-gray-300">
-            Email:{' '}
-            <a
-              href={company.emailHref}
-              target="_blank"
-              className="text-yellow-500 hover:text-yellow-300 font-bold"
-              rel="noreferrer"
-            >
-              {company.email}
-            </a>
-            .
-          </p>
-          <div className="mt-8 inline-flex rounded-md shadow">
+          <div className="mt-12 inline-flex rounded-md shadow">
             <Button type="internal" />
           </div>
         </motion.div>

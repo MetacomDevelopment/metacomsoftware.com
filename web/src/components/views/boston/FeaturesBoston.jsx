@@ -1,0 +1,233 @@
+import React from 'react';
+import { graphql, Link, useStaticQuery } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import BlockContent from '@sanity/block-content-to-react';
+
+import useSanitySettingsCompany from '../../../hooks/useSanitySettingsCompany';
+import useSanitySettingsSocials from '../../../hooks/useSanitySettingsSocials';
+import useSanitySettingsColors from '../../../hooks/useSanitySettingsColors';
+import useSanitySettingsMetadata from '../../../hooks/useSanitySettingsMetadata';
+import Section from '../../layouts/Section';
+import Container from '../../layouts/Container';
+import Grid from '../../layouts/Grid';
+import Col from '../../layouts/Col';
+
+const FeaturesBoston = () => {
+  const settings = {
+    testimonialBg: 'bg-primary',
+    quoteColor: 'text-accent',
+    authorTextColor: 'text-accent',
+  };
+
+  const data = useStaticQuery(graphql`
+    query FeaturesBostonQ {
+      allSanityPageHome {
+        nodes {
+          _key
+          _rawCompanyBio
+        }
+      }
+      sanityPageHome {
+        companyImg {
+          alt
+          asset {
+            gatsbyImageData(fit: FILLMAX, placeholder: BLURRED)
+          }
+        }
+      }
+      imgMeeting: file(
+        relativePath: {
+          eq: "assets/images/boston-ma/boston-ma-interview-engineering-job-recruiter-agency-all-star-connections.jpg"
+        }
+      ) {
+        childImageSharp {
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH, placeholder: BLURRED)
+        }
+      }
+      imgPlacement: file(
+        relativePath: {
+          eq: "assets/images/boston-ma/boston-ma-placement-sustainability-recruiter-agency-all-star-connections.jpg"
+        }
+      ) {
+        childImageSharp {
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH, placeholder: BLURRED)
+        }
+      }
+      imgEngineer: file(
+        relativePath: {
+          eq: "assets/images/boston-ma/boston-ma-engineering-programmer-recruiter-agency-all-star-connections.jpg"
+        }
+      ) {
+        childImageSharp {
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH, placeholder: BLURRED)
+        }
+      }
+    }
+  `);
+
+  const sanity = data.sanityPageHome;
+  const allSanity = data.allSanityPageHome;
+
+  const { ...allCompany } = useSanitySettingsCompany();
+  const { ...allSocials } = useSanitySettingsSocials();
+  const { ...allColors } = useSanitySettingsColors();
+  const { ...allMetadata } = useSanitySettingsMetadata();
+
+  const imgMeeting = data.imgMeeting.childImageSharp.gatsbyImageData;
+  const imgPlacement = data.imgPlacement.childImageSharp.gatsbyImageData;
+  const imgEngineer = data.imgEngineer.childImageSharp.gatsbyImageData;
+
+  return (
+    <Section classes="bg-white">
+      <Container>
+        <Grid cols={2} gapY={32}>
+          <Col lg={2}>
+            <Container type="img">
+              <GatsbyImage
+                image={imgMeeting}
+                className="rounded-2xl shadow-xl"
+                imgClassName="w-full h-full object-center object-cover"
+                alt="Company"
+                loading="lazy"
+              />
+            </Container>
+          </Col>
+          <Col lg={1}>
+            <div className="text-lg text-gray-500 max-w-prose mx-auto lg:max-w-none space-y-10">
+              <div className="space-y-6">
+                <h2 className="text-3xl text-primary font-extrabold tracking-wide capitalize">
+                  We Provide Top Talent For Boston Companies To Hire On-Demand
+                </h2>
+                <p>
+                  Scaling your company and{' '}
+                  <strong>finding the right employees</strong> is never easy,
+                  especially when you've tried using other staffing agencies and
+                  they failed to deliver.
+                </p>
+                <p>
+                  Imagine having access to thousands of qualified candidates who
+                  are eager to work at your company. We'll help you find the
+                  right people that fit into your culture, so you can{' '}
+                  <strong>focus on running your business</strong> instead of
+                  looking for new hires.
+                </p>
+                <p>
+                  All-Star Connections is a staffing agency that helps companies
+                  like yours{' '}
+                  <strong>find top talent and high-quality candidates</strong>.
+                  Since 2016, we've had extensive experience in helping
+                  businesses just like yours grow their workforce with ease and
+                  efficiency.
+                </p>
+              </div>
+            </div>
+          </Col>
+          <Col lg={3}>
+            <Container type="img">
+              <GatsbyImage
+                image={imgPlacement}
+                className="rounded-2xl shadow-xl"
+                imgClassName="w-full h-full object-center object-cover"
+                alt="Company"
+                loading="lazy"
+              />
+            </Container>
+          </Col>
+          <Col lg={4}>
+            <div className="text-lg text-gray-500 max-w-prose mx-auto lg:max-w-none space-y-10">
+              <div className="space-y-6">
+                <h2 className="text-3xl text-primary font-extrabold tracking-wide capitalize">
+                  Placement Sustainability is Our #1 Goal For Boston Companies
+                </h2>
+                <p>How do we maintain our 96.7% sustainability rating?</p>
+                <ul className="fa-ul">
+                  <li>
+                    <span className="fa-li">
+                      <i className="fas fa-check text-primary" />
+                    </span>
+                    Only dealing with reliable, driven, and talented candidates
+                  </li>
+                  <li>
+                    <span className="fa-li">
+                      <i className="fas fa-check text-primary" />
+                    </span>
+                    Integrating our proprietary vetting process using psychology
+                    and behavioral analysis
+                  </li>
+                  <li>
+                    <span className="fa-li">
+                      <i className="fas fa-check text-primary" />
+                    </span>
+                    Utilizing custom tests and interviews that are designed to
+                    assess a candidate's skills, competencies, work personality,
+                    cognitive abilities (IQ), and emotional intelligence
+                  </li>
+                </ul>
+                <p>
+                  <strong>The result?</strong> You get an elevated standard for
+                  technical talent – proven by our track record of client
+                  satisfaction.
+                </p>
+              </div>
+            </div>
+          </Col>
+          <Col lg={6}>
+            <Container type="img">
+              <GatsbyImage
+                image={imgEngineer}
+                className="rounded-2xl shadow-xl"
+                imgClassName="w-full h-full object-center object-cover"
+                alt="Company"
+                loading="lazy"
+              />
+            </Container>
+          </Col>
+          <Col lg={5}>
+            <div className="text-lg text-gray-500 max-w-prose mx-auto lg:max-w-none space-y-10">
+              <div className="space-y-6">
+                <h2 className="text-3xl text-primary font-extrabold tracking-wide capitalize">
+                  Boston's Engineering Industry Is Our Primary Focus
+                </h2>
+                <ul className="fa-ul">
+                  <li>
+                    <span className="fa-li">
+                      <i className="fas fa-check text-primary" />
+                    </span>
+                    <strong>Medical Device & Biotechnology</strong> (Pre-Market
+                    and Post-Market)
+                  </li>
+                  <li>
+                    <span className="fa-li">
+                      <i className="fas fa-check text-primary" />
+                    </span>
+                    <strong>IT/Technology</strong> (Software Engineers, Firmware
+                    Engineers, Hardware Engineers, Database Development/Admin,
+                    Front/Back End Development, IoT, and Project Management)
+                  </li>
+                  <li>
+                    <span className="fa-li">
+                      <i className="fas fa-check text-primary" />
+                    </span>
+                    <strong>Civil/Structural</strong> (Professional Engineers,
+                    Forensics, Construction Management, Project Management,
+                    Operations)
+                  </li>
+                  <li>
+                    <span className="fa-li">
+                      <i className="fas fa-check text-primary" />
+                    </span>
+                    <strong>Manufacturing</strong> (Quality Engineers,
+                    Mechanical Engineers, Electrical Engineers, Manufacturing
+                    Engineers, Process Engineers, OpEx, EHS, and more)
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </Col>
+        </Grid>
+      </Container>
+    </Section>
+  );
+};
+
+export default FeaturesBoston;

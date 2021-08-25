@@ -9,29 +9,36 @@ export default {
     {
       name: 'title',
       title: 'Title',
-      description: 'Create a title for your post',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'slug',
       title: 'Slug',
-      description: 'Generate a slug automatically or manually create one',
       type: 'slug',
+      validation: (Rule) => Rule.required(),
       options: {
         source: 'title',
         maxLength: 96,
       },
     },
     {
+      name: 'description',
+      title: 'Description',
+      type: 'text',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'schema',
+      title: 'Schema',
+      type: 'text',
+    },
+    {
       name: 'author',
       title: 'Author',
       type: 'reference',
+      validation: (Rule) => Rule.required(),
       to: [{ type: 'author' }],
-    },
-    {
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'imageAlt',
     },
     {
       name: 'tags',
@@ -43,12 +50,31 @@ export default {
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'bgImg',
+      title: 'Background Image',
+      type: 'imageAlt',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'headline',
+      title: 'Headline',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'subheadline',
+      title: 'Subheadline',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'body',
       title: 'Body',
-      type: 'array',
-      of: [{ type: 'block' }, { type: 'imageAlt' }],
+      type: 'portableTextBody',
+      validation: (Rule) => Rule.required(),
     },
   ],
 
@@ -56,7 +82,7 @@ export default {
     select: {
       title: 'title',
       author: 'author.name',
-      media: 'mainImage',
+      media: 'bgImg',
     },
     prepare(selection) {
       const { author } = selection;

@@ -6,7 +6,13 @@ import PropTypes from 'prop-types';
 
 import Button from '../common/Button';
 
-const HeroPage = ({ imgHeroBg, altText, headerText, subheaderText }) => {
+const HeroPage = ({
+  imgHeroBg,
+  altText,
+  headerText,
+  subheaderText,
+  anchor,
+}) => {
   const variants = {
     hidden: { opacity: 0, scale: 0.8, x: -100 },
     visible: { opacity: 1, scale: 1, x: 0 },
@@ -25,7 +31,7 @@ const HeroPage = ({ imgHeroBg, altText, headerText, subheaderText }) => {
   }, [controls, inView]);
 
   return (
-    <div className="relative">
+    <div className="relative flex flex-col place-content-center place-items-center lg:h-screen">
       <div className="absolute inset-0">
         <GatsbyImage
           image={imgHeroBg}
@@ -34,7 +40,7 @@ const HeroPage = ({ imgHeroBg, altText, headerText, subheaderText }) => {
           loading="eager"
         />
         <div
-          className="absolute inset-0 bg-gray-500"
+          className="absolute inset-0 bg-coolGray-600"
           style={{ mixBlendMode: 'multiply' }}
           aria-hidden="true"
         />
@@ -45,7 +51,7 @@ const HeroPage = ({ imgHeroBg, altText, headerText, subheaderText }) => {
         initial="hidden"
         animate={controls}
         transition={{ duration: 0.5, delay: 0 }}
-        className="relative mx-auto text-center max-w-4xl py-24 px-4 sm:py-32 sm:px-6 lg:px-8"
+        className="relative mx-auto text-center max-w-4xl mt-24 px-4 sm:px-6 lg:px-8 py-24"
       >
         <motion.h1
           ref={ref}
@@ -53,7 +59,7 @@ const HeroPage = ({ imgHeroBg, altText, headerText, subheaderText }) => {
           initial="hidden"
           animate={controls}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-4xl font-extrabold tracking-tight text-amber-100 sm:text-5xl lg:text-6xl"
+          className="text-4xl font-extrabold tracking-tight text-lightBlue-50 sm:text-5xl lg:text-6xl drop-shadow-darker"
         >
           {headerText}
         </motion.h1>
@@ -76,7 +82,7 @@ const HeroPage = ({ imgHeroBg, altText, headerText, subheaderText }) => {
           className="flex mt-10"
         >
           <div className="col-1 gap-4 mx-auto">
-            <Button type="internal" />
+            <Button type="internal" anchor={anchor} />
           </div>
         </motion.div>
       </motion.div>

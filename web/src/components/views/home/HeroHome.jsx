@@ -70,7 +70,7 @@ const HeroHome = () => {
   }, [controls, inView]);
 
   return (
-    <div className="relative max-h-full lg:max-h-screen">
+    <div className="relative flex flex-col place-content-center place-items-center lg:h-screen">
       <div className="absolute inset-0">
         <GatsbyImage
           image={sanity.bgImg.asset.gatsbyImageData}
@@ -83,7 +83,7 @@ const HeroHome = () => {
           aria-hidden="true"
         />
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-7xl mx-auto mt-32 py-24">
         <div className="relative text-center lg:text-left pt-5 pb-5 px-4 sm:pt-10 sm:pb-12 sm:px-6 lg:px-8">
           <motion.h1
             ref={ref}
@@ -91,7 +91,7 @@ const HeroHome = () => {
             initial="hidden"
             animate={controls}
             transition={{ duration: 0.5, delay: 0 }}
-            className="text-4xl font-extrabold tracking-tight drop-shadow-text-darker sm:text-5xl lg:text-6xl capitalize mb-10 text-amber-100"
+            className="text-4xl font-extrabold tracking-tight drop-shadow-text-darker sm:text-5xl lg:text-6xl capitalize mb-10 text-lightBlue-100"
             // style={{ color: allColors.heroHeadlineColor.hex }}
           >
             {sanity.heading}
@@ -183,7 +183,7 @@ const HeroHome = () => {
                         <BlockContent
                           key={node._key}
                           blocks={node._rawTestimonial}
-                          className="space-y-6"
+                          className="space-y-6 italic"
                         />
                       ))}
                     </div>

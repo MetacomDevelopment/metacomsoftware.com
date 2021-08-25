@@ -1,6 +1,7 @@
 import S from '@sanity/desk-tool/structure-builder';
 import { FaHome as iconHome } from 'react-icons/fa';
 import { FaFileAlt as iconPage } from 'react-icons/fa';
+import { FaTools as iconService } from 'react-icons/fa';
 import { FaPencilAlt as iconPost } from 'react-icons/fa';
 import { FaUserEdit as iconAuthor } from 'react-icons/fa';
 import { FaTag as iconTag } from 'react-icons/fa';
@@ -82,6 +83,21 @@ export default () =>
             ])
         ),
       S.listItem()
+        .title('Pages')
+        .icon(iconPage)
+        .schemaType('page')
+        .child(S.documentTypeList('page').title('Pages')),
+      S.listItem()
+        .title('Services')
+        .icon(iconService)
+        .schemaType('service')
+        .child(S.documentTypeList('service').title('Services')),
+      S.listItem()
+        .title('Locations')
+        .icon(iconService)
+        .schemaType('location')
+        .child(S.documentTypeList('location').title('Locations')),
+      S.listItem()
         .title('Posts')
         .icon(iconPost)
         .schemaType('post')
@@ -106,6 +122,9 @@ export default () =>
             'pageHome',
             'pageAbout',
             'pageContact',
+            'page',
+            'service',
+            'location',
             'post',
             'author',
             'tag',

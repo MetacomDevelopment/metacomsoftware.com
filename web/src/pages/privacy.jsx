@@ -34,15 +34,17 @@ const PrivacyPage = ({ location }) => {
   const imgHeroBg = data.imgHeroBg.childImageSharp.gatsbyImageData;
 
   const seo = {
-    title: `NEED TO COMPLETE`,
-    description: 'NEED TO COMPLETE',
-    slug: location.pathname,
+    title: `We Respect Your Privacy Rights - Read Our Privacy Policy`,
+    description:
+      'All-Star Connections respects your privacy rights. Please read our privacy policy to understand which data we collect and why.',
+    slug: 'https://www.allstarconnections.com/privacy/',
   };
 
   const hero = {
     header: 'Our Privacy Policy',
-    subheader: 'This is going to be a short description',
-    alt: 'NEED TO COMPLETE',
+    subheader:
+      'We respect your privacy rights. Please read our privacy policy below.',
+    alt: 'All-Star Connections is a recruitment agency that respects your privacy. Read our privacy policy to understand why our staffing agency collects your data.',
   };
 
   return (

@@ -12,6 +12,7 @@ import useSanitySettingsMetadata from '../hooks/useSanitySettingsMetadata';
 import Layout from '../components/layout';
 import SEO from '../components/common/Seo';
 import HeaderPage from '../components/layouts/HeroPage';
+import Container from '../components/layouts/Container';
 
 const NotFoundPage = ({ location }) => {
   const data = useStaticQuery(graphql`
@@ -36,15 +37,17 @@ const NotFoundPage = ({ location }) => {
   const imgHeroBg = data.imgHeroBg.childImageSharp.gatsbyImageData;
 
   const seo = {
-    title: `NEED TO COMPLETE`,
-    description: 'NEED TO COMPLETE',
-    slug: location.pathname,
+    title: `Something Went Wrong! This Page Does Not Exist (404 Error)`,
+    description:
+      "The page you are trying to visit does not exist. Let's see if we can help you get on the right track!",
+    slug: 'https://www.allstarconnections.com/404/',
   };
 
   const hero = {
-    header: 'Page Not Found',
-    subheader: 'This is going to be a short description',
-    alt: 'NEED TO COMPLETE',
+    header: 'Something Went Wrong! This Page Does Not Exist (404 Error)',
+    subheader:
+      "The page you are trying to visit does not exist. Let's see if we can help you get on the right track!",
+    alt: 'All-Star Connections is an engineering recruitment agency that also provides staffing support for companies.',
   };
 
   const variants = {
@@ -104,76 +107,61 @@ const NotFoundPage = ({ location }) => {
         headerText={hero.header}
         subheaderText={hero.subheader}
       />
-      <div className="bg-white overflow-hidden">
-        <div className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-          <div className="hidden lg:block bg-gray-50 absolute top-0 bottom-0 left-3/4 w-screen" />
-          <motion.div
-            ref={ref}
-            variants={variants}
-            initial="hidden"
-            animate={controls}
-            transition={{ duration: 0.5, delay: 0 }}
-            className="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none"
-          >
-            <div>
-              <h2 className="text-base text-primary font-semibold tracking-wide uppercase">
-                Business Owner
-              </h2>
-              <h3 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                Meet {allCompany.owner}
-              </h3>
-            </div>
-          </motion.div>
-          <motion.div
-            ref={ref}
-            variants={variants}
-            initial="hidden"
-            animate={controls}
-            transition={{ duration: 0.5, delay: 0 }}
-            className="mt-8 lg:grid lg:grid-cols-2 lg:gap-8"
-          >
-            <div className="relative lg:row-start-1 lg:col-start-2">
-              <div className="relative text-base mx-auto max-w-prose lg:max-w-none">
-                {/* <div className="aspect-w-12 aspect-h-7">
-                  <GatsbyImage
-                    image={imgCompany}
-                    className="rounded-2xl shadow-xl"
-                    imgClassName="rounded-2xl shadow-xl"
-                    alt="Company"
-                    loading="lazy"
-                  />
-                </div> */}
-              </div>
-            </div>
-            <div className="mt-8 lg:mt-0">
-              <div className="text-base max-w-prose mx-auto lg:max-w-none">
-                <p className="text-lg text-gray-500">
-                  Sagittis scelerisque nulla cursus in enim consectetur quam.
-                  Dictum urna sed consectetur neque tristique pellentesque.
-                  Blandit amet, sed aenean erat arcu morbi.
-                </p>
-              </div>
-              <div className="mt-5 prose prose-indigo text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1">
-                <p>
-                  Sollicitudin tristique eros erat odio sed vitae, consequat
-                  turpis elementum. Lorem nibh vel, eget pretium arcu vitae.
-                  Eros eu viverra donec ut volutpat donec laoreet quam urna.
-                </p>
-                <p>
-                  Bibendum eu nulla feugiat justo, elit adipiscing. Ut tristique
-                  sit nisi lorem pulvinar. Urna, laoreet fusce nibh leo. Dictum
-                  et et et sit. Faucibus sed non gravida lectus dignissim
-                  imperdiet a.
-                </p>
-                <p>
-                  Dictum magnis risus phasellus vitae quam morbi. Quis lorem
-                  lorem arcu, metus, egestas netus cursus. In.
-                </p>
-              </div>
-            </div>
-          </motion.div>
+      <Container type="sm">
+        <div className="py-24 lg:max-w-3xl mx-auto">
+          <div className="text-center py-5 space-y-3">
+            <h2 className="text-xl font-normal text-gray-500 uppercase break-normal">
+              {allCompany.name}
+            </h2>
+            <h3 className="text-primary font-bold break-normal text-4xl capitalize">
+              Let's see if we can help
+            </h3>
+          </div>
+          <p className="py-5 text-xl text-center">
+            The page you are trying to visit does not exist. Check for a typo in
+            the URL.
+          </p>
+          <h3 className="py-5 font-bold">Try these links:</h3>
+          <div className="max-w-3xl">
+            <ul className="list-disc list-inside text-lg font-bold">
+              <li>
+                <Link to="/" className="text-accent hover:text-primary">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/about/" className="text-accent hover:text-primary">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/testimonials/"
+                  className="text-accent hover:text-primary"
+                >
+                  Testimonials
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/locations/"
+                  className="text-accent hover:text-primary"
+                >
+                  Locations
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact-us/"
+                  className="text-accent hover:text-primary"
+                >
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </Container>
     </Layout>
   );
 };

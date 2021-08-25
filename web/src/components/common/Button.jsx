@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 const Button = ({
   type,
@@ -19,6 +20,8 @@ const Button = ({
   borderRadius,
   btnShadow,
   focusColor,
+  anchor,
+  title,
 }) => {
   switch (type) {
     default:
@@ -48,6 +51,16 @@ const Button = ({
           <span className="drop-shadow-text-dark">{btnLabel}</span>
         </a>
       );
+    case 'anchor':
+      return (
+        <AnchorLink
+          to={anchor}
+          title={title}
+          className={`inline-flex items-center ${bgWidth} ${bgHeight} ${bgColor} ${bgColorHover} ${textSize} ${textWeight} ${textColor} ${textColorHover} border ${borderColor} ${borderColorHover} ${borderRadius} ${btnShadow} focus:outline-none focus:ring-2 focus:ring-offset-2 ${focusColor} hover:-translate-y-0.5 translate transform`}
+        >
+          <span className="drop-shadow-text-dark">{btnLabel}</span>
+        </AnchorLink>
+      );
   }
 };
 
@@ -68,6 +81,8 @@ Button.defaultProps = {
   borderRadius: `rounded-md`,
   btnShadow: `shadow-md`,
   focusColor: `focus:ring-gray-500`,
+  anchor: `/#form-footer`,
+  title: `Jump to Contact Form`,
 };
 
 Button.propTypes = {
@@ -87,6 +102,8 @@ Button.propTypes = {
   borderRadius: PropTypes.string,
   btnShadow: PropTypes.string,
   focusColor: PropTypes.string,
+  anchor: PropTypes.string,
+  title: PropTypes.string,
 };
 
 export default Button;

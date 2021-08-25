@@ -14,6 +14,10 @@ import SEO from '../components/common/Seo';
 import HeaderPage from '../components/layouts/HeroPage';
 import PageSidebar from '../components/layouts/PageSidebar';
 import Testimonial from '../components/common/Testimonial';
+import Container from '../components/layouts/Container';
+import Section from '../components/layouts/Section';
+import Grid from '../components/layouts/Grid';
+import Col from '../components/layouts/Col';
 
 const TestimonialsPage = ({ location }) => {
   const data = useStaticQuery(graphql`
@@ -138,16 +142,17 @@ const TestimonialsPage = ({ location }) => {
   const imgMatt = data.imgMatt.childImageSharp.gatsbyImageData;
 
   const seo = {
-    title: `NEED TO COMPLETE`,
-    description: 'NEED TO COMPLETE',
-    slug: location.pathname,
+    title: `5-Star Recruitment Agency Reviews & Testimonials`,
+    description:
+      'We have earned many 5-star reviews from satisfied clients. Read how they received high-quality candidates that resulted in permanent placements.',
+    slug: 'https://www.allstarconnections.com/testimonials/',
   };
 
   const hero = {
     header: '5-Star Recruiting Agency Testimonials',
     subheader:
       'Read our 5-star reviews on LinkedIn and Google Reviews from satisfied clients',
-    alt: 'NEED TO COMPLETE',
+    alt: 'All-Star Connections is a recruitment agency that focuses on permanent placements in engineering companies.',
   };
 
   const testimonials = [
@@ -310,84 +315,46 @@ const TestimonialsPage = ({ location }) => {
         headerText={hero.header}
         subheaderText={hero.subheader}
       />
-      <PageSidebar>
-        <div className="space-y-12">
-          <div className="space-y-6">
-            <h2>Highly Rated Staffing Agency</h2>
-            <p>
-              Over the years, All-Star Connections has received numerous 5-star
-              reviews on LinkedIn and Google Reviews for our top-notch staffing
-              in highly competitive marketplaces.{' '}
-            </p>
-            <p>
-              The results of our flexible, friendly recruitment solutions for
-              big corporations as well as small businesses speak for themselves.
-            </p>
-            <div className="py-10 space-y-16">
-              {testimonials.map((testimonial) => (
-                <Testimonial
-                  containerStyles="bg-primary"
-                  header={testimonial.header}
-                  headerStyles="text-white"
-                  testimonial={testimonial.testimonial}
-                  testimonialStyles="text-gray-100"
-                  imgTestimonial={testimonial.img}
-                  imgAlt={testimonial.imgAlt}
-                  imgStyles=""
-                  author={testimonial.author}
-                  authorStyles="text-blue-300"
-                  position={testimonial.position}
-                  positionStyles="text-gray-50"
-                  company={testimonial.company}
-                />
-              ))}
+      <Section>
+        <Container>
+          <PageSidebar>
+            <div className="space-y-12">
+              <div className="space-y-6">
+                <h2>Highly Rated Staffing Agency</h2>
+                <p>
+                  Over the years, All-Star Connections has received numerous
+                  5-star reviews on LinkedIn and Google Reviews for our
+                  top-notch staffing in highly competitive marketplaces.{' '}
+                </p>
+                <p>
+                  The results of our flexible, friendly recruitment solutions
+                  for big corporations as well as small businesses speak for
+                  themselves.
+                </p>
+                <div className="py-10 space-y-16">
+                  {testimonials.map((testimonial) => (
+                    <Testimonial
+                      containerStyles="bg-primary"
+                      header={testimonial.header}
+                      headerStyles="text-white"
+                      testimonial={testimonial.testimonial}
+                      testimonialStyles="text-gray-100"
+                      imgTestimonial={testimonial.img}
+                      imgAlt={testimonial.imgAlt}
+                      imgStyles=""
+                      author={testimonial.author}
+                      authorStyles="text-blue-300"
+                      position={testimonial.position}
+                      positionStyles="text-gray-50"
+                      company={testimonial.company}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
-
-            <div className="space-y-6">
-              <h2>
-                Guaranteed Placement Sustainability Or We'll Replace For Free
-              </h2>
-              <p>
-                We value your time and want your new hire to remain permanent.{' '}
-              </p>
-              <p>
-                Our thorough vetting process ensures that our talent pool is
-                stocked with candidates who are a perfect match for your
-                business.
-              </p>
-              <p>
-                Since we have such a high success rate, we now{' '}
-                <strong>guarantee placement sustainability</strong>.
-              </p>
-              <p>
-                If this is not the case,{' '}
-                <em>we will locate and place someone for free</em>.
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              <h2>
-                Contact All-Star Connections for Staffing & Recruitment Support
-              </h2>
-              <p>
-                Learn more about how our professional recruitment firm can help
-                by calling us today or fill out our contact form to schedule an
-                appointment.
-              </p>
-              <p>We look forward to helping your company grow.</p>
-              <p className="lg:w-max mx-auto lg:mx-0 text-center text-white font-semibold text-xl lg:text-2xl italic py-3 px-6 lg:p-6 bg-primary border-2 border-accent rounded-xl shadow-lg">
-                Call our recruiting agency today at{' '}
-                <a
-                  href={allCompany.phoneHref}
-                  className="text-accent hover:text-white font-bold text-xl lg:text-2xl"
-                >
-                  {allCompany.phone}
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </PageSidebar>
+          </PageSidebar>
+        </Container>
+      </Section>
     </Layout>
   );
 };
