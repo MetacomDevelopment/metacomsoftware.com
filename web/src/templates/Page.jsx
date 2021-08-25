@@ -48,16 +48,17 @@ const PageTemplate = (props) => {
   const { pageBuilder, _rawPageBuilder } = page;
 
   const sanity = data.page;
-  const seo = {
-    title: sanity.title,
-    description: sanity.title,
-    slug: `${allCompany.website}/${sanity.slug.current}/`,
-  };
 
   const { ...allCompany } = useSanitySettingsCompany();
   const { ...allSocials } = useSanitySettingsSocials();
   const { ...allColors } = useSanitySettingsColors();
   const { ...allMetadata } = useSanitySettingsMetadata();
+
+  const seo = {
+    title: sanity.title,
+    description: sanity.title,
+    slug: `${allCompany.website}/${sanity.slug.current}/`,
+  };
 
   return (
     <Layout>

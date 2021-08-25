@@ -43,16 +43,17 @@ export const query = graphql`
 
 const ServiceTemplate = ({ data }) => {
   const sanity = data.sanityService;
-  const seo = {
-    title: sanity.title,
-    description: sanity.title,
-    slug: `${allCompany.website}/${sanity.slug.current}/`,
-  };
 
   const { ...allCompany } = useSanitySettingsCompany();
   const { ...allSocials } = useSanitySettingsSocials();
   const { ...allColors } = useSanitySettingsColors();
   const { ...allMetadata } = useSanitySettingsMetadata();
+
+  const seo = {
+    title: sanity.title,
+    description: sanity.title,
+    slug: `${allCompany.website}/${sanity.slug.current}/`,
+  };
 
   return (
     <Layout>
