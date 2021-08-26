@@ -32,12 +32,6 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     'gatsby-plugin-loadable-components-ssr',
     {
-      resolve: 'gatsby-plugin-zopfli',
-      options: {
-        extensions: ['css', 'html', 'js', 'jsx', 'ts', 'tsx', 'svg'],
-      },
-    },
-    {
       resolve: 'gatsby-plugin-anchor-links',
       options: {
         offset: -144,
