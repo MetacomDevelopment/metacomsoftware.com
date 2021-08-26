@@ -135,7 +135,7 @@ const BlogPage = ({ location }) => {
               Check Our Latest Recruiting Posts
             </h2>
           </div>
-          <Grid cols={3} gapY={32}>
+          <Grid classes="lg:grid-cols-2 gap-x-12 gap-y-24">
             {posts.map((post) => (
               <Col>
                 <Link

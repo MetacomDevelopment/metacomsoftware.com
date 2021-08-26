@@ -111,7 +111,7 @@ const ContactUsPage = ({ location }) => {
       />
       <Section classes="bg-white overflow-hidden">
         <Container classes="space-y-12">
-          <Grid cols={1} gapXs={16} gapLg={16}>
+          <Grid classes="lg:grid-cols-1 gap-x-12 gap-y-32">
             <Col
               ref={ref}
               variants={variants}

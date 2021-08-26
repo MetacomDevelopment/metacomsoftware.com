@@ -47,7 +47,7 @@ const FormFooter = () => {
       </div>
       <input type="hidden" name="form-name" value="form-footer" />
 
-      <Grid cols={2} gapX={4} gapY={6} gapXs={8} gapLg={2}>
+      <Grid classes="lg:grid-cols-2 gap-6">
         <Col>
           <input
             name="firstName"

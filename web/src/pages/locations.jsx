@@ -123,8 +123,8 @@ const LocationsPage = ({ location }) => {
       />
       <Section classes="bg-white">
         <Container>
-          <Grid cols={2} gapY={32}>
-            <Col lg={2}>
+          <Grid classes="lg:grid-cols-2 gap-x-12 gap-y-32">
+            <Col classes="order-1 lg:order-2">
               <Container type="img">
                 <GatsbyImage
                   image={imgBoston}
@@ -135,7 +135,7 @@ const LocationsPage = ({ location }) => {
                 />
               </Container>
             </Col>
-            <Col lg={1}>
+            <Col classes="order-2 lg:order-1">
               <div className="text-lg text-gray-500 max-w-prose mx-auto lg:max-w-none space-y-10">
                 <div className="space-y-6">
                   <h2 className="text-3xl text-primary font-extrabold tracking-wide capitalize">
@@ -193,7 +193,7 @@ const LocationsPage = ({ location }) => {
                 </div>
               </div>
             </Col>
-            <Col lg={3}>
+            <Col classes="order-3 lg:order-3">
               <Container type="img">
                 <GatsbyImage
                   image={imgHouston}
@@ -204,7 +204,7 @@ const LocationsPage = ({ location }) => {
                 />
               </Container>
             </Col>
-            <Col lg={4}>
+            <Col classes="order-4 lg:order-4">
               <div className="text-lg text-gray-500 max-w-prose mx-auto lg:max-w-none space-y-10">
                 <div className="space-y-6">
                   <h2 className="text-3xl text-primary font-extrabold tracking-wide capitalize">
@@ -262,7 +262,7 @@ const LocationsPage = ({ location }) => {
                 </div>
               </div>
             </Col>
-            <Col lg={6}>
+            <Col classes="order-5 lg:order-6">
               <Container type="img">
                 <GatsbyImage
                   image={imgSanDiego}
@@ -273,7 +273,7 @@ const LocationsPage = ({ location }) => {
                 />
               </Container>
             </Col>
-            <Col lg={5}>
+            <Col classes="order-6 lg:order-5">
               <div className="text-lg text-gray-500 max-w-prose mx-auto lg:max-w-none space-y-10">
                 <div className="space-y-6">
                   <h2 className="text-3xl text-primary font-extrabold tracking-wide capitalize">
