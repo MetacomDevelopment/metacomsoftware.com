@@ -105,7 +105,7 @@ const LinkFooter = () => {
       },
       {
         label: 'Information Technology',
-        link: '/information-technology/',
+        link: '/it-technology/',
       },
       {
         label: 'Civil & Structural Engineering',
@@ -127,7 +127,7 @@ const LinkFooter = () => {
       },
       {
         label: `${company.hours}`,
-        link: `${socials.gmbShare}`,
+        link: `${socials.gmbCid}`,
       },
     ],
   };
