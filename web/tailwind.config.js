@@ -26,8 +26,8 @@ const heroHeadline = {
 };
 
 module.exports = {
+  mode: 'jit',
   future: {},
-  // purge: ["./src/**/*.js", "./src/**/*.jsx", "./src/**/*.ts", "./src/**/*.tsx"],
   purge: ['./public/**/*.html', './src/**/*.{js,jsx,ts,tsx,vue}'],
   theme: {
     colors: {
@@ -79,15 +79,7 @@ module.exports = {
     },
     extend: {},
   },
-  variants: {
-    extend: {
-      backgroundColor: ['active'],
-    },
-  },
-  // plugins: {
-  //   "@tailwindcss/jit": {},
-  //   autoprefixer: {},
-  // },
+  variants: {},
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
