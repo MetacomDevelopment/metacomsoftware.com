@@ -107,7 +107,7 @@ const ContactUsPage = ({ location }) => {
         altText={hero.alt}
         headerText={hero.header}
         subheaderText={hero.subheader}
-        anchor="/contact-us#form-footer"
+        anchor="/contact-us#form-footer/"
       />
       <Section classes="bg-white overflow-hidden">
         <Container classes="space-y-12">
