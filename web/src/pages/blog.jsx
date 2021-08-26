@@ -145,7 +145,7 @@ const BlogPage = ({ location }) => {
                   <Container type="img">
                     <GatsbyImage
                       image={post.bgImg.asset.gatsbyImageData}
-                      className="rounded-2xl shadow-xl"
+                      className="aspect-w-12 aspect-h-7 rounded-2xl shadow-xl"
                       imgClassName="w-full h-full object-center object-cover"
                       alt="Company"
                       loading="lazy"

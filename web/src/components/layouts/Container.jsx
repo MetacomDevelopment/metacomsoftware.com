@@ -8,11 +8,7 @@ const Container = ({ type, children, classes }) => {
         <div className={`mx-auto sm:px-6 lg:px-8 ${classes}`}>{children}</div>
       );
     case 'img':
-      return (
-        <div className={`mx-auto w-full aspect-w-12 aspect-h-7 ${classes}`}>
-          {children}
-        </div>
-      );
+      return <div className={`mx-auto w-full ${classes}`}>{children}</div>;
     case 'full':
       return (
         <div className={`mx-auto sm:px-6 lg:px-8 ${classes}`}>{children}</div>

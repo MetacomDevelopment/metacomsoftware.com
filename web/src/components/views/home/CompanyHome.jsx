@@ -85,7 +85,7 @@ const CompanyHome = () => {
             <Container type="img">
               <GatsbyImage
                 image={imgMeeting}
-                className="rounded-2xl shadow-xl"
+                className="aspect-w-12 aspect-h-7 rounded-2xl shadow-xl"
                 imgClassName="w-full h-full object-center object-cover"
                 alt="Company"
                 loading="lazy"
@@ -126,7 +126,7 @@ const CompanyHome = () => {
             <Container type="img">
               <GatsbyImage
                 image={imgPlacement}
-                className="rounded-2xl shadow-xl"
+                className="aspect-w-12 aspect-h-7 rounded-2xl shadow-xl"
                 imgClassName="w-full h-full object-center object-cover"
                 alt="Company"
                 loading="lazy"
@@ -175,7 +175,7 @@ const CompanyHome = () => {
             <Container type="img">
               <GatsbyImage
                 image={imgEngineer}
-                className="rounded-2xl shadow-xl"
+                className="aspect-w-12 aspect-h-7 rounded-2xl shadow-xl"
                 imgClassName="w-full h-full object-center object-cover"
                 alt="Company"
                 loading="lazy"
