@@ -140,10 +140,10 @@ const AccessibilityPage = ({ location }) => {
             </a>{' '}
             defines requirements for designers and developers to improve
             accessibility for people with disabilities. It defines three levels
-            of conformance: Level A, Level AA, and Level AAA. Citylights
-            WebStore is partially conformant with WCAG 2.1 level AA. Partially
-            conformant means that some parts of the content do not fully conform
-            to the accessibility standard.
+            of conformance: Level A, Level AA, and Level AAA. {allCompany.name}{' '}
+            is partially conformant with WCAG 2.1 level AA. Partially conformant
+            means that some parts of the content do not fully conform to the
+            accessibility standard.
           </p>
 
           <h4 className="py-5 font-bold capitalize">
@@ -195,7 +195,7 @@ const AccessibilityPage = ({ location }) => {
             Compatibility with browsers and assistive technology
           </h3>
           <p>
-            {allCompany.name}'s website is designed to be compatible with the
+            {allCompany.name}' website is designed to be compatible with the
             following assistive technologies:
           </p>
           <ul className="list-disc list-inside">
@@ -204,7 +204,7 @@ const AccessibilityPage = ({ location }) => {
               Z&quot;
             </li>
           </ul>
-          <p>{allCompany.name}'s website is not compatible with:</p>
+          <p>{allCompany.name}' website is not compatible with:</p>
           <ul className="list-disc list-inside">
             <li>
               &quot;browsers older than 3 major versions&quot; or &quot;Mobile
@@ -213,7 +213,7 @@ const AccessibilityPage = ({ location }) => {
           </ul>
           <h3 className="font-bold capitalize">Technical specifications</h3>
           <p>
-            Accessibility of Citylights WebStore relies on the following
+            Accessibility of {allCompany.name} relies on the following
             technologies to work with the particular combination of web browser
             and any assistive technologies or plugins installed on your
             computer:
@@ -227,12 +227,12 @@ const AccessibilityPage = ({ location }) => {
 
           <h3 className="font-bold capitalize">Limitations and alternatives</h3>
           <p>
-            Despite our best efforts to ensure accessibility of Citylights
-            WebStore, there may be some limitations. Below is a description of
-            known limitations, and potential solutions. Please contact us if you
-            observe an issue not listed below.
+            Despite our best efforts to ensure accessibility of{' '}
+            {allCompany.name}, there may be some limitations. Below is a
+            description of known limitations, and potential solutions. Please
+            contact us if you observe an issue not listed below.
           </p>
-          <p>Known limitations for {allCompany.name}'s website:</p>
+          <p>Known limitations for {allCompany.name}' website:</p>
           <ol className="list-decimal list-inside">
             <li>
               <span className="font-bold">Comments from users</span>: uploaded
