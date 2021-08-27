@@ -16,7 +16,7 @@ const AccessibilityPage = ({ location }) => {
     query AccessibilityPageQ {
       imgHeroBg: file(
         relativePath: {
-          eq: "assets/images/accessibility/web-accessibility-landscaping-services-braven-landscape-construction-plympton-ma.jpg"
+          eq: "assets/images/accessibility/accessibility-job-recruiter-staffing-agency-all-star-connections.jpg"
         }
       ) {
         childImageSharp {

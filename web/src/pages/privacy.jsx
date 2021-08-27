@@ -16,7 +16,7 @@ const PrivacyPage = ({ location }) => {
     query PrivacyPageQ {
       imgHeroBg: file(
         relativePath: {
-          eq: "assets/images/privacy/privacy-policy-landscaping-services-braven-landscape-construction-plympton-ma.jpg"
+          eq: "assets/images/privacy/privacy-policy-job-recruiter-staffing-agency-all-star-connections.jpg"
         }
       ) {
         childImageSharp {

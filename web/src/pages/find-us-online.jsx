@@ -16,7 +16,7 @@ const FindUsOnlinePage = ({ location }) => {
     query FindUsOnlinePageQ {
       imgHeroBg: file(
         relativePath: {
-          eq: "assets/images/find-us-online/find-us-online-landscaping-services-braven-landscape-construction-plympton-ma.jpg"
+          eq: "assets/images/find-us-online/find-us-online-job-recruiter-staffing-agency-all-star-connections.jpg"
         }
       ) {
         childImageSharp {
