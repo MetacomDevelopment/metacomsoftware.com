@@ -5,6 +5,9 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
+import Grid from '../../layouts/Grid';
+import Col from '../../layouts/Col';
+
 const FeaturesHome = () => {
   const data = useStaticQuery(graphql`
     query FeaturesHomeQ {
@@ -56,32 +59,25 @@ const FeaturesHome = () => {
     {
       name: 'Medical Device & Biotechnology',
       image: imgFeatureOne,
-      alt: 'Gardening services for front yard and backyard of residential homes and commercial businesses.',
-      description: 'Regulatory, Quality, Research, Laboratory, Engineering',
+      alt: 'All-Star Connections is a medical device recruiting agency and a biotechnology recruiting agency.',
       link: '/medical-device-biotechnology/',
     },
     {
       name: 'Information Technology (IT)',
       image: imgFeatureTwo,
-      alt: 'Landscaping services for front yard and backyard of residential homes and commercial businesses.',
-      description:
-        "Mobile, UI, Front/Back End Developers, SWE's, Network Engineers, Embedded/Firmware Engineers, Database Admins/Engineers, DevOps/Cloud Developers, Project Management",
+      alt: 'All-Star Connections is an information technology (IT) recruiting agency.',
       link: '/it-technology/',
     },
     {
       name: 'Civil & Structural Engineering',
       image: imgFeatureFour,
-      alt: 'Construction services for front yard and backyard of residential homes and commercial businesses.',
-      description:
-        'Structural, Transportation, Geotechnical, Water Resource, Forensics, Surveying, Construction/Project Management, Environmental Health & Safety',
+      alt: 'All-Star Connections is a civil & structural engineering recruiting agency.',
       link: '/civil-structural-engineering/',
     },
     {
       name: 'Manufacturing',
       image: imgFeatureThree,
-      alt: 'Construction services for front yard and backyard of residential homes and commercial businesses.',
-      description:
-        'Quality Engineering, Mechanical Engineering, Electrical Engineering, Manufacturing Engineering, Process Engineering, Operations Excellence, Chemical Engineering, Industrial Engineering, Aerospace Engineering, Environmental Health & Safety',
+      alt: 'All-Star Connections is a manufacturing recruiting agency.',
       link: '/manufacturing/',
     },
   ];
@@ -135,9 +131,9 @@ const FeaturesHome = () => {
           industries so that we deliver the best results to our clients.
         </p>
         <div className="mt-12">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 grid-flow-row auto-rows-fr">
+          <Grid classes="gap-8 sm:grid-cols-2 grid-flow-row auto-rows-fr">
             {features.map((feature) => (
-              <div key={feature.name} className="pt-6 h-full">
+              <Col key={feature.name} className="pt-6 h-full">
                 <motion.div
                   ref={ref}
                   variants={itemVariants}
@@ -160,11 +156,7 @@ const FeaturesHome = () => {
                           {feature.name}
                         </span>
                       </h3>
-                      {/* <p className="mt-5 mb-8 text-base text-gray-50 drop-shadow-text-darker">
-                        <span className="drop-shadow-text-darker">
-                          {feature.description}
-                        </span>
-                      </p> */}
+
                       <Link
                         to={feature.link}
                         className="text-xl font-medium text-accent hover:text-gray-300"
@@ -174,9 +166,9 @@ const FeaturesHome = () => {
                     </div>
                   </Link>
                 </motion.div>
-              </div>
+              </Col>
             ))}
-          </div>
+          </Grid>
         </div>
       </motion.div>
     </div>

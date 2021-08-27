@@ -82,87 +82,35 @@ const BenefitsBoston = () => {
         </p> */}
         <div className="mt-20">
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 lg:grid-cols-3">
-            <div className="pt-6">
-              <motion.div
-                ref={ref}
-                variants={itemVariants}
-                className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-              >
-                <div className="">
+            {benefits.map((benefit) => (
+              <div className="pt-6">
+                <motion.div
+                  ref={ref}
+                  variants={itemVariants}
+                  className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+                >
                   <div className="">
-                    <TimeIcon className="h-40 w-40 mx-auto text-primary fill-current" />
+                    <div className="">
+                      <TimeIcon className="h-40 w-40 mx-auto text-primary fill-current" />
+                    </div>
+                    <div className="relative z-10">
+                      <h3 className="mt-8 text-3xl font-medium text-gray-800">
+                        <span className="">{benefit.name}</span>
+                      </h3>
+                      <p className="mt-5 mb-8 text-xl text-gray-500 italic">
+                        <span className="">{benefit.description}</span>
+                      </p>
+                      <p className="mt-5 text-base text-primary font-bold">
+                        <span>{benefit.author}</span>
+                      </p>
+                      <p className="mb-8 text-base text-gray-800 font-semibold">
+                        <span>{benefit.position}</span>
+                      </p>
+                    </div>
                   </div>
-                  <div className="relative z-10">
-                    <h3 className="mt-8 text-3xl font-medium text-gray-800">
-                      <span className="">{benefits[0].name}</span>
-                    </h3>
-                    <p className="mt-5 mb-8 text-xl text-gray-500 italic">
-                      <span className="">{benefits[0].description}</span>
-                    </p>
-                    <p className="mt-5 text-base text-primary font-bold">
-                      <span>{benefits[0].author}</span>
-                    </p>
-                    <p className="mb-8 text-base text-gray-800 font-semibold">
-                      <span>{benefits[0].position}</span>
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-            <div className="pt-6">
-              <motion.div
-                ref={ref}
-                variants={itemVariants}
-                className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-              >
-                <div className="">
-                  <div className="">
-                    <RecruitmentIcon className="h-40 w-40 mx-auto text-primary fill-current" />
-                  </div>
-                  <div className="relative z-10">
-                    <h3 className="mt-8 text-3xl font-medium text-gray-800">
-                      <span className="">{benefits[1].name}</span>
-                    </h3>
-                    <p className="mt-5 text-xl text-gray-500 italic">
-                      <span className="">{benefits[1].description}</span>
-                    </p>
-                    <p className="mt-5 text-base text-primary font-bold">
-                      <span>{benefits[1].author}</span>
-                    </p>
-                    <p className="mb-8 text-base text-gray-800 font-semibold">
-                      <span>{benefits[1].position}</span>
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-            <div className="pt-6">
-              <motion.div
-                ref={ref}
-                variants={itemVariants}
-                className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-              >
-                <div className="">
-                  <div className="">
-                    <GrowthIcon className="h-40 w-40 mx-auto text-primary fill-current" />
-                  </div>
-                  <div className="relative z-10">
-                    <h3 className="mt-8 text-3xl font-medium text-gray-800">
-                      <span className="">{benefits[2].name}</span>
-                    </h3>
-                    <p className="mt-5 text-xl text-gray-500 italic">
-                      <span className="">{benefits[2].description}</span>
-                    </p>
-                    <p className="mt-5 text-base text-primary font-bold">
-                      <span>{benefits[2].author}</span>
-                    </p>
-                    <p className="mb-8 text-base text-gray-800 font-semibold">
-                      <span>{benefits[2].position}</span>
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
+                </motion.div>
+              </div>
+            ))}
           </div>
         </div>
       </motion.div>

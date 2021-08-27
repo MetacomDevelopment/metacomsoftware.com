@@ -5,6 +5,9 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
+import Grid from '../../layouts/Grid';
+import Col from '../../layouts/Col';
+
 const ServicesHouston = () => {
   const data = useStaticQuery(graphql`
     query ServicesHoustonQ {
@@ -56,32 +59,29 @@ const ServicesHouston = () => {
     {
       name: 'Medical Device & Biotechnology',
       image: imgServiceOne,
-      alt: 'Gardening services for front yard and backyard of residential homes and commercial businesses.',
-      description: 'Regulatory, Quality, Research, Laboratory, Engineering',
+      alt: 'All-Star Connections is a medical device recruiting agency and a biotechnology recruiting agency in Houston, TX.',
+
       link: '/medical-device-biotechnology/',
     },
     {
       name: 'Information Technology (IT)',
       image: imgServiceTwo,
-      alt: 'Landscaping services for front yard and backyard of residential homes and commercial businesses.',
-      description:
-        "Mobile, UI, Front/Back End Developers, SWE's, Network Engineers, Embedded/Firmware Engineers, Database Admins/Engineers, DevOps/Cloud Developers, Project Management",
+      alt: 'All-Star Connections is an information technology (IT) recruiting agency in Houston, TX.',
+
       link: '/it-technology/',
     },
     {
       name: 'Civil & Structural Engineering',
       image: imgServiceFour,
-      alt: 'Construction services for front yard and backyard of residential homes and commercial businesses.',
-      description:
-        'Structural, Transportation, Geotechnical, Water Resource, Forensics, Surveying, Construction/Project Management, Environmental Health & Safety',
+      alt: 'All-Star Connections is a civil & structural engineering recruiting agency in Houston, TX.',
+
       link: '/civil-structural-engineering/',
     },
     {
       name: 'Manufacturing',
       image: imgServiceThree,
-      alt: 'Construction services for front yard and backyard of residential homes and commercial businesses.',
-      description:
-        'Quality Engineering, Mechanical Engineering, Electrical Engineering, Manufacturing Engineering, Process Engineering, Operations Excellence, Chemical Engineering, Industrial Engineering, Aerospace Engineering, Environmental Health & Safety',
+      alt: 'All-Star Connections is a manufacturing recruiting agency in Houston, TX.',
+
       link: '/manufacturing/',
     },
   ];
@@ -135,9 +135,9 @@ const ServicesHouston = () => {
           industries so that we deliver the best results to our clients.
         </p>
         <div className="mt-12">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 grid-flow-row auto-rows-fr">
+          <Grid classes="gap-8 sm:grid-cols-2 grid-flow-row auto-rows-fr">
             {features.map((feature) => (
-              <div key={feature.name} className="pt-6 h-full">
+              <Col key={feature.name} className="pt-6 h-full">
                 <motion.div
                   ref={ref}
                   variants={itemVariants}
@@ -160,11 +160,7 @@ const ServicesHouston = () => {
                           {feature.name}
                         </span>
                       </h3>
-                      {/* <p className="mt-5 mb-8 text-base text-gray-50 drop-shadow-text-darker">
-                        <span className="drop-shadow-text-darker">
-                          {feature.description}
-                        </span>
-                      </p> */}
+
                       <Link
                         to={feature.link}
                         className="text-xl font-medium text-accent hover:text-gray-300"
@@ -174,9 +170,9 @@ const ServicesHouston = () => {
                     </div>
                   </Link>
                 </motion.div>
-              </div>
+              </Col>
             ))}
-          </div>
+          </Grid>
         </div>
       </motion.div>
     </div>

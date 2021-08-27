@@ -147,7 +147,7 @@ const HeroLocations = ({ imgHeroBg, altText, headerText, subheaderText }) => {
           initial="hidden"
           animate={controls}
           transition={{ duration: 0.5, delay: 0 }}
-          className="relative text-left p-8"
+          className="relative text-left p-8 lg:mt-14"
         >
           <div className="bg-opacity-80 bg-primary overflow-hidden rounded-2xl shadow-2xl">
             <div className="relative max-w-7xl mx-auto p-8">
