@@ -17,7 +17,7 @@ import Testimonial from '../components/common/Testimonial';
 import Container from '../components/layouts/Container';
 import Section from '../components/layouts/Section';
 import Grid from '../components/layouts/Grid';
-import Col from '../components/layouts/Col';
+import Row from '../components/layouts/Row';
 
 const TestimonialsPage = ({ location }) => {
   const data = useStaticQuery(graphql`
@@ -331,25 +331,27 @@ const TestimonialsPage = ({ location }) => {
                   for big corporations as well as small businesses speak for
                   themselves.
                 </p>
-                <div className="py-10 space-y-16">
+                <Grid classes="grid-col-1 gap-y-16">
                   {testimonials.map((testimonial) => (
-                    <Testimonial
-                      containerStyles="bg-primary"
-                      header={testimonial.header}
-                      headerStyles="text-white"
-                      testimonial={testimonial.testimonial}
-                      testimonialStyles="text-gray-100"
-                      imgTestimonial={testimonial.img}
-                      imgAlt={testimonial.imgAlt}
-                      imgStyles=""
-                      author={testimonial.author}
-                      authorStyles="text-blue-300"
-                      position={testimonial.position}
-                      positionStyles="text-gray-50"
-                      company={testimonial.company}
-                    />
+                    <Row>
+                      <Testimonial
+                        containerStyles="bg-primary"
+                        header={testimonial.header}
+                        headerStyles="text-white"
+                        testimonial={testimonial.testimonial}
+                        testimonialStyles="text-gray-100"
+                        imgTestimonial={testimonial.img}
+                        imgAlt={testimonial.imgAlt}
+                        imgStyles=""
+                        author={testimonial.author}
+                        authorStyles="text-blue-300"
+                        position={testimonial.position}
+                        positionStyles="text-gray-50"
+                        company={testimonial.company}
+                      />
+                    </Row>
                   ))}
-                </div>
+                </Grid>
               </div>
             </div>
           </PageSidebar>

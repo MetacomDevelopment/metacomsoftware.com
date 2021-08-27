@@ -30,7 +30,7 @@ module.exports = {
     `gatsby-plugin-netlify`,
     `gatsby-plugin-force-trailing-slashes`,
     `gatsby-plugin-sitemap`,
-    'gatsby-plugin-loadable-components-ssr',
+    // 'gatsby-plugin-loadable-components-ssr',
     {
       resolve: 'gatsby-plugin-anchor-links',
       options: {

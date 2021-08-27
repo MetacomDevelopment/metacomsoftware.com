@@ -84,7 +84,7 @@ const HeroLocations = ({ imgHeroBg, altText, headerText, subheaderText }) => {
           aria-hidden="true"
         />
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-7xl mx-auto mt-32 py-24">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-7xl mx-auto mt-16 lg:mt-32 py-12 lg:py-24">
         <div className="relative text-center lg:text-left pt-5 pb-5 px-4 sm:pt-10 sm:pb-12 sm:px-6 lg:px-8">
           <motion.h1
             ref={ref}
@@ -92,7 +92,7 @@ const HeroLocations = ({ imgHeroBg, altText, headerText, subheaderText }) => {
             initial="hidden"
             animate={controls}
             transition={{ duration: 0.5, delay: 0 }}
-            className="text-4xl font-extrabold tracking-tight drop-shadow-text-darker sm:text-5xl lg:text-6xl capitalize mb-10 text-lightBlue-100"
+            className="text-5xl font-extrabold tracking-tight drop-shadow-text-darker sm:text-5xl lg:text-6xl capitalize mb-10 text-sky-100"
             // style={{ color: allColors.heroHeadlineColor.hex }}
           >
             {headerText}
@@ -103,7 +103,7 @@ const HeroLocations = ({ imgHeroBg, altText, headerText, subheaderText }) => {
             initial="hidden"
             animate={controls}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-6 text-2xl max-w-3xl drop-shadow-darker space-y-6"
+            className="mt-6 text-xl lg:text-2xl max-w-3xl drop-shadow-darker space-y-6"
             style={{ color: allColors.heroSubheadlineColor.hex }}
           >
             {subheaderText}
@@ -114,7 +114,7 @@ const HeroLocations = ({ imgHeroBg, altText, headerText, subheaderText }) => {
             initial="hidden"
             animate={controls}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-6 text-xl max-w-3xl drop-shadow-darker space-y-6"
+            className="mt-6 text-xl max-w-3xl drop-shadow-darker space-y-6 hidden lg:block"
             style={{ color: allColors.heroSubheadlineColor.hex }}
           >
             {allSanity.nodes.map((node) => (
@@ -136,7 +136,7 @@ const HeroLocations = ({ imgHeroBg, altText, headerText, subheaderText }) => {
             }}
             className="flex mt-10"
           >
-            <div className="">
+            <div className="mx-auto lg:mx-0">
               <Button type="internal" />
             </div>
           </motion.div>
@@ -147,10 +147,10 @@ const HeroLocations = ({ imgHeroBg, altText, headerText, subheaderText }) => {
           initial="hidden"
           animate={controls}
           transition={{ duration: 0.5, delay: 0 }}
-          className="relative text-left pt-5 pb-24 px-4 sm:py-16 sm:px-6 lg:px-8"
+          className="relative text-left p-8"
         >
-          <section className="bg-opacity-80 bg-primary overflow-hidden rounded-2xl shadow-2xl">
-            <div className="relative max-w-7xl mx-auto pt-0 pb-12 px-4 sm:px-6 lg:px-8 lg:py-10">
+          <div className="bg-opacity-80 bg-primary overflow-hidden rounded-2xl shadow-2xl">
+            <div className="relative max-w-7xl mx-auto p-8">
               <div className="relative lg:flex lg:items-center">
                 <div className="hidden lg:block lg:flex-shrink-0">
                   <GatsbyImage
@@ -205,7 +205,7 @@ const HeroLocations = ({ imgHeroBg, altText, headerText, subheaderText }) => {
                 </div>
               </div>
             </div>
-          </section>
+          </div>
         </motion.div>
       </div>
     </div>

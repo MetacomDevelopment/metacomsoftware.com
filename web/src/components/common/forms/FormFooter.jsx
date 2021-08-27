@@ -47,7 +47,7 @@ const FormFooter = () => {
       </div>
       <input type="hidden" name="form-name" value="form-footer" />
 
-      <Grid classes="lg:grid-cols-2 gap-6">
+      <Grid classes="gap-x-4 gap-y-6 lg:grid-cols-2">
         <Col>
           <input
             name="firstName"
@@ -129,7 +129,7 @@ const FormFooter = () => {
             </option>
           </select>
         </Col>
-        <Col classes="col-span-2">
+        <Col classes="lg:col-span-2">
           <select
             name="findUs"
             as="select"
@@ -157,7 +157,7 @@ const FormFooter = () => {
             </option>
           </select>
         </Col>
-        <Col classes="col-span-2">
+        <Col classes="lg:col-span-2">
           <textarea
             name="message"
             rows="3"

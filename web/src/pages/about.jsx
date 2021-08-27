@@ -143,7 +143,7 @@ const AboutPage = ({ location }) => {
       />
       <Section classes="bg-white">
         <Container>
-          <Grid classes="lg:grid-cols-2 gap-x-12 gap-y-32">
+          <Grid classes="lg:grid-cols-2 gap-x-12 gap-y-14 lg:gap-y-32">
             <Col classes="order-1 lg:order-2">
               <Container type="img">
                 <GatsbyImage

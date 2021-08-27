@@ -61,7 +61,7 @@ const FormSidebar = () => {
       </div>
       <input type="hidden" name="form-name" value="form-sidebar" />
 
-      <Grid classes="lg:grid-cols-2 gap-y-6 gap-x-4">
+      <Grid classes="gap-x-4 gap-y-6 lg:grid-cols-2">
         <Col>
           <input
             name="firstName"
@@ -142,7 +142,7 @@ const FormSidebar = () => {
             <option value="Manufacturing">Manufacturing</option>
           </select>
         </Col>
-        <Col classes="col-span-2">
+        <Col classes="lg:col-span-2">
           <select
             name="findUs"
             as="select"
@@ -172,7 +172,7 @@ const FormSidebar = () => {
             </option>
           </select>
         </Col>
-        <Col classes="col-span-2">
+        <Col classes="lg:col-span-2">
           <textarea
             name="message"
             rows="3"

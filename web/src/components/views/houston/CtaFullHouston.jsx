@@ -83,7 +83,7 @@ const CtaFullHouston = () => {
           initial="hidden"
           animate={controls}
           transition={{ duration: 0.5, delay: 0 }}
-          className="text-4xl font-extrabold tracking-tight text-lightBlue-200 sm:text-5xl lg:text-6xl drop-shadow-darker capitalize"
+          className="text-4xl font-extrabold tracking-tight text-sky-200 sm:text-5xl lg:text-6xl drop-shadow-darker capitalize"
         >
           {content.headline}
         </motion.h2>

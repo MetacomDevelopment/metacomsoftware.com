@@ -60,7 +60,7 @@ const HeroContact = ({
           initial="hidden"
           animate={controls}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-4xl font-extrabold tracking-tight text-lightBlue-50 sm:text-5xl lg:text-6xl drop-shadow-darker"
+          className="text-4xl font-extrabold tracking-tight text-sky-50 sm:text-5xl lg:text-6xl drop-shadow-darker"
         >
           {headerText}
         </motion.h1>

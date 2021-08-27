@@ -154,7 +154,7 @@ const ServicesBoston = () => {
                         alt={feature.alt}
                       />
                     </div>
-                    <div className="relative z-10">
+                    <div className="relative z-10 m-auto text-center">
                       <h3 className="my-8 text-3xl font-medium text-white drop-shadow-text-darker">
                         <span className="drop-shadow-text-darker">
                           {feature.name}

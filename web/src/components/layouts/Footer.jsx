@@ -45,7 +45,7 @@ const Footer = () => {
               aria-hidden="true"
             />
           </div>
-          <FadeIn classes="z-10 py-24">
+          <FadeIn classes="z-10 px-3 lg:px-0 py-24">
             <FormFooter />
           </FadeIn>
         </div>

@@ -137,7 +137,7 @@ const BlogPage = ({ location }) => {
           </div>
           <Grid classes="lg:grid-cols-2 gap-x-12 gap-y-24">
             {posts.map((post) => (
-              <Col>
+              <Col key={post.slug.current}>
                 <Link
                   to={`${allCompany.website}/blog/${post.slug.current}/`}
                   className="mx-auto p-6 space-y-6 h-full flex flex-col bg-gray-200 hover:bg-gray-300 rounded-xl shadow-xl"
@@ -147,7 +147,7 @@ const BlogPage = ({ location }) => {
                       image={post.bgImg.asset.gatsbyImageData}
                       className="aspect-w-12 aspect-h-7 rounded-2xl shadow-xl"
                       imgClassName="w-full h-full object-center object-cover"
-                      alt="Company"
+                      alt={post.bgImg.alt}
                       loading="lazy"
                     />
                   </Container>

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-const Grid = ({ children, classes }) => {
+const Row = ({ children, classes }) => {
   const variants = {
     initial: { opacity: 0, scale: 0.8 },
     animate: {
@@ -30,7 +30,7 @@ const Grid = ({ children, classes }) => {
   }, [controls, inView]);
   return (
     <motion.div
-      className={`grid grid-cols-1 ${classes}`}
+      className={classes}
       ref={ref}
       variants={variants}
       initial="initial"
@@ -41,13 +41,13 @@ const Grid = ({ children, classes }) => {
   );
 };
 
-Grid.defaultProps = {
+Row.defaultProps = {
   classes: ``,
 };
 
-Grid.propTypes = {
+Row.propTypes = {
   classes: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
 
-export default Grid;
+export default Row;

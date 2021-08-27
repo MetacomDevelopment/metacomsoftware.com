@@ -3,9 +3,13 @@ import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { motion } from 'framer-motion';
-import { Disclosure, Menu, Popover, Transition } from '@headlessui/react';
-import { MenuIcon, XIcon } from '@heroicons/react/outline';
-import { ChevronDownIcon } from '@heroicons/react/solid';
+import { Disclosure, Popover, Transition } from '@headlessui/react';
+import {
+  ChevronUpIcon,
+  ChevronDownIcon,
+  MenuIcon,
+  XIcon,
+} from '@heroicons/react/outline';
 
 import useSanitySettingsCompany from '../../../hooks/useSanitySettingsCompany';
 import useSanitySettingsSocials from '../../../hooks/useSanitySettingsSocials';
@@ -14,6 +18,9 @@ import useSanitySettingsMetadata from '../../../hooks/useSanitySettingsMetadata'
 
 import NavLogo from './NavLogo';
 import Button from '../Button';
+import Col from '../../layouts/Col';
+import Grid from '../../layouts/Grid';
+import Row from '../../layouts/Row';
 
 const settings = {
   bg: 'bg-gray-50',
@@ -64,18 +71,28 @@ const callsToAction = [
 
 const navLinksMobile = [
   { name: 'Home', to: '/' },
+  {
+    name: 'Medical Device & Biotechnology',
+    to: '/medical-device-biotechnology/',
+  },
+  { name: 'IT & Technology', to: '/it-technology/' },
+  {
+    name: 'Civil & Structural Engineering',
+    to: '/civil-structural-engineering/',
+  },
+  { name: 'Manufacturing', to: '/manufacturing/' },
   { name: 'About Us', to: '/about/' },
-  { name: 'Industries', to: '/industries/' },
-  { name: 'Request Talent', to: '/clients/' },
   { name: 'Testimonials', to: '/testimonials/' },
+  { name: 'Locations', to: '/locations/' },
   { name: 'Blog', to: '/blog/' },
   { name: 'Contact Us', to: '/contact-us/' },
 ];
 
 const dryClasses = {
   navItem: `border-transparent ${settings.textColor} ${settings.textColorHover} inline-flex items-center px-1 pt-1 ${settings.textSize} ${settings.textWeight}`,
-  navItemMobile: `border-transparent ${settings.textColor} ${settings.textColorHover} inline-flex items-center px-1 pt-4 pb-4 ${settings.textSizeMobile} ${settings.textWeight}`,
+  navItemMobile: `border-transparent text-xl ${settings.textColor} ${settings.textColorHover} inline-flex items-center px-1 pt-4 pb-4 ${settings.textSizeMobile} ${settings.textWeight}`,
   activeNavItem: `border-transparent ${settings.textColorActive} ${settings.textColorActiveHover} inline-flex items-center px-1 pt-1 ${settings.textSize} font-bold`,
+  activeNavItemMobile: `border-transparent ${settings.textColor} ${settings.textColorHover} inline-flex items-center px-1 pt-1 ${settings.textSize} font-bold`,
 };
 
 const NavbarMain = () => {
@@ -129,16 +146,16 @@ const NavbarMain = () => {
             <div className="relative flex items-center justify-between h-24">
               <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
                 {/* Mobile menu button */}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-primary hover:text-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XIcon
-                      className="block h-6 w-6 text-primary"
+                      className="block h-10 w-10 text-primary"
                       aria-hidden="true"
                     />
                   ) : (
                     <MenuIcon
-                      className="block h-6 w-6 text-primary"
+                      className="block h-10 w-10 text-primary"
                       aria-hidden="true"
                     />
                   )}
@@ -188,7 +205,7 @@ const NavbarMain = () => {
                           <Transition
                             show={open}
                             as="div"
-                            enter="transition ease-out duration-200"
+                            enter="transition-all ease-in-out duration-300"
                             enterFrom="opacity-0 -translate-y-1"
                             enterTo="opacity-100 translate-y-0"
                             leave="transition ease-in duration-150"
@@ -328,20 +345,170 @@ const NavbarMain = () => {
           </div>
 
           <Disclosure.Panel className="sm:hidden">
-            <div className="flex flex-col lg:flex-row px-2 pt-2 pb-3 space-y-1">
-              {navLinksMobile.map((item) => (
-                <div className="text-center">
+            <Grid classes="gap-y-2 px-6 pt-2 pb-3">
+              <Col>
+                <div>
                   <Link
-                    key={item.name}
-                    to={item.to}
+                    key={navLinksMobile[0].name}
+                    to={navLinksMobile[0].to}
                     className={dryClasses.navItemMobile}
                     activeClassName={dryClasses.activeNavItem}
                   >
-                    {item.name}
+                    {navLinksMobile[0].name}
                   </Link>
                 </div>
-              ))}
-            </div>
+              </Col>
+              <Col>
+                <Disclosure>
+                  {({ open }) => (
+                    <div>
+                      <Disclosure.Button className="flex justify-between w-full px-4 py-4 bg-gray-50 text-xl font-medium text-gray-800 hover:text-gray-800 focus:text-gray-800">
+                        <span className="pr-1 hover:text-gray-800 focus:text-gray-800">
+                          Industries
+                        </span>
+                        <ChevronUpIcon
+                          className={`${
+                            open ? 'transform rotate-180' : ''
+                          } w-6 h-6 text-accent`}
+                        />
+                      </Disclosure.Button>
+                      <Disclosure.Panel className="px-4 pt-4 pb-2 bg-gray-200">
+                        <Col>
+                          <div>
+                            <Link
+                              key={navLinksMobile[1].name}
+                              to={navLinksMobile[1].to}
+                              className={dryClasses.navItemMobile}
+                              activeClassName={dryClasses.activeNavItem}
+                            >
+                              {navLinksMobile[1].name}
+                            </Link>
+                          </div>
+                        </Col>
+                        <Col>
+                          <div>
+                            <Link
+                              key={navLinksMobile[2].name}
+                              to={navLinksMobile[2].to}
+                              className={dryClasses.navItemMobile}
+                              activeClassName={dryClasses.activeNavItem}
+                            >
+                              {navLinksMobile[2].name}
+                            </Link>
+                          </div>
+                        </Col>
+                        <Col>
+                          <div>
+                            <Link
+                              key={navLinksMobile[3].name}
+                              to={navLinksMobile[3].to}
+                              className={dryClasses.navItemMobile}
+                              activeClassName={dryClasses.activeNavItem}
+                            >
+                              {navLinksMobile[3].name}
+                            </Link>
+                          </div>
+                        </Col>
+                        <Col>
+                          <div>
+                            <Link
+                              key={navLinksMobile[4].name}
+                              to={navLinksMobile[4].to}
+                              className={dryClasses.navItemMobile}
+                              activeClassName={dryClasses.activeNavItem}
+                            >
+                              {navLinksMobile[4].name}
+                            </Link>
+                          </div>
+                        </Col>
+                      </Disclosure.Panel>
+                    </div>
+                  )}
+                </Disclosure>
+              </Col>
+              <Col>
+                <div>
+                  <Link
+                    key={navLinksMobile[5].name}
+                    to={navLinksMobile[5].to}
+                    className={dryClasses.navItemMobile}
+                    activeClassName={dryClasses.activeNavItem}
+                  >
+                    {navLinksMobile[5].name}
+                  </Link>
+                </div>
+              </Col>
+              <Col>
+                <div>
+                  <Link
+                    key={navLinksMobile[6].name}
+                    to={navLinksMobile[6].to}
+                    className={dryClasses.navItemMobile}
+                    activeClassName={dryClasses.activeNavItem}
+                  >
+                    {navLinksMobile[6].name}
+                  </Link>
+                </div>
+              </Col>
+              <Col>
+                <div>
+                  <Link
+                    key={navLinksMobile[7].name}
+                    to={navLinksMobile[7].to}
+                    className={dryClasses.navItemMobile}
+                    activeClassName={dryClasses.activeNavItem}
+                  >
+                    {navLinksMobile[7].name}
+                  </Link>
+                </div>
+              </Col>
+              <Col>
+                <div>
+                  <Link
+                    key={navLinksMobile[8].name}
+                    to={navLinksMobile[8].to}
+                    className={dryClasses.navItemMobile}
+                    activeClassName={dryClasses.activeNavItem}
+                  >
+                    {navLinksMobile[8].name}
+                  </Link>
+                </div>
+              </Col>
+            </Grid>
+            <Grid classes="pt-8 pb-4 bg-primary">
+              <Row classes="mx-auto">
+                <Button type="internal" />
+              </Row>
+              <Grid classes="pt-10 pb-4 grid-cols-3">
+                <Col classes="mx-auto">
+                  <a
+                    href={allCompany.phoneHref}
+                    target="_blank"
+                    rel="nonopener noreferrer"
+                  >
+                    <i className="fas fa-phone fa-2x text-white hover:text-accent" />
+                  </a>
+                </Col>
+                <Col classes="mx-auto">
+                  <a
+                    href={allCompany.emailHref}
+                    target="_blank"
+                    rel="nonopener noreferrer"
+                  >
+                    <i className="fas fa-envelope fa-2x text-white hover:text-accent" />
+                  </a>
+                </Col>
+                <Col classes="mx-auto">
+                  <a
+                    href={allSocials.linkedIn}
+                    target="_blank"
+                    rel="nonopener noreferrer"
+                  >
+                    <i className="fab fa-linkedin fa-2x text-white hover:text-accent" />
+                  </a>
+                </Col>
+              </Grid>
+            </Grid>
           </Disclosure.Panel>
         </div>
       )}

@@ -98,7 +98,7 @@ const CtaHome = () => {
               business!
             </p>
           </div>
-          <div className="mt-12 inline-flex rounded-md shadow">
+          <div className="mx-auto lg:mx-none mt-12 flex justify-center lg:justify-start rounded-md shadow">
             <Button type="internal" />
           </div>
         </motion.div>

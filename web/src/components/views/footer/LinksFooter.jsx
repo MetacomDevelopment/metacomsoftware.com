@@ -204,7 +204,7 @@ const LinkFooter = () => {
                 </h4>
                 <ul className="mt-4 space-y-4">
                   {links.col1.map((link) => (
-                    <li>
+                    <li key={link.label}>
                       <Link
                         to={link.link}
                         className={`text-base break-normal ${settings.linkColor} ${settings.linkColorHover}`}
@@ -221,7 +221,7 @@ const LinkFooter = () => {
                 </h4>
                 <ul className="mt-4 space-y-4">
                   {links.col2.map((link) => (
-                    <li>
+                    <li key={link.label}>
                       <Link
                         to={link.link}
                         className={`text-base break-normal ${settings.linkColor} ${settings.linkColorHover}`}
@@ -240,7 +240,7 @@ const LinkFooter = () => {
                 </h4>
                 <ul className="mt-4 space-y-4">
                   {links.col3.map((link) => (
-                    <li>
+                    <li key={link.label}>
                       <Link
                         to={link.link}
                         className={`text-base break-normal ${settings.linkColor} ${settings.linkColorHover}`}
@@ -257,12 +257,12 @@ const LinkFooter = () => {
                 </h4>
                 <ul className="mt-4 space-y-4">
                   {links.col4.map((link) => (
-                    <li>
+                    <li key={link.label}>
                       <a
                         href={link.link}
                         rel="noreferrer noopener"
                         target="_blank"
-                        className={`text-base break-normal ${settings.linkColor} ${settings.linkColorHover}`}
+                        className={`text-base break-all ${settings.linkColor} ${settings.linkColorHover}`}
                       >
                         {link.label}
                       </a>

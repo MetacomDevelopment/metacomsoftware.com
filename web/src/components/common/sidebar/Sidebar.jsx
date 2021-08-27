@@ -24,7 +24,7 @@ const Sidebar = () => {
   const imgTestimonial = data.imgTestimonial.childImageSharp.gatsbyImageData;
 
   return (
-    <aside className="lg:h-full pt-12 lg:pt-0">
+    <aside className="lg:h-full pt-12 lg:pt-0 hidden lg:flex">
       <FadeIn classes="space-y-20 lg:h-full">
         <FormSidebar />
         <TestimonialSidebar
