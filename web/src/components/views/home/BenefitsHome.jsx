@@ -46,6 +46,7 @@ const BenefitsHome = () => {
 
   const benefits = [
     {
+      icon: TimeIcon,
       name: 'Save Time & Money',
       description:
         '"He understands our needs and gears in to action quickly - without wasting time. It has been a pleasure working with Rich."',
@@ -53,6 +54,7 @@ const BenefitsHome = () => {
       position: 'Test Devices - SCHENCK USA CORP.',
     },
     {
+      icon: RecruitmentIcon,
       name: 'High-Calibar Candidates',
       description:
         '"Immediately produced strong candidates, one of which we hired remotely within a month of working with Rich."',
@@ -60,6 +62,7 @@ const BenefitsHome = () => {
       position: 'Arsenal Medical',
     },
     {
+      icon: GrowthIcon,
       name: 'Scale Your Business',
       description:
         '"His goal was a long term relationship with me and my organization, not a short term win for himself, and that showed in everything he did."',
@@ -125,7 +128,7 @@ const BenefitsHome = () => {
                 >
                   <div className="">
                     <div className="">
-                      <TimeIcon className="h-40 w-40 mx-auto text-primary fill-current" />
+                      <benefit.icon className="h-40 w-40 mx-auto text-primary fill-current" />
                     </div>
                     <div className="relative z-10">
                       <h3 className="mt-8 text-3xl font-medium text-gray-800">
