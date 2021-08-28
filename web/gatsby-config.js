@@ -88,7 +88,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-tagmanager',
       options: {
-        id: 'GTM',
+        id: 'GTM-5V7CDJW',
         includeInDevelopment: false,
         defaultDataLayer: { platform: 'gatsby' },
       },
@@ -108,7 +108,7 @@ module.exports = {
         env: {
           production: {
             // REMOVE BEFORE GOING LIVE
-            policy: [{ userAgent: '*', disallow: ['/'] }],
+            policy: [{ userAgent: '*' }],
           },
           'branch-deploy': {
             policy: [{ userAgent: '*', disallow: ['/'] }],
