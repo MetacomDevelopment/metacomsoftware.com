@@ -55,33 +55,41 @@ const SanDiegoPage = ({ location }) => {
       <SEO title={seo.title} description={seo.description} canonical={seo.slug}>
         <script type="application/ld+json">
           {`{
-            '@context': 'https://schema.org',
-						'@type': 'Organization',
-						'@id': ${allCompany.website}${seo.slug},
-            'address': {
-              '@type': 'PostalAddress',
-              'addressLocality': ${allCompany.cityState},
-              'postalCode': ${allCompany.zip},
-              'streetAddress': ${allCompany.street}
-            },
-            'email': ${allCompany.email},
-            'member': [
-              {
-                '@type': 'Organization'
+              "@context": "https://schema.org",
+              "@type": "EmploymentAgency",
+              "name": "All-Star Connections",
+              "image": "https://www.allstarconnections.com/san-diego-ca/#image",
+              "@id": "https://www.allstarconnections.com/san-diego-ca/",
+              "url": "https://www.allstarconnections.com/san-diego-ca/",
+              "telephone": "(619) 759-5234",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "3093 C Street Unit 1",
+                "addressLocality": "San Diego, CA",
+                "addressRegion": "CA",
+                "postalCode": "92102",
+                "addressCountry": "US"
               },
-              {
-                '@type': 'Organization'
-              }
-            ],
-            'alumni': [
-              {
-                '@type': 'Person',
-                'name': ${allCompany.owner}
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 32.71673754903574,
+                "longitude": -117.12767020230521
               },
-            ],
-            'name': ${allCompany.name},
-            'telephone': ${allCompany.phone}
-          }`}
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday"
+                ],
+                "opens": "09:00",
+                "closes": "17:00"
+              },
+              "sameAs": "https://www.linkedin.com/company/all-star-connections/" 
+            }`}
         </script>
       </SEO>
       <HeroLocations

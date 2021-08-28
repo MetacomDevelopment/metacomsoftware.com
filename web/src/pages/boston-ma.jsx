@@ -55,33 +55,41 @@ const BostonPage = ({ location }) => {
       <SEO title={seo.title} description={seo.description} canonical={seo.slug}>
         <script type="application/ld+json">
           {`{
-            '@context': 'https://schema.org',
-						'@type': 'Organization',
-						'@id': ${allCompany.website}${seo.slug},
-            'address': {
-              '@type': 'PostalAddress',
-              'addressLocality': ${allCompany.cityState},
-              'postalCode': ${allCompany.zip},
-              'streetAddress': ${allCompany.street}
-            },
-            'email': ${allCompany.email},
-            'member': [
-              {
-                '@type': 'Organization'
+              "@context": "https://schema.org",
+              "@type": "EmploymentAgency",
+              "name": "All-Star Connections",
+              "image": "https://www.allstarconnections.com/boston-ma/#image",
+              "@id": "https://www.allstarconnections.com/boston-ma/",
+              "url": "https://www.allstarconnections.com/boston-ma/",
+              "telephone": "(617) 684-5108",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "111 Atlantic Ave",
+                "addressLocality": "Boston, MA",
+                "addressRegion": "MA",
+                "postalCode": "02110",
+                "addressCountry": "US"
               },
-              {
-                '@type': 'Organization'
-              }
-            ],
-            'alumni': [
-              {
-                '@type': 'Person',
-                'name': ${allCompany.owner}
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 42.361633082284776,
+                "longitude": -71.05285347874647
               },
-            ],
-            'name': ${allCompany.name},
-            'telephone': ${allCompany.phone}
-          }`}
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday"
+                ],
+                "opens": "09:00",
+                "closes": "17:00"
+              },
+              "sameAs": "https://www.linkedin.com/company/all-star-connections/" 
+            }`}
         </script>
       </SEO>
       <HeroLocations

@@ -55,33 +55,41 @@ const HoustonPage = ({ location }) => {
       <SEO title={seo.title} description={seo.description} canonical={seo.slug}>
         <script type="application/ld+json">
           {`{
-            '@context': 'https://schema.org',
-						'@type': 'Organization',
-						'@id': ${allCompany.website}${seo.slug},
-            'address': {
-              '@type': 'PostalAddress',
-              'addressLocality': ${allCompany.cityState},
-              'postalCode': ${allCompany.zip},
-              'streetAddress': ${allCompany.street}
-            },
-            'email': ${allCompany.email},
-            'member': [
-              {
-                '@type': 'Organization'
+              "@context": "https://schema.org",
+              "@type": "EmploymentAgency",
+              "name": "All-Star Connections",
+              "image": "https://www.allstarconnections.com/houston-tx/#image",
+              "@id": "https://www.allstarconnections.com/houston-tx/",
+              "url": "https://www.allstarconnections.com/houston-tx/",
+              "telephone": "(832) 864-5816",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "1544 West 23rd",
+                "addressLocality": "Houston, TX",
+                "addressRegion": "TX",
+                "postalCode": "77008",
+                "addressCountry": "US"
               },
-              {
-                '@type': 'Organization'
-              }
-            ],
-            'alumni': [
-              {
-                '@type': 'Person',
-                'name': ${allCompany.owner}
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 29.80675254559343,
+                "longitude": -95.42751183121199
               },
-            ],
-            'name': ${allCompany.name},
-            'telephone': ${allCompany.phone}
-          }`}
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday"
+                ],
+                "opens": "09:00",
+                "closes": "17:00"
+              },
+              "sameAs": "https://www.linkedin.com/company/all-star-connections/" 
+            }`}
         </script>
       </SEO>
       <HeroLocations

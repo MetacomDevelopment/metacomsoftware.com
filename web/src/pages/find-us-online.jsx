@@ -52,33 +52,20 @@ const FindUsOnlinePage = ({ location }) => {
       <SEO title={seo.title} description={seo.description} canonical={seo.slug}>
         <script type="application/ld+json">
           {`{
-            '@context': 'https://schema.org',
-						'@type': 'Organization',
-						'@id': ${allCompany.website}${seo.slug},
-            'address': {
-              '@type': 'PostalAddress',
-              'addressLocality': ${allCompany.cityState},
-              'postalCode': ${allCompany.zip},
-              'streetAddress': ${allCompany.street}
-            },
-            'email': ${allCompany.email},
-            'member': [
-              {
-                '@type': 'Organization'
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "All-Star Connections",
+              "url": "https://www.allstarconnections.com/",
+              "logo": "https://www.allstarconnections.com/#image",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "(617) 684-5108",
+                "contactType": "sales",
+                "areaServed": "US",
+                "availableLanguage": "en"
               },
-              {
-                '@type': 'Organization'
-              }
-            ],
-            'alumni': [
-              {
-                '@type': 'Person',
-                'name': ${allCompany.owner}
-              },
-            ],
-            'name': ${allCompany.name},
-            'telephone': ${allCompany.phone}
-          }`}
+              "sameAs": "https://www.linkedin.com/company/all-star-connections/"
+            }`}
         </script>
       </SEO>
       <HeaderPage
