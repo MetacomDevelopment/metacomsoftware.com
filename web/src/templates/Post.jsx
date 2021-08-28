@@ -56,7 +56,7 @@ const PostTemplate = ({ data }) => {
   };
 
   return (
-    <Layout>
+    <Layout type="brand">
       <SEO title={seo.title} description={seo.description} canonical={seo.slug}>
         <script type="application/ld+json">{`${sanity.schema}`}</script>
       </SEO>

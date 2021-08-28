@@ -82,7 +82,7 @@ const LocationsPage = ({ location }) => {
   };
 
   return (
-    <Layout>
+    <Layout type="brand">
       <SEO title={seo.title} description={seo.description} canonical={seo.slug}>
         <script type="application/ld+json">
           {`{
@@ -130,7 +130,7 @@ const LocationsPage = ({ location }) => {
                   image={imgBoston}
                   className="aspect-w-12 aspect-h-7 rounded-2xl shadow-xl"
                   imgClassName="w-full h-full object-center object-cover"
-                  alt="Company"
+                  alt="All-Star Connections is an engineering recruitment agency that helps companies find permanent placements"
                   loading="lazy"
                 />
               </Container>
@@ -183,7 +183,7 @@ const LocationsPage = ({ location }) => {
                     <li>
                       <span className="font-bold">Website</span>:{' '}
                       <Link
-                        to={`${allCompany.website}/boston-ma/`}
+                        to="/boston-ma/"
                         className="text-yellow-500 hover:text-blue-800 font-semibold"
                       >
                         {allCompany.name} of Boston
@@ -199,7 +199,7 @@ const LocationsPage = ({ location }) => {
                   image={imgHouston}
                   className="aspect-w-12 aspect-h-7 rounded-2xl shadow-xl"
                   imgClassName="w-full h-full object-center object-cover"
-                  alt="Company"
+                  alt="All-Star Connections is an engineering recruitment agency that helps companies find permanent placements"
                   loading="lazy"
                 />
               </Container>
@@ -252,7 +252,7 @@ const LocationsPage = ({ location }) => {
                     <li>
                       <span className="font-bold">Website</span>:{' '}
                       <Link
-                        to={`${allCompany.website}/houston-tx/`}
+                        to="/houston-tx/"
                         className="text-yellow-500 hover:text-blue-800 font-semibold"
                       >
                         {allCompany.name} of Texas
@@ -268,7 +268,7 @@ const LocationsPage = ({ location }) => {
                   image={imgSanDiego}
                   className="aspect-w-12 aspect-h-7 rounded-2xl shadow-xl"
                   imgClassName="w-full h-full object-center object-cover"
-                  alt="Company"
+                  alt="All-Star Connections is an engineering recruitment agency that helps companies find permanent placements"
                   loading="lazy"
                 />
               </Container>
@@ -321,7 +321,7 @@ const LocationsPage = ({ location }) => {
                     <li>
                       <span className="font-bold">Website</span>:{' '}
                       <Link
-                        to={`${allCompany.website}/san-diego-ca/`}
+                        to="/san-diego-ca/"
                         className="text-yellow-500 hover:text-blue-800 font-semibold"
                       >
                         {allCompany.name} of San Diego

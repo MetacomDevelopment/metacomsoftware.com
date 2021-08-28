@@ -102,7 +102,7 @@ const AboutPage = ({ location }) => {
   };
 
   return (
-    <Layout>
+    <Layout type="brand">
       <SEO title={seo.title} description={seo.description} canonical={seo.slug}>
         <script type="application/ld+json">
           {`{
@@ -150,7 +150,7 @@ const AboutPage = ({ location }) => {
                   image={imgRich}
                   className="aspect-w-12 aspect-h-7 rounded-2xl shadow-xl"
                   imgClassName="w-full h-full object-center object-cover"
-                  alt="Company"
+                  alt="All-Star Connections is an engineering recruitment agency that helps companies find permanent placements"
                   loading="lazy"
                 />
               </Container>
@@ -184,7 +184,7 @@ const AboutPage = ({ location }) => {
                   image={imgResume}
                   className="aspect-w-12 aspect-h-7 rounded-2xl shadow-xl"
                   imgClassName="w-full h-full object-center object-cover"
-                  alt="Company"
+                  alt="All-Star Connections is an engineering recruitment agency that helps companies find permanent placements"
                   loading="lazy"
                 />
               </Container>
@@ -220,7 +220,7 @@ const AboutPage = ({ location }) => {
                   image={imgHiring}
                   className="aspect-w-12 aspect-h-7 rounded-2xl shadow-xl"
                   imgClassName="w-full h-full object-center object-cover"
-                  alt="Company"
+                  alt="All-Star Connections is an engineering recruitment agency that helps companies find permanent placements"
                   loading="lazy"
                 />
               </Container>
@@ -274,7 +274,7 @@ const AboutPage = ({ location }) => {
                   image={imgNegotiations}
                   className="aspect-w-12 aspect-h-7 rounded-2xl shadow-xl"
                   imgClassName="w-full h-full object-center object-cover"
-                  alt="Company"
+                  alt="All-Star Connections is an engineering recruitment agency that helps companies find permanent placements"
                   loading="lazy"
                 />
               </Container>

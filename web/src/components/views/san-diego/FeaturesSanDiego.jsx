@@ -87,7 +87,7 @@ const FeaturesSanDiego = () => {
                 image={imgMeeting}
                 className="aspect-w-12 aspect-h-7 rounded-2xl shadow-xl"
                 imgClassName="w-full h-full object-center object-cover"
-                alt="Company"
+                alt="All-Star Connections is an engineering recruitment agency that helps companies find permanent placements"
                 loading="lazy"
               />
             </Container>
@@ -129,7 +129,7 @@ const FeaturesSanDiego = () => {
                 image={imgPlacement}
                 className="aspect-w-12 aspect-h-7 rounded-2xl shadow-xl"
                 imgClassName="w-full h-full object-center object-cover"
-                alt="Company"
+                alt="All-Star Connections is an engineering recruitment agency that helps companies find permanent placements"
                 loading="lazy"
               />
             </Container>
@@ -179,7 +179,7 @@ const FeaturesSanDiego = () => {
                 image={imgEngineer}
                 className="aspect-w-12 aspect-h-7 rounded-2xl shadow-xl"
                 imgClassName="w-full h-full object-center object-cover"
-                alt="Company"
+                alt="All-Star Connections is an engineering recruitment agency that helps companies find permanent placements"
                 loading="lazy"
               />
             </Container>

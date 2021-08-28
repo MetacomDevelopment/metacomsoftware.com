@@ -51,7 +51,7 @@ const SanDiegoPage = ({ location }) => {
   };
 
   return (
-    <Layout>
+    <Layout type="san diego">
       <SEO title={seo.title} description={seo.description} canonical={seo.slug}>
         <script type="application/ld+json">
           {`{

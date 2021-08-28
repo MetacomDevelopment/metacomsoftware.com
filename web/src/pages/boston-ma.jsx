@@ -51,7 +51,7 @@ const BostonPage = ({ location }) => {
   };
 
   return (
-    <Layout>
+    <Layout type="boston">
       <SEO title={seo.title} description={seo.description} canonical={seo.slug}>
         <script type="application/ld+json">
           {`{
