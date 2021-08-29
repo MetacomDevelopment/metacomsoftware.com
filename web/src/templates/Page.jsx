@@ -11,7 +11,7 @@ import useSanitySettingsMetadata from '../hooks/useSanitySettingsMetadata';
 
 import Layout from '../components/layout';
 import SEO from '../components/common/Seo';
-import HeaderPage from '../components/layouts/HeroPage';
+import HeroPage from '../components/layouts/HeroPage';
 import PageSidebar from '../components/layouts/PageSidebar';
 import Testimonial from '../components/common/Testimonial';
 import Section from '../components/layouts/Section';
@@ -65,7 +65,7 @@ const PageTemplate = (props) => {
       <SEO title={seo.title} description={seo.description} canonical={seo.slug}>
         <script type="application/ld+json">{`${sanity.schema}`}</script>
       </SEO>
-      <HeaderPage
+      <HeroPage
         imgHeroBg={sanity.bgImg.asset.gatsbyImageData}
         altText={sanity.bgImg.alt}
         headerText={sanity.headline}

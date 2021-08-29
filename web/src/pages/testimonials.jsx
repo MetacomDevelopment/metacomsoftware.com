@@ -11,7 +11,7 @@ import useSanitySettingsMetadata from '../hooks/useSanitySettingsMetadata';
 
 import Layout from '../components/layout';
 import SEO from '../components/common/Seo';
-import HeaderPage from '../components/layouts/HeroPage';
+import HeroPage from '../components/layouts/HeroPage';
 import PageSidebar from '../components/layouts/PageSidebar';
 import Testimonial from '../components/common/Testimonial';
 import Container from '../components/layouts/Container';
@@ -296,7 +296,7 @@ const TestimonialsPage = ({ location }) => {
             }`}
         </script>
       </SEO>
-      <HeaderPage
+      <HeroPage
         imgHeroBg={imgHeroBg}
         altText={hero.alt}
         headerText={hero.header}

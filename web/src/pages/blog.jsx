@@ -9,7 +9,7 @@ import useSanitySettingsMetadata from '../hooks/useSanitySettingsMetadata';
 
 import Layout from '../components/layout';
 import SEO from '../components/common/Seo';
-import HeaderPage from '../components/layouts/HeroPage';
+import HeroPage from '../components/layouts/HeroPage';
 import Section from '../components/layouts/Section';
 import Container from '../components/layouts/Container';
 import Grid from '../components/layouts/Grid';
@@ -106,7 +106,7 @@ const BlogPage = ({ location }) => {
             }`}
         </script>
       </SEO>
-      <HeaderPage
+      <HeroPage
         imgHeroBg={imgHeroBg}
         altText={hero.alt}
         headerText={hero.header}
@@ -126,13 +126,13 @@ const BlogPage = ({ location }) => {
             {posts.map((post) => (
               <Col key={post.slug.current}>
                 <Link
-                  to={`${allCompany.website}/blog/${post.slug.current}/`}
+                  to={`/blog/${post.slug.current}/`}
                   className="mx-auto p-6 space-y-6 h-full flex flex-col bg-gray-200 hover:bg-gray-300 rounded-xl shadow-xl"
                 >
                   <Container type="img">
                     <GatsbyImage
                       image={post.bgImg.asset.gatsbyImageData}
-                      className="aspect-w-12 aspect-h-7 rounded-2xl shadow-xl"
+                      className="rounded-xl shadow-xl"
                       imgClassName="w-full h-full object-center object-cover"
                       alt={post.bgImg.alt}
                       loading="lazy"

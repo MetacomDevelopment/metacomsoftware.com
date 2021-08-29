@@ -9,7 +9,7 @@ import useSanitySettingsMetadata from '../hooks/useSanitySettingsMetadata';
 
 import Layout from '../components/layout';
 import SEO from '../components/common/Seo';
-import HeaderPage from '../components/layouts/HeroPage';
+import HeroPage from '../components/layouts/HeroPage';
 import Section from '../components/layouts/Section';
 import Container from '../components/layouts/Container';
 import Grid from '../components/layouts/Grid';
@@ -102,7 +102,7 @@ const LocationsPage = ({ location }) => {
             }`}
         </script>
       </SEO>
-      <HeaderPage
+      <HeroPage
         imgHeroBg={imgHeroBg}
         altText={hero.alt}
         headerText={hero.header}

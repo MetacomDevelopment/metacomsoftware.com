@@ -64,11 +64,6 @@ const navLinksIndustries = [
   },
 ];
 
-const callsToAction = [
-  { name: 'Request Talent', to: '/contact-us/', icon: 'fas fa-user-plus' },
-  { name: 'Contact Us', to: '/contact-us/', icon: 'fas fa-phone' },
-];
-
 const navLinksMobile = [
   { name: 'Home', to: '/' },
   {
@@ -253,23 +248,32 @@ const NavbarMain = () => {
                               </div>
                               <div className="bg-blue-50">
                                 <div className="max-w-7xl mx-auto space-y-6 px-4 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-6 lg:px-8">
-                                  {callsToAction.map((item) => (
-                                    <div key={item.name} className="flow-root">
-                                      <Link
-                                        key={item.name}
-                                        to={item.to}
-                                        className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-blue-100 transition ease-in-out duration-150"
-                                      >
-                                        <i
-                                          className={`${item.icon} flex-shrink text-xl text-gray-400`}
-                                          aria-hidden="true"
-                                        />
-                                        <span className="ml-3">
-                                          {item.name}
-                                        </span>
-                                      </Link>
-                                    </div>
-                                  ))}
+                                  <div className="flow-root">
+                                    <Link
+                                      to="/contact-us/"
+                                      className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-blue-100 transition ease-in-out duration-150"
+                                    >
+                                      <i
+                                        className="fas fa-user-plus flex-shrink text-xl text-gray-400"
+                                        aria-hidden="true"
+                                      />
+                                      <span className="ml-3">
+                                        Request Talent
+                                      </span>
+                                    </Link>
+                                  </div>
+                                  <div className="flow-root">
+                                    <a
+                                      href={allCompany.phoneHref}
+                                      className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-blue-100 transition ease-in-out duration-150"
+                                    >
+                                      <i
+                                        className="fas fa-phone flex-shrink text-xl text-gray-400"
+                                        aria-hidden="true"
+                                      />
+                                      <span className="ml-3">Call Us</span>
+                                    </a>
+                                  </div>
                                 </div>
                               </div>
                             </Popover.Panel>

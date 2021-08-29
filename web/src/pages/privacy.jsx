@@ -8,7 +8,7 @@ import useSanitySettingsMetadata from '../hooks/useSanitySettingsMetadata';
 
 import Layout from '../components/layout';
 import SEO from '../components/common/Seo';
-import HeaderPage from '../components/layouts/HeroPage';
+import HeroPage from '../components/layouts/HeroPage';
 import Container from '../components/layouts/Container';
 import Section from '../components/layouts/Section';
 
@@ -69,7 +69,7 @@ const PrivacyPage = ({ location }) => {
             }`}
         </script>
       </SEO>
-      <HeaderPage
+      <HeroPage
         imgHeroBg={imgHeroBg}
         altText={hero.alt}
         headerText={hero.header}

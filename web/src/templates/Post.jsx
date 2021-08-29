@@ -11,7 +11,7 @@ import useSanitySettingsMetadata from '../hooks/useSanitySettingsMetadata';
 
 import Layout from '../components/layout';
 import SEO from '../components/common/Seo';
-import HeaderPage from '../components/layouts/HeroPage';
+import HeroPost from '../components/layouts/HeroPost';
 import PageSidebar from '../components/layouts/PageSidebar';
 import Testimonial from '../components/common/Testimonial';
 import Section from '../components/layouts/Section';
@@ -37,12 +37,19 @@ export const query = graphql`
       headline
       subheadline
       _rawBody
+      author {
+        name
+      }
+      publishedAt(formatString: "MMMM D, yyyy")
+      tags {
+        title
+      }
     }
   }
 `;
 
 const PostTemplate = ({ data }) => {
-  const sanity = data.sanityPost;
+  const post = data.sanityPost;
 
   const { ...allCompany } = useSanitySettingsCompany();
   const { ...allSocials } = useSanitySettingsSocials();
@@ -50,26 +57,29 @@ const PostTemplate = ({ data }) => {
   const { ...allMetadata } = useSanitySettingsMetadata();
 
   const seo = {
-    title: sanity.title,
-    description: sanity.title,
-    slug: `${allCompany.website}/blog/${sanity.slug.current}/`,
+    title: post.title,
+    description: post.description,
+    slug: `${allCompany.website}/blog/${post.slug.current}/`,
   };
 
   return (
     <Layout type="brand">
       <SEO title={seo.title} description={seo.description} canonical={seo.slug}>
-        <script type="application/ld+json">{`${sanity.schema}`}</script>
+        <script type="application/ld+json">{`${post.schema}`}</script>
       </SEO>
-      <HeaderPage
-        imgHeroBg={sanity.bgImg.asset.gatsbyImageData}
-        altText={sanity.bgImg.alt}
-        headerText={sanity.headline}
-        subheaderText={sanity.subheadline}
+      <HeroPost
+        imgHeroBg={post.bgImg.asset.gatsbyImageData}
+        altText={post.bgImg.alt}
+        headerText={post.headline}
+        authorName={post.author.name}
+        tags={post.tags}
+        tagTitle={post.tags.title}
+        publishedAt={post.publishedAt}
       />
       <Section>
         <Container>
           <PageSidebar>
-            <SanityBlockContent blocks={sanity._rawBody} />
+            <SanityBlockContent blocks={post._rawBody} />
           </PageSidebar>
         </Container>
       </Section>
