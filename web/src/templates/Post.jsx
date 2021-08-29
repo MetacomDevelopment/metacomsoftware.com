@@ -65,7 +65,33 @@ const PostTemplate = ({ data }) => {
   return (
     <Layout type="brand">
       <SEO title={seo.title} description={seo.description} canonical={seo.slug}>
-        <script type="application/ld+json">{`${post.schema}`}</script>
+        <script type="application/ld+json">
+          {`{
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://www.allstarconnections.com/"
+              },
+              "headline": ${post.title},
+              "description": ${post.description},
+              "image": "https://www.allstarconnections.com/#image",  
+              "author": {
+                "@type": "Person",
+                "name": ${post.author.name},
+                "url": "https://www.allstarconnections.com/#author"
+              },  
+              "publisher": {
+                "@type": "Organization",
+                "name": "All-Star Connections",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://www.allstarconnections.com/#image"
+                }
+              },
+              "datePublished": ${post.publishedAt}
+            }`}
+        </script>
       </SEO>
       <HeroPost
         imgHeroBg={post.bgImg.asset.gatsbyImageData}
