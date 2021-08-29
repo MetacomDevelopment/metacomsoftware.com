@@ -73,12 +73,12 @@ const PostTemplate = ({ data }) => {
                 "@type": "WebPage",
                 "@id": "https://www.allstarconnections.com/"
               },
-              "headline": ${post.title},
-              "description": ${post.description},
+              "headline": "${post.title}",
+              "description": "${post.description}",
               "image": "https://www.allstarconnections.com/#image",  
               "author": {
                 "@type": "Person",
-                "name": ${post.author.name},
+                "name": "${post.author.name}",
                 "url": "https://www.allstarconnections.com/#author"
               },  
               "publisher": {
@@ -89,7 +89,7 @@ const PostTemplate = ({ data }) => {
                   "url": "https://www.allstarconnections.com/#image"
                 }
               },
-              "datePublished": ${post.publishedAt}
+              "datePublished": "${post.publishedAt}"
             }`}
         </script>
       </SEO>
