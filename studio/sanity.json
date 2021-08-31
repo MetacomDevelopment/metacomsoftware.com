@@ -1,11 +1,11 @@
 {
   "root": true,
   "api": {
-    "projectId": "01zxde2p",
+    "projectId": "igptrarm",
     "dataset": "production"
   },
   "project": {
-    "name": "all-star-connections"
+    "name": "Template - SMB"
   },
   "plugins": [
     "@sanity/base",
@@ -27,9 +27,7 @@
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [
