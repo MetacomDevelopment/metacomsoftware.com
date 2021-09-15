@@ -1,11 +1,25 @@
 import S from '@sanity/desk-tool/structure-builder';
-import { FaHome as iconHome } from 'react-icons/fa';
-import { FaFileAlt as iconPage } from 'react-icons/fa';
-import { FaTools as iconService } from 'react-icons/fa';
-import { FaPencilAlt as iconPost } from 'react-icons/fa';
-import { FaUserEdit as iconAuthor } from 'react-icons/fa';
-import { FaTag as iconTag } from 'react-icons/fa';
-import { FaCog as iconSettings } from 'react-icons/fa';
+import {
+  FaBuilding as iconBusiness,
+  FaClock as iconHours,
+  FaClone as iconPages,
+  FaCode as iconMetadata,
+  FaCog as iconSettings,
+  FaEnvelope as iconEmail,
+  FaGlobe as iconWebsite,
+  FaImage as iconLogo,
+  FaMapMarkerAlt as iconAddress,
+  FaMobileAlt as iconNap,
+  FaPalette as iconColors,
+  FaPencilAlt as iconPosts,
+  FaPhone as iconPhone,
+  FaShareAlt as iconSocials,
+  FaTag as iconTags,
+  FaUserEdit as iconAuthors,
+  FaUsers as iconTeam,
+} from 'react-icons/fa';
+import { SiGooglemybusiness as iconGMB } from 'react-icons/si';
+import { RiLayout5Fill as iconLayouts } from 'react-icons/ri';
 
 export default () =>
   S.list()
@@ -16,118 +30,216 @@ export default () =>
         .icon(iconSettings)
         .child(
           S.list()
-            .title('Settings Options')
+            .title('Settings')
             .items([
               S.listItem()
-                .title('Company')
-                .icon(iconSettings)
+                .title('Website')
+                .icon(iconWebsite)
                 .child(
                   S.document()
-                    .schemaType('settingsCompany')
-                    .documentId('settingsCompany')
-                ),
-              S.listItem()
-                .title('Socials')
-                .icon(iconSettings)
-                .child(
-                  S.document()
-                    .schemaType('settingsSocials')
-                    .documentId('settingsSocials')
+                    .title('Website')
+                    .schemaType('settingsWebsite')
+                    .documentId('settingsWebsite')
                 ),
               S.listItem()
                 .title('Metadata')
-                .icon(iconSettings)
+                .icon(iconMetadata)
                 .child(
                   S.document()
+                    .title('Metadata')
                     .schemaType('settingsMetadata')
                     .documentId('settingsMetadata')
                 ),
+            ])
+        ),
+      S.listItem()
+        .title('Business')
+        .icon(iconBusiness)
+        .child(
+          S.list()
+            .title('Business')
+            .items([
               S.listItem()
-                .title('Colors')
-                .icon(iconSettings)
+                .title('Logos')
+                .icon(iconLogo)
                 .child(
                   S.document()
-                    .schemaType('settingsColors')
-                    .documentId('settingsColors')
+                    .title('Logos')
+                    .schemaType('businessLogo')
+                    .documentId('businessLogo')
+                ),
+              S.listItem()
+                .title('GMBs')
+                .icon(iconGMB)
+                .schemaType('gmb')
+                .child(S.documentTypeList('gmb').title('GMBs')),
+              S.listItem()
+                .title('NAP')
+                .icon(iconNap)
+                .schemaType('nap')
+                .child(S.documentTypeList('nap').title('NAP')),
+              S.listItem()
+                .title('Addresses')
+                .icon(iconAddress)
+                .schemaType('address')
+                .child(S.documentTypeList('address').title('Addresses')),
+              S.listItem()
+                .title('Phones')
+                .icon(iconPhone)
+                .schemaType('phone')
+                .child(S.documentTypeList('phone').title('Phones')),
+              S.listItem()
+                .title('Emails')
+                .icon(iconEmail)
+                .schemaType('emailAddress')
+                .child(S.documentTypeList('emailAddress').title('Emails')),
+              S.listItem()
+                .title('Hours')
+                .icon(iconHours)
+                .schemaType('hours')
+                .child(S.documentTypeList('hours').title('Hours')),
+              S.listItem()
+                .title('Socials')
+                .icon(iconSocials)
+                .schemaType('social')
+                .child(S.documentTypeList('social').title('Socials')),
+              S.listItem()
+                .title('Teams')
+                .icon(iconTeam)
+                .schemaType('team')
+                .child(S.documentTypeList('team').title('Team')),
+            ])
+        ),
+      S.listItem()
+        .title('Colors')
+        .icon(iconColors)
+        .child(
+          S.list()
+            .title('Colors')
+            .items([
+              S.listItem()
+                .title('Primary')
+                .icon(iconColors)
+                .child(
+                  S.document()
+                    .title('Primary')
+                    .schemaType('colorsPrimary')
+                    .documentId('colorsPrimary')
+                ),
+              S.listItem()
+                .title('Secondary')
+                .icon(iconColors)
+                .child(
+                  S.document()
+                    .title('Secondary')
+                    .schemaType('colorsSecondary')
+                    .documentId('colorsSecondary')
+                ),
+              S.listItem()
+                .title('Accent')
+                .icon(iconColors)
+                .child(
+                  S.document()
+                    .title('Accent')
+                    .schemaType('colorsAccent')
+                    .documentId('colorsAccent')
+                ),
+              S.listItem()
+                .title('Neutral')
+                .icon(iconColors)
+                .child(
+                  S.document()
+                    .title('Neutral')
+                    .schemaType('colorsNeutral')
+                    .documentId('colorsNeutral')
+                ),
+              S.listItem()
+                .title('Hero')
+                .icon(iconColors)
+                .child(
+                  S.document()
+                    .title('Hero')
+                    .schemaType('colorsHero')
+                    .documentId('colorsHero')
                 ),
             ])
         ),
-      S.divider(),
       S.listItem()
-        .title('Brand Pages')
-        .icon(iconHome)
+        .title('Layouts')
+        .icon(iconLayouts)
         .child(
           S.list()
-            .title('Brand/Core Pages')
+            .title('Layouts')
             .items([
               S.listItem()
-                .title('Home')
-                .icon(iconHome)
+                .title('Navbars')
+                .icon(iconLayouts)
                 .child(
-                  S.document().schemaType('pageHome').documentId('pageHome')
+                  S.document().schemaType('navbars').documentId('navbars')
                 ),
               S.listItem()
-                .title('About')
-                .icon(iconHome)
-                .child(
-                  S.document().schemaType('pageAbout').documentId('pageAbout')
-                ),
-              S.listItem()
-                .title('Contact')
-                .icon(iconHome)
+                .title('Footers')
+                .icon(iconLayouts)
                 .child(
                   S.document()
-                    .schemaType('pageContact')
-                    .documentId('pageContact')
+                    .schemaType('navbarMobile')
+                    .documentId('navbarMobile')
+                ),
+              S.listItem()
+                .title('Sidebars')
+                .icon(iconLayouts)
+                .child(
+                  S.document()
+                    .schemaType('navbarMobile')
+                    .documentId('navbarMobile')
                 ),
             ])
         ),
       S.listItem()
         .title('Pages')
-        .icon(iconPage)
+        .icon(iconPages)
         .schemaType('page')
         .child(S.documentTypeList('page').title('Pages')),
       S.listItem()
-        .title('Services')
-        .icon(iconService)
-        .schemaType('service')
-        .child(S.documentTypeList('service').title('Services')),
-      S.listItem()
-        .title('Locations')
-        .icon(iconService)
-        .schemaType('location')
-        .child(S.documentTypeList('location').title('Locations')),
-      S.listItem()
         .title('Posts')
-        .icon(iconPost)
+        .icon(iconPosts)
         .schemaType('post')
         .child(S.documentTypeList('post').title('Posts')),
       S.listItem()
         .title('Authors')
-        .icon(iconAuthor)
+        .icon(iconAuthors)
         .schemaType('author')
         .child(S.documentTypeList('author').title('Authors')),
       S.listItem()
         .title('Tags')
-        .icon(iconTag)
+        .icon(iconTags)
         .schemaType('tag')
         .child(S.documentTypeList('tag').title('Tags')),
       ...S.documentTypeListItems().filter(
         (listItem) =>
           ![
-            'settingsCompany',
-            'settingsSocials',
-            'settingsMetadata',
-            'settingsColors',
-            'pageHome',
-            'pageAbout',
-            'pageContact',
-            'page',
-            'service',
-            'location',
-            'post',
+            'address',
             'author',
+            'businessLogo',
+            'colorsAccent',
+            'colorsHero',
+            'colorsNeutral',
+            'colorsPrimary',
+            'colorsSecondary',
+            'emailAddress',
+            'hours',
+            'gmb',
+            'logo',
+            'nap',
+            'navbars',
+            'page',
+            'phone',
+            'post',
+            'settingsMetadata',
+            'settingsWebsite',
+            'social',
             'tag',
+            'team',
           ].includes(listItem.getId())
       ),
     ]);

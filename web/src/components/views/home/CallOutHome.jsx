@@ -1,15 +1,13 @@
 import React, { useEffect } from 'react';
+import styled from 'styled-components';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-import useSanitySettingsCompany from '../../../hooks/useSanitySettingsCompany';
-import useSanitySettingsSocials from '../../../hooks/useSanitySettingsSocials';
-import useSanitySettingsColors from '../../../hooks/useSanitySettingsColors';
-import useSanitySettingsMetadata from '../../../hooks/useSanitySettingsMetadata';
+import { useSanity } from '../../../hooks';
 
-import Button from '../../common/Button';
+import { Button } from '../..';
 
 const callOutSettings = {
   bgOverlay: 'bg-gray-500',
@@ -39,10 +37,7 @@ const CallOutHome = () => {
 
   const imgCallOutBg = data.imgCallOutBg.childImageSharp.gatsbyImageData;
 
-  const { ...allCompany } = useSanitySettingsCompany();
-  const { ...allSocials } = useSanitySettingsSocials();
-  const { ...allColors } = useSanitySettingsColors();
-  const { ...allMetadata } = useSanitySettingsMetadata();
+  const { primary, secondary, accent, neutral, hero } = useSanity();
 
   const variants = {
     hidden: { opacity: 0, scale: 0.8, x: -100 },
@@ -109,7 +104,7 @@ const CallOutHome = () => {
           className="flex mt-10"
         >
           <div className="col-1 gap-4 mx-auto">
-            <Button type="internal" />
+            <Button btn="internal" />
           </div>
         </motion.div>
       </div>

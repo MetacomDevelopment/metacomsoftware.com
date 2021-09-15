@@ -1,0 +1,21 @@
+{
+  "headline": "Learn About Us",
+  "links": [
+    {
+      "anchor": "History",
+      "link": "/history/"
+    },
+    {
+      "anchor": "Philosophy",
+      "link": "/philosophy/"
+    },
+    {
+      "anchor": "Process",
+      "link": "/process/"
+    },
+    {
+      "anchor": "Why Sentinel?",
+      "link": "/why-sentinel/"
+    }
+  ]
+}

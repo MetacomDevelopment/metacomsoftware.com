@@ -1,40 +1,41 @@
 export default {
-  name: `settingsMetadata`,
-  title: `Settings - Metadata`,
-  type: `document`,
-  // __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
+  title: 'Metadata',
+  name: 'settingsMetadata',
+  type: 'document',
   fields: [
     {
-      name: `title`,
-      title: `Metadata: Title`,
-      description: `Add the metadata title. Example: "Landscaping, Lawn Care, Construction Services - Plympton, MA | Braven Landscape & Construction" `,
-      type: `string`,
-      initialValue: `Landscaping, Lawn Care, Construction Services - Plympton, MA | Braven Landscape & Construction`,
-      // validation: (Rule) => Rule.required(),
+      title: 'Title',
+      name: 'title',
+      type: 'string',
+      validation: (Rule) => [
+        Rule.required().min(10).warning('Title tag length should be longer.'),
+        Rule.required()
+          .max(55)
+          .error('Title tag must be less than 155 characters.'),
+      ],
     },
     {
-      name: `description`,
-      title: `Metadata: Description`,
-      description: `Add the metadata description.`,
-      type: `text`,
-      initialValue: `We offer landscaping, lawn care, construction services in Plymouth County. Call today for a free estimate to achieve your vision for your home or business!`,
-      // validation: (Rule) => Rule.required(),
+      title: 'Description',
+      name: 'description',
+      type: 'text',
+      validation: (Rule) => [
+        Rule.required()
+          .min(10)
+          .warning('Meta description length should be longer.'),
+        Rule.required()
+          .max(155)
+          .error('Meta description must be less than 155 characters.'),
+      ],
     },
     {
-      name: `author`,
-      title: `Metadata: Author`,
-      description: `Add the metadata author. Example: "John Grattan" `,
-      type: `string`,
-      initialValue: `John Grattan`,
-      // validation: (Rule) => Rule.required(),
+      title: 'Author',
+      name: 'author',
+      type: 'string',
     },
     {
-      name: `image`,
-      title: `Metadata: Image`,
-      description: `Add the metadata image. Example: "src/assets/graphics/generic-logo-navbar-1000x199.png" `,
-      type: `string`,
-      initialValue: `src/assets/graphics/generic-logo-navbar-1000x199.png`,
-      // validation: (Rule) => Rule.required(),
+      title: 'Image',
+      name: 'image',
+      type: 'imageAlt',
     },
   ],
 };

@@ -1,7 +1,10 @@
+import { FaListAlt as icon } from 'react-icons/fa';
+
 export default {
   name: 'pageBuilder',
   type: 'array',
   title: 'Page Builder',
+  icon,
   of: [
     { type: 'hero', title: 'Hero' },
     { type: 'benefits', title: 'Benefits' },

@@ -5,13 +5,17 @@ const createPages = async (graphql, actions) => {
   // You can query this API on http://localhost:8000/___graphql
   const result = await graphql(`
     query {
-      pages: allSanityPage(filter: { slug: { current: { ne: "null" } } }) {
+      pages: allSanityPage(
+        filter: { metadata: { slug: { current: { ne: "null" } } } }
+      ) {
         nodes {
-          title
-          slug {
-            current
-          }
           id
+          metadata {
+            title
+            slug {
+              current
+            }
+          }
         }
       }
     }
@@ -26,14 +30,15 @@ const createPages = async (graphql, actions) => {
   // Loop through the category nodes, but don't return anything
   pageNodes.forEach((node) => {
     // Desctructure the id and slug fields for each category
-    const { id, slug = {} } = node;
+    const { id, metadata = {} } = node;
 
     // If there isn't a slug, we want to do nothing
-    if (!slug) return;
+    if (!metadata) return;
 
     // Make the URL with the current slug
-    const path = `/${slug.current}/`;
+    let path = `/${metadata.slug.current}/`;
 
+    if (path === '/home/') path = '/';
     // Create the page using the URL path and the template file, and pass down the id
     // that we can use to query for the right category in the template file
     createPage({

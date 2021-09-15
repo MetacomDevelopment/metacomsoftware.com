@@ -1,42 +1,24 @@
-import React, { useEffect } from 'react';
-import { graphql, Link, useStaticQuery } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import React from 'react';
+import { graphql } from 'gatsby';
 
-import useSanitySettingsCompany from '../hooks/useSanitySettingsCompany';
-import useSanitySettingsSocials from '../hooks/useSanitySettingsSocials';
-import useSanitySettingsColors from '../hooks/useSanitySettingsColors';
-import useSanitySettingsMetadata from '../hooks/useSanitySettingsMetadata';
-
-import Layout from '../components/layout';
-import SEO from '../components/common/Seo';
-import HeroPage from '../components/layouts/HeroPage';
-import PageSidebar from '../components/layouts/PageSidebar';
-import Testimonial from '../components/common/Testimonial';
-import Section from '../components/layouts/Section';
-import Container from '../components/layouts/Container';
-import SanityBlockContent from '../components/common/SanityBlockContent';
-import PageBuilder from '../components/common/PageBuilder';
+import { Layout, SEO, PageBuilder } from '../components';
+import { useSanity } from '../hooks';
 
 export const query = graphql`
   query PageTemplateQ($id: String!) {
     page: sanityPage(id: { eq: $id }) {
       id
-      title
-      slug {
-        current
-      }
-      description
-      schema
-      bgImg {
-        alt
-        asset {
-          gatsbyImageData(fit: FILLMAX, placeholder: BLURRED)
+      layout
+      metadata {
+        title
+        slug {
+          current
+        }
+        description
+        schema {
+          code
         }
       }
-      headline
-      subheadline
       ...PageBuilder
     }
   }
@@ -49,36 +31,24 @@ const PageTemplate = (props) => {
 
   const sanity = data.page;
 
-  const { ...allCompany } = useSanitySettingsCompany();
-  const { ...allSocials } = useSanitySettingsSocials();
-  const { ...allColors } = useSanitySettingsColors();
-  const { ...allMetadata } = useSanitySettingsMetadata();
+  const { website, primary, secondary, accent, neutral, hero } = useSanity();
 
   const seo = {
-    title: sanity.title,
-    description: sanity.title,
-    slug: `${allCompany.website}/${sanity.slug.current}/`,
+    title: sanity.metadata.title,
+    description: sanity.metadata.description,
+    slug: `${website.url}/${sanity.metadata.slug.current}/`,
+    schema: sanity.metadata.schema.code,
   };
 
   return (
-    <Layout type="brand">
+    <Layout layout={sanity.layout}>
       <SEO title={seo.title} description={seo.description} canonical={seo.slug}>
-        <script type="application/ld+json">{`${sanity.schema}`}</script>
+        <script type="application/ld+json">{`${seo.schema}`}</script>
       </SEO>
-      <HeroPage
-        imgHeroBg={sanity.bgImg.asset.gatsbyImageData}
-        altText={sanity.bgImg.alt}
-        headerText={sanity.headline}
-        subheaderText={sanity.subheadline}
+      <PageBuilder
+        pageBuilder={pageBuilder}
+        _rawPageBuilder={_rawPageBuilder}
       />
-      <Section>
-        <Container>
-          <PageBuilder
-            pageBuilder={pageBuilder}
-            _rawPageBuilder={_rawPageBuilder}
-          />
-        </Container>
-      </Section>
     </Layout>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import styled from 'styled-components';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { motion, useAnimation } from 'framer-motion';
@@ -86,7 +87,7 @@ const NavHome = () => {
     <motion.div
       ref={ref}
       variants={containerVariants}
-      initial={'hidden'}
+      initial="hidden"
       animate={controls}
       className="relative bg-indigo-200 bg-opacity-25 py-16 sm:py-24 lg:py-32"
     >

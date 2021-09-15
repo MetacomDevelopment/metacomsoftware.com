@@ -1,60 +1,130 @@
 import React from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import Navbar from './layouts/Navbar';
-import Footer from './layouts/Footer';
+import { useSanity } from '../hooks';
+import { Footer, Header } from '.';
 import './layout.css';
 
-const Layout = ({ type, children }) => {
-  switch (type) {
+const GlobalStyles = styled.div`
+  h2 {
+    color: ${(props) => props.h2Color};
+  }
+  h3 {
+    color: ${(props) => props.h3Color};
+  }
+  h4 {
+    color: ${(props) => props.h4Color};
+  }
+  h5 {
+    color: ${(props) => props.h5Color};
+  }
+  h6 {
+    color: ${(props) => props.h6Color};
+  }
+  a {
+    color: ${(props) => props.linkColor};
+    font-weight: bold;
+    transition: all 0.25s;
+    &:hover {
+      color: ${(props) => props.linkColorHover};
+      transition: all 0.25s;
+    }
+  }
+`;
+
+const Layout = ({ layout, children }) => {
+  const { primary, secondary, accent, neutral, hero } = useSanity();
+
+  switch (layout) {
     default:
       return (
         <div>
-          <Navbar />
-          <div>
+          <Header />
+          <GlobalStyles
+            linkColor={accent.default.color}
+            linkColorHover={accent.light.color}
+            h2Color={primary.dark.color}
+            h3Color={neutral.dark.color}
+            h4Color={neutral.default.color}
+            h5Color={neutral.default.color}
+            h6Color={neutral.default.color}
+          >
             <main>{children}</main>
-          </div>
+          </GlobalStyles>
           <Footer type="brand" />
         </div>
       );
-    case 'brand':
+    case 'page':
       return (
         <div>
-          <Navbar />
-          <div>
+          <Header />
+          <GlobalStyles
+            linkColor={accent.default.color}
+            linkColorHover={accent.light.color}
+            h2Color={secondary.default.color}
+            h3Color={secondary.dark.color}
+            h4Color={neutral.dark.color}
+            h5Color={neutral.default.color}
+            h6Color={neutral.default.color}
+          >
             <main>{children}</main>
-          </div>
+          </GlobalStyles>
           <Footer type="brand" />
         </div>
       );
-    case 'boston':
+    case 'service':
       return (
         <div>
-          <Navbar />
-          <div>
+          <Header />
+          <GlobalStyles
+            linkColor={accent.default.color}
+            linkColorHover={accent.light.color}
+            h2Color={secondary.default.color}
+            h3Color={secondary.dark.color}
+            h4Color={neutral.dark.color}
+            h5Color={neutral.default.color}
+            h6Color={neutral.default.color}
+          >
             <main>{children}</main>
-          </div>
-          <Footer type="boston" />
+          </GlobalStyles>
+          <Footer type="brand" />
         </div>
       );
-    case 'houston':
+    case 'location':
       return (
         <div>
-          <Navbar />
-          <div>
+          <Header />
+          <GlobalStyles
+            linkColor={accent.default.color}
+            linkColorHover={accent.light.color}
+            h2Color={secondary.default.color}
+            h3Color={secondary.dark.color}
+            h4Color={neutral.dark.color}
+            h5Color={neutral.default.color}
+            h6Color={neutral.default.color}
+          >
             <main>{children}</main>
-          </div>
-          <Footer type="houston" />
+          </GlobalStyles>
+          <Footer type="brand" />
         </div>
       );
-    case 'san diego':
+    case 'post':
       return (
         <div>
-          <Navbar />
-          <div>
+          <Header />
+          <GlobalStyles
+            linkColor={accent.default.color}
+            linkColorHover={accent.light.color}
+            h2Color={secondary.default.color}
+            h3Color={secondary.dark.color}
+            h4Color={neutral.dark.color}
+            h5Color={neutral.default.color}
+            h6Color={neutral.default.color}
+          >
             <main>{children}</main>
-          </div>
-          <Footer type="san diego" />
+          </GlobalStyles>
+          <Footer type="brand" />
         </div>
       );
   }

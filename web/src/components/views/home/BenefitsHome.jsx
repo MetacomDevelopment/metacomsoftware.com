@@ -1,5 +1,6 @@
 /* This example requires Tailwind CSS v2.0+ */
 import React, { useEffect } from 'react';
+import styled from 'styled-components';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { motion, useAnimation } from 'framer-motion';
@@ -8,6 +9,10 @@ import { useInView } from 'react-intersection-observer';
 import TimeIcon from '../../../assets/graphics/time-is-money.svg';
 import RecruitmentIcon from '../../../assets/graphics/recruitment.svg';
 import GrowthIcon from '../../../assets/graphics/growth.svg';
+
+const StyledIcon = styled.div`
+  color: ${(props) => props.color};
+`;
 
 const BenefitsHome = () => {
   const data = useStaticQuery(graphql`
@@ -39,6 +44,8 @@ const BenefitsHome = () => {
       }
     }
   `);
+
+  const { primary, secondary, accent, neutral, hero } = useSanity();
 
   const imgBenefitOne = data.imgBenefitOne.childImageSharp.gatsbyImageData;
   const imgBenefitTwo = data.imgBenefitTwo.childImageSharp.gatsbyImageData;
@@ -127,9 +134,9 @@ const BenefitsHome = () => {
                   className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
                 >
                   <div className="">
-                    <div className="">
-                      <benefit.icon className="h-40 w-40 mx-auto text-primary fill-current" />
-                    </div>
+                    <StyledIcon color={primary.default.color}>
+                      <benefit.icon className="h-40 w-40 mx-auto fill-current" />
+                    </StyledIcon>
                     <div className="relative z-10">
                       <h3 className="mt-8 text-3xl font-medium text-gray-800">
                         <span className="">{benefit.name}</span>

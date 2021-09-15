@@ -30,7 +30,14 @@ module.exports = {
     `gatsby-plugin-netlify`,
     `gatsby-plugin-force-trailing-slashes`,
     `gatsby-plugin-sitemap`,
+    `gatsby-transformer-json`,
     // 'gatsby-plugin-loadable-components-ssr',
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      },
+    },
     {
       resolve: 'gatsby-plugin-anchor-links',
       options: {

@@ -1,114 +1,54 @@
-import React, { useEffect } from 'react';
-import { graphql, Link, useStaticQuery } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import React from 'react';
+import { graphql } from 'gatsby';
 
-import useSanitySettingsCompany from '../hooks/useSanitySettingsCompany';
-import useSanitySettingsSocials from '../hooks/useSanitySettingsSocials';
-import useSanitySettingsColors from '../hooks/useSanitySettingsColors';
-import useSanitySettingsMetadata from '../hooks/useSanitySettingsMetadata';
-
-import Layout from '../components/layout';
-import SEO from '../components/common/Seo';
-import HeroPost from '../components/layouts/HeroPost';
-import PageSidebar from '../components/layouts/PageSidebar';
-import Testimonial from '../components/common/Testimonial';
-import Section from '../components/layouts/Section';
-import Container from '../components/layouts/Container';
-import SanityBlockContent from '../components/common/SanityBlockContent';
+import { Layout, SEO, PageBuilder } from '../components';
+import { useSanity } from '../hooks';
 
 export const query = graphql`
   query PostTemplateQ($id: String!) {
-    sanityPost(id: { eq: $id }) {
+    page: sanityPage(id: { eq: $id }) {
       id
-      title
-      slug {
-        current
-      }
-      description
-      schema
-      bgImg {
-        alt
-        asset {
-          gatsbyImageData(fit: FILLMAX, placeholder: BLURRED)
+      layout
+      metadata {
+        title
+        slug {
+          current
+        }
+        description
+        schema {
+          code
         }
       }
-      headline
-      subheadline
-      _rawBody
-      author {
-        name
-      }
-      publishedAt(formatString: "MMMM D, yyyy")
-      tags {
-        title
-      }
+      ...PageBuilder
     }
   }
 `;
 
-const PostTemplate = ({ data }) => {
-  const post = data.sanityPost;
+const PostTemplate = (props) => {
+  const { data } = props;
+  const page = data && data.page;
+  const { pageBuilder, _rawPageBuilder } = page;
 
-  const { ...allCompany } = useSanitySettingsCompany();
-  const { ...allSocials } = useSanitySettingsSocials();
-  const { ...allColors } = useSanitySettingsColors();
-  const { ...allMetadata } = useSanitySettingsMetadata();
+  const sanity = data.page;
+
+  const { primary, secondary, accent, neutral, hero } = useSanity();
 
   const seo = {
-    title: post.title,
-    description: post.description,
-    slug: `${allCompany.website}/blog/${post.slug.current}/`,
+    title: sanity.metadata.title,
+    description: sanity.metadata.description,
+    slug: `${website.url}/${sanity.metadata.slug.current}/`,
+    schema: sanity.metadata.schema.code,
   };
 
   return (
-    <Layout type="brand">
+    <Layout layout={sanity.layout}>
       <SEO title={seo.title} description={seo.description} canonical={seo.slug}>
-        <script type="application/ld+json">
-          {`{
-              "@context": "https://schema.org",
-              "@type": "BlogPosting",
-              "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": "https://www.allstarconnections.com/"
-              },
-              "headline": "${post.title}",
-              "description": "${post.description}",
-              "image": "https://www.allstarconnections.com/#image",  
-              "author": {
-                "@type": "Person",
-                "name": "${post.author.name}",
-                "url": "https://www.allstarconnections.com/#author"
-              },  
-              "publisher": {
-                "@type": "Organization",
-                "name": "All-Star Connections",
-                "logo": {
-                  "@type": "ImageObject",
-                  "url": "https://www.allstarconnections.com/#image"
-                }
-              },
-              "datePublished": "${post.publishedAt}"
-            }`}
-        </script>
+        <script type="application/ld+json">{`${seo.schema}`}</script>
       </SEO>
-      <HeroPost
-        imgHeroBg={post.bgImg.asset.gatsbyImageData}
-        altText={post.bgImg.alt}
-        headerText={post.headline}
-        authorName={post.author.name}
-        tags={post.tags}
-        tagTitle={post.tags.title}
-        publishedAt={post.publishedAt}
+      <PageBuilder
+        pageBuilder={pageBuilder}
+        _rawPageBuilder={_rawPageBuilder}
       />
-      <Section>
-        <Container>
-          <PageSidebar>
-            <SanityBlockContent blocks={post._rawBody} />
-          </PageSidebar>
-        </Container>
-      </Section>
     </Layout>
   );
 };

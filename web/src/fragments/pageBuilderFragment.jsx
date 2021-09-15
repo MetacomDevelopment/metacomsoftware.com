@@ -29,6 +29,14 @@ export const query = graphql`
         _key
         _type
         headline
+        _rawTagline
+        bgImg {
+          alt
+          asset {
+            gatsbyImageData
+          }
+        }
+        layout
       }
       ... on SanityServices {
         _key

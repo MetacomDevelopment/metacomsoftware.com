@@ -18,16 +18,18 @@
     "seo-tools",
     "content-calendar",
     "netlify-deploy-status-badge",
-    "dark-theme-blue",
     "dashboard-widget-notes",
     "icon-picker",
     "@sanity/color-input",
     "order-documents",
-    "@sanity/code-input"
+    "@sanity/code-input",
+    "media"
   ],
   "env": {
     "development": {
-      "plugins": ["@sanity/vision"]
+      "plugins": [
+        "@sanity/vision"
+      ]
     }
   },
   "parts": [
@@ -42,6 +44,10 @@
     {
       "implements": "part:@sanity/dashboard/config",
       "path": "./parts/dashboardConfig.js"
+    },
+    {
+      "implements": "part:@sanity/form-builder/input/image/asset-sources",
+      "path": "./parts/assetSources.js"
     }
   ]
 }

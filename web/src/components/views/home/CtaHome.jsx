@@ -1,20 +1,16 @@
 import React, { useEffect } from 'react';
+import styled from 'styled-components';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-import Button from '../../common/Button';
+import { Button } from '../..';
+import { useSanity } from '../../../hooks';
 
 const CtaHome = () => {
   const data = useStaticQuery(graphql`
     query CtaHomeQ {
-      sanitySettingsCompany {
-        email
-        emailHref
-        phone
-        phoneHref
-      }
       imgCta: file(
         relativePath: {
           eq: "assets/images/home/staffing-request-talent-send-resume-engineering-job-recruiter-agency-all-star-connections.jpg"
@@ -27,7 +23,7 @@ const CtaHome = () => {
     }
   `);
 
-  const company = data.sanitySettingsCompany;
+  const { primary, secondary, accent, neutral, hero } = useSanity();
   const imgCta = data.imgCta.childImageSharp.gatsbyImageData;
 
   const variants = {
@@ -99,7 +95,7 @@ const CtaHome = () => {
             </p>
           </div>
           <div className="mx-auto lg:mx-none mt-12 flex justify-center lg:justify-start rounded-md shadow">
-            <Button type="internal" />
+            <Button btn="internal" />
           </div>
         </motion.div>
       </div>

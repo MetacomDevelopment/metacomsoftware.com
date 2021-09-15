@@ -1,0 +1,17 @@
+{
+  "headline": "Learn About Us",
+  "links": [
+    {
+      "anchor": "Location #1",
+      "link": "/history/"
+    },
+    {
+      "anchor": "Location #2",
+      "link": "/philosophy/"
+    },
+    {
+      "anchor": "Location #3",
+      "link": "/process/"
+    }
+  ]
+}

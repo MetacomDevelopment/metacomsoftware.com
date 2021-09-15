@@ -1,12 +1,33 @@
 /* This example requires Tailwind CSS v2.0+ */
 import React, { useEffect } from 'react';
+import styled from 'styled-components';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-import Grid from '../../layouts/Grid';
-import Col from '../../layouts/Col';
+import { Col, Grid } from '../..';
+
+const StyledFeatures = styled.div`
+  background-color: ${(props) => props.bgColor};
+  &:hover {
+    background-color: ${(props) => props.bgColorHover};
+  }
+`;
+
+const StyledHeadline = styled.span`
+  color: #fff !important;
+  &:hover {
+    color: #ggg !important;
+  }
+`;
+
+const StyledLink = styled((props) => <Link {...props} />)`
+  color: ${(props) => props.color} !important;
+  &:hover {
+    color: ${(props) => props.colorHover} !important;
+  }
+`;
 
 const FeaturesHome = () => {
   const data = useStaticQuery(graphql`
@@ -49,6 +70,8 @@ const FeaturesHome = () => {
       }
     }
   `);
+
+  const { primary, secondary, accent, neutral, hero } = useSanity();
 
   const imgFeatureOne = data.imgFeatureOne.childImageSharp.gatsbyImageData;
   const imgFeatureTwo = data.imgFeatureTwo.childImageSharp.gatsbyImageData;
@@ -139,9 +162,11 @@ const FeaturesHome = () => {
                   variants={itemVariants}
                   className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full"
                 >
-                  <Link
+                  <StyledFeatures
                     to={feature.link}
-                    className="relative py-24 px-4 bg-primary hover:bg-blueGray-800 transition-all ease-in-out rounded-xl shadow-2xl overflow-hidden lg:px-8 flex md:h-full lg:flex-col justify-between"
+                    className="relative py-24 px-4 rounded-xl shadow-2xl overflow-hidden lg:px-8 flex md:h-full lg:flex-col justify-between"
+                    bgColor={primary.dark.color}
+                    bgColorHover={neutral.dark.color}
                   >
                     <div className="absolute inset-0 opacity-20 filter saturate-0 mix-blend-multiply">
                       <GatsbyImage
@@ -152,19 +177,21 @@ const FeaturesHome = () => {
                     </div>
                     <div className="relative z-10 m-auto text-center">
                       <h3 className="mx-auto my-8 text-3xl font-medium text-white drop-shadow-text-darker">
-                        <span className="drop-shadow-text-darker">
+                        <StyledHeadline className="drop-shadow-text-darker">
                           {feature.name}
-                        </span>
+                        </StyledHeadline>
                       </h3>
 
-                      <Link
+                      <StyledLink
                         to={feature.link}
-                        className="text-xl font-medium text-accent hover:text-gray-300"
+                        className="text-xl font-medium"
+                        color={accent.light.color}
+                        colorHover={accent.default.color}
                       >
                         Learn More <span aria-hidden="true">&rarr;</span>{' '}
-                      </Link>
+                      </StyledLink>
                     </div>
-                  </Link>
+                  </StyledFeatures>
                 </motion.div>
               </Col>
             ))}

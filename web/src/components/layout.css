@@ -13,15 +13,6 @@
   h4 {
     @apply capitalize text-lg text-secondary font-semibold tracking-tight sm:text-xl;
   }
-  /* ul {
-    @apply list-disc !important;
-    margin-left: 40px !important;
-    text-indent: -1em !important;
-  }
-  ul > li {
-    list-style-position: inside !important;
-    text-indent: -1.5em !important;
-  } */
 }
 
 @tailwind components;

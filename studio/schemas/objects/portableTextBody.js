@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaPaperclip, FaGlobe, FaExchangeAlt } from 'react-icons/fa';
 
 import {
   mathInlineIcon,
@@ -64,6 +65,9 @@ export default {
             name: 'link',
             type: 'object',
             title: 'External link',
+            blockEditor: {
+              icon: FaGlobe,
+            },
             fields: [
               {
                 name: 'href',
@@ -73,7 +77,6 @@ export default {
               {
                 title: 'Open in new tab',
                 name: 'blank',
-                description: 'Read https://css-tricks.com/use-target_blank/',
                 type: 'boolean',
               },
             ],
@@ -82,16 +85,31 @@ export default {
             name: 'internalLink',
             type: 'object',
             title: 'Internal link',
+            blockEditor: {
+              icon: FaPaperclip,
+            },
             fields: [
               {
                 name: 'reference',
                 type: 'reference',
                 title: 'Reference',
-                to: [
-                  { type: 'post' },
-                  { type: 'service' },
-                  // other types you may want to link to
-                ],
+                to: [{ type: 'page' }, { type: 'post' }],
+              },
+            ],
+          },
+          {
+            name: 'variable',
+            type: 'object',
+            title: 'Variables',
+            blockEditor: {
+              icon: FaExchangeAlt,
+            },
+            fields: [
+              {
+                name: 'reference',
+                type: 'reference',
+                title: 'Reference',
+                to: [{ type: 'phone' }, { type: 'emailAddress' }],
               },
             ],
           },
