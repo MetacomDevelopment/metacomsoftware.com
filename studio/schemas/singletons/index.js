@@ -4,6 +4,7 @@ export { default as colorsHero } from './colorsHero';
 export { default as colorsNeutral } from './colorsNeutral';
 export { default as colorsPrimary } from './colorsPrimary';
 export { default as colorsSecondary } from './colorsSecondary';
-export { default as settingsMetadata } from './settingsMetadata';
+export { default as footers } from './footers';
 export { default as navbars } from './navbars';
+export { default as settingsMetadata } from './settingsMetadata';
 export { default as settingsWebsite } from './settingsWebsite';

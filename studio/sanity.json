@@ -23,7 +23,8 @@
     "@sanity/color-input",
     "order-documents",
     "@sanity/code-input",
-    "media"
+    "media",
+    "inline-svg"
   ],
   "env": {
     "development": {

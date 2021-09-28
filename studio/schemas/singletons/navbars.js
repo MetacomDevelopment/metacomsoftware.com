@@ -1,7 +1,7 @@
 import { FaFileInvoice as icon } from 'react-icons/fa';
 
 export default {
-  title: 'Navbar: Desktop',
+  title: 'Navbars',
   name: 'navbars',
   type: 'document',
   options: {
@@ -12,44 +12,23 @@ export default {
   icon,
   fieldsets: [
     {
-      title: 'Navbar: Desktop',
+      title: 'Navbars',
       name: 'navbarsSet',
     },
   ],
   fields: [
     {
       title: 'Navbar Items',
-      description: 'Create an item for the navbar.',
+      description:
+        'Add items to the primary navbar: dropdown menus with links and/or single links.',
       name: 'navItem',
       type: 'array',
       of: [{ type: 'navItem' }],
     },
-    // {
-    //   title: 'Navbar: Dropdown Menus',
-    //   description: 'Create a dropdown menu and add navigational links',
-    //   name: 'dropdowns',
-    //   type: 'array',
-    //   of: [{ type: 'dropdown' }],
-    // },
-    // {
-    //   title: 'Navbar: Individual Links',
-    //   description: 'Create individual navigational links',
-    //   name: 'pageLinks',
-    //   type: 'array',
-    //   of: [
-    //     {
-    //       type: 'reference',
-    //       to: [
-    //         {
-    //           type: 'page',
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // },
     {
-      name: 'contactLinks',
       title: 'Contact Links',
+      description: 'Add contact links to the secondary navbar.',
+      name: 'contactLinks',
       type: 'array',
       of: [
         {
@@ -63,8 +42,9 @@ export default {
       ],
     },
     {
-      name: 'socialLinks',
       title: 'Social Media Links',
+      description: 'Add social links to the secondary navbar.',
+      name: 'socialLinks',
       type: 'array',
       of: [
         {

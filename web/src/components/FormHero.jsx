@@ -70,9 +70,9 @@ const FormHero = () => {
           borderColor={accent.light.color}
         >
           Send us a request or give us a call today at{' '}
-          <TextLink type="external" light weight="500" href={info.phoneHref}>
+          <AnchorText type="external" light weight="500" href={info.phoneHref}>
             {info.phone}
-          </TextLink>
+          </AnchorText>
           .
         </StyledBorder> */}
       </div>

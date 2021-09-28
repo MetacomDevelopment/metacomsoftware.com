@@ -1,5 +1,6 @@
 import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
+import svgUploadPreview from 'sanity-plugin-inline-svg';
 
 import * as singletons from './singletons';
 import * as documents from './documents';
@@ -25,6 +26,7 @@ const allPlugs = Object.values(plugs).map((plug) => {
 export default createSchema({
   name: 'default',
   types: schemaTypes
+    .concat(svgUploadPreview)
     .concat(allSingletons)
     .concat(allDocuments)
     .concat(allObjects)

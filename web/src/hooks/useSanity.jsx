@@ -20,14 +20,18 @@ const useSanitySettings = () => {
       }
       allSanityNavbars {
         nodes {
+          _key
           navItem {
+            _key
             type
             dropdowns {
+              _key
               label
               links {
-                id
+                _key
                 anchor
                 metadata {
+                  _key
                   slug {
                     current
                   }
@@ -35,6 +39,38 @@ const useSanitySettings = () => {
               }
             }
             pageLinks {
+              _key
+              anchor
+              metadata {
+                _key
+                slug {
+                  current
+                }
+              }
+            }
+          }
+          contactLinks {
+            _key
+            anchor
+            url
+            icon
+          }
+          socialLinks {
+            _key
+            anchor
+            url
+            icon
+          }
+        }
+      }
+      allSanityFooters {
+        nodes {
+          id
+          tagline
+          footerItem {
+            _key
+            headline
+            links {
               id
               anchor
               metadata {
@@ -122,6 +158,12 @@ const useSanitySettings = () => {
         lighter {
           color
         }
+        white {
+          color
+        }
+        black {
+          color
+        }
       }
       sanityColorsPrimary {
         dark {
@@ -169,6 +211,7 @@ const useSanitySettings = () => {
   const metadata = data.sanitySettingsMetadata;
   const logo = data.sanityBusinessLogo;
   const navbars = data.allSanityNavbars.nodes;
+  const footers = data.allSanityFooters.nodes;
   const primary = data.sanityColorsPrimary;
   const secondary = data.sanityColorsSecondary;
   const accent = data.sanityColorsAccent;
@@ -185,6 +228,7 @@ const useSanitySettings = () => {
     metadata,
     logo,
     navbars,
+    footers,
     primary,
     secondary,
     accent,

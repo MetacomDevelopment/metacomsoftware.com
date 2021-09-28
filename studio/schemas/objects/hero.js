@@ -1,20 +1,25 @@
 import { FaListAlt as icon } from 'react-icons/fa';
 
 export default {
-  name: 'hero',
   title: 'Hero',
+  name: 'hero',
   type: 'object',
+  options: {
+    collapsible: false, // Makes the whole fieldset collapsible
+    collapsed: false, // Defines if the fieldset should be collapsed by default or not
+    columns: 1, // Defines a grid for the fields and how many columns it should have
+  },
   icon,
   fieldsets: [
     {
-      title: 'Page Hero',
-      name: 'pageHero',
+      title: 'Hero',
+      name: 'heroSet',
     },
   ],
   fields: [
     {
-      name: 'layout',
       title: 'Layout',
+      name: 'layout',
       type: 'string',
       options: {
         list: [
@@ -27,36 +32,37 @@ export default {
       },
     },
     {
-      name: 'headline',
       title: 'Headline',
+      name: 'headline',
       type: 'string',
     },
     {
-      name: 'tagline',
       title: 'Tagline',
+      name: 'tagline',
       type: 'portableTextBody',
     },
     {
-      name: 'bgImg',
       title: 'Background Image',
+      name: 'bgImg',
       type: 'imageAlt',
     },
     {
-      name: 'testimonial',
       title: 'Testimonial',
+      name: 'testimonial',
       type: 'testimonial',
       hidden: ({ parent }) => !(parent?.layout === 'testimonial'),
     },
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'layout',
       media: 'icon',
     },
-    prepare() {
+    prepare(selection) {
+      const { title, media } = selection;
       return {
-        title: `Hero`,
-        media: icon,
+        title: `Hero: ${title.charAt(0).toUpperCase() + title.slice(1)}`,
+        media,
       };
     },
   },

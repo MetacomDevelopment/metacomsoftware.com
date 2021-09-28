@@ -32,7 +32,7 @@ const Footer = ({ layout }) => {
     default:
       return (
         <footer aria-labelledby="footerHeading">
-          <Section type="none">
+          <Section padding="none">
             <div className="relative flex flex-col place-content-center place-items-center">
               <div className="absolute inset-0">
                 <GatsbyImage
@@ -59,7 +59,7 @@ const Footer = ({ layout }) => {
     case 'map':
       return (
         <footer aria-labelledby="footerHeading">
-          <Section type="none">
+          <Section padding="none">
             <div className="relative flex flex-col place-content-center place-items-center">
               <div className="absolute inset-0">
                 <GatsbyImage
@@ -87,7 +87,7 @@ const Footer = ({ layout }) => {
     case 'noMap':
       return (
         <footer aria-labelledby="footerHeading">
-          <Section type="none">
+          <Section padding="none">
             <div className="relative flex flex-col place-content-center place-items-center">
               <div className="absolute inset-0">
                 <GatsbyImage

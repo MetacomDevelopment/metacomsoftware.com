@@ -1,17 +1,21 @@
 import { FaListAlt as icon } from 'react-icons/fa';
 
 export default {
+  title: 'Page Builder',
   name: 'pageBuilder',
   type: 'array',
-  title: 'Page Builder',
+  options: {
+    collapsible: false, // Makes the whole fieldset collapsible
+    collapsed: false, // Defines if the fieldset should be collapsed by default or not
+    columns: 1, // Defines a grid for the fields and how many columns it should have
+  },
   icon,
   of: [
     { type: 'hero', title: 'Hero' },
     { type: 'benefits', title: 'Benefits' },
     { type: 'features', title: 'Features' },
-    { type: 'ctaFull', title: 'CTA (Full)' },
+    { type: 'cta', title: 'CTA' },
     { type: 'services', title: 'Services' },
-    { type: 'ctaHalf', title: 'CTA (Half)' },
     { type: 'testimonials', title: 'Testimonials' },
   ],
 };

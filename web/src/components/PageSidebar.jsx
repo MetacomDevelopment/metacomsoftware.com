@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Container, Sidebar } from '.';
 
 const SidebarLayout = ({ children }) => (
-  <Container type="page">
+  <Container padding="page">
     <div type="sm" className="grid grid-cols-1 lg:grid-cols-12  gap-x-24">
       <div className="lg:col-span-7">{children}</div>
       <div className="lg:col-span-5 lg:h-full">

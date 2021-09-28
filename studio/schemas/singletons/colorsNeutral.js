@@ -9,28 +9,38 @@ export default {
   },
   fields: [
     {
-      name: 'default',
       title: 'Default',
+      name: 'default',
       type: 'colors',
     },
     {
-      name: 'light',
+      title: 'White',
+      name: 'white',
+      type: 'colors',
+    },
+    {
       title: 'Light',
+      name: 'light',
       type: 'colors',
     },
     {
-      name: 'lighter',
       title: 'Lighter',
+      name: 'lighter',
       type: 'colors',
     },
     {
-      name: 'dark',
       title: 'Dark',
+      name: 'dark',
       type: 'colors',
     },
     {
-      name: 'darker',
       title: 'Darker',
+      name: 'darker',
+      type: 'colors',
+    },
+    {
+      title: 'Black',
+      name: 'black',
       type: 'colors',
     },
   ],

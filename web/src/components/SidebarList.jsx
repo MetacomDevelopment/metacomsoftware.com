@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 
 import { useSanity } from '../hooks';
-import { TextLink } from '.';
+import { AnchorText } from '.';
 
 const StyledLink = styled.a`
   color: ${(props) => props.color} !important;
@@ -63,14 +63,19 @@ const SidebarList = ({ type }) => {
               {brands.map((brand) =>
                 brand.links.map((link) => (
                   <li className="py-3">
-                    <TextLink type="internal" light weight="500" to={link.link}>
+                    <AnchorText
+                      type="internal"
+                      light
+                      weight="500"
+                      to={link.link}
+                    >
                       <h3>
                         <span className="text-gray-50 font-bold text-lg mr-2">
                           >
                         </span>
                         {link.anchor}
                       </h3>
-                    </TextLink>
+                    </AnchorText>
                   </li>
                 ))
               )}
@@ -93,14 +98,19 @@ const SidebarList = ({ type }) => {
               {services.map((service) =>
                 service.links.map((link) => (
                   <li className="py-3">
-                    <TextLink type="internal" light weight="500" to={link.link}>
+                    <AnchorText
+                      type="internal"
+                      light
+                      weight="500"
+                      to={link.link}
+                    >
                       <h3>
                         <span className="text-gray-50 font-bold text-lg mr-2">
                           >
                         </span>
                         {link.anchor}
                       </h3>
-                    </TextLink>
+                    </AnchorText>
                   </li>
                 ))
               )}
@@ -123,14 +133,19 @@ const SidebarList = ({ type }) => {
               {businessLocations.map((location) =>
                 location.links.map((link) => (
                   <li className="py-3">
-                    <TextLink type="internal" light weight="500" to={link.link}>
+                    <AnchorText
+                      type="internal"
+                      light
+                      weight="500"
+                      to={link.link}
+                    >
                       <h3>
                         <span className="text-gray-50 font-bold text-lg mr-2">
                           >
                         </span>
                         {link.anchor}
                       </h3>
-                    </TextLink>
+                    </AnchorText>
                   </li>
                 ))
               )}

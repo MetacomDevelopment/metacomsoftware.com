@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import { Col, Grid, TextLink } from '.';
+import { Col, Grid, AnchorText } from '.';
 import { useSanity } from '../hooks';
 
 const StyledForm = styled.form`
@@ -73,9 +73,9 @@ const FormSidebar = () => {
           borderColor={accent.light.color}
         >
           Send us a request or give us a call today at{' '}
-          <TextLink type="external" light weight="500" href={info.phoneHref}>
+          <AnchorText type="external" light weight="500" href={info.phoneHref}>
             {info.phone}
-          </TextLink>
+          </AnchorText>
           .
         </StyledBorder>
       </div>

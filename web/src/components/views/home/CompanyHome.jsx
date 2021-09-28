@@ -86,7 +86,7 @@
 //       <Container>
 //         <Grid classes="lg:grid-cols-2 gap-x-12 gap-y-14 lg:gap-y-32">
 //           <Col classes="order-1 lg:order-2">
-//             <Container type="img">
+//             <Container padding="img">
 //               <GatsbyImage
 //                 image={imgMeeting}
 //                 className="aspect-w-12 aspect-h-7 rounded-2xl shadow-xl"
@@ -127,7 +127,7 @@
 //             </div>
 //           </Col>
 //           <Col classes="order-3 lg:order-3">
-//             <Container type="img">
+//             <Container padding="img">
 //               <GatsbyImage
 //                 image={imgPlacement}
 //                 className="aspect-w-12 aspect-h-7 rounded-2xl shadow-xl"
@@ -176,7 +176,7 @@
 //             </div>
 //           </Col>
 //           <Col classes="order-5 lg:order-6">
-//             <Container type="img">
+//             <Container padding="img">
 //               <GatsbyImage
 //                 image={imgEngineer}
 //                 className="aspect-w-12 aspect-h-7 rounded-2xl shadow-xl"

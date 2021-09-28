@@ -2,6 +2,11 @@ export default {
   title: 'Page',
   name: 'page',
   type: 'document',
+  options: {
+    collapsible: false, // Makes the whole fieldset collapsible
+    collapsed: false, // Defines if the fieldset should be collapsed by default or not
+    columns: 1, // Defines a grid for the fields and how many columns it should have
+  },
   fields: [
     {
       title: 'Layout',
@@ -10,7 +15,7 @@ export default {
       type: 'string',
       options: {
         list: [
-          { title: 'Page', value: 'page' },
+          { title: 'Brand', value: 'brand' },
           { title: 'Service', value: 'service' },
           { title: 'Location', value: 'location' },
           { title: 'Post', value: 'Post' },
@@ -26,14 +31,14 @@ export default {
       type: 'string',
     },
     {
+      title: 'Metadata',
       name: 'metadata',
       type: 'metadata',
-      title: 'Metadata',
     },
     {
+      title: 'Page Builder',
       name: 'pageBuilder',
       type: 'pageBuilder',
-      title: 'Page Builder',
     },
   ],
   preview: {

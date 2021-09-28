@@ -49,105 +49,105 @@ const createPages = async (graphql, actions) => {
   });
 };
 
-const createServicePages = async (graphql, actions) => {
+// const createServicePages = async (graphql, actions) => {
+//   // Get Gatsby‘s method for creating new pages
+//   const { createPage } = actions;
+//   // Query Gatsby‘s GraphAPI for all the categories that come from Sanity
+//   // You can query this API on http://localhost:8000/___graphql
+//   const result = await graphql(`
+//     query {
+//       services: allSanityService(
+//         filter: { slug: { current: { ne: "null" } } }
+//       ) {
+//         nodes {
+//           title
+//           slug {
+//             current
+//           }
+//           id
+//         }
+//       }
+//     }
+//   `);
+
+//   // If there are any errors in the query, cancel the build and tell us
+//   if (result.errors) throw result.errors;
+
+//   // Let‘s gracefully handle if allSanityCatgogy is null
+//   const serviceNodes = (result.data.services || {}).nodes || [];
+
+//   // Loop through the category nodes, but don't return anything
+//   serviceNodes.forEach((node) => {
+//     // Desctructure the id and slug fields for each category
+//     const { id, slug = {} } = node;
+
+//     // If there isn't a slug, we want to do nothing
+//     if (!slug) return;
+
+//     // Make the URL with the current slug
+//     const path = `/${slug.current}/`;
+
+//     // Create the page using the URL path and the template file, and pass down the id
+//     // that we can use to query for the right category in the template file
+//     createPage({
+//       path,
+//       component: require.resolve('./src/templates/Service.jsx'),
+//       context: { id },
+//     });
+//   });
+// };
+
+// const createLocationPages = async (graphql, actions) => {
+//   // Get Gatsby‘s method for creating new pages
+//   const { createPage } = actions;
+//   // Query Gatsby‘s GraphAPI for all the categories that come from Sanity
+//   // You can query this API on http://localhost:8000/___graphql
+//   const result = await graphql(`
+//     query {
+//       services: allSanityService(
+//         filter: { slug: { current: { ne: "null" } } }
+//       ) {
+//         nodes {
+//           title
+//           slug {
+//             current
+//           }
+//           id
+//         }
+//       }
+//     }
+//   `);
+
+//   // If there are any errors in the query, cancel the build and tell us
+//   if (result.errors) throw result.errors;
+
+//   // Let‘s gracefully handle if allSanityCatgogy is null
+//   const locationNodes = (result.data.locations || {}).nodes || [];
+
+//   // Loop through the category nodes, but don't return anything
+//   locationNodes.forEach((node) => {
+//     // Desctructure the id and slug fields for each category
+//     const { id, slug = {} } = node;
+
+//     // If there isn't a slug, we want to do nothing
+//     if (!slug) return;
+
+//     // Make the URL with the current slug
+//     const path = `/${slug.current}/`;
+
+//     // Create the page using the URL path and the template file, and pass down the id
+//     // that we can use to query for the right category in the template file
+//     createPage({
+//       path,
+//       component: require.resolve('./src/templates/Location.jsx'),
+//       context: { id },
+//     });
+//   });
+// };
+
+const createPosts = async (graphql, actions) => {
   // Get Gatsby‘s method for creating new pages
-  const { createPage } = actions;
-  // Query Gatsby‘s GraphAPI for all the categories that come from Sanity
-  // You can query this API on http://localhost:8000/___graphql
-  const result = await graphql(`
-    query {
-      services: allSanityService(
-        filter: { slug: { current: { ne: "null" } } }
-      ) {
-        nodes {
-          title
-          slug {
-            current
-          }
-          id
-        }
-      }
-    }
-  `);
-
-  // If there are any errors in the query, cancel the build and tell us
-  if (result.errors) throw result.errors;
-
-  // Let‘s gracefully handle if allSanityCatgogy is null
-  const serviceNodes = (result.data.services || {}).nodes || [];
-
-  // Loop through the category nodes, but don't return anything
-  serviceNodes.forEach((node) => {
-    // Desctructure the id and slug fields for each category
-    const { id, slug = {} } = node;
-
-    // If there isn't a slug, we want to do nothing
-    if (!slug) return;
-
-    // Make the URL with the current slug
-    const path = `/${slug.current}/`;
-
-    // Create the page using the URL path and the template file, and pass down the id
-    // that we can use to query for the right category in the template file
-    createPage({
-      path,
-      component: require.resolve('./src/templates/Service.jsx'),
-      context: { id },
-    });
-  });
-};
-
-const createLocationPages = async (graphql, actions) => {
-  // Get Gatsby‘s method for creating new pages
-  const { createPage } = actions;
-  // Query Gatsby‘s GraphAPI for all the categories that come from Sanity
-  // You can query this API on http://localhost:8000/___graphql
-  const result = await graphql(`
-    query {
-      services: allSanityService(
-        filter: { slug: { current: { ne: "null" } } }
-      ) {
-        nodes {
-          title
-          slug {
-            current
-          }
-          id
-        }
-      }
-    }
-  `);
-
-  // If there are any errors in the query, cancel the build and tell us
-  if (result.errors) throw result.errors;
-
-  // Let‘s gracefully handle if allSanityCatgogy is null
-  const locationNodes = (result.data.locations || {}).nodes || [];
-
-  // Loop through the category nodes, but don't return anything
-  locationNodes.forEach((node) => {
-    // Desctructure the id and slug fields for each category
-    const { id, slug = {} } = node;
-
-    // If there isn't a slug, we want to do nothing
-    if (!slug) return;
-
-    // Make the URL with the current slug
-    const path = `/${slug.current}/`;
-
-    // Create the page using the URL path and the template file, and pass down the id
-    // that we can use to query for the right category in the template file
-    createPage({
-      path,
-      component: require.resolve('./src/templates/Location.jsx'),
-      context: { id },
-    });
-  });
-};
-
-const createBlogPages = async (graphql, actions) => {
-  // Get Gatsby‘s method for creating new pages
-  const { createPage } = actions;
+  const { createPost } = actions;
   // Query Gatsby‘s GraphAPI for all the categories that come from Sanity
   // You can query this API on http://localhost:8000/___graphql
   const result = await graphql(`
@@ -183,7 +183,7 @@ const createBlogPages = async (graphql, actions) => {
 
     // Create the page using the URL path and the template file, and pass down the id
     // that we can use to query for the right category in the template file
-    createPage({
+    createPost({
       path,
       component: require.resolve('./src/templates/Post.jsx'),
       context: { id },
@@ -193,7 +193,7 @@ const createBlogPages = async (graphql, actions) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   await createPages(graphql, actions);
-  await createServicePages(graphql, actions);
-  await createLocationPages(graphql, actions);
-  await createBlogPages(graphql, actions);
+  // await createServicePages(graphql, actions);
+  // await createLocationPages(graphql, actions);
+  await createPosts(graphql, actions);
 };

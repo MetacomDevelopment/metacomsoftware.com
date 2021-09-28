@@ -54,6 +54,7 @@
     "tailwindcss": "^2.2.9"
   },
   "devDependencies": {
+    "@svgr/webpack": "^5.5.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-node": "^4.1.0",

@@ -181,9 +181,7 @@ export default () =>
                 .title('Footers')
                 .icon(iconLayouts)
                 .child(
-                  S.document()
-                    .schemaType('navbarMobile')
-                    .documentId('navbarMobile')
+                  S.document().schemaType('footers').documentId('footers')
                 ),
               S.listItem()
                 .title('Sidebars')
@@ -227,6 +225,7 @@ export default () =>
             'colorsPrimary',
             'colorsSecondary',
             'emailAddress',
+            'footers',
             'hours',
             'gmb',
             'logo',

@@ -23,15 +23,15 @@ export default {
       type: 'string',
       options: {
         list: [
-          { title: 'Single Item', value: 'single' },
-          { title: 'Dropdown Menu', value: 'dropdown' },
+          { title: 'Single Link', value: 'single' },
+          { title: 'Dropdown Links', value: 'dropdown' },
         ],
         layout: 'radio',
         direction: 'horizontal',
       },
     },
     {
-      title: 'Navbar: Dropdown Menus',
+      title: 'Navbar: Dropdown Links',
       description: 'Create a dropdown menu and add navigational links',
       name: 'dropdowns',
       type: 'array',
@@ -39,8 +39,8 @@ export default {
       hidden: ({ parent }) => !(parent?.type === 'dropdown'),
     },
     {
-      title: 'Navbar: Individual Links',
-      description: 'Create individual navigational links',
+      title: 'Navbar: Single Link',
+      description: 'Create a single navigational link',
       name: 'pageLinks',
       type: 'array',
       of: [

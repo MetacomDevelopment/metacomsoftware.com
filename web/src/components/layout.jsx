@@ -55,7 +55,7 @@ const Layout = ({ layout, children }) => {
           <Footer type="brand" />
         </div>
       );
-    case 'page':
+    case 'brand':
       return (
         <div>
           <Header />

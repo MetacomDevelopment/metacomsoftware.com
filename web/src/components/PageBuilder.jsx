@@ -1,25 +1,16 @@
 import React from 'react';
 
-import {
-  Benefits,
-  Features,
-  Hero,
-  Services,
-  CtaFull,
-  CtaHalf,
-  Testimonials,
-} from '.';
+import { Benefits, Cta, Features, Hero, Services, Testimonials } from '.';
 
 const PageBuilder = (props) => {
   const { type, pageBuilder, _rawPageBuilder } = props;
   // Load the right component, based on the _type from Sanity
   const Components = {
+    hero: Hero,
     benefits: Benefits,
     features: Features,
-    hero: Hero,
+    cta: Cta,
     services: Services,
-    ctaFull: CtaFull,
-    ctaHalf: CtaHalf,
     testimonials: Testimonials,
   };
 

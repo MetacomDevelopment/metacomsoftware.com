@@ -6,8 +6,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 import { useSanity } from '../hooks';
-
-import { SanityBlockContent, Button, FormHero, Grid, Flex } from '.';
+import { SanityBlockContent, Button, FormHero, Grid, Flex, Overlay } from '.';
 
 const StyledHeroHeadline = styled(motion.h1)`
   color: ${(props) => props.headline};
@@ -15,10 +14,6 @@ const StyledHeroHeadline = styled(motion.h1)`
 
 const StyledHeroSubheadline = styled(motion.p)`
   color: ${(props) => props.subheadline};
-`;
-
-const StyledHeroOverlay = styled(motion.div)`
-  background-color: ${(props) => props.overlay};
 `;
 
 const Hero = ({ block, raw, index, headline, bgImg, alt }) => {
@@ -51,12 +46,7 @@ const Hero = ({ block, raw, index, headline, bgImg, alt }) => {
           alt={alt}
           className="w-full h-full object-cover"
         />
-        <StyledHeroOverlay
-          className="absolute inset-0"
-          style={{ mixBlendMode: 'multiply' }}
-          aria-hidden="true"
-          overlay={hero.overlay.color}
-        />
+        <Overlay overlay={hero.overlay.color} />
       </div>
       <Grid classes="lg:grid-cols-2 gap-4 max-w-7xl mx-auto mt-16 lg:mt-32 py-12 lg:py-24">
         <Flex classes="flex-col justify-center relative text-center lg:text-left pt-5 pb-5 px-4 sm:pt-10 sm:pb-12 sm:px-6 lg:px-8">
