@@ -9,6 +9,16 @@ import { useInView } from 'react-intersection-observer';
 import { Section, Container, Col, Grid, SanityBlockContent } from '.';
 import { useSanity } from '../hooks';
 
+const StyledServices = styled((props) => <Section {...props} />)`
+  background-color: ${(props) => props.bgColor};
+  & h2 {
+    color: ${(props) => props.h2Color};
+  }
+  & h3 {
+    color: ${(props) => props.h3Color};
+  }
+`;
+
 const StyledLink = styled((props) => <Link {...props} />)`
   background-color: ${(props) => props.bgColor};
   &:hover {
@@ -68,12 +78,17 @@ const ServicesImages = ({
     }
   }, [controls, inView]);
   return (
-    <Section classes="bg-gray-200">
+    <Section
+      type="my"
+      bgColor={neutral.light.color}
+      h2Color={neutral.darker.color}
+      h3Color={primary.dark.color}
+    >
       <Container classes="max-w-md px-4 text-center sm:max-w-3xl lg:max-w-7xl">
-        <h3 className="text-base font-semibold tracking-wider text-primary uppercase">
+        <h3 className="text-base font-semibold tracking-wider uppercase">
           {tagline}
         </h3>
-        <h2 className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
+        <h2 className="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">
           {headline}
         </h2>
         <p className="mt-5 max-w-prose mx-auto text-xl text-gray-600">

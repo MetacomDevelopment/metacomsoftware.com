@@ -14,6 +14,14 @@ const StyledBenefits = styled((props) => <Section {...props} />)`
   }
 `;
 
+const StyledIcon = styled.div`
+  color: ${(props) => props.color};
+`;
+
+const StyledAuthor = styled.p`
+  color: ${(props) => props.color};
+`;
+
 function useDynamicSVGImport(name, options = {}) {
   const ImportedIconRef = useRef();
   const [loading, setLoading] = useState(false);
@@ -113,7 +121,10 @@ const BenefitsIcons = ({
               key={item._key}
               classes="pt-6 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
             >
-              <div className="h-40 w-40 mx-auto text-primary">
+              <StyledIcon
+                className="h-40 w-40 mx-auto"
+                color={primary.dark.color}
+              >
                 <Icon
                   name={item.icon}
                   fill="currentColor"
@@ -123,7 +134,7 @@ const BenefitsIcons = ({
                   onError={handleIconError}
                   className="transition hover:scale-105"
                 />
-              </div>
+              </StyledIcon>
               <div className="relative z-10">
                 <h3 className="mt-8 text-3xl font-medium text-gray-800">
                   <span className="">{item.title}</span>
@@ -131,9 +142,12 @@ const BenefitsIcons = ({
                 <p className="mt-5 mb-8 text-xl text-gray-500 italic">
                   <SanityBlockContent blocks={item._rawDescription} />
                 </p>
-                <p className="mt-5 text-base text-primary font-bold">
+                <StyledAuthor
+                  className="mt-5 text-base font-bold"
+                  color={primary.dark.color}
+                >
                   <span>{item.author}</span>
-                </p>
+                </StyledAuthor>
                 <p className="mb-8 text-base text-gray-800 font-semibold">
                   <span>{item.info}</span>
                 </p>
