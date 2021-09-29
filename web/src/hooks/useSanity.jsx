@@ -7,13 +7,21 @@ const useSanitySettings = () => {
       sanitySettingsWebsite {
         name
         url
+        cta
+        ctaUrl {
+          metadata {
+            slug {
+              current
+            }
+          }
+        }
       }
       sanitySettingsMetadata {
         author
         description
         image {
           asset {
-            gatsbyImageData
+            gatsbyImageData(placeholder: BLURRED, formats: WEBP)
           }
         }
         title
@@ -104,13 +112,13 @@ const useSanitySettings = () => {
         footer {
           alt
           asset {
-            gatsbyImageData
+            gatsbyImageData(placeholder: BLURRED, formats: WEBP)
           }
         }
         favicon {
           alt
           asset {
-            gatsbyImageData
+            gatsbyImageData(placeholder: BLURRED, formats: WEBP)
           }
         }
       }

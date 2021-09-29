@@ -7,9 +7,9 @@ import {
   FaCog as iconSettings,
   FaEnvelope as iconEmail,
   FaGlobe as iconWebsite,
-  FaImage as iconLogo,
+  FaUpload as iconLogo,
   FaMapMarkerAlt as iconAddress,
-  FaMobileAlt as iconNap,
+  FaAddressCard as iconNap,
   FaPalette as iconColors,
   FaPencilAlt as iconPosts,
   FaPhone as iconPhone,
@@ -69,45 +69,45 @@ export default () =>
                     .documentId('businessLogo')
                 ),
               S.listItem()
-                .title('GMBs')
-                .icon(iconGMB)
-                .schemaType('gmb')
-                .child(S.documentTypeList('gmb').title('GMBs')),
-              S.listItem()
-                .title('NAP')
+                .title('NAP Info')
                 .icon(iconNap)
                 .schemaType('nap')
                 .child(S.documentTypeList('nap').title('NAP')),
               S.listItem()
-                .title('Addresses')
-                .icon(iconAddress)
-                .schemaType('address')
-                .child(S.documentTypeList('address').title('Addresses')),
+                .title('GMB Listings')
+                .icon(iconGMB)
+                .schemaType('gmb')
+                .child(S.documentTypeList('gmb').title('GMBs')),
               S.listItem()
-                .title('Phones')
-                .icon(iconPhone)
-                .schemaType('phone')
-                .child(S.documentTypeList('phone').title('Phones')),
-              S.listItem()
-                .title('Emails')
-                .icon(iconEmail)
-                .schemaType('emailAddress')
-                .child(S.documentTypeList('emailAddress').title('Emails')),
-              S.listItem()
-                .title('Hours')
-                .icon(iconHours)
-                .schemaType('hours')
-                .child(S.documentTypeList('hours').title('Hours')),
-              S.listItem()
-                .title('Socials')
+                .title('Social Accounts')
                 .icon(iconSocials)
                 .schemaType('social')
                 .child(S.documentTypeList('social').title('Socials')),
               S.listItem()
-                .title('Teams')
+                .title('Team Members')
                 .icon(iconTeam)
                 .schemaType('team')
                 .child(S.documentTypeList('team').title('Team')),
+              // S.listItem()
+              //   .title('Addresses')
+              //   .icon(iconAddress)
+              //   .schemaType('address')
+              //   .child(S.documentTypeList('address').title('Addresses')),
+              // S.listItem()
+              //   .title('Phones')
+              //   .icon(iconPhone)
+              //   .schemaType('phone')
+              //   .child(S.documentTypeList('phone').title('Phones')),
+              // S.listItem()
+              //   .title('Emails')
+              //   .icon(iconEmail)
+              //   .schemaType('emailAddress')
+              //   .child(S.documentTypeList('emailAddress').title('Emails')),
+              // S.listItem()
+              //   .title('Hours')
+              //   .icon(iconHours)
+              //   .schemaType('hours')
+              //   .child(S.documentTypeList('hours').title('Hours')),
             ])
         ),
       S.listItem()
@@ -216,7 +216,7 @@ export default () =>
       ...S.documentTypeListItems().filter(
         (listItem) =>
           ![
-            'address',
+            // 'address',
             'author',
             'businessLogo',
             'colorsAccent',
@@ -224,15 +224,15 @@ export default () =>
             'colorsNeutral',
             'colorsPrimary',
             'colorsSecondary',
-            'emailAddress',
+            // 'emailAddress',
             'footers',
-            'hours',
+            // 'hours',
             'gmb',
             'logo',
             'nap',
             'navbars',
             'page',
-            'phone',
+            // 'phone',
             'post',
             'settingsMetadata',
             'settingsWebsite',

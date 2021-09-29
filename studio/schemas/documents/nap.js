@@ -34,6 +34,7 @@ export default {
           { title: 'Address', value: 'fas fa-map-marker-alt' },
           { title: 'Email', value: 'fas fa-envelope' },
           { title: 'Phone', value: 'fas fa-phone' },
+          { title: 'Hours', value: 'fas fa-clock' },
         ],
         layout: 'dropdown',
         direction: 'vertical',

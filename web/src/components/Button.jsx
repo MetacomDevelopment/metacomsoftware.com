@@ -21,31 +21,43 @@ const StyledButtonForm = styled.button`
 `;
 
 const Button = ({ btn, bgColor, secondaryBtn, link, label }) => {
-  const { primary, secondary, accent, neutral, hero } = useSanity();
+  const { website, primary, secondary, accent, neutral, hero } = useSanity();
 
   switch (btn) {
     default:
       return (
         <StyledButtonInternal
-          to={link}
+          to={
+            website.ctaUrl.metadata.slug.current !== null
+              ? `/${website.ctaUrl.metadata.slug.current}/`
+              : link
+          }
           className="inline-flex items-center py-3 px-6 text-lg font-medium text-gray-50 hover:text-white border border-gray-50 hover:border-gray-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform transition-all"
           secondaryBtn={secondaryBtn}
           bgColor={secondaryBtn ? 'transparent' : accent.default.color}
           bgColorHover={secondaryBtn ? accent.default.color : accent.dark.color}
         >
-          <span className="drop-shadow-text">{label}</span>
+          <span className="drop-shadow-text">
+            {website.cta !== null ? website.cta : label}
+          </span>
         </StyledButtonInternal>
       );
     case 'internal':
       return (
         <StyledButtonInternal
-          to={link}
+          to={
+            website.ctaUrl.metadata.slug.current !== null
+              ? `/${website.ctaUrl.metadata.slug.current}/`
+              : link
+          }
           className="inline-flex items-center py-3 px-6 text-lg font-medium text-gray-50 hover:text-white border border-gray-50 hover:border-gray-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform transition-all"
           secondaryBtn={secondaryBtn}
           bgColor={secondaryBtn ? 'transparent' : accent.default.color}
           bgColorHover={secondaryBtn ? accent.default.color : accent.dark.color}
         >
-          <span className="drop-shadow-text">{label}</span>
+          <span className="drop-shadow-text">
+            {website.cta !== null ? website.cta : label}
+          </span>
         </StyledButtonInternal>
       );
     case 'form':
@@ -58,7 +70,9 @@ const Button = ({ btn, bgColor, secondaryBtn, link, label }) => {
           bgColor={secondaryBtn ? 'transparent' : accent.default.color}
           bgColorHover={secondaryBtn ? accent.default.color : accent.dark.color}
         >
-          <span className="drop-shadow-text">{label}</span>
+          <span className="drop-shadow-text">
+            {website.cta !== null ? website.cta : label}
+          </span>
         </StyledButtonForm>
       );
     case 'anchor':
@@ -71,7 +85,9 @@ const Button = ({ btn, bgColor, secondaryBtn, link, label }) => {
           bgColor={secondaryBtn ? 'transparent' : accent.default.color}
           bgColorHover={secondaryBtn ? accent.default.color : accent.dark.color}
         >
-          <span className="drop-shadow-text">{label}</span>
+          <span className="drop-shadow-text">
+            {website.cta !== null ? website.cta : label}
+          </span>
         </AnchorLink>
       );
   }

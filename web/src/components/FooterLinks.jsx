@@ -1,5 +1,4 @@
 import React from 'react';
-import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 import { Section, Flex, AnchorText } from '.';
@@ -11,29 +10,9 @@ const settings = {
   footerBgColor: 'bg-gray-50',
 };
 
-const text = {
-  logoSubText: 'Engineering Recruitment Consultants',
-};
-
 const LinkFooter = () => {
-  const data = useStaticQuery(graphql`
-    query LinkFooterQ {
-      logo: file(
-        relativePath: {
-          eq: "assets/graphics/all-star-connections-job-recruiting-agency-logo.png"
-        }
-      ) {
-        childImageSharp {
-          gatsbyImageData(quality: 90, layout: FULL_WIDTH, placeholder: BLURRED)
-        }
-      }
-    }
-  `);
-
-  const { footers, website, primary, secondary, accent, neutral, hero } =
+  const { logo, footers, website, primary, secondary, accent, neutral, hero } =
     useSanity();
-
-  const imgLogo = data.logo.childImageSharp.gatsbyImageData;
 
   return (
     <Section padding="sm" bgColor={neutral.lighter.color}>
@@ -41,9 +20,10 @@ const LinkFooter = () => {
         <Flex classes="justify-around flex-col lg:flex-row">
           <div className="space-y-6">
             <GatsbyImage
-              image={imgLogo}
-              className="w-56 mx-auto"
-              alt={`${website.name} logo`}
+              image={logo.footer.asset.gatsbyImageData}
+              alt={`${website.name} company logo`}
+              loading="lazy"
+              className="w-56 mx-auto transition hover:scale-110"
             />
             {footers.map((footer) => (
               <p
@@ -58,8 +38,8 @@ const LinkFooter = () => {
                 item.socialLinks.map((social) => (
                   <AnchorText
                     type="external"
-                    color={primary.dark.color}
-                    colorHover={accent.default.color}
+                    color={accent.default.color}
+                    colorHover={primary.dark.color}
                     key={social.id}
                     href={social.url}
                     rel="noreferrer noopener"

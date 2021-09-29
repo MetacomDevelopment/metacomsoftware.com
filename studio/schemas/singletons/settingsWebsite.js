@@ -14,7 +14,7 @@ export default {
       initialValue: 'John Grattan SEO & Web Design',
     },
     {
-      title: 'Url',
+      title: 'Business URL',
       description: 'Format: "https://johngrattan.com"',
       name: 'url',
       type: 'url',
@@ -23,6 +23,19 @@ export default {
         Rule.uri({
           scheme: ['http', 'https'],
         }),
+    },
+    {
+      title: 'Call-to-Action (CTA)',
+      description: 'Format: "Schedule Consultation"',
+      name: 'cta',
+      type: 'string',
+      initialValue: 'Schedule Consultation',
+    },
+    {
+      title: 'Business URL',
+      name: 'ctaUrl',
+      type: 'reference',
+      to: [{ type: 'page' }],
     },
   ],
 };
