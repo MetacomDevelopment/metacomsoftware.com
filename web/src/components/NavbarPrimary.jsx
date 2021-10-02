@@ -242,7 +242,7 @@ const NavbarPrimary = () => {
                     initial="initial"
                     animate="animate"
                   >
-                    <div className="hidden sm:flex sm:items-center text-3xl font-bold">
+                    <div className="hidden sm:flex sm:items-center">
                       <Button btn="internal" />
                     </div>
                   </motion.div>

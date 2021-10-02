@@ -4,12 +4,6 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import { Section, Flex, AnchorText } from '.';
 import { useSanity } from '../hooks';
 
-const settings = {
-  linkColor: 'text-primary',
-  linkColorHover: 'hover:text-accent',
-  footerBgColor: 'bg-gray-50',
-};
-
 const LinkFooter = () => {
   const { logo, footers, website, primary, secondary, accent, neutral, hero } =
     useSanity();
@@ -65,7 +59,7 @@ const LinkFooter = () => {
                       <li key={link.id}>
                         <AnchorText
                           type="internal"
-                          color={primary.dark.color}
+                          color={neutral.default.color}
                           colorHover={accent.default.color}
                           to={
                             link.metadata.slug.current === 'home'
@@ -92,7 +86,7 @@ const LinkFooter = () => {
                     <li key={contact.id}>
                       <AnchorText
                         type="external"
-                        color={primary.dark.color}
+                        color={neutral.default.color}
                         colorHover={accent.default.color}
                         href={contact.url}
                         rel="noreferrer noopener"

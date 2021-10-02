@@ -1,6 +1,15 @@
 import React from 'react';
 
-import { Benefits, Cta, Features, Hero, Services, Testimonials } from '.';
+import {
+  Benefits,
+  Cta,
+  Features,
+  Hero,
+  Services,
+  Testimonials,
+  Contacts,
+  RichText,
+} from '.';
 
 const PageBuilder = (props) => {
   const { type, pageBuilder, _rawPageBuilder } = props;
@@ -12,6 +21,8 @@ const PageBuilder = (props) => {
     cta: Cta,
     services: Services,
     testimonials: Testimonials,
+    contacts: Contacts,
+    richText: RichText,
   };
 
   // 'raw' content needs to be passed in for the PortableText Component

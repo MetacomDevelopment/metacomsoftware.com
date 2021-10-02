@@ -103,7 +103,7 @@ const BenefitsIcons = ({
 
   return (
     <Section
-      type="my"
+      type="sm"
       bgColor={neutral.light.color}
       h2Color={neutral.darker.color}
       h3Color={primary.dark.color}

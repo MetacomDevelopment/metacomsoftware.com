@@ -1,10 +1,10 @@
 {
-  "name": "bravenlandscape",
+  "name": "template-smb",
   "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "package.json",
-  "author": "Henrique Almeida <bravenlandscapewebsite@gmail.com>",
+  "author": "John Grattan <contact@johngrattan.com>",
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
@@ -14,29 +14,29 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/base": "^2.17.2",
-    "@sanity/code-input": "^2.17.2",
-    "@sanity/color-input": "^2.17.2",
+    "@sanity/base": "^2.20.0",
+    "@sanity/code-input": "^2.20.0",
+    "@sanity/color-input": "^2.20.0",
     "@sanity/components": "^2.14.0",
     "@sanity/core": "^2.17.2",
-    "@sanity/dashboard": "^2.17.2",
-    "@sanity/default-layout": "^2.17.2",
-    "@sanity/default-login": "^2.17.2",
+    "@sanity/dashboard": "^2.20.0",
+    "@sanity/default-layout": "^2.20.0",
+    "@sanity/default-login": "^2.19.0",
     "@sanity/desk-tool": "^2.17.2",
-    "@sanity/vision": "^2.17.2",
+    "@sanity/vision": "^2.20.0",
     "prop-types": "^15.7",
     "react": "^17.0",
     "react-dom": "^17.0",
     "react-icons": "^4.2.0",
     "sanity-plugin-content-calendar": "^1.1.2",
     "sanity-plugin-dashboard-widget-netlify": "^1.1.0",
-    "sanity-plugin-dashboard-widget-notes": "^0.3.2",
+    "sanity-plugin-dashboard-widget-notes": "^0.4.1",
     "sanity-plugin-icon-picker": "^2.0.1",
-    "sanity-plugin-inline-svg": "^1.0.3",
-    "sanity-plugin-media": "^1.3.1",
+    "sanity-plugin-media": "^1.4.0",
     "sanity-plugin-netlify-deploy-status-badge": "^0.0.3",
-    "sanity-plugin-order-documents": "^0.0.19",
-    "sanity-plugin-seo-tools": "^2.2.0"
+    "sanity-plugin-order-documents": "^0.0.20",
+    "sanity-plugin-seo-tools": "^2.2.0",
+    "styled-components": "^5.3.1"
   },
   "devDependencies": {
     "eslint": "^7.2.0",
@@ -46,9 +46,9 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-react-hooks": "^1.7.0",
-    "prettier": "^2.3.0"
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.4.1"
   }
 }

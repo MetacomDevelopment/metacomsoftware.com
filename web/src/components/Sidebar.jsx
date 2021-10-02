@@ -32,7 +32,7 @@ const Sidebar = () => {
           position="Director of Supply Chain"
           company="Tegra Medical"
         /> */}
-        <SidebarList />
+        {/* <SidebarList /> */}
       </FadeIn>
     </aside>
   );

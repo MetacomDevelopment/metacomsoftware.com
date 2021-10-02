@@ -1,18 +1,14 @@
 import S from '@sanity/desk-tool/structure-builder';
 import {
   FaBuilding as iconBusiness,
-  FaClock as iconHours,
   FaClone as iconPages,
   FaCode as iconMetadata,
   FaCog as iconSettings,
-  FaEnvelope as iconEmail,
   FaGlobe as iconWebsite,
   FaUpload as iconLogo,
-  FaMapMarkerAlt as iconAddress,
   FaAddressCard as iconNap,
   FaPalette as iconColors,
   FaPencilAlt as iconPosts,
-  FaPhone as iconPhone,
   FaShareAlt as iconSocials,
   FaTag as iconTags,
   FaUserEdit as iconAuthors,
@@ -88,26 +84,6 @@ export default () =>
                 .icon(iconTeam)
                 .schemaType('team')
                 .child(S.documentTypeList('team').title('Team')),
-              // S.listItem()
-              //   .title('Addresses')
-              //   .icon(iconAddress)
-              //   .schemaType('address')
-              //   .child(S.documentTypeList('address').title('Addresses')),
-              // S.listItem()
-              //   .title('Phones')
-              //   .icon(iconPhone)
-              //   .schemaType('phone')
-              //   .child(S.documentTypeList('phone').title('Phones')),
-              // S.listItem()
-              //   .title('Emails')
-              //   .icon(iconEmail)
-              //   .schemaType('emailAddress')
-              //   .child(S.documentTypeList('emailAddress').title('Emails')),
-              // S.listItem()
-              //   .title('Hours')
-              //   .icon(iconHours)
-              //   .schemaType('hours')
-              //   .child(S.documentTypeList('hours').title('Hours')),
             ])
         ),
       S.listItem()
@@ -216,7 +192,6 @@ export default () =>
       ...S.documentTypeListItems().filter(
         (listItem) =>
           ![
-            // 'address',
             'author',
             'businessLogo',
             'colorsAccent',
@@ -224,15 +199,12 @@ export default () =>
             'colorsNeutral',
             'colorsPrimary',
             'colorsSecondary',
-            // 'emailAddress',
             'footers',
-            // 'hours',
             'gmb',
             'logo',
             'nap',
             'navbars',
             'page',
-            // 'phone',
             'post',
             'settingsMetadata',
             'settingsWebsite',

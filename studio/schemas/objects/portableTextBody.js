@@ -109,11 +109,7 @@ export default {
                 name: 'reference',
                 type: 'reference',
                 title: 'Reference',
-                to: [
-                  { type: 'phone' },
-                  { type: 'emailAddress' },
-                  { type: 'gmb' },
-                ],
+                to: [{ type: 'gmb' }],
               },
             ],
           },

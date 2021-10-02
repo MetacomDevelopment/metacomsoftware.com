@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Container, Sidebar } from '.';
+import { Container, Grid, Col, Sidebar } from '.';
 
 const SidebarLayout = ({ children }) => (
   <Container padding="page">
-    <div type="sm" className="grid grid-cols-1 lg:grid-cols-12  gap-x-24">
-      <div className="lg:col-span-7">{children}</div>
-      <div className="lg:col-span-5 lg:h-full">
+    <Grid type="sm" classes="lg:grid-cols-12  gap-x-24">
+      <Col classes="lg:col-span-7">{children}</Col>
+      <Col classes="lg:col-span-5 lg:h-full">
         <Sidebar />
-      </div>
-    </div>
+      </Col>
+    </Grid>
   </Container>
 );
 

@@ -1,4 +1,4 @@
-import { FaMobileAlt as icon } from 'react-icons/fa';
+import { FaAddressCard as icon } from 'react-icons/fa';
 
 export default {
   title: 'NAP Information',
@@ -14,7 +14,7 @@ export default {
       initialValue: '30 Roosevelt Rd, Plymouth MA 02360',
     },
     {
-      title: 'URL',
+      title: 'External URL',
       description:
         'Enter the URL for the address (GMB CID), email (mailto), or phone number (tel:+1).',
       name: 'url',
@@ -23,6 +23,13 @@ export default {
         Rule.uri({
           scheme: ['http', 'https', 'mailto', 'tel'],
         }),
+    },
+    {
+      title: 'Internal URL',
+      description: 'Select the internal link.',
+      name: 'page',
+      type: 'reference',
+      to: [{ type: 'page' }],
     },
     {
       name: 'icon',
@@ -35,6 +42,7 @@ export default {
           { title: 'Email', value: 'fas fa-envelope' },
           { title: 'Phone', value: 'fas fa-phone' },
           { title: 'Hours', value: 'fas fa-clock' },
+          { title: 'Website', value: 'fas fa-globe' },
         ],
         layout: 'dropdown',
         direction: 'vertical',

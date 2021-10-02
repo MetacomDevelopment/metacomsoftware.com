@@ -93,6 +93,13 @@ const useSanitySettings = () => {
             anchor
             url
             icon
+            page {
+              metadata {
+                slug {
+                  current
+                }
+              }
+            }
           }
           socialLinks {
             id

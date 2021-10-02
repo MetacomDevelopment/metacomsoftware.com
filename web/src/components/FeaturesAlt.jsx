@@ -115,7 +115,7 @@ const FeaturesAlt = ({
   return (
     <Section
       type="my"
-      bgColor={neutral.lighter.color}
+      bgColor={neutral.white.color}
       h2Color={primary.dark.color}
     >
       <Container classes="space-y-24">{featureRows}</Container>

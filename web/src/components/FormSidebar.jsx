@@ -73,9 +73,9 @@ const FormSidebar = () => {
           borderColor={accent.light.color}
         >
           Send us a request or give us a call today at{' '}
-          <AnchorText type="external" light weight="500" href={info.phoneHref}>
+          {/* <AnchorText type="external" light weight="500" href={info.phoneHref}>
             {info.phone}
-          </AnchorText>
+          </AnchorText> */}
           .
         </StyledBorder>
       </div>

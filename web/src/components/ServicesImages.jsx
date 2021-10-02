@@ -9,16 +9,6 @@ import { useInView } from 'react-intersection-observer';
 import { Section, Container, Col, Grid, SanityBlockContent } from '.';
 import { useSanity } from '../hooks';
 
-const StyledServices = styled((props) => <Section {...props} />)`
-  background-color: ${(props) => props.bgColor};
-  & h2 {
-    color: ${(props) => props.h2Color};
-  }
-  & h3 {
-    color: ${(props) => props.h3Color};
-  }
-`;
-
 const StyledLink = styled((props) => <Link {...props} />)`
   background-color: ${(props) => props.bgColor};
   &:hover {

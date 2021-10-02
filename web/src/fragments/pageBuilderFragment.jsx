@@ -96,6 +96,53 @@ export const query = graphql`
         _type
         headline
       }
+      ... on SanityContacts {
+        _key
+        _type
+        layout
+        socialLinks {
+          id
+          anchor
+          url
+          icon
+        }
+        contact {
+          _key
+          _rawDescription
+          headline
+          gmb {
+            address
+            city
+            cityState
+            country
+            emailAddress
+            emailUrl
+            gmbCid
+            gmbEmbed
+            gmbReviews
+            latitude
+            longitude
+            name
+            phone
+            phoneUrl
+            street
+            website {
+              metadata {
+                slug {
+                  current
+                }
+              }
+            }
+            zip
+          }
+        }
+      }
+      ... on SanityRichText {
+        _key
+        _type
+        _rawBody
+        layout
+      }
     }
   }
 `;

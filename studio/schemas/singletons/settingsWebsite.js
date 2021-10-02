@@ -32,7 +32,8 @@ export default {
       initialValue: 'Schedule Consultation',
     },
     {
-      title: 'Business URL',
+      title: 'Call-to-Action (URL)',
+      description: 'Select the default internal link for the CTA.',
       name: 'ctaUrl',
       type: 'reference',
       to: [{ type: 'page' }],

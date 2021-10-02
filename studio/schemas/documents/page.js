@@ -9,7 +9,7 @@ export default {
   },
   fields: [
     {
-      title: 'Layout',
+      title: 'Page Layout',
       description: 'Choose a layout for the page...',
       name: 'layout',
       type: 'string',
@@ -26,7 +26,7 @@ export default {
     },
     {
       title: 'Anchor Text',
-      description: 'Enter the navbar anchor text.',
+      description: 'Enter the anchor text for navbar links.',
       name: 'anchor',
       type: 'string',
     },

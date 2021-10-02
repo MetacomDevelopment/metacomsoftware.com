@@ -238,6 +238,8 @@ export default {
           { title: 'Yellow - 700', value: '#A16207' },
           { title: 'Yellow - 800', value: '#854D0E' },
           { title: 'Yellow - 900', value: '#713F12' },
+          { title: 'Custom: White', value: '#fff' },
+          { title: 'Custom: Black', value: '#000' },
         ],
         layout: 'dropdown',
         direction: 'vertical',
