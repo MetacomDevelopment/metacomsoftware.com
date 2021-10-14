@@ -16,17 +16,17 @@ export default {
         sites: [
           {
             title: 'Sanity Studio',
-            apiId: 'f5d17d45-d898-42eb-b8ca-97c37147948a',
+            apiId: 'a8596547-7e93-4d8c-8030-8c73123c690a',
             buildHookId:
-              'https://api.netlify.com/build_hooks/60b1a295f776af78ee4454ed',
-            name: 'allstarconnections',
+              'https://api.netlify.com/build_hooks/6168a70f5e435138cf718f98',
+            name: 'aristocracysalon',
           },
           {
             title: 'Website',
-            apiId: 'f5d17d45-d898-42eb-b8ca-97c37147948a',
+            apiId: 'a8596547-7e93-4d8c-8030-8c73123c690a',
             buildHookId:
-              'https://api.netlify.com/build_hooks/60b1a29da84d5e7f4927d296',
-            name: 'allstarconnections',
+              'https://api.netlify.com/build_hooks/6168a9229edff333049acdcb',
+            name: 'aristocracysalon',
           },
         ],
       },
