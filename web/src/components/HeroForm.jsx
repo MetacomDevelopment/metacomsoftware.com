@@ -16,7 +16,7 @@ const StyledHeroSubheadline = styled(motion.p)`
   color: ${(props) => props.subheadline};
 `;
 
-const Hero = ({ block, raw, index, headline, bgImg, alt }) => {
+const HeroForm = ({ block, raw, index, headline, bgImg }) => {
   // const { headline, bgImg, alt } = block;
 
   const variants = {
@@ -43,7 +43,7 @@ const Hero = ({ block, raw, index, headline, bgImg, alt }) => {
       <div className="absolute inset-0">
         <GatsbyImage
           image={bgImg.asset.gatsbyImageData}
-          alt={alt}
+          alt={bgImg.alt}
           className="w-full h-full object-cover"
         />
         <Overlay overlay={hero.overlay.color} />
@@ -98,4 +98,4 @@ const Hero = ({ block, raw, index, headline, bgImg, alt }) => {
   );
 };
 
-export default Hero;
+export default HeroForm;

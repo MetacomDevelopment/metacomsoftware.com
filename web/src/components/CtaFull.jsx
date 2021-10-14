@@ -90,7 +90,7 @@ const CtaFull = ({
             initial="hidden"
             animate={controls}
             transition={{ duration: 0.5, delay: 0 }}
-            className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl drop-shadow-darker capitalize"
+            className="max-w-3xl mx-auto text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl drop-shadow-darker capitalize"
           >
             {headline}
           </motion.h2>

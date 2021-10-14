@@ -13,12 +13,14 @@ const LinkFooter = () => {
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <Flex classes="justify-around flex-col lg:flex-row">
           <div className="space-y-6">
-            <GatsbyImage
-              image={logo.footer.asset.gatsbyImageData}
-              alt={`${website.name} company logo`}
-              loading="lazy"
-              className="w-56 mx-auto transition hover:scale-110"
-            />
+            <div className="mx-auto text-center">
+              <GatsbyImage
+                image={logo.footer.asset.gatsbyImageData}
+                alt={`${website.name} company logo`}
+                loading="lazy"
+                className="w-56 transition hover:scale-110"
+              />
+            </div>
             {footers.map((footer) => (
               <p
                 key={footer.id}
@@ -66,9 +68,9 @@ const LinkFooter = () => {
                               ? '/'
                               : `/${link.metadata.slug.current}/`
                           }
-                          className="text-base break-normal"
+                          className="text-base break-words"
                         >
-                          {link.anchor}
+                          <span className="break-words">{link.anchor}</span>
                         </AnchorText>
                       </li>
                     ))}

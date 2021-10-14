@@ -12,27 +12,11 @@ import {
 } from '.';
 
 const Footer = ({ layout }) => {
-  const data = useStaticQuery(graphql`
-    query FooterQ {
-      imgFormBg: file(
-        relativePath: {
-          eq: "assets/images/home/request-expert-talent-recruiter-agency-all-star-connections.jpg"
-        }
-      ) {
-        childImageSharp {
-          gatsbyImageData(quality: 90, layout: FULL_WIDTH, placeholder: BLURRED)
-        }
-      }
-    }
-  `);
-
-  const imgFormBg = data.imgFormBg.childImageSharp.gatsbyImageData;
-
   switch (layout) {
     default:
       return (
         <footer aria-labelledby="footerHeading">
-          <Section padding="none">
+          {/* <Section padding="none">
             <div className="relative flex flex-col place-content-center place-items-center">
               <div className="absolute inset-0">
                 <GatsbyImage
@@ -51,7 +35,7 @@ const Footer = ({ layout }) => {
                 <FormFooter />
               </FadeIn>
             </div>
-          </Section>
+          </Section> */}
           <FooterLinks />
           <FooterTerms />
         </footer>
@@ -59,7 +43,7 @@ const Footer = ({ layout }) => {
     case 'map':
       return (
         <footer aria-labelledby="footerHeading">
-          <Section padding="none">
+          {/* <Section padding="none">
             <div className="relative flex flex-col place-content-center place-items-center">
               <div className="absolute inset-0">
                 <GatsbyImage
@@ -78,7 +62,7 @@ const Footer = ({ layout }) => {
                 <FormFooter />
               </FadeIn>
             </div>
-          </Section>
+          </Section> */}
           <FooterMap location={location} />
           <FooterLinks />
           <FooterTerms />
@@ -87,7 +71,7 @@ const Footer = ({ layout }) => {
     case 'noMap':
       return (
         <footer aria-labelledby="footerHeading">
-          <Section padding="none">
+          {/* <Section padding="none">
             <div className="relative flex flex-col place-content-center place-items-center">
               <div className="absolute inset-0">
                 <GatsbyImage
@@ -106,7 +90,7 @@ const Footer = ({ layout }) => {
                 <FormFooter />
               </FadeIn>
             </div>
-          </Section>
+          </Section> */}
           {/* <FooterMap /> */}
           <FooterLinks />
           <FooterTerms />

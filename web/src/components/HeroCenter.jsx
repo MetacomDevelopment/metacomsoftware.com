@@ -15,7 +15,7 @@ const StyledHeroSubheadline = styled(motion.p)`
   color: ${(props) => props.subheadline};
 `;
 
-const Hero = ({ block, raw, index, headline, bgImg, alt }) => {
+const HeroCenter = ({ block, raw, index, headline, bgImg }) => {
   // const { headline, bgImg, alt } = block;
 
   const variants = {
@@ -43,7 +43,7 @@ const Hero = ({ block, raw, index, headline, bgImg, alt }) => {
         <div className="absolute inset-0">
           <GatsbyImage
             image={bgImg.asset.gatsbyImageData}
-            alt={alt}
+            alt={bgImg.alt}
             className="w-full h-full object-cover"
           />
           <Overlay overlay={hero.overlay.color} />
@@ -56,7 +56,7 @@ const Hero = ({ block, raw, index, headline, bgImg, alt }) => {
               initial="hidden"
               animate={controls}
               transition={{ duration: 0.5, delay: 0 }}
-              className="text-5xl font-extrabold tracking-tight drop-shadow-text-darker sm:text-5xl lg:text-6xl capitalize mb-10"
+              className="mx-auto text-5xl font-extrabold tracking-tight drop-shadow-text-darker sm:text-5xl lg:text-6xl capitalize mb-10 max-w-3xl"
               headline={hero.headline.color}
             >
               {headline}
@@ -67,7 +67,7 @@ const Hero = ({ block, raw, index, headline, bgImg, alt }) => {
               initial="hidden"
               animate={controls}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-6 text-xl lg:text-2xl max-w-3xl drop-shadow-darker space-y-6"
+              className="mx-auto mt-6 text-xl lg:text-2xl max-w-3xl drop-shadow-darker space-y-6"
               subheadline={hero.tagline.color}
             >
               <SanityBlockContent blocks={raw.tagline} />
@@ -94,4 +94,4 @@ const Hero = ({ block, raw, index, headline, bgImg, alt }) => {
   );
 };
 
-export default Hero;
+export default HeroCenter;

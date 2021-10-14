@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { HeroCenter, HeroForm, HeroTestimonial } from '.';
+import { HeroCenter, HeroForm, HeroTestimonial, HeroGraphic } from '.';
 
 const Hero = ({ block, raw, index }) => {
-  const { layout, headline, bgImg, alt } = block;
+  const { layout, headline, bgImg, graphic } = block;
 
   switch (layout) {
     default:
@@ -14,7 +14,6 @@ const Hero = ({ block, raw, index }) => {
           index={index}
           headline={headline}
           bgImg={bgImg}
-          alt={alt}
         />
       );
     case 'center':
@@ -25,7 +24,6 @@ const Hero = ({ block, raw, index }) => {
           index={index}
           headline={headline}
           bgImg={bgImg}
-          alt={alt}
         />
       );
     case 'testimonial':
@@ -36,7 +34,6 @@ const Hero = ({ block, raw, index }) => {
           index={index}
           headline={headline}
           bgImg={bgImg}
-          alt={alt}
         />
       );
     case 'form':
@@ -47,7 +44,17 @@ const Hero = ({ block, raw, index }) => {
           index={index}
           headline={headline}
           bgImg={bgImg}
-          alt={alt}
+        />
+      );
+    case 'graphic':
+      return (
+        <HeroGraphic
+          block={block}
+          raw={raw}
+          index={index}
+          headline={headline}
+          bgImg={bgImg}
+          graphic={graphic}
         />
       );
   }

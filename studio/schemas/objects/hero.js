@@ -26,6 +26,7 @@ export default {
           { title: 'Centered', value: 'center' },
           { title: 'Testimonial', value: 'testimonial' },
           { title: 'Contact Form', value: 'form' },
+          { title: 'Graphic', value: 'graphic' },
         ],
         layout: 'radio',
         direction: 'horizontal',
@@ -51,6 +52,18 @@ export default {
       name: 'testimonial',
       type: 'testimonial',
       hidden: ({ parent }) => !(parent?.layout === 'testimonial'),
+    },
+    {
+      title: 'Graphic',
+      name: 'graphic',
+      type: 'imageAlt',
+      hidden: ({ parent }) => !(parent?.layout === 'graphic'),
+    },
+    {
+      title: 'Caption',
+      name: 'caption',
+      type: 'portableTextBody',
+      hidden: ({ parent }) => !(parent?.layout === 'graphic'),
     },
   ],
   preview: {

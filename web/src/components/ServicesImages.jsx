@@ -22,12 +22,12 @@ const StyledLink = styled((props) => <Link {...props} />)`
   }
 `;
 
-const StyledHeadline = styled.span`
-  color: #fff !important;
-  &:hover {
-    color: #ggg !important;
-  }
-`;
+// const StyledHeadline = styled.span`
+//   color: #fff !important;
+//   &:hover {
+//     color: #ggg !important;
+//   }
+// `;
 
 const ServicesImages = ({
   block,
@@ -70,9 +70,9 @@ const ServicesImages = ({
   return (
     <Section
       type="my"
-      bgColor={neutral.light.color}
+      bgColor={secondary.lighter.color}
       h2Color={neutral.darker.color}
-      h3Color={primary.dark.color}
+      h3Color={secondary.dark.color}
     >
       <Container classes="max-w-md px-4 text-center sm:max-w-3xl lg:max-w-7xl">
         <h3 className="text-base font-semibold tracking-wider uppercase">
@@ -85,7 +85,7 @@ const ServicesImages = ({
           <SanityBlockContent blocks={raw.description} />
         </p>
         <div className="mt-24">
-          <Grid classes="gap-8 sm:grid-cols-2 grid-flow-row auto-rows-fr">
+          <Grid classes="gap-8 sm:grid-cols-2 lg:grid-cols-2 grid-flow-row auto-rows-fr">
             {service.map((item) => (
               <Col key={item._key} className="pt-6 h-full">
                 <motion.div
@@ -100,12 +100,12 @@ const ServicesImages = ({
                         : `/${item.link.metadata.slug.current}/`
                     }
                     className="relative py-24 px-4 rounded-xl shadow-2xl overflow-hidden lg:px-8 flex md:h-full lg:flex-col justify-between"
-                    bgColor={primary.dark.color}
+                    bgColor={neutral.default.color}
                     bgColorHover={neutral.dark.color}
                     textColor={accent.default.color}
-                    textColorHover={accent.dark.color}
+                    textColorHover={accent.light.color}
                   >
-                    <div className="absolute inset-0 opacity-50 filter saturate-0 mix-blend-multiply">
+                    <div className="absolute inset-0 opacity-90 filter saturate-90 mix-blend-multiply">
                       <GatsbyImage
                         image={item.image.asset.gatsbyImageData}
                         className="w-full h-full object-cover rounded-xl transition hover:scale-125"
@@ -113,14 +113,15 @@ const ServicesImages = ({
                       />
                     </div>
                     <div className="relative z-10 m-auto text-center">
-                      <h3 className="mx-auto my-8 text-3xl font-medium text-white drop-shadow-text-darker">
-                        <StyledHeadline className="drop-shadow-text-darker">
+                      <h3 className="mx-auto mb-4 text-4xl font-bold px-3 lg:px-12">
+                        <span className="drop-shadow-darker text-white">
                           {item.title}
-                        </StyledHeadline>
+                        </span>
                       </h3>
 
-                      <p className="text-xl font-medium">
-                        Learn More <span aria-hidden="true">&rarr;</span>{' '}
+                      <p className="text-xl font-medium drop-shadow-text-dark">
+                        <span className="drop-shadow-darker">Learn More</span>{' '}
+                        <span aria-hidden="true">&rarr;</span>{' '}
                       </p>
                     </div>
                   </StyledLink>

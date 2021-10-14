@@ -15,6 +15,10 @@ import {
 import { Button, Col, Container, Grid, Row, AnchorText, Section } from '.';
 import { useSanity } from '../hooks';
 
+const MobileNavCtaBg = styled.div`
+  background-color: ${({ bgColor }) => bgColor};
+`;
+
 const DropdownLabelText = styled.span`
   color: ${(props) => props.color};
   cursor: pointer;
@@ -325,29 +329,34 @@ const NavbarPrimary = () => {
                   )}
                 </Col>
               </Grid>
-              <Grid classes="pt-8 pb-4 bg-primary">
-                <Row classes="mx-auto">
-                  <Button btn="internal" />
-                </Row>
-                <Grid classes="pt-10 pb-4 grid-cols-3">
-                  {navbars.map((item) =>
-                    item.contactLinks.map((contact) => (
-                      <Col key={contact._key} classes="mx-auto">
-                        <div className="flex my-auto px-6">
-                          <a
-                            href={contact.url}
-                            target="_blank"
-                            rel="noreferrer noopener"
-                          >
-                            <i
-                              className={`${contact.icon} fa-2x text-white hover:text-accent`}
-                            />
-                          </a>
-                        </div>
-                      </Col>
-                    ))
-                  )}
-                </Grid>
+              <Grid>
+                <MobileNavCtaBg
+                  bgColor={primary.dark.color}
+                  className="pt-8 pb-4"
+                >
+                  <Row classes="text-center">
+                    <Button btn="internal" />
+                  </Row>
+                  <Grid classes="pt-10 pb-4 grid-cols-3">
+                    {navbars.map((item) =>
+                      item.contactLinks.map((contact) => (
+                        <Col key={contact._key} classes="mx-auto">
+                          <div className="flex my-auto px-6">
+                            <a
+                              href={contact.url}
+                              target="_blank"
+                              rel="noreferrer noopener"
+                            >
+                              <i
+                                className={`${contact.icon} fa-2x text-white hover:text-accent`}
+                              />
+                            </a>
+                          </div>
+                        </Col>
+                      ))
+                    )}
+                  </Grid>
+                </MobileNavCtaBg>
               </Grid>
             </Disclosure.Panel>
           </div>

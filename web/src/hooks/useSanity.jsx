@@ -113,7 +113,7 @@ const useSanitySettings = () => {
         navbar {
           alt
           asset {
-            gatsbyImageData(placeholder: BLURRED, height: 75, layout: FIXED)
+            gatsbyImageData(placeholder: BLURRED, height: 55, layout: FIXED)
           }
         }
         footer {

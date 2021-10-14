@@ -2,7 +2,7 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
-const companyURL = `https://www.allstarconnections.com`;
+const companyURL = `https://www.aristocracysalon.com`;
 
 const {
   NODE_ENV,

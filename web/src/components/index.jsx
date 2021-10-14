@@ -34,6 +34,7 @@ export { default as Hero } from './Hero';
 export { default as HeroCenter } from './HeroCenter';
 export { default as HeroContact } from './HeroContact';
 export { default as HeroForm } from './HeroForm';
+export { default as HeroGraphic } from './HeroGraphic';
 export { default as HeroHome } from './views/home/HeroHome';
 export { default as HeroLocations } from './HeroLocations';
 export { default as HeroPage } from './HeroPage';

@@ -18,9 +18,9 @@ const SEO = ({ lang, title, description, canonical, image, children }) => {
       title={`${title} | ${website.name}`}
     >
       <link rel="canonical" href={`${canonical}`} />
-
+      {/* REMOVE WHEN LIVE */}
+      <meta name="robots" content="noindex, nofollow" />
       <meta name="description" content={metaDescription} />
-
       {/* Open Graph tags */}
       <meta property="og:title" content={metadata.title} />
       <meta property="og:description" content={metaDescription} />
@@ -28,13 +28,11 @@ const SEO = ({ lang, title, description, canonical, image, children }) => {
       <meta property="og:type" content="website" />
       <meta property="og:url" content={website.url} />
       <meta property="og:site_name" content={metadata.title} />
-
       {/* Twitter Card tags */}
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:creator" content={metadata.author} />
       <meta name="twitter:title" content={metadata.title} />
       <meta name="twitter:description" content={metaDescription} />
-
       {children}
     </Helmet>
   );

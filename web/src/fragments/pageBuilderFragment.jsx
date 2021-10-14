@@ -15,6 +15,12 @@ export const query = graphql`
             gatsbyImageData(placeholder: BLURRED, formats: WEBP)
           }
         }
+        graphic {
+          alt
+          asset {
+            gatsbyImageData(placeholder: BLURRED, formats: WEBP)
+          }
+        }
         layout
       }
       ... on SanityBenefits {
