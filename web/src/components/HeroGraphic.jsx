@@ -98,7 +98,7 @@ const HeroGraphic = ({ block, raw, index, headline, bgImg, graphic }) => {
               />
             </div>
             <div>
-              <h2 className="max-w-md mb-3 text-3xl font-extrabold text-indigo-600 lg:max-w-xl lg:text-center drop-shadow-darker">
+              <h2 className="max-w-md mb-3 text-2xl lg:text-3xl font-extrabold text-indigo-600 lg:max-w-xl text-center lg:text-center drop-shadow-darker">
                 Aristocracy Salon & Day Spa
                 <br />
                 <span className="text-yellow-600">
