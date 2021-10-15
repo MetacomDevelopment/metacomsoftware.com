@@ -17,7 +17,14 @@ const SEO = ({ lang, title, description, canonical, image, children }) => {
       }}
       title={`${title} | ${website.name}`}
     >
-      <link rel="canonical" href={`${canonical}`} />
+      <link
+        rel="canonical"
+        href={`${
+          canonical === 'https://www.aristocracysalon.com/home/'
+            ? 'https://www.aristocracysalon.com/'
+            : canonical
+        }`}
+      />
       <meta name="description" content={metaDescription} />
       {/* Open Graph tags */}
       <meta property="og:title" content={metadata.title} />
