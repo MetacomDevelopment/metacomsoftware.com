@@ -47,9 +47,9 @@ const RowTextLeft = ({ _key, headline, _rawDescription, image, alt }) => (
           <h2 className="text-3xl font-extrabold tracking-wide capitalize">
             {headline}
           </h2>
-          <p>
+          <div>
             <SanityBlockContent blocks={_rawDescription} />
-          </p>
+          </div>
         </div>
       </div>
     </Col>

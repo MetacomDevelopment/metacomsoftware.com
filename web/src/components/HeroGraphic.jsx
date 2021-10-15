@@ -12,7 +12,7 @@ const StyledHeroHeadline = styled(motion.h1)`
   color: ${(props) => props.headline};
 `;
 
-const StyledHeroSubheadline = styled(motion.p)`
+const StyledHeroSubheadline = styled(motion.div)`
   color: ${(props) => props.subheadline};
 `;
 
@@ -106,7 +106,7 @@ const HeroGraphic = ({ block, raw, index, headline, bgImg, graphic }) => {
                 </span>
               </h2>
               <div className="pt-2 space-y-4">
-                <p className="text-gray-50 italic drop-shadow-text-cta">
+                <p className="text-gray-50 italic text-center lg:text-left drop-shadow-text-cta">
                   "We are so honored and grateful to be selected by the Plymouth
                   Awards Program in the category of Beauty Salon!"
                 </p>

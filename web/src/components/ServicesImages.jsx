@@ -81,9 +81,9 @@ const ServicesImages = ({
         <h2 className="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">
           {headline}
         </h2>
-        <p className="mt-5 max-w-prose mx-auto text-xl text-gray-600">
+        <div className="mt-5 max-w-prose mx-auto text-xl text-gray-600">
           <SanityBlockContent blocks={raw.description} />
-        </p>
+        </div>
         <div className="mt-24">
           <Grid classes="gap-8 sm:grid-cols-2 lg:grid-cols-2 grid-flow-row auto-rows-fr">
             {service.map((item) => (
