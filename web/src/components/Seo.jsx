@@ -18,8 +18,6 @@ const SEO = ({ lang, title, description, canonical, image, children }) => {
       title={`${title} | ${website.name}`}
     >
       <link rel="canonical" href={`${canonical}`} />
-      {/* REMOVE WHEN LIVE */}
-      <meta name="robots" content="noindex, nofollow" />
       <meta name="description" content={metaDescription} />
       {/* Open Graph tags */}
       <meta property="og:title" content={metadata.title} />
