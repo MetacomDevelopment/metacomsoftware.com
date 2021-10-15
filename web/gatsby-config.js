@@ -95,7 +95,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-tagmanager',
       options: {
-        id: 'GTM-5V7CDJW',
+        id: 'GTM-PP9JFR8',
         includeInDevelopment: false,
         defaultDataLayer: { platform: 'gatsby' },
       },
@@ -114,7 +114,6 @@ module.exports = {
         resolveEnv: () => NETLIFY_ENV,
         env: {
           production: {
-            // REMOVE BEFORE GOING LIVE
             policy: [{ userAgent: '*' }],
           },
           'branch-deploy': {
