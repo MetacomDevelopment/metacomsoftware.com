@@ -29,7 +29,7 @@ module.exports = {
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-force-trailing-slashes`,
-    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-advanced-sitemap`,
     `gatsby-transformer-json`,
     // 'gatsby-plugin-loadable-components-ssr',
     {
