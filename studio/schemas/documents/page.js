@@ -3,8 +3,8 @@ export default {
   name: 'page',
   type: 'document',
   options: {
-    collapsible: false, // Makes the whole fieldset collapsible
-    collapsed: false, // Defines if the fieldset should be collapsed by default or not
+    collapsible: true, // Makes the whole fieldset collapsible
+    collapsed: true, // Defines if the fieldset should be collapsed by default or not
     columns: 1, // Defines a grid for the fields and how many columns it should have
   },
   fields: [
@@ -34,6 +34,11 @@ export default {
       title: 'Metadata',
       name: 'metadata',
       type: 'metadata',
+      options: {
+        collapsible: true, // Makes the whole fieldset collapsible
+        collapsed: true, // Defines if the fieldset should be collapsed by default or not
+        columns: 1, // Defines a grid for the fields and how many columns it should have
+      },
     },
     {
       title: 'Page Builder',

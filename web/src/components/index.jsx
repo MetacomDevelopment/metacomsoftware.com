@@ -42,6 +42,8 @@ export { default as HeroPost } from './HeroPost';
 export { default as HeroTestimonial } from './HeroTestimonial';
 export { default as Image } from './Image';
 export { default as Layout } from './layout';
+export { default as Menus } from './Menus';
+export { default as MenuList } from './MenuList';
 export { default as NavbarPrimary } from './NavbarPrimary';
 export { default as NavbarSecondary } from './NavbarSecondary';
 export { default as NavItems } from './NavItems';

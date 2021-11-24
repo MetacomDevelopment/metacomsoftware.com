@@ -70,7 +70,7 @@ const ServicesImages = ({
   return (
     <Section
       type="my"
-      bgColor={secondary.lighter.color}
+      bgColor={neutral.lighter.color}
       h2Color={neutral.darker.color}
       h3Color={secondary.dark.color}
     >

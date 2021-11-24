@@ -149,6 +149,26 @@ export const query = graphql`
         _rawBody
         layout
       }
+      ... on SanityMenuSection {
+        _key
+        _type
+        layout
+        category {
+          _rawDescription
+          headline
+          images {
+            alt
+            asset {
+              gatsbyImageData
+            }
+          }
+          items {
+            name
+            price
+            _rawDescription
+          }
+        }
+      }
     }
   }
 `;

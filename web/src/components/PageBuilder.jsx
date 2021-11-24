@@ -9,6 +9,7 @@ import {
   Testimonials,
   Contacts,
   RichText,
+  Menus,
 } from '.';
 
 const PageBuilder = (props) => {
@@ -23,6 +24,7 @@ const PageBuilder = (props) => {
     testimonials: Testimonials,
     contacts: Contacts,
     richText: RichText,
+    menuSection: Menus,
   };
 
   // 'raw' content needs to be passed in for the PortableText Component
