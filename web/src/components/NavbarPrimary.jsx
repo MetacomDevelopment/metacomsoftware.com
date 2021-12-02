@@ -343,7 +343,17 @@ const NavbarPrimary = () => {
                   className="pt-8 pb-4"
                 >
                   <Row classes="text-center">
-                    <Button btn="internal" />
+                    {navbars.map((item) => (
+                      <div>
+                        <Button
+                          btn="internal"
+                          internalLink={
+                            item.primaryNavCtaButtonLink.metadata.slug.current
+                          }
+                          label={item.primaryNavCtaButtonLabel}
+                        />
+                      </div>
+                    ))}
                   </Row>
                   <Grid classes="pt-10 pb-4 grid-cols-3">
                     {navbars.map((item) =>
