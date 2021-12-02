@@ -8,18 +8,36 @@ export default {
   icon,
   inputComponent: Tabs,
   fieldsets: [
-    { title: 'Primary Navbar', name: 'primaryNavSet' },
-    { title: 'Secondary Navbar', name: 'secondaryNavSet' },
+    { title: 'Primary Nav: CTA', name: 'primaryNavCtaSet' },
+    { title: 'Primary Nav: Links', name: 'primaryNavLinksSet' },
+    { title: 'Secondary Nav: Links', name: 'secondaryNavSet' },
   ],
   fields: [
     {
-      title: 'Navbar Items',
+      title: 'CTA Button Label',
+      description:
+        'Enter the label for the primary call to action button (Example: "Request Appointment")',
+      name: 'primaryNavCtaButtonLabel',
+      type: 'string',
+      fieldset: 'primaryNavCtaSet',
+    },
+    {
+      title: 'CTA Button Link',
+      description:
+        'Select the internal link for the primary call to action button (Most likely the contact page)',
+      name: 'primaryNavCtaButtonLink',
+      type: 'reference',
+      to: [{ type: 'page' }],
+      fieldset: 'primaryNavCtaSet',
+    },
+    {
+      title: 'Page Links',
       description:
         'Add items to the primary navbar: dropdown menus with links and/or single links.',
       name: 'navItem',
       type: 'array',
       of: [{ type: 'navItem' }],
-      fieldset: 'primaryNavSet',
+      fieldset: 'primaryNavLinksSet',
     },
     {
       title: 'Contact Links',

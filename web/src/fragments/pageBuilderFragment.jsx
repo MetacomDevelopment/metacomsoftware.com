@@ -75,6 +75,14 @@ export const query = graphql`
         subheadline
         tagline
         _rawDescription
+        ctaButtonLabel
+        ctaButtonLink {
+          metadata {
+            slug {
+              current
+            }
+          }
+        }
         image {
           alt
           asset {

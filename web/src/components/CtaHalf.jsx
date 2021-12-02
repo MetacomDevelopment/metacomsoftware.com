@@ -41,6 +41,8 @@ const CtaHalf = ({
   tagline,
   _rawDescription,
   image,
+  ctaButtonLabel,
+  ctaButtonLink,
 }) => {
   const { primary, secondary, accent, neutral, hero } = useSanity();
 
@@ -68,7 +70,11 @@ const CtaHalf = ({
                 <SanityBlockContent blocks={raw.description} />
               </div>
               <div className="mx-auto lg:mx-none mt-12 flex justify-center lg:justify-start rounded-md drop-shadow">
-                <Button btn="internal" />
+                <Button
+                  btn="internal"
+                  internalLink={ctaButtonLink.metadata.slug.current}
+                  label={ctaButtonLabel}
+                />
               </div>
             </div>
           </Col>

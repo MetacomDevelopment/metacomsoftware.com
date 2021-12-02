@@ -9,6 +9,7 @@ export default {
   inputComponent: Tabs,
   fieldsets: [
     { title: 'Layout', name: 'layoutSet' },
+    { title: 'Text', name: 'textSet' },
     { title: 'CTA', name: 'ctaSet' },
     { title: 'Image', name: 'imageSet' },
   ],
@@ -31,27 +32,44 @@ export default {
       title: 'Headline',
       name: 'headline',
       type: 'string',
-      fieldset: 'ctaSet',
+      fieldset: 'textSet',
     },
     {
       title: 'Subheadline',
       name: 'subheadline',
       type: 'string',
       hidden: ({ parent }) => !(parent?.layout === 'full'),
-      fieldset: 'ctaSet',
+      fieldset: 'textSet',
     },
     {
       title: 'Tagline',
       name: 'tagline',
       type: 'string',
       hidden: ({ parent }) => !(parent?.layout === 'half'),
-      fieldset: 'ctaSet',
+      fieldset: 'textSet',
     },
     {
       title: 'Description',
       name: 'description',
       type: 'portableTextBody',
       hidden: ({ parent }) => !(parent?.layout === 'half'),
+      fieldset: 'textSet',
+    },
+    {
+      title: 'CTA Button Label',
+      description:
+        'Enter the label for the  call to action button (Example: "Request Appointment")',
+      name: 'ctaButtonLabel',
+      type: 'string',
+      fieldset: 'ctaSet',
+    },
+    {
+      title: 'CTA Button Link',
+      description:
+        'Select the internal link for the  call to action button (Most likely the contact page)',
+      name: 'ctaButtonLink',
+      type: 'reference',
+      to: [{ type: 'page' }],
       fieldset: 'ctaSet',
     },
     {

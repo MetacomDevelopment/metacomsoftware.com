@@ -51,6 +51,8 @@ const CtaFull = ({
   tagline,
   _rawDescription,
   image,
+  ctaButtonLabel,
+  ctaButtonLink,
 }) => {
   const { primary, secondary, accent, neutral, hero } = useSanity();
 
@@ -116,7 +118,11 @@ const CtaFull = ({
             className="flex mt-10"
           >
             <div className="col-1 gap-4 mx-auto">
-              <Button btn="internal" />
+              <Button
+                btn="internal"
+                internalLink={ctaButtonLink.metadata.slug.current}
+                label={ctaButtonLabel}
+              />
             </div>
           </motion.div>
         </div>

@@ -49,7 +49,7 @@ const ContactMap = ({ block, raw, index, contact, socialLinks }) => {
       bgColor={neutral.lighter.color}
       h2Color={neutral.lighter.color}
     >
-      <Container classes="space-y-24">
+      <Container classes="space-y-24 mt-12 lg:mt-24">
         <Grid classes="lg:grid-cols-1 gap-x-12 gap-y-32">
           {contact.map((item) => (
             <Col key={item._key} classes="relative bg-white shadow-xl">
@@ -196,7 +196,7 @@ const ContactMap = ({ block, raw, index, contact, socialLinks }) => {
                               classes="flex"
                             >
                               <i className="fas fa-2x fa-envelope mr-4 text-yellow-500 hover:text-yellow-400" />
-                              <span className="text-yellow-100 hover:text-yellow-600 text-lg">
+                              <span className="text-yellow-100 hover:text-yellow-600 text-lg break-all">
                                 {gmb.emailAddress}
                               </span>
                             </AnchorText>
@@ -247,7 +247,7 @@ const ContactMap = ({ block, raw, index, contact, socialLinks }) => {
                       </dl>
                     </div>
                   ))}
-                  <ul className="mt-12 ml-1 flex space-x-6">
+                  <ul className="mt-12 flex space-x-6">
                     {socialLinks.map((social) => (
                       <li key={social.id}>
                         <AnchorText

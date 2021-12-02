@@ -246,9 +246,17 @@ const NavbarPrimary = () => {
                     initial="initial"
                     animate="animate"
                   >
-                    <div className="hidden sm:flex sm:items-center">
-                      <Button btn="internal" />
-                    </div>
+                    {navbars.map((item) => (
+                      <div className="hidden sm:flex sm:items-center">
+                        <Button
+                          btn="internal"
+                          internalLink={
+                            item.primaryNavCtaButtonLink.metadata.slug.current
+                          }
+                          label={item.primaryNavCtaButtonLabel}
+                        />
+                      </div>
+                    ))}
                   </motion.div>
                 </div>
               </div>

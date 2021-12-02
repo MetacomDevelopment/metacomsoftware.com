@@ -21,6 +21,14 @@ const useSanitySettings = () => {
       allSanityNavbars {
         nodes {
           _key
+          primaryNavCtaButtonLabel
+          primaryNavCtaButtonLink {
+            metadata {
+              slug {
+                current
+              }
+            }
+          }
           navItem {
             _key
             type
