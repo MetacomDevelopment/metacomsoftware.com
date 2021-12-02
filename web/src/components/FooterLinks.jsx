@@ -5,7 +5,7 @@ import { Section, Flex, AnchorText } from '.';
 import { useSanity } from '../hooks';
 
 const LinkFooter = () => {
-  const { logo, footers, website, primary, secondary, accent, neutral, hero } =
+  const { logo, footers, siteSEO, primary, secondary, accent, neutral, hero } =
     useSanity();
 
   return (
@@ -16,7 +16,7 @@ const LinkFooter = () => {
             <div className="mx-auto text-center">
               <GatsbyImage
                 image={logo.footer.asset.gatsbyImageData}
-                alt={`${website.name} company logo`}
+                alt={`${siteSEO.name} company logo`}
                 loading="lazy"
                 className="w-56 transition hover:scale-110"
               />

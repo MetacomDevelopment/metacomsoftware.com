@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 import { useSanity } from '../hooks';
 
@@ -20,7 +21,16 @@ const StyledButtonForm = styled.button`
   }
 `;
 
-const Button = ({ btn, bgColor, secondaryBtn, link, label }) => {
+const Button = ({
+  btn,
+  bgColor,
+  secondaryBtn,
+  internalLink,
+  link,
+  url,
+  label,
+  anchor,
+}) => {
   const { website, primary, secondary, accent, neutral, hero } = useSanity();
 
   switch (btn) {
@@ -28,28 +38,32 @@ const Button = ({ btn, bgColor, secondaryBtn, link, label }) => {
       return (
         <StyledButtonInternal
           to={
-            website.ctaUrl.metadata.slug.current !== null
-              ? `/${website.ctaUrl.metadata.slug.current}/`
-              : link
+            internalLink.metadata.slug.current === 'home'
+              ? '/'
+              : `/${internalLink.metadata.slug.current}/`
           }
           className="inline-flex items-center py-3 px-6 text-lg font-bold text-gray-50 hover:text-white border border-gray-50 hover:border-gray-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform transition-all"
-          secondaryBtn={secondaryBtn}
-          bgColor={secondaryBtn ? 'transparent' : accent.default.color}
-          bgColorHover={secondaryBtn ? accent.default.color : accent.dark.color}
+          bgColor={accent.default.color}
+          bgColorHover={accent.dark.color}
         >
-          <span className="drop-shadow-text-cta">
-            {website.cta !== null ? website.cta : label}
-          </span>
+          <span className="drop-shadow-text-cta">{label}</span>
         </StyledButtonInternal>
       );
     case 'internal':
       return (
         <StyledButtonInternal
-          to={
-            website.ctaUrl.metadata.slug.current !== null
-              ? `/${website.ctaUrl.metadata.slug.current}/`
-              : link
-          }
+          to={internalLink === 'home' ? '/' : `/${internalLink}/`}
+          className="inline-flex items-center py-3 px-6 text-lg font-bold text-gray-50 hover:text-white border border-gray-50 hover:border-gray-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform transition-all"
+          bgColor={accent.default.color}
+          bgColorHover={accent.dark.color}
+        >
+          <span className="drop-shadow-text-cta">{label}</span>
+        </StyledButtonInternal>
+      );
+    case 'external':
+      return (
+        <StyledButtonInternal
+          href={url}
           className="inline-flex items-center py-3 px-6 text-lg font-bold text-gray-50 hover:text-white border border-gray-50 hover:border-gray-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform transition-all"
           secondaryBtn={secondaryBtn}
           bgColor={secondaryBtn ? 'transparent' : accent.default.color}
@@ -79,15 +93,12 @@ const Button = ({ btn, bgColor, secondaryBtn, link, label }) => {
       return (
         <AnchorLink
           to={anchor}
-          title={title}
-          className="inline-flex items-center text-lg font-bold text-gray-50 hover:text-white border border-gray-50 hover:border-gray-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform transition-all"
+          className="inline-flex items-center py-3 px-6 text-lg font-bold text-gray-50 hover:text-white border border-gray-50 hover:border-gray-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform transition-all cursor-pointer"
           secondaryBtn={secondaryBtn}
           bgColor={secondaryBtn ? 'transparent' : accent.default.color}
           bgColorHover={secondaryBtn ? accent.default.color : accent.dark.color}
         >
-          <span className="drop-shadow-text-cta">
-            {website.cta !== null ? website.cta : label}
-          </span>
+          <span className="drop-shadow-text-cta">{label}</span>
         </AnchorLink>
       );
   }

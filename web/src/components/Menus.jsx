@@ -3,7 +3,7 @@ import React from 'react';
 import { MenuList } from '.';
 
 const Menus = ({ block, raw, index }) => {
-  const { layout, headline, tagline, category } = block;
+  const { layout, headline, tagline, category, idName } = block;
 
   switch (layout) {
     default:
@@ -15,6 +15,7 @@ const Menus = ({ block, raw, index }) => {
           headline={headline}
           tagline={tagline}
           category={category}
+          idName={idName}
         />
       );
     case 'list':
@@ -26,6 +27,7 @@ const Menus = ({ block, raw, index }) => {
           headline={headline}
           tagline={tagline}
           category={category}
+          idName={idName}
         />
       );
   }

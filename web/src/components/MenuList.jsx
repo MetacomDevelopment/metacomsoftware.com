@@ -37,7 +37,15 @@ const StyledLink = styled((props) => <Link {...props} />)`
 //   }
 // `;
 
-const MenuList = ({ block, raw, index, headline, tagline, category }) => {
+const MenuList = ({
+  block,
+  raw,
+  index,
+  headline,
+  tagline,
+  category,
+  idName,
+}) => {
   const { primary, secondary, accent, neutral, hero } = useSanity();
 
   const containerVariants = {
@@ -67,6 +75,7 @@ const MenuList = ({ block, raw, index, headline, tagline, category }) => {
   }, [controls, inView]);
   return (
     <Section
+      idName={idName}
       type="my"
       bgColor={neutral.white.color}
       h2Color={neutral.darker.color}

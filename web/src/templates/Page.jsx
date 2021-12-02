@@ -31,19 +31,23 @@ const PageTemplate = (props) => {
 
   const sanity = data.page;
 
-  const { website, primary, secondary, accent, neutral, hero } = useSanity();
+  const { siteSEO, primary, secondary, accent, neutral, hero } = useSanity();
 
-  const seo = {
+  const pageSEO = {
     title: sanity.metadata.title,
     description: sanity.metadata.description,
-    slug: `${website.url}/${sanity.metadata.slug.current}/`,
+    slug: `${siteSEO.url}/${sanity.metadata.slug.current}/`,
     schema: sanity.metadata.schema.code,
   };
 
   return (
     <Layout layout={sanity.layout}>
-      <SEO title={seo.title} description={seo.description} canonical={seo.slug}>
-        <script type="application/ld+json">{`${seo.schema}`}</script>
+      <SEO
+        title={pageSEO.title}
+        description={pageSEO.description}
+        canonical={pageSEO.slug}
+      >
+        <script type="application/ld+json">{`${pageSEO.schema}`}</script>
       </SEO>
       <PageBuilder
         pageBuilder={pageBuilder}

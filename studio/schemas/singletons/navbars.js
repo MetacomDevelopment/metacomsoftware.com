@@ -1,20 +1,15 @@
 import { FaFileInvoice as icon } from 'react-icons/fa';
+import Tabs from 'sanity-plugin-tabs';
 
 export default {
   title: 'Navbars',
   name: 'navbars',
   type: 'document',
-  options: {
-    collapsible: true, // Makes the whole fieldset collapsible
-    collapsed: true, // Defines if the fieldset should be collapsed by default or not
-    columns: 1, // Defines a grid for the fields and how many columns it should have
-  },
   icon,
+  inputComponent: Tabs,
   fieldsets: [
-    {
-      title: 'Navbars',
-      name: 'navbarsSet',
-    },
+    { title: 'Primary Navbar', name: 'primaryNavSet' },
+    { title: 'Secondary Navbar', name: 'secondaryNavSet' },
   ],
   fields: [
     {
@@ -24,6 +19,7 @@ export default {
       name: 'navItem',
       type: 'array',
       of: [{ type: 'navItem' }],
+      fieldset: 'primaryNavSet',
     },
     {
       title: 'Contact Links',
@@ -40,6 +36,7 @@ export default {
           ],
         },
       ],
+      fieldset: 'secondaryNavSet',
     },
     {
       title: 'Social Media Links',
@@ -56,6 +53,7 @@ export default {
           ],
         },
       ],
+      fieldset: 'secondaryNavSet',
     },
   ],
 };

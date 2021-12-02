@@ -28,6 +28,12 @@ export default {
       },
     },
     {
+      title: 'ID Name',
+      description: 'Pick an ID name for the section (Example: "menu")',
+      name: 'idName',
+      type: 'string',
+    },
+    {
       title: 'Add Categories',
       name: 'category',
       type: 'array',

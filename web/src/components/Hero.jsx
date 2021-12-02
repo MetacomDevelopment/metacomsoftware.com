@@ -3,7 +3,16 @@ import React from 'react';
 import { HeroCenter, HeroForm, HeroTestimonial, HeroGraphic } from '.';
 
 const Hero = ({ block, raw, index }) => {
-  const { layout, headline, bgImg, graphic } = block;
+  const {
+    layout,
+    headline,
+    primaryCtaButtonLabel,
+    primaryCtaButtonLink,
+    secondaryCtaButtonLabel,
+    secondaryCtaButtonLink,
+    bgImg,
+    graphic,
+  } = block;
 
   switch (layout) {
     default:
@@ -14,6 +23,10 @@ const Hero = ({ block, raw, index }) => {
           index={index}
           headline={headline}
           bgImg={bgImg}
+          primaryCtaButtonLabel={primaryCtaButtonLabel}
+          primaryCtaButtonLink={primaryCtaButtonLink}
+          secondaryCtaButtonLabel={secondaryCtaButtonLabel}
+          secondaryCtaButtonLink={secondaryCtaButtonLink}
         />
       );
     case 'center':
@@ -24,6 +37,10 @@ const Hero = ({ block, raw, index }) => {
           index={index}
           headline={headline}
           bgImg={bgImg}
+          primaryCtaButtonLabel={primaryCtaButtonLabel}
+          primaryCtaButtonLink={primaryCtaButtonLink}
+          secondaryCtaButtonLabel={secondaryCtaButtonLabel}
+          secondaryCtaButtonLink={secondaryCtaButtonLink}
         />
       );
     case 'testimonial':
@@ -34,6 +51,10 @@ const Hero = ({ block, raw, index }) => {
           index={index}
           headline={headline}
           bgImg={bgImg}
+          primaryCtaButtonLabel={primaryCtaButtonLabel}
+          primaryCtaButtonLink={primaryCtaButtonLink}
+          secondaryCtaButtonLabel={secondaryCtaButtonLabel}
+          secondaryCtaButtonLink={secondaryCtaButtonLink}
         />
       );
     case 'form':
@@ -44,6 +65,10 @@ const Hero = ({ block, raw, index }) => {
           index={index}
           headline={headline}
           bgImg={bgImg}
+          primaryCtaButtonLabel={primaryCtaButtonLabel}
+          primaryCtaButtonLink={primaryCtaButtonLink}
+          secondaryCtaButtonLabel={secondaryCtaButtonLabel}
+          secondaryCtaButtonLink={secondaryCtaButtonLink}
         />
       );
     case 'graphic':
@@ -55,6 +80,10 @@ const Hero = ({ block, raw, index }) => {
           headline={headline}
           bgImg={bgImg}
           graphic={graphic}
+          primaryCtaButtonLabel={primaryCtaButtonLabel}
+          primaryCtaButtonLink={primaryCtaButtonLink}
+          secondaryCtaButtonLabel={secondaryCtaButtonLabel}
+          secondaryCtaButtonLink={secondaryCtaButtonLink}
         />
       );
   }

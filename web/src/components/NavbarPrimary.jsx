@@ -59,7 +59,7 @@ const DropdownLabelChevron = styled.svg`
 `;
 
 const NavbarPrimary = () => {
-  const { website, logo, navbars, primary, secondary, accent, neutral, hero } =
+  const { siteSEO, logo, navbars, primary, secondary, accent, neutral, hero } =
     useSanity();
 
   function classNames(...classes) {
@@ -113,7 +113,7 @@ const NavbarPrimary = () => {
                       <Link to="/">
                         <GatsbyImage
                           image={logo.navbar.asset.gatsbyImageData}
-                          alt={`${website.name} company logo`}
+                          alt={`${siteSEO.name} company logo`}
                           loading="eager"
                           className="transition hover:scale-110"
                         />

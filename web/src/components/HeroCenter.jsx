@@ -15,7 +15,17 @@ const StyledHeroSubheadline = styled(motion.p)`
   color: ${(props) => props.subheadline};
 `;
 
-const HeroCenter = ({ block, raw, index, headline, bgImg }) => {
+const HeroCenter = ({
+  block,
+  raw,
+  index,
+  headline,
+  primaryCtaButtonLabel,
+  primaryCtaButtonLink,
+  secondaryCtaButtonLabel,
+  secondaryCtaButtonLink,
+  bgImg,
+}) => {
   // const { headline, bgImg, alt } = block;
 
   const variants = {
@@ -72,21 +82,47 @@ const HeroCenter = ({ block, raw, index, headline, bgImg }) => {
             >
               <SanityBlockContent blocks={raw.tagline} />
             </StyledHeroSubheadline>
-            <motion.div
-              ref={ref}
-              variants={variants}
-              initial="hidden"
-              animate={controls}
-              transition={{
-                duration: 0.5,
-                delay: 0.6,
-              }}
-              className="flex justify-center mt-10"
-            >
-              <div className="mx-auto lg:mx-0">
-                <Button btn="internal" />
-              </div>
-            </motion.div>
+            <Flex classes="flex-col lg:flex-row mx-auto justify-center gap-8">
+              <motion.div
+                ref={ref}
+                variants={variants}
+                initial="hidden"
+                animate={controls}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.6,
+                }}
+                className="flex justify-center mt-10"
+              >
+                <div className="mx-auto lg:mx-0">
+                  <Button
+                    btn="internal"
+                    internalLink={primaryCtaButtonLink.metadata.slug.current}
+                    label={primaryCtaButtonLabel}
+                  />
+                </div>
+              </motion.div>
+              <motion.div
+                ref={ref}
+                variants={variants}
+                initial="hidden"
+                animate={controls}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.6,
+                }}
+                className="flex justify-center lg:mt-10"
+              >
+                <div className="mx-auto lg:mx-0">
+                  <Button
+                    btn="anchor"
+                    secondaryBtn="secondaryBtn"
+                    anchor={secondaryCtaButtonLink}
+                    label={secondaryCtaButtonLabel}
+                  />
+                </div>
+              </motion.div>
+            </Flex>
           </div>
         </div>
       </Flex>

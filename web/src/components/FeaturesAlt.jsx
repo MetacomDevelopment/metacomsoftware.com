@@ -101,6 +101,7 @@ const FeaturesAlt = ({
   headline,
   _rawDescription,
   image,
+  idName,
 }) => {
   const { primary, secondary, accent, neutral, hero } = useSanity();
 
@@ -114,6 +115,7 @@ const FeaturesAlt = ({
 
   return (
     <Section
+      idName={idName}
       type="my"
       bgColor={neutral.white.color}
       h2Color={primary.dark.color}

@@ -9,6 +9,16 @@ export const query = graphql`
         _key
         _type
         headline
+        primaryCtaButtonLabel
+        primaryCtaButtonLink {
+          metadata {
+            slug {
+              current
+            }
+          }
+        }
+        secondaryCtaButtonLabel
+        secondaryCtaButtonLink
         bgImg {
           alt
           asset {
@@ -43,6 +53,7 @@ export const query = graphql`
         _key
         _type
         layout
+        idName
         feature {
           _key
           _type
@@ -153,6 +164,7 @@ export const query = graphql`
         _key
         _type
         layout
+        idName
         category {
           _rawDescription
           headline

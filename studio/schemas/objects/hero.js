@@ -1,20 +1,19 @@
 import { FaListAlt as icon } from 'react-icons/fa';
+import Tabs from 'sanity-plugin-tabs';
 
 export default {
   title: 'Hero',
   name: 'hero',
   type: 'object',
-  options: {
-    collapsible: false, // Makes the whole fieldset collapsible
-    collapsed: false, // Defines if the fieldset should be collapsed by default or not
-    columns: 1, // Defines a grid for the fields and how many columns it should have
-  },
   icon,
+  inputComponent: Tabs,
   fieldsets: [
-    {
-      title: 'Hero',
-      name: 'heroSet',
-    },
+    { title: 'Layout', name: 'layoutSet' },
+    { title: 'Headlines', name: 'headlinesSet' },
+    { title: 'CTAs', name: 'ctasSet' },
+    { title: 'BG Image', name: 'bgImageSet' },
+    { title: 'Testimonial', name: 'testimonialSet' },
+    { title: 'Graphic', name: 'graphicSet' },
   ],
   fields: [
     {
@@ -31,39 +30,79 @@ export default {
         layout: 'radio',
         direction: 'horizontal',
       },
+      fieldset: 'layoutSet',
     },
     {
       title: 'Headline',
       name: 'headline',
       type: 'string',
+      fieldset: 'headlinesSet',
     },
     {
       title: 'Tagline',
       name: 'tagline',
       type: 'portableTextBody',
+      fieldset: 'headlinesSet',
+    },
+    {
+      title: 'Primary CTA Button Label',
+      description:
+        'Enter the label for the primary call to action button (Example: "Request Appointment")',
+      name: 'primaryCtaButtonLabel',
+      type: 'string',
+      fieldset: 'ctasSet',
+    },
+    {
+      title: 'Primary CTA Button Link',
+      description:
+        'Select the internal link for the primary call to action button (Most likely the contact page)',
+      name: 'primaryCtaButtonLink',
+      type: 'reference',
+      to: [{ type: 'page' }],
+      fieldset: 'ctasSet',
+    },
+    {
+      title: 'Secondary CTA Button Label',
+      description:
+        'Enter the label for the secondary call to action button (Example: "See Details")',
+      name: 'secondaryCtaButtonLabel',
+      type: 'string',
+      fieldset: 'ctasSet',
+    },
+    {
+      title: 'Secondary CTA Button Link',
+      description:
+        'Enter the ID name of the section to jump to (Example: "#features")',
+      name: 'secondaryCtaButtonLink',
+      type: 'string',
+      fieldset: 'ctasSet',
     },
     {
       title: 'Background Image',
       name: 'bgImg',
       type: 'imageAlt',
+      fieldset: 'bgImageSet',
     },
     {
       title: 'Testimonial',
       name: 'testimonial',
       type: 'testimonial',
       hidden: ({ parent }) => !(parent?.layout === 'testimonial'),
+      fieldset: 'testimonialSet',
     },
     {
       title: 'Graphic',
       name: 'graphic',
       type: 'imageAlt',
       hidden: ({ parent }) => !(parent?.layout === 'graphic'),
+      fieldset: 'graphicSet',
     },
     {
       title: 'Caption',
       name: 'caption',
       type: 'portableTextBody',
       hidden: ({ parent }) => !(parent?.layout === 'graphic'),
+      fieldset: 'graphicSet',
     },
   ],
   preview: {

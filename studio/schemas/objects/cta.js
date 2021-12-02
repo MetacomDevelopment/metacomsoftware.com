@@ -1,20 +1,16 @@
 import { FaListAlt as icon } from 'react-icons/fa';
+import Tabs from 'sanity-plugin-tabs';
 
 export default {
   title: 'CTA',
   name: 'cta',
   type: 'object',
-  options: {
-    collapsible: false, // Makes the whole fieldset collapsible
-    collapsed: false, // Defines if the fieldset should be collapsed by default or not
-    columns: 1, // Defines a grid for the fields and how many columns it should have
-  },
   icon,
+  inputComponent: Tabs,
   fieldsets: [
-    {
-      title: 'CTA',
-      name: 'ctaSet',
-    },
+    { title: 'Layout', name: 'layoutSet' },
+    { title: 'CTA', name: 'ctaSet' },
+    { title: 'Image', name: 'imageSet' },
   ],
   fields: [
     {
@@ -29,34 +25,40 @@ export default {
         layout: 'radio',
         direction: 'horizontal',
       },
+      fieldset: 'layoutSet',
     },
     {
       title: 'Headline',
       name: 'headline',
       type: 'string',
+      fieldset: 'ctaSet',
     },
     {
       title: 'Subheadline',
       name: 'subheadline',
       type: 'string',
       hidden: ({ parent }) => !(parent?.layout === 'full'),
+      fieldset: 'ctaSet',
     },
     {
       title: 'Tagline',
       name: 'tagline',
       type: 'string',
       hidden: ({ parent }) => !(parent?.layout === 'half'),
+      fieldset: 'ctaSet',
     },
     {
       title: 'Description',
       name: 'description',
       type: 'portableTextBody',
       hidden: ({ parent }) => !(parent?.layout === 'half'),
+      fieldset: 'ctaSet',
     },
     {
       title: 'Image',
       name: 'image',
       type: 'imageAlt',
+      fieldset: 'imageSet',
     },
   ],
   preview: {

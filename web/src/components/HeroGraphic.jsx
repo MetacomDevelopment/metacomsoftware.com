@@ -16,7 +16,18 @@ const StyledHeroSubheadline = styled(motion.div)`
   color: ${(props) => props.subheadline};
 `;
 
-const HeroGraphic = ({ block, raw, index, headline, bgImg, graphic }) => {
+const HeroGraphic = ({
+  block,
+  raw,
+  index,
+  headline,
+  bgImg,
+  graphic,
+  primaryCtaButtonLabel,
+  primaryCtaButtonLink,
+  secondaryCtaButtonLabel,
+  secondaryCtaButtonLink,
+}) => {
   // const { headline, bgImg, alt } = block;
 
   const variants = {
@@ -84,7 +95,11 @@ const HeroGraphic = ({ block, raw, index, headline, bgImg, graphic }) => {
             className="flex mt-10"
           >
             <div className="mx-auto lg:mx-0 max">
-              <Button btn="internal" />
+              <Button
+                btn="internal"
+                internalLink={primaryCtaButtonLink.metadata.slug.current}
+                label={primaryCtaButtonLabel}
+              />
             </div>
           </motion.div>
         </Flex>
