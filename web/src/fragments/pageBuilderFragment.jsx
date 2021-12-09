@@ -31,6 +31,17 @@ export const query = graphql`
             gatsbyImageData(placeholder: BLURRED, formats: WEBP)
           }
         }
+        testimonial {
+          _rawQuote
+          author
+          authorImg {
+            alt
+            asset {
+              gatsbyImageData(placeholder: BLURRED, formats: WEBP)
+            }
+          }
+          info
+        }
         layout
       }
       ... on SanityBenefits {

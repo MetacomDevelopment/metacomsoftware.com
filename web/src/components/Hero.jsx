@@ -11,6 +11,7 @@ const Hero = ({ block, raw, index }) => {
     secondaryCtaButtonLabel,
     secondaryCtaButtonLink,
     bgImg,
+    testimonial,
     graphic,
   } = block;
 
@@ -51,6 +52,7 @@ const Hero = ({ block, raw, index }) => {
           index={index}
           headline={headline}
           bgImg={bgImg}
+          testimonial={testimonial}
           primaryCtaButtonLabel={primaryCtaButtonLabel}
           primaryCtaButtonLink={primaryCtaButtonLink}
           secondaryCtaButtonLabel={secondaryCtaButtonLabel}
