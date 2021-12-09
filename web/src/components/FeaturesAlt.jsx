@@ -11,6 +11,7 @@ import {
   Col,
   Flex,
   SanityBlockContent,
+  Button,
 } from '.';
 import { useSanity } from '../hooks';
 
@@ -39,7 +40,20 @@ const StyledLink = styled((props) => <Link {...props} />)`
   }
 `;
 
-const RowTextLeft = ({ _key, headline, _rawDescription, image, alt }) => (
+const RowTextLeft = ({
+  _key,
+  headline,
+  _rawDescription,
+  image,
+  alt,
+  idName,
+  ctaButton,
+  linkType,
+  label,
+  internalLink,
+  externalLink,
+  jumpLink,
+}) => (
   <Grid key={_key} classes="lg:grid-cols-2 gap-x-12 gap-y-14 lg:gap-y-32">
     <Col classes="order-2 lg:order-none">
       <div className="text-lg text-gray-500 max-w-prose mx-auto lg:max-w-none space-y-10">
@@ -49,6 +63,29 @@ const RowTextLeft = ({ _key, headline, _rawDescription, image, alt }) => (
           </h2>
           <div>
             <SanityBlockContent blocks={_rawDescription} />
+          </div>
+        </div>
+        <div className="flex mt-10">
+          <div className="mx-auto lg:mx-0 max">
+            {ctaButton.linkType === 'internal' ? (
+              <Button
+                linkType={ctaButton.linkType}
+                internalLink={ctaButton.internalLink.metadata.slug.current}
+                label={ctaButton.label}
+              />
+            ) : ctaButton.linkType === 'external' ? (
+              <Button
+                linkType={ctaButton.linkType}
+                externalLink={ctaButton.externalLink}
+                label={ctaButton.label}
+              />
+            ) : ctaButton.linkType === 'jump' ? (
+              <Button
+                linkType={ctaButton.linkType}
+                jumpLink={ctaButton.jumpLink}
+                label={ctaButton.label}
+              />
+            ) : null}
           </div>
         </div>
       </div>
@@ -66,7 +103,20 @@ const RowTextLeft = ({ _key, headline, _rawDescription, image, alt }) => (
   </Grid>
 );
 
-const RowTextRight = ({ _key, headline, _rawDescription, image, alt }) => (
+const RowTextRight = ({
+  _key,
+  headline,
+  _rawDescription,
+  image,
+  alt,
+  idName,
+  ctaButton,
+  linkType,
+  label,
+  internalLink,
+  externalLink,
+  jumpLink,
+}) => (
   <Grid key={_key} classes="lg:grid-cols-2 gap-x-12 gap-y-14 lg:gap-y-32">
     <Col classes="order-1 lg:order-none">
       <Container padding="img">
@@ -87,6 +137,16 @@ const RowTextRight = ({ _key, headline, _rawDescription, image, alt }) => (
           <div>
             <SanityBlockContent blocks={_rawDescription} />
           </div>
+          <div className="flex mt-10" />
+          <div className="mx-auto lg:mx-0 max">
+            <Button
+              linkType={ctaButton.linkType}
+              internalLink={ctaButton.internalLink.metadata.slug.current}
+              externalLink={ctaButton.externalLink}
+              jumpLink={ctaButton.jumpLink}
+              label={ctaButton.label}
+            />
+          </div>
         </div>
       </div>
     </Col>
@@ -101,6 +161,7 @@ const FeaturesAlt = ({
   headline,
   _rawDescription,
   image,
+  ctaButton,
   idName,
 }) => {
   const { primary, secondary, accent, neutral, hero } = useSanity();

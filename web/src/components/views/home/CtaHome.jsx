@@ -95,7 +95,7 @@ const CtaHome = () => {
             </p>
           </div>
           <div className="mx-auto lg:mx-none mt-12 flex justify-center lg:justify-start rounded-md shadow">
-            <Button btn="internal" />
+            <Button linkType="internal" />
           </div>
         </motion.div>
       </div>

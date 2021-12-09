@@ -82,7 +82,7 @@ const HeroPage = ({
           className="flex mt-10"
         >
           <div className="col-1 gap-4 mx-auto">
-            <Button btn="internal" anchor={anchor} />
+            <Button linkType="internal" jumpLink={anchor} />
           </div>
         </motion.div>
       </motion.div>

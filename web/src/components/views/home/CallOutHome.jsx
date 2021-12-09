@@ -104,7 +104,7 @@ const CallOutHome = () => {
           className="flex mt-10"
         >
           <div className="col-1 gap-4 mx-auto">
-            <Button btn="internal" />
+            <Button linkType="internal" />
           </div>
         </motion.div>
       </div>

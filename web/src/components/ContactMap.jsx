@@ -264,7 +264,7 @@ const ContactMap = ({ block, raw, index, contact, socialLinks }) => {
                     {/* <li>
                       <a
                         href="#"
-                        rel="noreferrer noopener"
+                        rel="noopener"
                         className="text-gray-400 hover:text-gray-500"
                       >
                         <span className="sr-only">Instagram</span>
@@ -274,7 +274,7 @@ const ContactMap = ({ block, raw, index, contact, socialLinks }) => {
                     <li>
                       <a
                         href="#"
-                        rel="noreferrer noopener"
+                        rel="noopener"
                         className="text-gray-400 hover:text-gray-500"
                       >
                         <span className="sr-only">Twitter</span>
@@ -284,7 +284,7 @@ const ContactMap = ({ block, raw, index, contact, socialLinks }) => {
                     <li>
                       <a
                         href="#"
-                        rel="noreferrer noopener"
+                        rel="noopener"
                         className="text-gray-400 hover:text-gray-500"
                       >
                         <span className="sr-only">YouTube</span>
@@ -294,7 +294,7 @@ const ContactMap = ({ block, raw, index, contact, socialLinks }) => {
                     <li>
                       <a
                         href="#"
-                        rel="noreferrer noopener"
+                        rel="noopener"
                         className="text-gray-400 hover:text-gray-500"
                       >
                         <span className="sr-only">LinkedIn</span>

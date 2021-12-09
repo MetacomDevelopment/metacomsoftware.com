@@ -3,7 +3,15 @@ import React from 'react';
 import { FeaturesAlt } from '.';
 
 const Features = ({ block, raw, index }) => {
-  const { layout, feature, headline, _rawDescription, image, idName } = block;
+  const {
+    layout,
+    feature,
+    headline,
+    _rawDescription,
+    image,
+    idName,
+    ctaButton,
+  } = block;
 
   switch (layout) {
     default:
@@ -16,6 +24,7 @@ const Features = ({ block, raw, index }) => {
           headline={headline}
           _rawDescription={_rawDescription}
           image={image}
+          ctaButton={ctaButton}
           idName={idName}
         />
       );
@@ -29,6 +38,7 @@ const Features = ({ block, raw, index }) => {
           headline={headline}
           _rawDescription={_rawDescription}
           image={image}
+          ctaButton={ctaButton}
           idName={idName}
         />
       );

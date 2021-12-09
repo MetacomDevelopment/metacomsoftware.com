@@ -20,5 +20,6 @@ export default {
     { type: 'services', title: 'Services' },
     { type: 'testimonials', title: 'Testimonials' },
     { type: 'menuSection', title: 'Menu' },
+    { type: 'spacer', title: 'Spacer' },
   ],
 };

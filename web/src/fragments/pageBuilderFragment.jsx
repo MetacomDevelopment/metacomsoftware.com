@@ -59,6 +59,19 @@ export const query = graphql`
           _type
           headline
           _rawDescription
+          ctaButton {
+            label
+            linkType
+            internalLink {
+              metadata {
+                slug {
+                  current
+                }
+              }
+            }
+            externalLink
+            jumpLink
+          }
           image {
             alt
             asset {
@@ -167,6 +180,12 @@ export const query = graphql`
         _type
         _rawBody
         layout
+      }
+      ... on SanitySpacer {
+        _key
+        _type
+        heightMobile
+        heightDesktop
       }
       ... on SanityMenuSection {
         _key

@@ -249,7 +249,7 @@ const NavbarPrimary = () => {
                     {navbars.map((item) => (
                       <div className="hidden sm:flex sm:items-center">
                         <Button
-                          btn="internal"
+                          linkType="internal"
                           internalLink={
                             item.primaryNavCtaButtonLink.metadata.slug.current
                           }
@@ -346,7 +346,7 @@ const NavbarPrimary = () => {
                     {navbars.map((item) => (
                       <div>
                         <Button
-                          btn="internal"
+                          linkType="internal"
                           internalLink={
                             item.primaryNavCtaButtonLink.metadata.slug.current
                           }
@@ -363,7 +363,7 @@ const NavbarPrimary = () => {
                             <a
                               href={contact.url}
                               target="_blank"
-                              rel="noreferrer noopener"
+                              rel="noopener noreferrer"
                             >
                               <i
                                 className={`${contact.icon} fa-2x text-white hover:text-accent`}

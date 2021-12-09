@@ -48,12 +48,12 @@ const CtaHalf = ({
 
   return (
     <Section padding="none" bgColor={neutral.dark.color}>
-      <Container padding="full">
+      <Container padding="none">
         <Grid classes="lg:grid-cols-2 gap-0">
           <Col classes="">
             <GatsbyImage
               image={image.asset.gatsbyImageData}
-              className="aspect-w-12 aspect-h-7 w-full h-full object-cover object-center"
+              className="aspect-w-12 aspect-h-7 lg:w-full lg:h-full object-cover object-center"
               alt={image.alt}
               loading="lazy"
             />
@@ -71,7 +71,7 @@ const CtaHalf = ({
               </div>
               <div className="mx-auto lg:mx-none mt-12 flex justify-center lg:justify-start rounded-md drop-shadow">
                 <Button
-                  btn="internal"
+                  linkType="internal"
                   internalLink={ctaButtonLink.metadata.slug.current}
                   label={ctaButtonLabel}
                 />

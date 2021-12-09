@@ -9,7 +9,7 @@ const RichTextBrand = ({ block, raw, index, _rawBody }) => {
   return (
     <Section padding="lg" bgColor={neutral.white.color}>
       <Container padding="sm">
-        <div className="space-y-6">
+        <div className="space-y-6 max-w-3xl mx-auto text-lg text-center">
           <SanityBlockContent blocks={_rawBody} />
         </div>
       </Container>

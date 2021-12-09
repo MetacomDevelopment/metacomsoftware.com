@@ -212,7 +212,7 @@ const FormHero = () => {
       </div> */}
       <div className="text-center">
         <Button
-          btn="form"
+          linkType="form"
           label="Submit Inquiry"
           className="inline-flex items-center py-3 px-6 hover:bg-gray-700 text-lg font-medium text-white hover:text-white border border-gray-50 hover:border-gray-100 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform"
           type="submit"

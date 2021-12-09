@@ -85,7 +85,7 @@ const Hero = ({ block, raw, index, headline, bgImg }) => {
             className="flex mt-10"
           >
             <div className="mx-auto lg:mx-0">
-              <Button btn="internal" />
+              <Button linkType="internal" />
             </div>
           </motion.div>
         </Flex>

@@ -6,7 +6,7 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 import { useSanity } from '../hooks';
 
-const StyledButtonInternal = styled((props) => <Link {...props} />)`
+const StyledButton = styled((props) => <Link {...props} />)`
   color: rgba(250, 250, 250) !important;
   background-color: ${(props) => props.bgColor};
   &:hover {
@@ -22,21 +22,20 @@ const StyledButtonForm = styled.button`
 `;
 
 const Button = ({
-  btn,
+  linkType,
+  label,
+  internalLink,
+  externalLink,
+  jumpLink,
   bgColor,
   secondaryBtn,
-  internalLink,
-  link,
-  url,
-  label,
-  anchor,
 }) => {
   const { website, primary, secondary, accent, neutral, hero } = useSanity();
 
-  switch (btn) {
+  switch (linkType) {
     default:
       return (
-        <StyledButtonInternal
+        <StyledButton
           to={
             internalLink.metadata.slug.current === 'home'
               ? '/'
@@ -47,32 +46,32 @@ const Button = ({
           bgColorHover={accent.dark.color}
         >
           <span className="drop-shadow-text-cta">{label}</span>
-        </StyledButtonInternal>
+        </StyledButton>
       );
     case 'internal':
       return (
-        <StyledButtonInternal
+        <StyledButton
           to={internalLink === 'home' ? '/' : `/${internalLink}/`}
           className="inline-flex items-center py-3 px-6 text-lg font-bold text-gray-50 hover:text-white border border-gray-50 hover:border-gray-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform transition-all"
           bgColor={accent.default.color}
           bgColorHover={accent.dark.color}
         >
           <span className="drop-shadow-text-cta">{label}</span>
-        </StyledButtonInternal>
+        </StyledButton>
       );
     case 'external':
       return (
-        <StyledButtonInternal
-          href={url}
+        <StyledButton
+          href={externalLink}
+          target="_blank"
+          rel="noopener"
           className="inline-flex items-center py-3 px-6 text-lg font-bold text-gray-50 hover:text-white border border-gray-50 hover:border-gray-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform transition-all"
           secondaryBtn={secondaryBtn}
           bgColor={secondaryBtn ? 'transparent' : accent.default.color}
           bgColorHover={secondaryBtn ? accent.default.color : accent.dark.color}
         >
-          <span className="drop-shadow-text-cta">
-            {website.cta !== null ? website.cta : label}
-          </span>
-        </StyledButtonInternal>
+          <span className="drop-shadow-text-cta">{label}</span>
+        </StyledButton>
       );
     case 'form':
       return (
@@ -84,15 +83,13 @@ const Button = ({
           bgColor={secondaryBtn ? 'transparent' : accent.default.color}
           bgColorHover={secondaryBtn ? accent.default.color : accent.dark.color}
         >
-          <span className="drop-shadow-text-cta">
-            {website.cta !== null ? website.cta : label}
-          </span>
+          <span className="drop-shadow-text-cta">{label}</span>
         </StyledButtonForm>
       );
     case 'anchor':
       return (
         <AnchorLink
-          to={anchor}
+          to={jumpLink}
           className="inline-flex items-center py-3 px-6 text-lg font-bold text-gray-50 hover:text-white border border-gray-50 hover:border-gray-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform transition-all cursor-pointer"
           secondaryBtn={secondaryBtn}
           bgColor={secondaryBtn ? 'transparent' : accent.default.color}

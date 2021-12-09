@@ -84,7 +84,7 @@ const HeroForm = ({ block, raw, index, headline, bgImg }) => {
             className="flex mt-10"
           >
             <div className="mx-auto lg:mx-0 max">
-              <Button btn="internal" />
+              <Button linkType="internal" />
             </div>
           </motion.div> */}
         </Flex>

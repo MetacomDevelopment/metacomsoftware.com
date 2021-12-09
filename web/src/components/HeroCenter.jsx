@@ -96,7 +96,7 @@ const HeroCenter = ({
               >
                 <div className="mx-auto lg:mx-0">
                   <Button
-                    btn="internal"
+                    linkType="internal"
                     internalLink={primaryCtaButtonLink.metadata.slug.current}
                     label={primaryCtaButtonLabel}
                   />
@@ -115,9 +115,9 @@ const HeroCenter = ({
               >
                 <div className="mx-auto lg:mx-0">
                   <Button
-                    btn="anchor"
+                    linkType="anchor"
                     secondaryBtn="secondaryBtn"
-                    anchor={secondaryCtaButtonLink}
+                    jumpLink={secondaryCtaButtonLink}
                     label={secondaryCtaButtonLabel}
                   />
                 </div>

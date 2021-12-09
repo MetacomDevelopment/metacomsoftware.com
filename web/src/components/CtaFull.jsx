@@ -119,7 +119,7 @@ const CtaFull = ({
           >
             <div className="col-1 gap-4 mx-auto">
               <Button
-                btn="internal"
+                linkType="internal"
                 internalLink={ctaButtonLink.metadata.slug.current}
                 label={ctaButtonLabel}
               />
@@ -151,7 +151,7 @@ const CtaFull = ({
     //             <SanityBlockContent blocks={raw.description} />
     //           </div>
     //           <div className="mx-auto lg:mx-none mt-12 flex justify-center lg:justify-start rounded-md drop-shadow">
-    //             <Button btn="internal" />
+    //             <Button linkType="internal" />
     //           </div>
     //         </div>
     //       </Col>

@@ -9,6 +9,7 @@ export default {
   inputComponent: Tabs,
   fieldsets: [
     { title: 'Feature', name: 'featureSet' },
+    { title: 'CTA', name: 'ctaSet' },
     { title: 'Image', name: 'imageSet' },
   ],
   fields: [
@@ -25,6 +26,13 @@ export default {
       name: 'description',
       type: 'portableTextBody',
       fieldset: 'featureSet',
+    },
+    {
+      title: 'CTA Button',
+      description: 'Enter a description of the feature.',
+      name: 'ctaButton',
+      type: 'ctaButton',
+      fieldset: 'ctaSet',
     },
     {
       title: 'Image',

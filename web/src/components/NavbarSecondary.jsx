@@ -56,7 +56,7 @@ const NavbarSecondary = () => {
                   textColorHover={accent.light.color}
                   href={contact.url}
                   target="_blank"
-                  rel="noreferrer noopener"
+                  rel="noopener"
                 >
                   <i className={`${contact.icon} mr-3`} />
                   <span className="text-md font-thin">{contact.anchor}</span>
@@ -74,7 +74,7 @@ const NavbarSecondary = () => {
                   textColorHover={accent.light.color}
                   href={social.url}
                   target="_blank"
-                  rel="noreferrer noopener"
+                  rel="noopener"
                 >
                   <i className={`text-2xl ${social.icon}`} />
                   <span className="text-md font-thin sr-only">

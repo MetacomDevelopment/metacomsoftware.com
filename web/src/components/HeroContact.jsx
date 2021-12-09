@@ -83,7 +83,7 @@ const HeroContact = ({
           className="flex mt-10"
         >
           <div className="col-1 gap-4 mx-auto">
-            <Button type="anchor" anchor={anchor} title={title} />
+            <Button type="anchor" jumpLink={anchor} title={title} />
           </div>
         </motion.div>
       </motion.div>

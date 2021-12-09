@@ -65,5 +65,6 @@ export { default as ServicesImages } from './ServicesImages';
 export { default as Sidebar } from './Sidebar';
 export { default as SidebarList } from './SidebarList';
 export { default as SidebarTestimonial } from './SidebarTestimonial';
+export { default as Spacer } from './Spacer';
 export { default as Testimonial } from './Testimonial';
 export { default as Testimonials } from './Testimonials';
