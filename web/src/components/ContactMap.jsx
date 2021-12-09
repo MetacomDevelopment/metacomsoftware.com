@@ -49,7 +49,7 @@ const ContactMap = ({ block, raw, index, contact, socialLinks }) => {
       bgColor={neutral.lighter.color}
       h2Color={neutral.lighter.color}
     >
-      <Container classes="space-y-24 mt-12 lg:mt-24">
+      <Container classes="space-y-24">
         <Grid classes="lg:grid-cols-1 gap-x-12 gap-y-32">
           {contact.map((item) => (
             <Col key={item._key} classes="relative bg-white shadow-xl">
