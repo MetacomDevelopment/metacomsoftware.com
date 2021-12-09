@@ -35,6 +35,7 @@
         "tryExtensions": [".js", ".jsx", ".json", ".node"]
       }
     ],
+    "no-nested-ternary": "off",
     "no-unused-vars": "warn",
     "no-console": "warn",
     "func-names": "warn",

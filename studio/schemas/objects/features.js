@@ -18,7 +18,10 @@ export default {
       name: 'layout',
       type: 'string',
       options: {
-        list: [{ title: 'Alternating', value: 'alternating' }],
+        list: [
+          { title: 'Alternating (No CTA)', value: 'alternatingNoCta' },
+          { title: 'Alternating (With CTA)', value: 'alternatingCta' },
+        ],
         layout: 'radio',
         direction: 'horizontal',
       },

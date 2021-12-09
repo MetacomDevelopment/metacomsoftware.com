@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { FeaturesAlt } from '.';
+import { FeaturesAltNoCta, FeaturesAltCta } from '.';
 
 const Features = ({ block, raw, index }) => {
   const {
@@ -16,7 +16,7 @@ const Features = ({ block, raw, index }) => {
   switch (layout) {
     default:
       return (
-        <FeaturesAlt
+        <FeaturesAltNoCta
           block={block}
           raw={raw}
           index={index}
@@ -28,9 +28,23 @@ const Features = ({ block, raw, index }) => {
           idName={idName}
         />
       );
-    case 'alternating':
+    case 'alternatingNoCta':
       return (
-        <FeaturesAlt
+        <FeaturesAltNoCta
+          block={block}
+          raw={raw}
+          index={index}
+          feature={feature}
+          headline={headline}
+          _rawDescription={_rawDescription}
+          image={image}
+          ctaButton={ctaButton}
+          idName={idName}
+        />
+      );
+    case 'alternatingCta':
+      return (
+        <FeaturesAltCta
           block={block}
           raw={raw}
           index={index}

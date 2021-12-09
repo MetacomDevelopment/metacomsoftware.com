@@ -65,29 +65,6 @@ const RowTextLeft = ({
             <SanityBlockContent blocks={_rawDescription} />
           </div>
         </div>
-        <div className="flex mt-10">
-          <div className="mx-auto lg:mx-0 max">
-            {ctaButton.linkType === 'internal' ? (
-              <Button
-                linkType={ctaButton.linkType}
-                internalLink={ctaButton.internalLink.metadata.slug.current}
-                label={ctaButton.label}
-              />
-            ) : ctaButton.linkType === 'external' ? (
-              <Button
-                linkType={ctaButton.linkType}
-                externalLink={ctaButton.externalLink}
-                label={ctaButton.label}
-              />
-            ) : ctaButton.linkType === 'jump' ? (
-              <Button
-                linkType={ctaButton.linkType}
-                jumpLink={ctaButton.jumpLink}
-                label={ctaButton.label}
-              />
-            ) : null}
-          </div>
-        </div>
       </div>
     </Col>
     <Col classes="order-1 lg:order-none">
@@ -137,23 +114,13 @@ const RowTextRight = ({
           <div>
             <SanityBlockContent blocks={_rawDescription} />
           </div>
-          <div className="flex mt-10" />
-          <div className="mx-auto lg:mx-0 max">
-            <Button
-              linkType={ctaButton.linkType}
-              internalLink={ctaButton.internalLink.metadata.slug.current}
-              externalLink={ctaButton.externalLink}
-              jumpLink={ctaButton.jumpLink}
-              label={ctaButton.label}
-            />
-          </div>
         </div>
       </div>
     </Col>
   </Grid>
 );
 
-const FeaturesAlt = ({
+const FeaturesAltNoCta = ({
   block,
   raw,
   index,
@@ -186,4 +153,4 @@ const FeaturesAlt = ({
   );
 };
 
-export default FeaturesAlt;
+export default FeaturesAltNoCta;
