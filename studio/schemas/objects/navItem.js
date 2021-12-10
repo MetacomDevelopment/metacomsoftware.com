@@ -18,8 +18,8 @@ export default {
   ],
   fields: [
     {
-      name: 'type',
       title: 'Type',
+      name: 'type',
       type: 'string',
       options: {
         list: [
@@ -56,4 +56,18 @@ export default {
       hidden: ({ parent }) => !(parent?.type === 'single'),
     },
   ],
+  preview: {
+    select: {
+      single: 'pageLinks.0.anchor',
+      dropdown: 'dropdowns.0.label',
+      media: 'pageLinks.0.pageBuilder.0.bgImg',
+    },
+    prepare(selection) {
+      const { single, dropdown, media } = selection;
+      return {
+        title: single ? `Single: ${single}` : `Dropdown: ${dropdown}`,
+        media: media,
+      };
+    },
+  },
 };

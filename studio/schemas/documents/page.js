@@ -56,7 +56,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'metadata.title',
+      title: 'anchor',
       slug: 'metadata.slug.current',
       media: 'pageBuilder.0.bgImg',
     },

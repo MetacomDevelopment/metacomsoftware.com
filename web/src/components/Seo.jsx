@@ -25,6 +25,14 @@ const SEO = ({ lang, title, description, canonical, image, children }) => {
             : canonical
         }`}
       />
+
+      <meta
+        name="robots"
+        content={
+          siteSEO.isIndexed === true ? 'index, follow' : 'noindex, nofollow'
+        }
+      />
+
       <meta name="description" content={metaDescription} />
       {/* Open Graph tags */}
       <meta property="og:title" content={siteSEO.title} />

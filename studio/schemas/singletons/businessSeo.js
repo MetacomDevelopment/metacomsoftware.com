@@ -15,8 +15,7 @@ export default {
   fields: [
     {
       title: 'Allow Google to index this website?',
-      description:
-        'When staging, turn OFF. When live, turn ON. Once live, NEVER TURN OFF!',
+      description: 'OFF = "noindex, nofollow"; ON = "index, follow"',
       name: 'isIndexed',
       type: 'boolean',
       initialValue: false,

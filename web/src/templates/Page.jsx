@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 
 import { Layout, SEO, PageBuilder } from '../components';
 import { useSanity } from '../hooks';
@@ -10,6 +11,7 @@ export const query = graphql`
       id
       layout
       metadata {
+        isIndexed
         title
         slug {
           current
@@ -49,6 +51,16 @@ const PageTemplate = (props) => {
       >
         <script type="application/ld+json">{`${pageSEO.schema}`}</script>
       </SEO>
+      <Helmet>
+        <meta
+          name="robots"
+          content={
+            sanity.metadata.isIndexed === true
+              ? 'index, follow'
+              : 'noindex, nofollow'
+          }
+        />
+      </Helmet>
       <PageBuilder
         pageBuilder={pageBuilder}
         _rawPageBuilder={_rawPageBuilder}

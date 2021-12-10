@@ -18,7 +18,7 @@ module.exports = {
     title: `title`,
     description: `Description`,
     author: `John Grattan`,
-    image: `src/assets/graphics/all-star-connections-job-recruiting-agency-logo.png`,
+    image: `src/assets/graphics/aristocracy-salon-day-spa-logo-400x207.png`,
     siteUrl,
   },
   plugins: [
@@ -89,7 +89,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/assets/graphics/aristocracy-salon-day-spa-logo-favicon-75-75.png`, // This path is relative to the root of the site.
       },
     },
     {
