@@ -160,7 +160,7 @@
 //               <div className="relative lg:flex lg:items-center">
 //                 <div className="hidden lg:block lg:flex-shrink-0">
 //                   <GatsbyImage
-//                     image={sanity.testimonialImg.asset.gatsbyImageData}
+//                     image={sanity.testimonialImg?.asset?.gatsbyImageData}
 //                     alt={sanity.testimonialImg.alt}
 //                     className="h-32 w-32 rounded-full xl:h-40 xl:w-40"
 //                   />
@@ -192,7 +192,7 @@
 //                       <div className="flex">
 //                         <div className="flex-shrink-0 lg:hidden">
 //                           <GatsbyImage
-//                             image={sanity.testimonialImg.asset.gatsbyImageData}
+//                             image={sanity.testimonialImg?.asset?.gatsbyImageData}
 //                             alt={sanity.testimonialImg.alt}
 //                             className="h-12 w-12 rounded-full"
 //                           />

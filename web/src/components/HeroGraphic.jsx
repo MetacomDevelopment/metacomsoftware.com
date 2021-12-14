@@ -9,11 +9,11 @@ import { useSanity } from '../hooks';
 import { SanityBlockContent, Button, FormHero, Grid, Flex, Overlay } from '.';
 
 const StyledHeroHeadline = styled(motion.h1)`
-  color: ${(props) => props.headline};
+  color: ${(props) => props.$headline};
 `;
 
 const StyledHeroSubheadline = styled(motion.div)`
-  color: ${(props) => props.subheadline};
+  color: ${(props) => props.$subheadline};
 `;
 
 const HeroGraphic = ({
@@ -53,7 +53,7 @@ const HeroGraphic = ({
     <div className="relative flex flex-col place-content-center place-items-center lg:h-screen">
       <div className="absolute inset-0">
         <GatsbyImage
-          image={bgImg.asset.gatsbyImageData}
+          image={bgImg?.asset?.gatsbyImageData}
           alt={bgImg.alt}
           className="w-full h-full object-cover"
         />
@@ -68,7 +68,7 @@ const HeroGraphic = ({
             animate={controls}
             transition={{ duration: 0.5, delay: 0 }}
             className="text-5xl font-extrabold tracking-tight drop-shadow-darker sm:text-5xl lg:text-6xl capitalize mb-10"
-            headline={hero.headline.color}
+            $headline={hero.headline.color}
           >
             {headline}
           </StyledHeroHeadline>
@@ -79,7 +79,7 @@ const HeroGraphic = ({
             animate={controls}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl lg:text-2xl max-w-3xl drop-shadow-darker space-y-6"
-            subheadline={hero.tagline.color}
+            $subheadline={hero.tagline.color}
           >
             <SanityBlockContent blocks={raw.tagline} />
           </StyledHeroSubheadline>
@@ -107,7 +107,7 @@ const HeroGraphic = ({
           <div className="bg-blue-900 bg-opacity-75 p-6 rounded-2xl shadow-2xl space-y-6 mx-3 lg:mx-0">
             <div className="h-48 w-48 mx-auto">
               <GatsbyImage
-                image={graphic.asset.gatsbyImageData}
+                image={graphic?.asset?.gatsbyImageData}
                 alt={graphic.alt}
                 className="w-full h-full object-cover drop-shadow-darker"
               />

@@ -5,21 +5,21 @@ import { SanityBlockContent, Section, Container, Grid, Col } from '.';
 import { useSanity } from '../hooks';
 
 const StyledBenefits = styled((props) => <Section {...props} />)`
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.$bgColor};
   & h2 {
-    color: ${(props) => props.h2Color};
+    color: ${(props) => props.$h2Color};
   }
   & h3 {
-    color: ${(props) => props.h3Color};
+    color: ${(props) => props.$h3Color};
   }
 `;
 
 const StyledIcon = styled.div`
-  color: ${(props) => props.color};
+  color: ${(props) => props.$color};
 `;
 
 const StyledAuthor = styled.p`
-  color: ${(props) => props.color};
+  color: ${(props) => props.$color};
 `;
 
 function useDynamicSVGImport(name, options = {}) {
@@ -123,7 +123,7 @@ const BenefitsIcons = ({
             >
               <StyledIcon
                 className="h-40 w-40 mx-auto"
-                color={primary.dark.color}
+                $color={primary.dark.color}
               >
                 <Icon
                   name={item.icon}
@@ -144,7 +144,7 @@ const BenefitsIcons = ({
                 </p>
                 <StyledAuthor
                   className="mt-5 text-base font-bold"
-                  color={primary.dark.color}
+                  $color={primary.dark.color}
                 >
                   <span>{item.author}</span>
                 </StyledAuthor>

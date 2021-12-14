@@ -21,11 +21,11 @@ import { useSanity } from '../hooks';
 // `;
 
 // const StyledGrid = styled((props) => <Grid {...props} />)`
-//   background-color: ${(props) => props.bgColor};
+//   background-color: ${(props) => props.$bgColor};
 // `;
 
 // const StyledCol = styled((props) => <Col {...props} />)`
-//   order: ${(props) => props.classes};
+//   order: ${(props) => props.$classes};
 // `;
 
 const StyledHeadline = styled.span`
@@ -36,9 +36,9 @@ const StyledHeadline = styled.span`
 `;
 
 const StyledLink = styled((props) => <Link {...props} />)`
-  color: ${(props) => props.color} !important;
+  color: ${(props) => props.$$color} !important;
   &:hover {
-    color: ${(props) => props.colorHover} !important;
+    color: ${(props) => props.$$colorHover} !important;
   }
 `;
 
@@ -78,9 +78,9 @@ const CtaFull = ({
       <Container padding="none">
         <Container padding="none" classes="absolute inset-0">
           <GatsbyImage
-            image={image.asset.gatsbyImageData}
+            image={image?.asset?.gatsbyImageData}
             className="w-full h-full object-cover object-center"
-            alt={image.alt}
+            alt={image?.alt}
             loading="lazy"
           />
           <Overlay overlay={hero.overlay.color} />
@@ -128,14 +128,14 @@ const CtaFull = ({
         </div>
       </Container>
     </Section>
-    // <Section padding="none" bgColor={neutral.dark.color}>
+    // <Section padding="none" $bgColor={neutral.dark.color}>
     //   <Container padding="none">
     //     <Grid classes="lg:grid-cols-2 gap-0">
     //       <Col classes="">
     //         <GatsbyImage
-    //           image={image.asset.gatsbyImageData}
+    //           image={image?.asset?.gatsbyImageData}
     //           className="aspect-w-12 aspect-h-7 w-full h-full object-cover object-center"
-    //           alt={image.alt}
+    //           alt={image?.alt}
     //           loading="lazy"
     //         />
     //       </Col>

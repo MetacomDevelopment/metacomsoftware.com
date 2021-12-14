@@ -9,9 +9,9 @@ import {
 } from '../components/PortableTextEditorComponents';
 
 export default {
+  title: 'Content',
   name: 'portableTextBody',
   type: 'array',
-  title: 'Post body',
   of: [
     {
       type: 'block',
@@ -62,17 +62,17 @@ export default {
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
           {
-            name: 'link',
-            type: 'object',
             title: 'External link',
+            name: 'externalLink',
+            type: 'object',
             blockEditor: {
               icon: FaGlobe,
             },
             fields: [
               {
+                title: 'URL',
                 name: 'href',
                 type: 'url',
-                title: 'URL',
               },
               {
                 title: 'Open in new tab',
@@ -82,33 +82,33 @@ export default {
             ],
           },
           {
+            title: 'Internal link',
             name: 'internalLink',
             type: 'object',
-            title: 'Internal link',
             blockEditor: {
               icon: FaPaperclip,
             },
             fields: [
               {
+                title: 'Reference',
                 name: 'reference',
                 type: 'reference',
-                title: 'Reference',
-                to: [{ type: 'page' }, { type: 'post' }],
+                to: [{ type: 'page' }],
               },
             ],
           },
           {
+            title: 'Variables',
             name: 'variable',
             type: 'object',
-            title: 'Variables',
             blockEditor: {
               icon: FaExchangeAlt,
             },
             fields: [
               {
+                title: 'Reference',
                 name: 'reference',
                 type: 'reference',
-                title: 'Reference',
                 to: [{ type: 'gmb' }],
               },
             ],

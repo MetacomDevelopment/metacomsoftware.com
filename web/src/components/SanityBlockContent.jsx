@@ -9,9 +9,21 @@ const SanityBlockContent = ({ blocks, classes }) => {
   const serializers = {
     marks: {
       internalLink: ({ mark, children }) => {
-        const { slug = {} } = mark;
-        const href = `/${slug.current}/`;
+        const { metadata = {} } = mark;
+        const href =
+          metadata.slug.current === 'home' ? '/' : `/${metadata.slug.current}/`;
         return <a href={href}>{children}</a>;
+      },
+      externalLink: ({ mark, children }) => {
+        // Read https://css-tricks.com/use-target_blank/
+        const { blank, href } = mark;
+        return blank ? (
+          <a href={href} target="_blank" rel="noopener noreferrer">
+            {children}
+          </a>
+        ) : (
+          <a href={href}>{children}</a>
+        );
       },
     },
   };
@@ -45,6 +57,7 @@ const SanityBlockContent = ({ blocks, classes }) => {
       variants={variants}
       initial="initial"
       animate={controls}
+      className={`space-y-6 sanity-list ${classes}`}
     >
       <BlockContent
         blocks={blocks}

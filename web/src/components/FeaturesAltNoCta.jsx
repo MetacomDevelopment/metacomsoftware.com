@@ -16,14 +16,14 @@ import {
 import { useSanity } from '../hooks';
 
 const StyledServices = styled((props) => <Link {...props} />)`
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.$bgColor};
   &:hover {
-    background-color: ${(props) => props.bgColorHover};
+    background-color: ${(props) => props.$bgColorHover};
   }
 `;
 
 const StyledCol = styled((props) => <Col {...props} />)`
-  order: ${(props) => props.classes};
+  order: ${(props) => props.$classes};
 `;
 
 const StyledHeadline = styled.span`
@@ -34,9 +34,9 @@ const StyledHeadline = styled.span`
 `;
 
 const StyledLink = styled((props) => <Link {...props} />)`
-  color: ${(props) => props.color} !important;
+  color: ${(props) => props.$color} !important;
   &:hover {
-    color: ${(props) => props.colorHover} !important;
+    color: ${(props) => props.$colorHover} !important;
   }
 `;
 
@@ -70,9 +70,9 @@ const RowTextLeft = ({
     <Col classes="order-1 lg:order-none">
       <Container padding="img">
         <GatsbyImage
-          image={image.asset.gatsbyImageData}
+          image={image?.asset?.gatsbyImageData}
           className="aspect-w-12 aspect-h-7 w-full h-full object-cover rounded-xl shadow-2xl transition hover:scale-105"
-          alt={image.alt}
+          alt={image?.alt}
           loading="lazy"
         />
       </Container>
@@ -98,9 +98,9 @@ const RowTextRight = ({
     <Col classes="order-1 lg:order-none">
       <Container padding="img">
         <GatsbyImage
-          image={image.asset.gatsbyImageData}
+          image={image?.asset?.gatsbyImageData}
           className="aspect-w-12 aspect-h-7 w-full h-full object-cover rounded-xl shadow-2xl transition hover:scale-105"
-          alt={image.alt}
+          alt={image?.alt}
           loading="lazy"
         />
       </Container>

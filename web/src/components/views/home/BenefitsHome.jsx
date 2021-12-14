@@ -11,7 +11,7 @@ import RecruitmentIcon from '../../../assets/graphics/recruitment.svg';
 import GrowthIcon from '../../../assets/graphics/growth.svg';
 
 const StyledIcon = styled.div`
-  color: ${(props) => props.color};
+  color: ${(props) => props.$color};
 `;
 
 const BenefitsHome = () => {
@@ -134,7 +134,7 @@ const BenefitsHome = () => {
                   className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
                 >
                   <div className="">
-                    <StyledIcon color={primary.default.color}>
+                    <StyledIcon $color={primary.default.color}>
                       <benefit.icon className="h-40 w-40 mx-auto fill-current" />
                     </StyledIcon>
                     <div className="relative z-10">

@@ -8,7 +8,7 @@ const Container = ({ overlay }) => (
     className="absolute inset-0"
     style={{ mixBlendMode: 'multiply' }}
     aria-hidden="true"
-    overlay={overlay}
+    $overlay={overlay}
   />
 );
 

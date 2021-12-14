@@ -10,16 +10,16 @@ import { useSanity } from '../hooks';
 import { SanityBlockContent, Button, Grid, Flex, Overlay } from '.';
 
 const StyledHeroHeadline = styled(motion.h1)`
-  color: ${(props) => props.headline};
+  color: ${(props) => props.$headline};
 `;
 
 const StyledHeroSubheadline = styled(motion.p)`
-  color: ${(props) => props.subheadline};
+  color: ${(props) => props.$subheadline};
 `;
 
 const StyledTestimonial = styled(motion.div)`
-  background-color: ${({ bgColor }) => bgColor};
-  color: ${({ color }) => color};
+  background-color: ${(props) => props.$bgColor};
+  color: ${(props) => props.$color};
 `;
 
 const Hero = ({ block, raw, index, headline, bgImg, testimonial }) => {
@@ -48,7 +48,7 @@ const Hero = ({ block, raw, index, headline, bgImg, testimonial }) => {
     <div className="relative flex flex-col place-content-center place-items-center lg:h-screen">
       <div className="absolute inset-0">
         <GatsbyImage
-          image={bgImg.asset.gatsbyImageData}
+          image={bgImg?.asset?.gatsbyImageData}
           alt={bgImg.alt}
           className="w-full h-full object-cover"
         />
@@ -63,7 +63,7 @@ const Hero = ({ block, raw, index, headline, bgImg, testimonial }) => {
             animate={controls}
             transition={{ duration: 0.5, delay: 0 }}
             className="text-5xl font-extrabold tracking-tight drop-shadow-darker sm:text-5xl lg:text-6xl mb-10"
-            headline={hero.headline.color}
+            $headline={hero.headline.color}
           >
             {headline}
           </StyledHeroHeadline>
@@ -74,7 +74,7 @@ const Hero = ({ block, raw, index, headline, bgImg, testimonial }) => {
             animate={controls}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl lg:text-2xl max-w-3xl drop-shadow-darker space-y-6"
-            subheadline={hero.tagline.color}
+            $subheadline={hero.tagline.color}
           >
             <SanityBlockContent blocks={raw.tagline} />
           </StyledHeroSubheadline>
@@ -98,8 +98,8 @@ const Hero = ({ block, raw, index, headline, bgImg, testimonial }) => {
           <div className="relative lg:flex lg:items-center">
             <div className="relative lg:ml-10">
               <StyledTestimonial
-                bgColor={primary.darker.color}
-                color={primary.lighter.color}
+                $bgColor={primary.darker.color}
+                $color={primary.lighter.color}
                 className="bg-opacity-80 overflow-hidden rounded-2xl shadow-2xl z-10 p-8 lg:p-10"
               >
                 <svg
@@ -126,7 +126,7 @@ const Hero = ({ block, raw, index, headline, bgImg, testimonial }) => {
                       <div className="col-span-3 lg:col-span-2 mr-3">
                         <GatsbyImage
                           image="../assets/images/testimonials/kate-linkedin-5-star-review-engineering-job-recruiter-agency-all-star-connections.jpg"
-                          // image={testimonial.authorImg.asset.gatsbyImageData}
+                          // image={testimonial.authorImg?.asset?.gatsbyImageData}
                           alt="Test"
                           // alt={testimonial.authorImg.alt}
                           className="w-full h-full rounded-full"

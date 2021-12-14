@@ -8,24 +8,33 @@ import { useSanity } from '../hooks';
 
 const StyledButtonInternal = styled((props) => <Link {...props} />)`
   color: rgba(250, 250, 250) !important;
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.$bgColor};
   &:hover {
-    background-color: ${(props) => props.bgColorHover};
+    background-color: ${(props) => props.$bgColorHover};
   }
 `;
 
 const StyledButtonExternal = styled.a`
   color: rgba(250, 250, 250) !important;
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.$bgColor};
   &:hover {
-    background-color: ${(props) => props.bgColorHover};
+    background-color: ${(props) => props.$bgColorHover};
   }
 `;
 
 const StyledButtonForm = styled.button`
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.$bgColor};
   &:hover {
-    background-color: ${(props) => props.bgColorHover};
+    background-color: ${(props) => props.$bgColorHover};
+  }
+`;
+
+const StyledAnchorLink = styled((props) => <AnchorLink {...props} />)`
+  color: rgba(250, 250, 250);
+  background-color: ${(props) => props.$bgColor};
+  &:hover {
+    color: ${(props) => props.$colorHover};
+    background-color: ${(props) => props.$bgColorHover};
   }
 `;
 
@@ -51,8 +60,8 @@ const Button = ({
               : `/${internalLink}/`
           }
           className="inline-flex items-center py-3 px-6 text-lg font-bold text-gray-50 hover:text-white border border-gray-50 hover:border-gray-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform transition-all"
-          bgColor={accent.default.color}
-          bgColorHover={accent.dark.color}
+          $bgColor={accent.default.color}
+          $bgColorHover={accent.dark.color}
         >
           <span className="drop-shadow-text-cta">
             {label === null || undefined ? 'Call Now' : label}
@@ -70,8 +79,8 @@ const Button = ({
               : `/${internalLink}/`
           }
           className="inline-flex items-center py-3 px-6 text-lg font-bold text-gray-50 hover:text-white border border-gray-50 hover:border-gray-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform transition-all"
-          bgColor={accent.default.color}
-          bgColorHover={accent.dark.color}
+          $bgColor={accent.default.color}
+          $bgColorHover={accent.dark.color}
         >
           <span className="drop-shadow-text-cta">
             {label === null || undefined ? 'Call Now' : label}
@@ -88,8 +97,10 @@ const Button = ({
           secondaryBtn={
             secondaryBtn === null || undefined ? false : secondaryBtn
           }
-          bgColor={secondaryBtn ? 'transparent' : accent.default.color}
-          bgColorHover={secondaryBtn ? accent.default.color : accent.dark.color}
+          $bgColor={secondaryBtn ? 'transparent' : accent.default.color}
+          $bgColorHover={
+            secondaryBtn ? accent.default.color : accent.dark.color
+          }
         >
           <span className="drop-shadow-text-cta">
             {label === null || undefined ? 'Call Now' : label}
@@ -105,8 +116,10 @@ const Button = ({
           secondaryBtn={
             secondaryBtn === null || undefined ? false : secondaryBtn
           }
-          bgColor={secondaryBtn ? 'transparent' : accent.default.color}
-          bgColorHover={secondaryBtn ? accent.default.color : accent.dark.color}
+          $bgColor={secondaryBtn ? 'transparent' : accent.default.color}
+          $bgColorHover={
+            secondaryBtn ? accent.default.color : accent.dark.color
+          }
         >
           <span className="drop-shadow-text-cta">
             {label === null || undefined ? 'Call Now' : label}
@@ -115,19 +128,20 @@ const Button = ({
       );
     case 'anchor':
       return (
-        <AnchorLink
+        <StyledAnchorLink
           to={jumpLink === null || undefined ? '#' : jumpLink}
           className="inline-flex items-center py-3 px-6 text-lg font-bold text-gray-50 hover:text-white border border-gray-50 hover:border-gray-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform transition-all cursor-pointer"
           secondaryBtn={
             secondaryBtn === null || undefined ? false : secondaryBtn
           }
-          bgColor={secondaryBtn ? 'transparent' : accent.default.color}
-          bgColorHover={secondaryBtn ? accent.default.color : accent.dark.color}
+          $bgColor={secondaryBtn ? 'transparent' : accent.default.color}
+          $bgColorHover={secondaryBtn ? neutral.dark.color : accent.dark.color}
+          $colorHover={secondaryBtn ? accent.default.color : accent.dark.color}
         >
           <span className="drop-shadow-text-cta">
             {label === null || undefined ? 'Call Now' : label}
           </span>
-        </AnchorLink>
+        </StyledAnchorLink>
       );
   }
 };

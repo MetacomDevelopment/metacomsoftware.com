@@ -15,46 +15,75 @@ import {
 import { Button, Col, Container, Grid, Row, AnchorText, Section } from '.';
 import { useSanity } from '../hooks';
 
-const MobileNavCtaBg = styled.div`
-  background-color: ${({ bgColor }) => bgColor};
+const StyledMobileNavCtaBg = styled.div`
+  background-color: ${(props) => props.$bgColor};
 `;
 
-const DropdownLabelText = styled.span`
-  color: ${(props) => props.color};
-  cursor: pointer;
-  transition: all 0.25s;
-  font-weight: ${({ weight }) => weight};
-  font-size: ${({ size }) => size};
-  line-height: ${({ lineHeight }) => lineHeight};
-  &:hover,
-  &:focus,
-  &:active {
-    color: ${(props) => props.colorHover};
-    transition: all 0.25s;
-    font-weight: ${({ weightHover }) => weightHover};
-    font-size: ${({ sizeHover }) => sizeHover};
-    line-height: ${({ lineHeightHover }) => lineHeightHover};
+const StyledDisclosureButton = styled((props) => (
+  <Disclosure.Button {...props} />
+))`
+  color: ${(props) => props.$color};
+  background-color: ${(props) => props.$bgColor};
+  &:hover {
+    color: ${(props) => props.$colorHover};
+    background-color: ${(props) => props.$bgColorHover};
   }
 `;
 
-const DropdownLabelChevron = styled.svg`
-  color: ${(props) => props.color};
+const StyledXIcon = styled((props) => <XIcon {...props} />)`
+  color: ${(props) => props.$color};
+  background-color: ${(props) => props.$bgColor};
+  &:hover {
+    color: ${(props) => props.$colorHover};
+    background-color: ${(props) => props.$bgColorHover};
+  }
+`;
+
+const StyledMenuIcon = styled((props) => <MenuIcon {...props} />)`
+  color: ${(props) => props.$color};
+  background-color: ${(props) => props.$bgColor};
+  &:hover {
+    color: ${(props) => props.$colorHover};
+    background-color: ${(props) => props.$bgColorHover};
+  }
+`;
+
+const StyledDropdownLabelText = styled.span`
+  color: ${(props) => props.$color};
   cursor: pointer;
   transition: all 0.25s;
-  font-weight: ${({ weight }) => weight};
-  font-size: ${({ size }) => size};
-  height: ${({ height }) => height};
-  width: ${({ width }) => width};
-  line-height: ${({ lineHeight }) => lineHeight};
-  margin-left: ${({ marginLeft }) => marginLeft};
+  font-weight: ${(props) => props.$weight};
+  font-size: ${(props) => props.$size};
+  line-height: ${(props) => props.$lineHeight};
   &:hover,
   &:focus,
   &:active {
-    color: ${(props) => props.colorHover};
+    color: ${(props) => props.$colorHover};
     transition: all 0.25s;
-    font-weight: ${({ weightHover }) => weightHover};
-    font-size: ${({ sizeHover }) => sizeHover};
-    line-height: ${({ lineHeightHover }) => lineHeightHover};
+    font-weight: ${(props) => props.$weightHover};
+    font-size: ${(props) => props.$sizeHover};
+    line-height: ${(props) => props.$lineHeightHover};
+  }
+`;
+
+const StyledDropdownLabelChevron = styled.svg`
+  color: ${(props) => props.$color};
+  cursor: pointer;
+  transition: all 0.25s;
+  font-weight: ${(props) => props.$weight};
+  font-size: ${(props) => props.$size};
+  height: ${(props) => props.$height};
+  width: ${(props) => props.$width};
+  line-height: ${(props) => props.$lineHeight};
+  margin-left: ${(props) => props.$marginLeft};
+  &:hover,
+  &:focus,
+  &:active {
+    color: ${(props) => props.$colorHover};
+    transition: all 0.25s;
+    font-weight: ${(props) => props.$weightHover};
+    font-size: ${(props) => props.$sizeHover};
+    line-height: ${(props) => props.$lineHeightHover};
   }
 `;
 
@@ -87,20 +116,34 @@ const NavbarPrimary = () => {
               <div className="relative flex items-center justify-between h-24">
                 <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
                   {/* Mobile menu button */}
-                  <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-primary hover:text-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                  <StyledDisclosureButton
+                    $color={primary.dark.color}
+                    $colorHover={primary.dark.color}
+                    $bgColor={neutral.white.color}
+                    $bgColorHover={neutral.white.color}
+                    className="inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                  >
                     <span className="sr-only">Open main menu</span>
                     {open ? (
-                      <XIcon
-                        className="block h-10 w-10 text-primary"
+                      <StyledXIcon
+                        $color={primary.dark.color}
+                        $colorHover={primary.dark.color}
+                        $bgColor={neutral.white.color}
+                        $bgColorHover={neutral.white.color}
+                        className="block h-10 w-10"
                         aria-hidden="true"
                       />
                     ) : (
-                      <MenuIcon
-                        className="block h-10 w-10 text-primary"
+                      <StyledMenuIcon
+                        $color={primary.dark.color}
+                        $colorHover={primary.dark.color}
+                        $bgColor={neutral.white.color}
+                        $bgColorHover={neutral.white.color}
+                        className="block h-10 w-10"
                         aria-hidden="true"
                       />
                     )}
-                  </Disclosure.Button>
+                  </StyledDisclosureButton>
                 </div>
                 <div className="flex-1 flex items-center justify-start sm:items-stretch sm:justify-start">
                   <motion.div
@@ -112,7 +155,7 @@ const NavbarPrimary = () => {
                     <div className="flex-shrink-0 flex items-center">
                       <Link to="/">
                         <GatsbyImage
-                          image={logo.navbar.asset.gatsbyImageData}
+                          image={logo.navbar?.asset?.gatsbyImageData}
                           alt={`${siteSEO.name} company logo`}
                           loading="eager"
                           className="transition hover:scale-110"
@@ -143,27 +186,27 @@ const NavbarPrimary = () => {
                                               `border-transparent inline-flex items-center px-1 focus:outline-none text-lg font-medium`
                                             )}
                                           >
-                                            <DropdownLabelText
-                                              color={neutral.dark.color}
-                                              colorHover={accent.default.color}
-                                              weight={500}
-                                              size="1.125rem"
-                                              lineHeight="1.75rem"
+                                            <StyledDropdownLabelText
+                                              $color={neutral.dark.color}
+                                              $colorHover={accent.default.color}
+                                              $weight={500}
+                                              $size="1.125rem"
+                                              $lineHeight="1.75rem"
                                             >
                                               {dropdown.label}
-                                            </DropdownLabelText>
-                                            <DropdownLabelChevron
-                                              color={neutral.dark.color}
-                                              colorHover={accent.default.color}
-                                              weight={500}
-                                              size="1.125rem"
-                                              lineHeight="1.75rem"
-                                              height="1.25rem"
-                                              width="1.25rem"
-                                              marginLeft="0.5rem"
+                                            </StyledDropdownLabelText>
+                                            <StyledDropdownLabelChevron
+                                              $color={neutral.dark.color}
+                                              $colorHover={accent.default.color}
+                                              $weight={500}
+                                              $size="1.125rem"
+                                              $lineHeight="1.75rem"
+                                              $height="1.25rem"
+                                              $width="1.25rem"
+                                              $marginLeft="0.5rem"
                                             >
                                               <ChevronDownIcon aria-hidden="true" />
-                                            </DropdownLabelChevron>
+                                            </StyledDropdownLabelChevron>
                                           </Popover.Button>
                                         </div>
                                       </div>
@@ -247,13 +290,17 @@ const NavbarPrimary = () => {
                     animate="animate"
                   >
                     {navbars.map((item) => (
-                      <div className="hidden sm:flex sm:items-center">
+                      <div
+                        key={item._key}
+                        className="hidden sm:flex sm:items-center"
+                      >
                         <Button
                           linkType="internal"
                           internalLink={
-                            item.primaryNavCtaButtonLink.metadata.slug.current
+                            item.primaryNavCtaButtonLink?.metadata?.slug
+                              ?.current
                           }
-                          label={item.primaryNavCtaButtonLabel}
+                          label={item?.primaryNavCtaButtonLabel}
                         />
                       </div>
                     ))}
@@ -338,19 +385,20 @@ const NavbarPrimary = () => {
                 </Col>
               </Grid>
               <Grid>
-                <MobileNavCtaBg
-                  bgColor={primary.dark.color}
+                <StyledMobileNavCtaBg
+                  $bgColor={primary.dark.color}
                   className="pt-8 pb-4"
                 >
                   <Row classes="text-center">
                     {navbars.map((item) => (
-                      <div>
+                      <div key={item._key}>
                         <Button
                           linkType="internal"
                           internalLink={
-                            item.primaryNavCtaButtonLink.metadata.slug.current
+                            item.primaryNavCtaButtonLink?.metadata?.slug
+                              ?.current
                           }
-                          label={item.primaryNavCtaButtonLabel}
+                          label={item?.primaryNavCtaButtonLabel}
                         />
                       </div>
                     ))}
@@ -374,7 +422,7 @@ const NavbarPrimary = () => {
                       ))
                     )}
                   </Grid>
-                </MobileNavCtaBg>
+                </StyledMobileNavCtaBg>
               </Grid>
             </Disclosure.Panel>
           </div>

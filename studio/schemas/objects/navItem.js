@@ -24,7 +24,7 @@ export default {
       options: {
         list: [
           { title: 'Single Link', value: 'single' },
-          { title: 'Dropdown Links', value: 'dropdown' },
+          { title: 'Dropdown Menu', value: 'dropdown' },
         ],
         layout: 'radio',
         direction: 'horizontal',
@@ -65,7 +65,9 @@ export default {
     prepare(selection) {
       const { single, dropdown, media } = selection;
       return {
-        title: single ? `Single: ${single}` : `Dropdown: ${dropdown}`,
+        title: single
+          ? `${single} (Single Link)`
+          : `${dropdown} (Dropdown Menu)`,
         media: media,
       };
     },

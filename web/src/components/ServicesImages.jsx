@@ -10,14 +10,14 @@ import { Section, Container, Col, Grid, SanityBlockContent } from '.';
 import { useSanity } from '../hooks';
 
 const StyledLink = styled((props) => <Link {...props} />)`
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.$bgColor};
   &:hover {
-    background-color: ${(props) => props.bgColorHover};
+    background-color: ${(props) => props.$bgColorHover};
   }
   & p {
-    color: ${(props) => props.textColor} !important;
+    color: ${(props) => props.$textColor} !important;
     &:hover {
-      color: ${(props) => props.textColorHover} !important;
+      color: ${(props) => props.$textColorHover} !important;
     }
   }
 `;
@@ -100,16 +100,16 @@ const ServicesImages = ({
                         : `/${item.link.metadata.slug.current}/`
                     }
                     className="relative py-24 px-4 rounded-xl shadow-2xl overflow-hidden lg:px-8 flex md:h-full lg:flex-col justify-between"
-                    bgColor={neutral.default.color}
-                    bgColorHover={neutral.dark.color}
-                    textColor={accent.default.color}
-                    textColorHover={accent.light.color}
+                    $bgColor={neutral.default.color}
+                    $bgColorHover={neutral.dark.color}
+                    $textColor={accent.default.color}
+                    $textColorHover={accent.light.color}
                   >
                     <div className="absolute inset-0 opacity-90 filter saturate-90 mix-blend-multiply">
                       <GatsbyImage
-                        image={item.image.asset.gatsbyImageData}
+                        image={item.image?.asset?.gatsbyImageData}
                         className="w-full h-full object-cover rounded-xl transition hover:scale-125"
-                        alt={item.image.alt}
+                        alt={item.image?.alt}
                       />
                     </div>
                     <div className="relative z-10 m-auto text-center">

@@ -9,8 +9,13 @@ const Features = ({ block, raw, index }) => {
     headline,
     _rawDescription,
     image,
-    idName,
     ctaButton,
+    idName,
+    linkType,
+    label,
+    internalLink,
+    externalLink,
+    jumpLink,
   } = block;
 
   switch (layout) {
@@ -54,6 +59,11 @@ const Features = ({ block, raw, index }) => {
           image={image}
           ctaButton={ctaButton}
           idName={idName}
+          linkType={linkType}
+          label={label}
+          internalLink={internalLink}
+          externalLink={externalLink}
+          jumpLink={jumpLink}
         />
       );
   }

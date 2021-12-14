@@ -6,7 +6,7 @@ import { useSanity } from '../hooks';
 import { AnchorText } from '.';
 
 const StyledLink = styled.a`
-  color: ${(props) => props.color} !important;
+  color: ${(props) => props.$color} !important;
   font-weight: 500;
 `;
 

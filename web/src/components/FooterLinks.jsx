@@ -15,7 +15,7 @@ const LinkFooter = () => {
           <div className="space-y-6">
             <div className="mx-auto text-center">
               <GatsbyImage
-                image={logo.footer.asset.gatsbyImageData}
+                image={logo.footer?.asset?.gatsbyImageData}
                 alt={`${siteSEO.name} company logo`}
                 loading="lazy"
                 className="w-56 transition hover:scale-110"

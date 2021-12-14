@@ -190,7 +190,8 @@ export const query = graphql`
         _key
         _type
         _rawBody
-        layout
+        alignment
+        idName
       }
       ... on SanitySpacer {
         _key

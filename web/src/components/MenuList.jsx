@@ -18,14 +18,14 @@ import {
 import { useSanity } from '../hooks';
 
 const StyledLink = styled((props) => <Link {...props} />)`
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.$bgColor};
   &:hover {
-    background-color: ${(props) => props.bgColorHover};
+    background-color: ${(props) => props.$bgColorHover};
   }
   & p {
-    color: ${(props) => props.textColor} !important;
+    color: ${(props) => props.$textColor} !important;
     &:hover {
-      color: ${(props) => props.textColorHover} !important;
+      color: ${(props) => props.$textColorHover} !important;
     }
   }
 `;
@@ -94,9 +94,9 @@ const MenuList = ({
               {item.images.map((image) => (
                 <Col>
                   <GatsbyImage
-                    image={image.asset.gatsbyImageData}
+                    image={image?.asset?.gatsbyImageData}
                     className="w-full h-full object-cover rounded-xl shadow-xl"
-                    alt={image.alt}
+                    alt={image?.alt}
                   />
                 </Col>
               ))}

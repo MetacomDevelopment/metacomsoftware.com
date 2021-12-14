@@ -24,14 +24,14 @@ const AnchorText = ({
       return (
         <StyledAnchorTextInternal
           to={to}
-          color={color}
-          colorHover={colorHover}
-          weight={weight}
-          weightHover={weightHover}
-          size={size}
-          sizeHover={sizeHover}
-          lineHeight={lineHeight}
-          lineHeightHover={lineHeightHover}
+          $color={color}
+          $colorHover={colorHover}
+          $weight={weight}
+          $weightHover={weightHover}
+          $size={size}
+          $sizeHover={sizeHover}
+          $lineHeight={lineHeight}
+          $lineHeightHover={lineHeightHover}
           activeClassName="active"
         >
           {children}
@@ -41,14 +41,14 @@ const AnchorText = ({
       return (
         <StyledAnchorTextInternal
           to={to}
-          color={color}
-          colorHover={colorHover}
-          weight={weight}
-          weightHover={weightHover}
-          size={size}
-          sizeHover={sizeHover}
-          lineHeight={lineHeight}
-          lineHeightHover={lineHeightHover}
+          $color={color}
+          $colorHover={colorHover}
+          $weight={weight}
+          $weightHover={weightHover}
+          $size={size}
+          $sizeHover={sizeHover}
+          $lineHeight={lineHeight}
+          $lineHeightHover={lineHeightHover}
           activeClassName="active"
         >
           {children}
@@ -58,14 +58,14 @@ const AnchorText = ({
       return (
         <StyledAnchorTextExternal
           href={href}
-          color={color}
-          colorHover={colorHover}
-          weight={weight}
-          weightHover={weightHover}
-          size={size}
-          sizeHover={sizeHover}
-          lineHeight={lineHeight}
-          lineHeightHover={lineHeightHover}
+          $color={color}
+          $colorHover={colorHover}
+          $weight={weight}
+          $weightHover={weightHover}
+          $size={size}
+          $sizeHover={sizeHover}
+          $lineHeight={lineHeight}
+          $lineHeightHover={lineHeightHover}
         >
           {children}
         </StyledAnchorTextExternal>

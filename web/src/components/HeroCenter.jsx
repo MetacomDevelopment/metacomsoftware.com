@@ -8,11 +8,11 @@ import { useSanity } from '../hooks';
 import { Section, SanityBlockContent, Button, Grid, Flex, Overlay } from '.';
 
 const StyledHeroHeadline = styled(motion.h1)`
-  color: ${(props) => props.headline};
+  color: ${(props) => props.$headline};
 `;
 
-const StyledHeroSubheadline = styled(motion.p)`
-  color: ${(props) => props.subheadline};
+const StyledHeroSubheadline = styled(motion.div)`
+  color: ${(props) => props.$subheadline};
 `;
 
 const HeroCenter = ({
@@ -52,7 +52,7 @@ const HeroCenter = ({
       <Flex classes="relative flex-col place-content-center place-items-center lg:h-screen">
         <div className="absolute inset-0">
           <GatsbyImage
-            image={bgImg.asset.gatsbyImageData}
+            image={bgImg?.asset?.gatsbyImageData}
             alt={bgImg.alt}
             className="w-full h-full object-cover"
           />
@@ -67,7 +67,7 @@ const HeroCenter = ({
               animate={controls}
               transition={{ duration: 0.5, delay: 0 }}
               className="mx-auto text-5xl font-extrabold tracking-tight drop-shadow-text-darker sm:text-5xl lg:text-6xl capitalize mb-10 max-w-3xl"
-              headline={hero.headline.color}
+              $headline={hero.headline.color}
             >
               {headline}
             </StyledHeroHeadline>
@@ -78,7 +78,7 @@ const HeroCenter = ({
               animate={controls}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mx-auto mt-6 text-xl lg:text-2xl max-w-3xl drop-shadow-darker space-y-6"
-              subheadline={hero.tagline.color}
+              $subheadline={hero.tagline.color}
             >
               <SanityBlockContent blocks={raw.tagline} />
             </StyledHeroSubheadline>
@@ -116,7 +116,7 @@ const HeroCenter = ({
                 <div className="mx-auto lg:mx-0">
                   <Button
                     linkType="anchor"
-                    secondaryBtn="secondaryBtn"
+                    secondaryBtn
                     jumpLink={secondaryCtaButtonLink}
                     label={secondaryCtaButtonLabel}
                   />

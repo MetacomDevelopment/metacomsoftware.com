@@ -8,13 +8,13 @@ export default {
   icon,
   inputComponent: Tabs,
   fieldsets: [
-    { title: 'Primary Nav: CTA', name: 'primaryNavCtaSet' },
-    { title: 'Primary Nav: Links', name: 'primaryNavLinksSet' },
-    { title: 'Secondary Nav: Links', name: 'secondaryNavSet' },
+    { title: 'CTA', name: 'primaryNavCtaSet' },
+    { title: 'Menu', name: 'primaryNavLinksSet' },
+    { title: 'NAP', name: 'secondaryNavSet' },
   ],
   fields: [
     {
-      title: 'CTA Button Label',
+      title: 'Button Label',
       description:
         'Enter the label for the primary call to action button (Example: "Request Appointment")',
       name: 'primaryNavCtaButtonLabel',
@@ -22,7 +22,7 @@ export default {
       fieldset: 'primaryNavCtaSet',
     },
     {
-      title: 'CTA Button Link',
+      title: 'Button Link',
       description:
         'Select the internal link for the primary call to action button (Most likely the contact page)',
       name: 'primaryNavCtaButtonLink',

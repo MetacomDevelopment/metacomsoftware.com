@@ -3,13 +3,13 @@ import React from 'react';
 import { Section, Container, SanityBlockContent } from '.';
 import { useSanity } from '../hooks';
 
-const RichTextLocation = ({ block, raw, index, _rawBody }) => {
+const RichTextAlignJustify = ({ block, raw, index, idName, _rawBody }) => {
   const { primary, secondary, accent, neutral, hero } = useSanity();
 
   return (
-    <Section padding="lg" bgColor={neutral.white.color}>
+    <Section idName={idName} padding="lg" bgColor={neutral.white.color}>
       <Container padding="sm">
-        <div className="space-y-6">
+        <div className="space-y-6 max-w-3xl mx-auto text-lg text-justify">
           <SanityBlockContent blocks={_rawBody} />
         </div>
       </Container>
@@ -17,4 +17,4 @@ const RichTextLocation = ({ block, raw, index, _rawBody }) => {
   );
 };
 
-export default RichTextLocation;
+export default RichTextAlignJustify;

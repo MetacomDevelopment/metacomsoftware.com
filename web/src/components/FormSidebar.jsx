@@ -5,21 +5,21 @@ import { Col, Grid, AnchorText } from '.';
 import { useSanity } from '../hooks';
 
 const StyledForm = styled.form`
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.$bgColor};
 `;
 
 const StyledHeadline = styled.h2`
-  color: ${(props) => props.color} !important;
+  color: ${(props) => props.$color} !important;
 `;
 
 const StyledBorder = styled.p`
-  border-color: ${(props) => props.borderColor};
+  border-color: ${(props) => props.$borderColor};
 `;
 
 const StyledButton = styled.button`
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.$bgColor};
   &:hover {
-    background-color: ${(props) => props.bgColorHover};
+    background-color: ${(props) => props.$bgColorHover};
   }
 `;
 
@@ -59,18 +59,18 @@ const FormSidebar = () => {
       data-netlify-honeypot="bot-field"
       className="p-3 lg:p-5 rounded-xl shadow-xl mx-auto"
       id="form-sidebar"
-      bgColor={primary.dark.color}
+      $bgColor={primary.dark.color}
     >
       <div className="space-y-6 mb-16">
         <StyledHeadline
           className="text-4xl font-bold text-center mb-1 mt-4 mt-md-0"
-          color={secondary.light.color}
+          $color={secondary.light.color}
         >
           Request Talent
         </StyledHeadline>
         <StyledBorder
           className="text-xl font-italic text-gray-100 text-center"
-          borderColor={accent.light.color}
+          $borderColor={accent.light.color}
         >
           Send us a request or give us a call today at{' '}
           {/* <AnchorText type="external" light weight="500" href={info.phoneHref}>
@@ -219,8 +219,8 @@ const FormSidebar = () => {
           className="inline-flex items-center py-3 px-6 hover:bg-gray-700 text-lg font-medium text-white hover:text-white border border-gray-50 hover:border-gray-100 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform"
           type="submit"
           value="Submit"
-          bgColor={accent.default.color}
-          bgColorHover={accent.dark.color}
+          $bgColor={accent.default.color}
+          $bgColorHover={accent.dark.color}
         >
           <span>Submit Inquiry</span>
         </StyledButton>

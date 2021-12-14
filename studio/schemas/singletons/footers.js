@@ -8,21 +8,21 @@ export default {
   icon,
   inputComponent: Tabs,
   fieldsets: [
-    { title: 'Column: First', name: 'colFirstSet' },
-    { title: 'Columns: Middle', name: 'colMiddleSet' },
-    { title: 'Column: Last', name: 'colLastSet' },
+    { title: 'First Column', name: 'colFirstSet' },
+    { title: 'Middle Columns', name: 'colMiddleSet' },
+    { title: 'Last Column', name: 'colLastSet' },
   ],
   fields: [
     {
       title: 'Tagline',
-      description: 'Add a tagline to the footer (appears below the logo).',
+      description: 'Add a tagline below the logo.',
       name: 'tagline',
       type: 'string',
       fieldset: 'colFirstSet',
     },
     {
       title: 'Social Media Links',
-      description: 'Add social links to the footer.',
+      description: 'Add social links below the tagline.',
       name: 'socialLinks',
       type: 'array',
       of: [
@@ -38,8 +38,8 @@ export default {
       fieldset: 'colFirstSet',
     },
     {
-      title: 'Footer Items',
-      description: 'Add items to the footer: columns with links.',
+      title: 'Middle Columns',
+      description: 'Add middle columns to the footer.',
       name: 'footerItem',
       type: 'array',
       of: [{ type: 'footerItem' }],
@@ -47,7 +47,7 @@ export default {
     },
     {
       title: 'Contact Links',
-      description: 'Add contact links to the footer.',
+      description: 'Add contact links to the last column in the footer.',
       name: 'contactLinks',
       type: 'array',
       of: [

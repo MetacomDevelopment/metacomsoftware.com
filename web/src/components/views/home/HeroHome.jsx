@@ -10,15 +10,15 @@
 // import {Button} from '../..';
 
 // const StyledHeroHeadline = styled(motion.h1)`
-//   color: ${(props) => props.headline};
+//   color: ${(props) => props.$headline};
 // `;
 
 // const StyledHeroSubheadline = styled(motion.p)`
-//   color: ${(props) => props.subheadline};
+//   color: ${(props) => props.$subheadline};
 // `;
 
 // const StyledHeroOverlay = styled(motion.div)`
-//   background-color: ${(props) => props.overlay};
+//   background-color: ${(props) => props.$overlay};
 // `;
 
 // const HeroHome = () => {
@@ -80,7 +80,7 @@
 //     <div className="relative flex flex-col place-content-center place-items-center lg:h-screen">
 //       <div className="absolute inset-0">
 //         <GatsbyImage
-//           image={sanity.bgImg.asset.gatsbyImageData}
+//           image={sanity.bgImg?.asset?.gatsbyImageData}
 //           alt={sanity.bgImg.alt}
 //           className="w-full h-full object-cover"
 //         />
@@ -169,7 +169,7 @@
 //               <div className="relative lg:flex lg:items-center">
 //                 <div className="hidden lg:block lg:flex-shrink-0">
 //                   <GatsbyImage
-//                     image={sanity.testimonialImg.asset.gatsbyImageData}
+//                     image={sanity.testimonialImg?.asset?.gatsbyImageData}
 //                     alt={sanity.testimonialImg.alt}
 //                     className="h-32 w-32 rounded-full xl:h-40 xl:w-40"
 //                   />
@@ -201,7 +201,7 @@
 //                       <div className="flex">
 //                         <div className="flex-shrink-0 lg:hidden">
 //                           <GatsbyImage
-//                             image={sanity.testimonialImg.asset.gatsbyImageData}
+//                             image={sanity.testimonialImg?.asset?.gatsbyImageData}
 //                             alt={sanity.testimonialImg.alt}
 //                             className="h-12 w-12 rounded-full"
 //                           />

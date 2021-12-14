@@ -11,11 +11,11 @@ import { useSanity } from '../hooks';
 // `;
 
 // const StyledGrid = styled((props) => <Grid {...props} />)`
-//   background-color: ${(props) => props.bgColor};
+//   background-color: ${(props) => props.$bgColor};
 // `;
 
 // const StyledCol = styled((props) => <Col {...props} />)`
-//   order: ${(props) => props.classes};
+//   order: ${(props) => props.$classes};
 // `;
 
 const StyledHeadline = styled.span`
@@ -26,9 +26,9 @@ const StyledHeadline = styled.span`
 `;
 
 const StyledLink = styled((props) => <Link {...props} />)`
-  color: ${(props) => props.color} !important;
+  color: ${(props) => props.$color} !important;
   &:hover {
-    color: ${(props) => props.colorHover} !important;
+    color: ${(props) => props.$colorHover} !important;
   }
 `;
 
@@ -52,9 +52,9 @@ const CtaHalf = ({
         <Grid classes="lg:grid-cols-2 gap-0">
           <Col classes="">
             <GatsbyImage
-              image={image.asset.gatsbyImageData}
+              image={image?.asset?.gatsbyImageData}
               className="aspect-w-12 aspect-h-7 lg:w-full lg:h-full object-cover object-center"
-              alt={image.alt}
+              alt={image?.alt}
               loading="lazy"
             />
           </Col>

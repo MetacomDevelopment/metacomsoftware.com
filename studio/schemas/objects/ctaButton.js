@@ -16,7 +16,6 @@ export default {
         layout: 'radio',
         direction: 'horizontal',
       },
-      initialValue: 'internal',
     },
     {
       title: 'Label',
@@ -29,7 +28,6 @@ export default {
       type: 'reference',
       to: [{ type: 'page' }],
       hidden: ({ parent }) => !(parent?.linkType === 'internal'),
-      initialValue: 'home',
     },
     {
       title: 'External Link',
@@ -40,14 +38,12 @@ export default {
           scheme: ['http', 'https', 'mailto', 'tel'],
         }),
       hidden: ({ parent }) => !(parent?.linkType === 'external'),
-      initialValue: '#',
     },
     {
       title: 'Jump Link',
       name: 'jumpLink',
       type: 'string',
       hidden: ({ parent }) => !(parent?.linkType === 'jump'),
-      initialValue: '#',
     },
   ],
 };

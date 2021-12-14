@@ -9,9 +9,9 @@ import { useInView } from 'react-intersection-observer';
 import { Col, Grid } from '../..';
 
 const StyledFeatures = styled.div`
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.$bgColor};
   &:hover {
-    background-color: ${(props) => props.bgColorHover};
+    background-color: ${(props) => props.$bgColorHover};
   }
 `;
 
@@ -23,9 +23,9 @@ const StyledHeadline = styled.span`
 `;
 
 const StyledLink = styled((props) => <Link {...props} />)`
-  color: ${(props) => props.color} !important;
+  color: ${(props) => props.$color} !important;
   &:hover {
-    color: ${(props) => props.colorHover} !important;
+    color: ${(props) => props.$colorHover} !important;
   }
 `;
 
@@ -165,8 +165,8 @@ const FeaturesHome = () => {
                   <StyledFeatures
                     to={feature.link}
                     className="relative py-24 px-4 rounded-xl shadow-2xl overflow-hidden lg:px-8 flex md:h-full lg:flex-col justify-between"
-                    bgColor={primary.dark.color}
-                    bgColorHover={neutral.dark.color}
+                    $bgColor={primary.dark.color}
+                    $bgColorHover={neutral.dark.color}
                   >
                     <div className="absolute inset-0 opacity-20 filter saturate-0 mix-blend-multiply">
                       <GatsbyImage
@@ -185,8 +185,8 @@ const FeaturesHome = () => {
                       <StyledLink
                         to={feature.link}
                         className="text-xl font-medium"
-                        color={accent.light.color}
-                        colorHover={accent.default.color}
+                        $color={accent.light.color}
+                        $colorHover={accent.default.color}
                       >
                         Learn More <span aria-hidden="true">&rarr;</span>{' '}
                       </StyledLink>

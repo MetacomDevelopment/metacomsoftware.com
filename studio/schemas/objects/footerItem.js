@@ -19,13 +19,13 @@ export default {
   fields: [
     {
       title: 'Headline',
-      description: 'Add a headline for the column',
+      description: 'Add a headline to the column.',
       name: 'headline',
       type: 'string',
     },
     {
       title: 'Links',
-      description: 'Add internal links to the column',
+      description: 'Add internal links to the column.',
       name: 'links',
       type: 'array',
       of: [

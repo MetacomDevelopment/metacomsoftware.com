@@ -5,20 +5,20 @@ import { Button, Col, Grid } from '.';
 import { useSanity } from '../hooks';
 
 const StyledForm = styled.form`
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.$bgColor};
   & h2 {
-    color: ${(props) => props.color} !important;
+    color: ${(props) => props.$color} !important;
   }
 `;
 
 const StyledBorder = styled.p`
-  border-color: ${(props) => props.borderColor};
+  border-color: ${(props) => props.$borderColor};
 `;
 
 const StyledButton = styled.button`
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.$bgColor};
   &:hover {
-    background-color: ${(props) => props.bgColorHover};
+    background-color: ${(props) => props.$bgColorHover};
   }
 `;
 
@@ -58,8 +58,8 @@ const FormHero = () => {
       data-netlify-honeypot="bot-field"
       className="p-3 lg:p-6 rounded-xl shadow-xl mx-auto space-y-10"
       id="form-hero"
-      bgColor={primary.darker.color}
-      color={accent.default.color}
+      $bgColor={primary.darker.color}
+      $color={accent.default.color}
     >
       <div>
         <h2 className="text-4xl font-bold text-center drop-shadow-text">
@@ -67,7 +67,7 @@ const FormHero = () => {
         </h2>
         {/* <StyledBorder
           className="text-xl font-italic text-gray-100 text-center"
-          borderColor={accent.light.color}
+          $borderColor={accent.light.color}
         >
           Send us a request or give us a call today at{' '}
           <AnchorText type="external" light weight="500" href={info.phoneHref}>
@@ -217,8 +217,8 @@ const FormHero = () => {
           className="inline-flex items-center py-3 px-6 hover:bg-gray-700 text-lg font-medium text-white hover:text-white border border-gray-50 hover:border-gray-100 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform"
           type="submit"
           value="Submit"
-          bgColor={accent.default.color}
-          bgColorHover={accent.dark.color}
+          $bgColor={accent.default.color}
+          $bgColorHover={accent.dark.color}
         />
       </div>
     </StyledForm>

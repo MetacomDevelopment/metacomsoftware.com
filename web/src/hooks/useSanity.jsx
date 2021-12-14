@@ -59,12 +59,14 @@ const useSanitySettings = () => {
           }
           contactLinks {
             _key
+            id
             anchor
             url
             icon
           }
           socialLinks {
             _key
+            id
             anchor
             url
             icon
