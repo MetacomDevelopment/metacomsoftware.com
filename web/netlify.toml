@@ -38,6 +38,11 @@
 [build.processing.images]
   compress = true
 
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self';"
+
 # [[headers]]
 #   for = "/*"
 #   [headers.values]
