@@ -83,7 +83,10 @@ const MenuList = ({
     >
       <div classes="max-w-md px-4 text-center sm:max-w-3xl lg:max-w-7xl">
         {category.map((item) => (
-          <Container classes="mb-32 bg-zinc-100 p-3 lg:p-6 rounded-xl shadow-xl">
+          <Container
+            key={item._key}
+            classes="mb-32 bg-zinc-100 p-3 lg:p-6 rounded-xl shadow-xl"
+          >
             <h3 className="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl text-center">
               {item.headline}
             </h3>
@@ -92,7 +95,7 @@ const MenuList = ({
             </div>
             <Grid classes="grid-cols-2 lg:grid-cols-4 gap-8 my-12">
               {item.images.map((image) => (
-                <Col>
+                <Col key={image._key}>
                   <GatsbyImage
                     image={image?.asset?.gatsbyImageData}
                     className="w-full h-full object-cover rounded-xl shadow-xl"
@@ -103,7 +106,10 @@ const MenuList = ({
             </Grid>
             <Row classes="max-w-3xl mx-auto mb-6">
               {item.items.map((categoryItem) => (
-                <Grid classes="grid-cols-12 gap-4 p-3 odd:bg-indigo-50 even:bg-zinc-50 rounded-lg border">
+                <Grid
+                  key={categoryItem._key}
+                  classes="grid-cols-12 gap-4 p-3 odd:bg-indigo-50 even:bg-zinc-50 rounded-lg border"
+                >
                   <Col classes="text-left col-span-8">
                     <Flex classes="flex-col">
                       <p className="font-bold">{categoryItem.name}</p>

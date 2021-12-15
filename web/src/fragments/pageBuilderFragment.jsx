@@ -207,15 +207,18 @@ export const query = graphql`
         layout
         idName
         category {
+          _key
           _rawDescription
           headline
           images {
+            _key
             alt
             asset {
               gatsbyImageData
             }
           }
           items {
+            _key
             name
             price
             _rawDescription

@@ -1,7 +1,7 @@
 import { FaListAlt as icon } from 'react-icons/fa';
 
 export default {
-  title: 'Menu Section',
+  title: 'Menu',
   name: 'menuSection',
   type: 'object',
   options: {
@@ -12,7 +12,7 @@ export default {
   icon,
   fieldsets: [
     {
-      title: 'Menu Section',
+      title: 'Menu',
       name: 'menuSectionSet',
     },
   ],
