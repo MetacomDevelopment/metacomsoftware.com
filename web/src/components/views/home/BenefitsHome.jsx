@@ -104,7 +104,7 @@ const BenefitsHome = () => {
     }
   }, [controls, inView]);
   return (
-    <div className="relative bg-gray-200 py-16 sm:py-24 lg:py-32">
+    <div className="relative bg-zinc-200 py-16 sm:py-24 lg:py-32">
       <motion.div
         ref={ref}
         variants={containerVariants}
@@ -115,10 +115,10 @@ const BenefitsHome = () => {
         <h3 className="text-base font-semibold tracking-wider text-primary uppercase">
           You deserve the best talent
         </h3>
-        <h2 className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
+        <h2 className="mt-2 text-3xl font-extrabold text-zinc-900 tracking-tight sm:text-4xl">
           Let us find the perfect fit
         </h2>
-        {/* <p className="mt-5 max-w-prose mx-auto text-xl text-gray-600">
+        {/* <p className="mt-5 max-w-prose mx-auto text-xl text-zinc-600">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
           neque esse hic similique natus. Doloremque qui perferendis quaerat
           sint tempore aut fuga. Quasi ullam fuga architecto numquam hic
@@ -138,16 +138,16 @@ const BenefitsHome = () => {
                       <benefit.icon className="h-40 w-40 mx-auto fill-current" />
                     </StyledIcon>
                     <div className="relative z-10">
-                      <h3 className="mt-8 text-3xl font-medium text-gray-800">
+                      <h3 className="mt-8 text-3xl font-medium text-zinc-800">
                         <span className="">{benefit.name}</span>
                       </h3>
-                      <p className="mt-5 mb-8 text-xl text-gray-500 italic">
+                      <p className="mt-5 mb-8 text-xl text-zinc-500 italic">
                         <span className="">{benefit.description}</span>
                       </p>
                       <p className="mt-5 text-base text-primary font-bold">
                         <span>{benefit.author}</span>
                       </p>
-                      <p className="mb-8 text-base text-gray-800 font-semibold">
+                      <p className="mb-8 text-base text-zinc-800 font-semibold">
                         <span>{benefit.position}</span>
                       </p>
                     </div>

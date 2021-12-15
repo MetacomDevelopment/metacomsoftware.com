@@ -141,13 +141,13 @@ const CtaFull = ({
     //       </Col>
     //       <Col classes="px-4 py-12 lg:py-16">
     //         <div className="md:ml-auto md:pl-10">
-    //           <h3 className="text-base font-semibold uppercase tracking-wider !text-gray-300">
+    //           <h3 className="text-base font-semibold uppercase tracking-wider !text-zinc-300">
     //             {tagline}
     //           </h3>
     //           <h2 className="mt-2 !text-white text-3xl font-extrabold tracking-tight sm:text-4xl">
     //             {headline}
     //           </h2>
-    //           <div className="!text-gray-300 space-y-6 mt-6">
+    //           <div className="!text-zinc-300 space-y-6 mt-6">
     //             <SanityBlockContent blocks={raw.description} />
     //           </div>
     //           <div className="mx-auto lg:mx-none mt-12 flex justify-center lg:justify-start rounded-md drop-shadow">

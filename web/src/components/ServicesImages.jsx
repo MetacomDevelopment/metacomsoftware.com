@@ -81,7 +81,7 @@ const ServicesImages = ({
         <h2 className="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">
           {headline}
         </h2>
-        <div className="mt-5 max-w-prose mx-auto text-xl text-gray-600">
+        <div className="mt-5 max-w-prose mx-auto text-xl text-zinc-600">
           <SanityBlockContent blocks={raw.description} />
         </div>
         <div className="mt-24">

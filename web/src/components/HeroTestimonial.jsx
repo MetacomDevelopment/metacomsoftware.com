@@ -123,7 +123,7 @@ const Hero = ({
                   />
                 </svg>
                 <blockquote className="relative">
-                  <div className="text-lg leading-9 font-normal text-gray-100">
+                  <div className="text-lg leading-9 font-normal text-zinc-100">
                     <SanityBlockContent
                       blocks={testimonial._rawQuote}
                       className="space-y-6 italic"
@@ -144,7 +144,7 @@ const Hero = ({
                         <div className="text-base font-bold">
                           {testimonial.author}
                         </div>
-                        <div className="text-base font-medium text-gray-50">
+                        <div className="text-base font-medium text-zinc-50">
                           {testimonial.info}
                         </div>
                       </div>

@@ -36,7 +36,7 @@ const LinkFooter = () => {
                     type="external"
                     color={accent.default.color}
                     colorHover={primary.dark.color}
-                    key={social._id}
+                    key={social.id}
                     href={social.url}
                     rel="noopener"
                   >
@@ -53,7 +53,7 @@ const LinkFooter = () => {
             {footers.map((footer) =>
               footer.footerItem.map((item) => (
                 <div key={item._key} className="mt-12 xl:mt-0">
-                  <h4 className="text-md font-semibold text-gray-800 tracking-tight uppercase">
+                  <h4 className="text-md font-semibold text-zinc-800 tracking-tight uppercase">
                     {item.headline}
                   </h4>
                   <ul className="mt-4 space-y-4">
@@ -79,13 +79,13 @@ const LinkFooter = () => {
               ))
             )}
             <div className="mt-12 xl:mt-0">
-              <h4 className="text-md font-semibold text-gray-800 tracking-wider uppercase">
+              <h4 className="text-md font-semibold text-zinc-800 tracking-wider uppercase">
                 Get In Touch
               </h4>
               <ul className="mt-4 space-y-4">
                 {footers.map((item) =>
                   item.contactLinks.map((contact) => (
-                    <li key={contact._id}>
+                    <li key={contact.id}>
                       <AnchorText
                         type="external"
                         color={neutral.default.color}

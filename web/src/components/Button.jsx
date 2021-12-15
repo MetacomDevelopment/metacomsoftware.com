@@ -59,7 +59,7 @@ const Button = ({
               ? '/'
               : `/${internalLink}/`
           }
-          className="inline-flex items-center py-3 px-6 text-lg font-bold text-gray-50 hover:text-white border border-gray-50 hover:border-gray-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform transition-all"
+          className="inline-flex items-center py-3 px-6 text-lg font-bold text-zinc-50 hover:text-white border border-zinc-50 hover:border-zinc-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500 hover:-translate-y-0.5 translate transform transition-all"
           $bgColor={accent.default.color}
           $bgColorHover={accent.dark.color}
         >
@@ -78,7 +78,7 @@ const Button = ({
               ? '/'
               : `/${internalLink}/`
           }
-          className="inline-flex items-center py-3 px-6 text-lg font-bold text-gray-50 hover:text-white border border-gray-50 hover:border-gray-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform transition-all"
+          className="inline-flex items-center py-3 px-6 text-lg font-bold text-zinc-50 hover:text-white border border-zinc-50 hover:border-zinc-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500 hover:-translate-y-0.5 translate transform transition-all"
           $bgColor={accent.default.color}
           $bgColorHover={accent.dark.color}
         >
@@ -93,7 +93,7 @@ const Button = ({
           href={externalLink === null || undefined ? '#' : externalLink}
           target="_blank"
           rel="noopener"
-          className="inline-flex items-center py-3 px-6 text-lg font-bold text-gray-50 hover:text-white border border-gray-50 hover:border-gray-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform transition-all"
+          className="inline-flex items-center py-3 px-6 text-lg font-bold text-zinc-50 hover:text-white border border-zinc-50 hover:border-zinc-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500 hover:-translate-y-0.5 translate transform transition-all"
           secondaryBtn={
             secondaryBtn === null || undefined ? false : secondaryBtn
           }
@@ -112,7 +112,7 @@ const Button = ({
         <StyledButtonForm
           type="submit"
           value="Submit"
-          className="inline-flex items-center py-3 px-6 text-lg font-bold text-gray-50 hover:text-white border border-gray-50 hover:border-gray-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform transition-all"
+          className="inline-flex items-center py-3 px-6 text-lg font-bold text-zinc-50 hover:text-white border border-zinc-50 hover:border-zinc-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500 hover:-translate-y-0.5 translate transform transition-all"
           secondaryBtn={
             secondaryBtn === null || undefined ? false : secondaryBtn
           }
@@ -130,7 +130,7 @@ const Button = ({
       return (
         <StyledAnchorLink
           to={jumpLink === null || undefined ? '#' : jumpLink}
-          className="inline-flex items-center py-3 px-6 text-lg font-bold text-gray-50 hover:text-white border border-gray-50 hover:border-gray-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform transition-all cursor-pointer"
+          className="inline-flex items-center py-3 px-6 text-lg font-bold text-zinc-50 hover:text-white border border-zinc-50 hover:border-zinc-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500 hover:-translate-y-0.5 translate transform transition-all cursor-pointer"
           secondaryBtn={
             secondaryBtn === null || undefined ? false : secondaryBtn
           }

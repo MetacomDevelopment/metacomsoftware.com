@@ -7,7 +7,7 @@ import { ChevronUpIcon } from '@heroicons/react/solid';
 import { useSanity } from '../hooks';
 
 const settings = {
-  footerBgColor: 'bg-gray-800',
+  footerBgColor: 'bg-zinc-800',
 };
 
 const FooterMap = ({ type, location }) => {
@@ -47,7 +47,7 @@ const FooterMap = ({ type, location }) => {
                       } w-5 h-5 text-blue-500`}
                     />
                   </Disclosure.Button>
-                  <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-50">
+                  <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-zinc-50">
                     {footer.map.directions}
                   </Disclosure.Panel>
                 </div>

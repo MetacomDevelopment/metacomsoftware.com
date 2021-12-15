@@ -121,11 +121,11 @@ const HeroGraphic = ({
                 </span>
               </h2>
               <div className="pt-2 space-y-4">
-                <p className="text-gray-50 italic text-center lg:text-left drop-shadow-text-cta">
+                <p className="text-zinc-50 italic text-center lg:text-left drop-shadow-text-cta">
                   "We are so honored and grateful to be selected by the Plymouth
                   Awards Program in the category of Beauty Salon!"
                 </p>
-                <p className="text-gray-50 italic  text-right font-bold">
+                <p className="text-zinc-50 italic  text-right font-bold">
                   - Amy Chapman, Owner
                 </p>
               </div>

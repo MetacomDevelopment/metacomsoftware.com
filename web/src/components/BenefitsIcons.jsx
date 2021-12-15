@@ -136,10 +136,10 @@ const BenefitsIcons = ({
                 />
               </StyledIcon>
               <div className="relative z-10">
-                <h3 className="mt-8 text-3xl font-medium text-gray-800">
+                <h3 className="mt-8 text-3xl font-medium text-zinc-800">
                   <span className="">{item.title}</span>
                 </h3>
-                <p className="mt-5 mb-8 text-xl text-gray-500 italic">
+                <p className="mt-5 mb-8 text-xl text-zinc-500 italic">
                   <SanityBlockContent blocks={item._rawDescription} />
                 </p>
                 <StyledAuthor
@@ -148,7 +148,7 @@ const BenefitsIcons = ({
                 >
                   <span>{item.author}</span>
                 </StyledAuthor>
-                <p className="mb-8 text-base text-gray-800 font-semibold">
+                <p className="mb-8 text-base text-zinc-800 font-semibold">
                   <span>{item.info}</span>
                 </p>
               </div>

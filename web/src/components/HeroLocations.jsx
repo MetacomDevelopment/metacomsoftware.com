@@ -85,7 +85,7 @@
 //           loading="eager"
 //         />
 //         <div
-//           className="absolute inset-0 bg-coolGray-600"
+//           className="absolute inset-0 bg-zinc-600"
 //           style={{ mixBlendMode: 'multiply' }}
 //           aria-hidden="true"
 //         />
@@ -179,7 +179,7 @@
 //                     />
 //                   </svg>
 //                   <blockquote className="relative">
-//                     <div className="text-lg leading-9 font-normal text-gray-100">
+//                     <div className="text-lg leading-9 font-normal text-zinc-100">
 //                       {allSanity.nodes.map((node) => (
 //                         <BlockContent
 //                           key={node._key}
@@ -201,7 +201,7 @@
 //                           <div className="text-base font-medium text-blue-300">
 //                             {sanity.testimonialAuthor}
 //                           </div>
-//                           <div className="text-base font-medium text-gray-50">
+//                           <div className="text-base font-medium text-zinc-50">
 //                             {sanity.testimonialPosition}
 //                           </div>
 //                         </div>

@@ -62,7 +62,7 @@ const ContactMap = ({
             <Col key={item._key} classes="relative bg-white shadow-xl">
               <h2 className="sr-only">{item.headline}</h2>
               <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="relative overflow-hidden py-10 px-6 bg-gray-700 sm:px-10 xl:p-12">
+                <div className="relative overflow-hidden py-10 px-6 bg-zinc-700 sm:px-10 xl:p-12">
                   <div
                     className="absolute inset-0 pointer-events-none sm:hidden"
                     aria-hidden="true"
@@ -169,7 +169,7 @@ const ContactMap = ({
                     <SanityBlockContent blocks={item._rawDescription} />
                   </div>
                   {item.gmb.map((gmb) => (
-                    <div>
+                    <div key={gmb._id}>
                       <dl className="mt-8 space-y-6">
                         <dt>
                           <span className="sr-only">Phone number</span>
@@ -256,7 +256,7 @@ const ContactMap = ({
                   ))}
                   <ul className="mt-12 flex space-x-6">
                     {socialLinks.map((social) => (
-                      <li key={social.id}>
+                      <li key={social._id}>
                         <AnchorText
                           type="external"
                           color={neutral.light.color}
@@ -272,7 +272,7 @@ const ContactMap = ({
                       <a
                         href="#"
                         rel="noopener"
-                        className="text-gray-400 hover:text-gray-500"
+                        className="text-zinc-400 hover:text-zinc-500"
                       >
                         <span className="sr-only">Instagram</span>
                         <i className="fab fa-2x fa-instagram" />
@@ -282,7 +282,7 @@ const ContactMap = ({
                       <a
                         href="#"
                         rel="noopener"
-                        className="text-gray-400 hover:text-gray-500"
+                        className="text-zinc-400 hover:text-zinc-500"
                       >
                         <span className="sr-only">Twitter</span>
                         <i className="fab fa-2x fa-twitter" />
@@ -292,7 +292,7 @@ const ContactMap = ({
                       <a
                         href="#"
                         rel="noopener"
-                        className="text-gray-400 hover:text-gray-500"
+                        className="text-zinc-400 hover:text-zinc-500"
                       >
                         <span className="sr-only">YouTube</span>
                         <i className="fab fa-2x fa-youtube" />
@@ -302,7 +302,7 @@ const ContactMap = ({
                       <a
                         href="#"
                         rel="noopener"
-                        className="text-gray-400 hover:text-gray-500"
+                        className="text-zinc-400 hover:text-zinc-500"
                       >
                         <span className="sr-only">LinkedIn</span>
                         <i className="fab fa-2x fa-linkedin" />
@@ -311,7 +311,7 @@ const ContactMap = ({
                   </ul>
                 </div>
                 {item.gmb.map((gmb) => (
-                  <div>
+                  <div key={gmb._id}>
                     <iframe
                       title={`Google Map of ${gmb.name}`}
                       src={gmb.gmbEmbed}

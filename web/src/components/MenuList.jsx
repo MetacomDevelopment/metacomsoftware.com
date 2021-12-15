@@ -83,11 +83,11 @@ const MenuList = ({
     >
       <div classes="max-w-md px-4 text-center sm:max-w-3xl lg:max-w-7xl">
         {category.map((item) => (
-          <Container classes="mb-32 bg-gray-100 p-3 lg:p-6 rounded-xl shadow-xl">
+          <Container classes="mb-32 bg-zinc-100 p-3 lg:p-6 rounded-xl shadow-xl">
             <h3 className="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl text-center">
               {item.headline}
             </h3>
-            <div className="mt-5 max-w-prose mx-auto text-lg text-gray-600 text-center">
+            <div className="mt-5 max-w-prose mx-auto text-lg text-zinc-600 text-center">
               <SanityBlockContent blocks={item._rawDescription} />
             </div>
             <Grid classes="grid-cols-2 lg:grid-cols-4 gap-8 my-12">
@@ -103,11 +103,11 @@ const MenuList = ({
             </Grid>
             <Row classes="max-w-3xl mx-auto mb-6">
               {item.items.map((categoryItem) => (
-                <Grid classes="grid-cols-12 gap-4 p-3 odd:bg-indigo-50 even:bg-gray-50 rounded-lg border">
+                <Grid classes="grid-cols-12 gap-4 p-3 odd:bg-indigo-50 even:bg-zinc-50 rounded-lg border">
                   <Col classes="text-left col-span-8">
                     <Flex classes="flex-col">
                       <p className="font-bold">{categoryItem.name}</p>
-                      <div className="text-gray-600">
+                      <div className="text-zinc-600">
                         <SanityBlockContent
                           blocks={categoryItem._rawDescription}
                         />

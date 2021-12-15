@@ -161,6 +161,7 @@ export const query = graphql`
           _rawDescription
           headline
           gmb {
+            _id
             address
             city
             cityState

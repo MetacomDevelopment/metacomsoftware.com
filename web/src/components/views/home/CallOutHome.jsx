@@ -10,7 +10,7 @@ import { useSanity } from '../../../hooks';
 import { Button } from '../..';
 
 const callOutSettings = {
-  bgOverlay: 'bg-gray-500',
+  bgOverlay: 'bg-zinc-500',
   bgImgAlt:
     'Front yard of home with walkway and patio, landscaping done by Braven Landscape & Construction in Plympton, MA',
 };

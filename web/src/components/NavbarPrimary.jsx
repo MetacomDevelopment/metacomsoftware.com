@@ -318,8 +318,8 @@ const NavbarPrimary = () => {
                             <Disclosure key={dropdown._key}>
                               {({ open }) => (
                                 <div>
-                                  <Disclosure.Button className="flex justify-between w-full bg-gray-50 text-lg font-medium text-gray-800 hover:text-gray-800 focus:text-gray-800">
-                                    <span className="pr-1 hover:text-gray-800 focus:text-gray-800">
+                                  <Disclosure.Button className="flex justify-between w-full bg-zinc-50 text-lg font-medium text-zinc-800 hover:text-zinc-800 focus:text-zinc-800">
+                                    <span className="pr-1 hover:text-zinc-800 focus:text-zinc-800">
                                       {dropdown.label}
                                     </span>
                                     <ChevronUpIcon
@@ -328,7 +328,7 @@ const NavbarPrimary = () => {
                                       } w-6 h-6 text-accent`}
                                     />
                                   </Disclosure.Button>
-                                  <Disclosure.Panel className="p-4 bg-gray-200 space-y-6">
+                                  <Disclosure.Panel className="p-4 bg-zinc-200 space-y-6">
                                     {dropdown.links.map((link) => (
                                       <Col key={link._key} classes="ml-3">
                                         <AnchorText
@@ -406,7 +406,7 @@ const NavbarPrimary = () => {
                   <Grid classes="pt-10 pb-4 grid-cols-3">
                     {navbars.map((item) =>
                       item.contactLinks.map((contact) => (
-                        <Col key={contact._id} classes="mx-auto">
+                        <Col key={contact.id} classes="mx-auto">
                           <div className="flex my-auto px-6">
                             <a
                               href={contact.url}

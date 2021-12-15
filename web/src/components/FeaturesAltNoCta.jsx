@@ -57,7 +57,7 @@ const RowTextLeft = ({
 }) => (
   <Grid key={_key} classes="lg:grid-cols-2 gap-x-12 gap-y-14 lg:gap-y-32">
     <Col classes="order-2 lg:order-none">
-      <div className="text-lg text-gray-500 max-w-prose mx-auto lg:max-w-none space-y-10">
+      <div className="text-lg text-zinc-500 max-w-prose mx-auto lg:max-w-none space-y-10">
         <div className="space-y-6">
           <h2 className="text-3xl font-extrabold tracking-wide capitalize">
             {headline}
@@ -107,7 +107,7 @@ const RowTextRight = ({
       </Container>
     </Col>
     <Col classes="order-2 lg:order-none">
-      <div className="text-lg text-gray-500 max-w-prose mx-auto lg:max-w-none space-y-10">
+      <div className="text-lg text-zinc-500 max-w-prose mx-auto lg:max-w-none space-y-10">
         <div className="space-y-6">
           <h2 className="text-3xl text-primary font-extrabold tracking-wide capitalize">
             {headline}

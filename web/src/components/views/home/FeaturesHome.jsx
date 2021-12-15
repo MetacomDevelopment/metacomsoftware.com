@@ -131,7 +131,7 @@ const FeaturesHome = () => {
     }
   }, [controls, inView]);
   return (
-    <div className="relative bg-gray-200 py-16 sm:py-24 lg:py-32">
+    <div className="relative bg-zinc-200 py-16 sm:py-24 lg:py-32">
       <motion.div
         ref={ref}
         variants={containerVariants}
@@ -142,13 +142,13 @@ const FeaturesHome = () => {
         <h3 className="text-base font-semibold tracking-wider text-primary uppercase">
           Industries We Work In
         </h3>
-        <h2 className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
+        <h2 className="mt-2 text-3xl font-extrabold text-zinc-900 tracking-tight sm:text-4xl">
           Job Recruiting Industries
         </h2>
-        <p className="mt-5 max-w-prose mx-auto text-xl text-gray-600">
+        <p className="mt-5 max-w-prose mx-auto text-xl text-zinc-600">
           What's the best way for you to grow your company? Add some new talent!
         </p>
-        <p className="mt-5 max-w-prose mx-auto text-xl text-gray-600">
+        <p className="mt-5 max-w-prose mx-auto text-xl text-zinc-600">
           With a little focus, the next hire can help your business be more
           efficient and profitable. That's why we specialize in certain
           industries so that we deliver the best results to our clients.
