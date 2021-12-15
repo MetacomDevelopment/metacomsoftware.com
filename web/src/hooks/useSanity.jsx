@@ -91,7 +91,7 @@ const useSanitySettings = () => {
             }
           }
           contactLinks {
-            id
+            _id
             anchor
             url
             icon
@@ -104,7 +104,7 @@ const useSanitySettings = () => {
             }
           }
           socialLinks {
-            id
+            _id
             anchor
             url
             icon
