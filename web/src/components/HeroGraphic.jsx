@@ -9,14 +9,25 @@ import { useSanity } from '../hooks';
 import { SanityBlockContent, Button, FormHero, Grid, Flex, Overlay } from '.';
 
 const StyledHeroHeadline = styled(motion.h1)`
-  color: ${(props) => props.headline};
+  color: ${(props) => props.$headline};
 `;
 
 const StyledHeroSubheadline = styled(motion.div)`
-  color: ${(props) => props.subheadline};
+  color: ${(props) => props.$subheadline};
 `;
 
-const HeroGraphic = ({ block, raw, index, headline, bgImg, graphic }) => {
+const HeroGraphic = ({
+  block,
+  raw,
+  index,
+  headline,
+  bgImg,
+  graphic,
+  primaryCtaButtonLabel,
+  primaryCtaButtonLink,
+  secondaryCtaButtonLabel,
+  secondaryCtaButtonLink,
+}) => {
   // const { headline, bgImg, alt } = block;
 
   const variants = {
@@ -42,7 +53,7 @@ const HeroGraphic = ({ block, raw, index, headline, bgImg, graphic }) => {
     <div className="relative flex flex-col place-content-center place-items-center lg:h-screen">
       <div className="absolute inset-0">
         <GatsbyImage
-          image={bgImg.asset.gatsbyImageData}
+          image={bgImg?.asset?.gatsbyImageData}
           alt={bgImg.alt}
           className="w-full h-full object-cover"
         />
@@ -57,7 +68,7 @@ const HeroGraphic = ({ block, raw, index, headline, bgImg, graphic }) => {
             animate={controls}
             transition={{ duration: 0.5, delay: 0 }}
             className="text-5xl font-extrabold tracking-tight drop-shadow-darker sm:text-5xl lg:text-6xl capitalize mb-10"
-            headline={hero.headline.color}
+            $headline={hero.headline.color}
           >
             {headline}
           </StyledHeroHeadline>
@@ -68,7 +79,7 @@ const HeroGraphic = ({ block, raw, index, headline, bgImg, graphic }) => {
             animate={controls}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl lg:text-2xl max-w-3xl drop-shadow-darker space-y-6"
-            subheadline={hero.tagline.color}
+            $subheadline={hero.tagline.color}
           >
             <SanityBlockContent blocks={raw.tagline} />
           </StyledHeroSubheadline>
@@ -84,7 +95,11 @@ const HeroGraphic = ({ block, raw, index, headline, bgImg, graphic }) => {
             className="flex mt-10"
           >
             <div className="mx-auto lg:mx-0 max">
-              <Button btn="internal" />
+              <Button
+                linkType="internal"
+                internalLink={primaryCtaButtonLink.metadata.slug.current}
+                label={primaryCtaButtonLabel}
+              />
             </div>
           </motion.div>
         </Flex>
@@ -92,7 +107,7 @@ const HeroGraphic = ({ block, raw, index, headline, bgImg, graphic }) => {
           <div className="bg-blue-900 bg-opacity-75 p-6 rounded-2xl shadow-2xl space-y-6 mx-3 lg:mx-0">
             <div className="h-48 w-48 mx-auto">
               <GatsbyImage
-                image={graphic.asset.gatsbyImageData}
+                image={graphic?.asset?.gatsbyImageData}
                 alt={graphic.alt}
                 className="w-full h-full object-cover drop-shadow-darker"
               />
@@ -106,11 +121,11 @@ const HeroGraphic = ({ block, raw, index, headline, bgImg, graphic }) => {
                 </span>
               </h2>
               <div className="pt-2 space-y-4">
-                <p className="text-gray-50 italic text-center lg:text-left drop-shadow-text-cta">
+                <p className="text-zinc-50 italic text-center lg:text-left drop-shadow-text-cta">
                   "We are so honored and grateful to be selected by the Plymouth
                   Awards Program in the category of Beauty Salon!"
                 </p>
-                <p className="text-gray-50 italic  text-right font-bold">
+                <p className="text-zinc-50 italic  text-right font-bold">
                   - Amy Chapman, Owner
                 </p>
               </div>

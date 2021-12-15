@@ -1,37 +1,47 @@
+import Tabs from 'sanity-plugin-tabs';
+
 export default {
   name: `colorsAccent`,
   title: `Colors: Accent`,
   type: `document`,
-  options: {
-    collapsible: true, // Makes the whole fieldset collapsible
-    collapsed: true, // Defines if the fieldset should be collapsed by default or not
-    columns: 3, // Defines a grid for the fields and how many columns it should have
-  },
+  inputComponent: Tabs,
+  fieldsets: [
+    { title: 'Default', name: 'defaultSet' },
+    { title: 'Light', name: 'lightSet' },
+    { title: 'Lighter', name: 'lighterSet' },
+    { title: 'Dark', name: 'darkSet' },
+    { title: 'Darker', name: 'darkerSet' },
+  ],
   fields: [
     {
       name: 'default',
       title: 'Default',
       type: 'colors',
+      fieldset: 'defaultSet',
     },
     {
-      name: 'light',
       title: 'Light',
+      name: 'light',
       type: 'colors',
+      fieldset: 'lightSet',
     },
     {
       name: 'lighter',
       title: 'Lighter',
       type: 'colors',
+      fieldset: 'lighterSet',
     },
     {
       name: 'dark',
       title: 'Dark',
       type: 'colors',
+      fieldset: 'darkSet',
     },
     {
       name: 'darker',
       title: 'Darker',
       type: 'colors',
+      fieldset: 'darkerSet',
     },
   ],
 };

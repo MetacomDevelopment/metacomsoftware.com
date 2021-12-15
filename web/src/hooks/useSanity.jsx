@@ -4,31 +4,31 @@ import { useStaticQuery, graphql } from 'gatsby';
 const useSanitySettings = () => {
   const data = useStaticQuery(graphql`
     query useSanitySettingsQ {
-      sanitySettingsWebsite {
+      sanityBusinessSeo {
+        isIndexed
         name
         url
-        cta
-        ctaUrl {
-          metadata {
-            slug {
-              current
-            }
-          }
-        }
-      }
-      sanitySettingsMetadata {
-        author
+        title
         description
+        author
         image {
+          alt
           asset {
             gatsbyImageData(placeholder: BLURRED, formats: WEBP)
           }
         }
-        title
       }
       allSanityNavbars {
         nodes {
           _key
+          primaryNavCtaButtonLabel
+          primaryNavCtaButtonLink {
+            metadata {
+              slug {
+                current
+              }
+            }
+          }
           navItem {
             _key
             type
@@ -59,12 +59,14 @@ const useSanitySettings = () => {
           }
           contactLinks {
             _key
+            id
             anchor
             url
             icon
           }
           socialLinks {
             _key
+            id
             anchor
             url
             icon
@@ -222,8 +224,7 @@ const useSanitySettings = () => {
   // const locations = data.allSanityBusinessLocations.nodes;
   // const socials = data.allSanityBusinessSocials.nodes;
   // const metadata = data.sanityBusinessMetadata;
-  const website = data.sanitySettingsWebsite;
-  const metadata = data.sanitySettingsMetadata;
+  const siteSEO = data.sanityBusinessSeo;
   const logo = data.sanityBusinessLogo;
   const navbars = data.allSanityNavbars.nodes;
   const footers = data.allSanityFooters.nodes;
@@ -239,8 +240,7 @@ const useSanitySettings = () => {
     // locations,
     // socials,
     // metadata,
-    website,
-    metadata,
+    siteSEO,
     logo,
     navbars,
     footers,

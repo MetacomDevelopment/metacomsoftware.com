@@ -33,7 +33,7 @@ const Container = ({ padding, children, classes, bgColor }) => {
   switch (padding) {
     default:
       return (
-        <StyledContainer bgColor={bgColor}>
+        <StyledContainer $bgColor={bgColor}>
           <motion.div
             ref={ref}
             variants={variants}
@@ -47,7 +47,7 @@ const Container = ({ padding, children, classes, bgColor }) => {
       );
     case 'none':
       return (
-        <StyledContainer bgColor={bgColor}>
+        <StyledContainer $bgColor={bgColor}>
           <motion.div
             ref={ref}
             variants={variants}
@@ -61,7 +61,7 @@ const Container = ({ padding, children, classes, bgColor }) => {
       );
     case 'sm':
       return (
-        <StyledContainer bgColor={bgColor}>
+        <StyledContainer $bgColor={bgColor}>
           <motion.div
             ref={ref}
             variants={variants}
@@ -75,7 +75,7 @@ const Container = ({ padding, children, classes, bgColor }) => {
       );
     case 'lg':
       return (
-        <StyledContainer bgColor={bgColor}>
+        <StyledContainer $bgColor={bgColor}>
           <motion.div
             ref={ref}
             variants={variants}
@@ -89,7 +89,7 @@ const Container = ({ padding, children, classes, bgColor }) => {
       );
     case 'breaks':
       return (
-        <StyledContainer bgColor={bgColor}>
+        <StyledContainer $bgColor={bgColor}>
           <motion.div
             ref={ref}
             variants={variants}

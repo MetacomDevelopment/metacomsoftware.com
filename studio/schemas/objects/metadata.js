@@ -15,6 +15,13 @@ export default {
   ],
   fields: [
     {
+      title: 'Allow Google to index this page?',
+      description: 'OFF = "noindex, nofollow"; ON = "index, follow"',
+      name: 'isIndexed',
+      type: 'boolean',
+      initialValue: true,
+    },
+    {
       title: 'Title',
       name: 'title',
       type: 'string',
@@ -57,7 +64,9 @@ export default {
       },
     },
   ],
-
+  // initialValue: {
+  //   isIndexed: true,
+  // },
   preview: {
     select: {
       title: 'title',

@@ -69,7 +69,7 @@
 //           className="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none"
 //         >
 //           <div>
-//             <h2 className="text-base text-gray-900 font-semibold tracking-wide uppercase">
+//             <h2 className="text-base text-zinc-900 font-semibold tracking-wide uppercase">
 //               Landscaping For Residential Homes & Commercial Business
 //             </h2>
 //             <h3 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-primary sm:text-4xl">
@@ -101,14 +101,14 @@
 //             className="mt-8 lg:mt-0"
 //           >
 //             <div className="text-base max-w-prose mx-auto lg:max-w-none">
-//               <p className="text-lg text-gray-500">
+//               <p className="text-lg text-zinc-500">
 //                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
 //                 quos temporibus animi ratione facilis. Optio sed provident
 //                 dignissimos consectetur maiores modi quo neque exercitationem,
 //                 eligendi id minima ea, amet aliquam?
 //               </p>
 //             </div>
-//             <div className="mt-5 prose prose-indigo text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1">
+//             <div className="mt-5 prose prose-indigo text-zinc-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1">
 //               <p className="italic">
 //                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem
 //                 tenetur praesentium omnis et fugiat fugit quidem quos ipsa

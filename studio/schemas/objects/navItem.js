@@ -18,13 +18,13 @@ export default {
   ],
   fields: [
     {
-      name: 'type',
       title: 'Type',
+      name: 'type',
       type: 'string',
       options: {
         list: [
           { title: 'Single Link', value: 'single' },
-          { title: 'Dropdown Links', value: 'dropdown' },
+          { title: 'Dropdown Menu', value: 'dropdown' },
         ],
         layout: 'radio',
         direction: 'horizontal',
@@ -56,4 +56,20 @@ export default {
       hidden: ({ parent }) => !(parent?.type === 'single'),
     },
   ],
+  preview: {
+    select: {
+      single: 'pageLinks.0.anchor',
+      dropdown: 'dropdowns.0.label',
+      media: 'pageLinks.0.pageBuilder.0.bgImg',
+    },
+    prepare(selection) {
+      const { single, dropdown, media } = selection;
+      return {
+        title: single
+          ? `${single} (Single Link)`
+          : `${dropdown} (Dropdown Menu)`,
+        media: media,
+      };
+    },
+  },
 };

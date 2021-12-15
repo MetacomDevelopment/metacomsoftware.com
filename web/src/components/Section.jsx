@@ -2,15 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StyledSection } from './styles/Section.styled';
 
-const Section = ({ padding, children, classes, bgColor, h2Color, h3Color }) => {
+const Section = ({
+  padding,
+  children,
+  classes,
+  idName,
+  bgColor,
+  h2Color,
+  h3Color,
+}) => {
   switch (padding) {
     default:
       return (
         <StyledSection
-          bgColor={bgColor}
-          h2Color={h2Color}
-          h3Color={h3Color}
+          $bgColor={bgColor}
+          $h2Color={h2Color}
+          $h3Color={h3Color}
           className={`relative py-24 ${classes}`}
+          id={idName}
         >
           {children}
         </StyledSection>
@@ -18,10 +27,11 @@ const Section = ({ padding, children, classes, bgColor, h2Color, h3Color }) => {
     case 'lg':
       return (
         <StyledSection
-          bgColor={bgColor}
-          h2Color={h2Color}
-          h3Color={h3Color}
+          $bgColor={bgColor}
+          $h2Color={h2Color}
+          $h3Color={h3Color}
           className={`relative py-24 ${classes}`}
+          id={idName}
         >
           {children}
         </StyledSection>
@@ -29,10 +39,11 @@ const Section = ({ padding, children, classes, bgColor, h2Color, h3Color }) => {
     case 'sm':
       return (
         <StyledSection
-          bgColor={bgColor}
-          h2Color={h2Color}
-          h3Color={h3Color}
+          $bgColor={bgColor}
+          $h2Color={h2Color}
+          $h3Color={h3Color}
           className={`relative py-8 ${classes}`}
+          id={idName}
         >
           {children}
         </StyledSection>
@@ -40,10 +51,11 @@ const Section = ({ padding, children, classes, bgColor, h2Color, h3Color }) => {
     case 'top':
       return (
         <StyledSection
-          bgColor={bgColor}
-          h2Color={h2Color}
-          h3Color={h3Color}
+          $bgColor={bgColor}
+          $h2Color={h2Color}
+          $h3Color={h3Color}
           className={`relative pt-24 ${classes}`}
+          id={idName}
         >
           {children}
         </StyledSection>
@@ -51,10 +63,11 @@ const Section = ({ padding, children, classes, bgColor, h2Color, h3Color }) => {
     case 'bottom':
       return (
         <StyledSection
-          bgColor={bgColor}
-          h2Color={h2Color}
-          h3Color={h3Color}
+          $bgColor={bgColor}
+          $h2Color={h2Color}
+          $h3Color={h3Color}
           className={`relative pb-24 ${classes}`}
+          id={idName}
         >
           {children}
         </StyledSection>
@@ -62,10 +75,11 @@ const Section = ({ padding, children, classes, bgColor, h2Color, h3Color }) => {
     case 'none':
       return (
         <StyledSection
-          bgColor={bgColor}
-          h2Color={h2Color}
-          h3Color={h3Color}
+          $bgColor={bgColor}
+          $h2Color={h2Color}
+          $h3Color={h3Color}
           className={`relative py-0 ${classes}`}
+          id={idName}
         >
           {children}
         </StyledSection>

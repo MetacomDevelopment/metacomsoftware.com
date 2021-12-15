@@ -50,7 +50,7 @@ const TrustAwardsHome = () => {
           <motion.div
             ref={ref}
             variants={variants}
-            initial={'hidden'}
+            initial="hidden"
             animate={controls}
             transition={{ duration: 0.5, delay: 0 }}
             className="pb-3 lg:pb-0 text-center text-lg-left"
@@ -64,7 +64,7 @@ const TrustAwardsHome = () => {
           <motion.div
             ref={ref}
             variants={variants}
-            initial={'hidden'}
+            initial="hidden"
             animate={controls}
             transition={{ duration: 0.5, delay: 0 }}
             className="flex-col mt-4 ml-0 lg:ml-8"
@@ -73,7 +73,7 @@ const TrustAwardsHome = () => {
               Aristocracy Salon & Day Spa Receives{' '}
               <em className="text-yellow-600">2020 Best of Plymouth Award</em>
             </h2>
-            <p className="text-gray-500">
+            <p className="text-zinc-500">
               "We are so honored and grateful to be selected by the Plymouth
               Awards Program in the category of Beauty Salon!"{' '}
               <em>- Amy Chapman, President</em>

@@ -26,20 +26,19 @@ const heroHeadline = {
 };
 
 module.exports = {
-  mode: 'jit',
   future: {},
   // purge: ["./src/**/*.js", "./src/**/*.jsx", "./src/**/*.ts", "./src/**/*.tsx"],
-  purge: ['./public/**/*.html', './src/**/*.{js,jsx,ts,tsx,vue}'],
+  content: ['./public/**/*.html', './src/**/*.{js,jsx,ts,tsx,vue}'],
   theme: {
     colors: {
       current: 'currentColor',
       transparent: 'transparent',
       white: colors.white,
-      blueGray: colors.blueGray,
-      coolGray: colors.coolGray,
+      slate: colors.slate,
       gray: colors.gray,
-      trueGray: colors.trueGray,
-      warmGray: colors.warmGray,
+      zinc: colors.zinc,
+      neutral: colors.neutral,
+      stone: colors.stone,
       red: colors.red,
       orange: colors.orange,
       amber: colors.amber,
@@ -80,18 +79,10 @@ module.exports = {
     },
     extend: {},
   },
-  variants: {
-    // extend: {
-    //   backgroundColor: ['active'],
-    // },
-  },
-  // plugins: {
-  //   "@tailwindcss/jit": {},
-  //   autoprefixer: {},
-  // },
   plugins: [
-    require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
     require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/line-clamp'),
   ],
 };

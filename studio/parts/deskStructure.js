@@ -4,7 +4,7 @@ import {
   FaClone as iconPages,
   FaCode as iconMetadata,
   FaCog as iconSettings,
-  FaGlobe as iconWebsite,
+  FaGlobe as iconSEO,
   FaUpload as iconLogo,
   FaAddressCard as iconNap,
   FaPalette as iconColors,
@@ -22,39 +22,21 @@ export default () =>
     .title('Content')
     .items([
       S.listItem()
-        .title('Settings')
-        .icon(iconSettings)
-        .child(
-          S.list()
-            .title('Settings')
-            .items([
-              S.listItem()
-                .title('Website')
-                .icon(iconWebsite)
-                .child(
-                  S.document()
-                    .title('Website')
-                    .schemaType('settingsWebsite')
-                    .documentId('settingsWebsite')
-                ),
-              S.listItem()
-                .title('Metadata')
-                .icon(iconMetadata)
-                .child(
-                  S.document()
-                    .title('Metadata')
-                    .schemaType('settingsMetadata')
-                    .documentId('settingsMetadata')
-                ),
-            ])
-        ),
-      S.listItem()
         .title('Business')
         .icon(iconBusiness)
         .child(
           S.list()
             .title('Business')
             .items([
+              S.listItem()
+                .title('SEO')
+                .icon(iconSEO)
+                .child(
+                  S.document()
+                    .title('SEO')
+                    .schemaType('businessSeo')
+                    .documentId('businessSeo')
+                ),
               S.listItem()
                 .title('Logos')
                 .icon(iconLogo)
@@ -65,22 +47,22 @@ export default () =>
                     .documentId('businessLogo')
                 ),
               S.listItem()
-                .title('NAP Info')
+                .title('NAP')
                 .icon(iconNap)
                 .schemaType('nap')
                 .child(S.documentTypeList('nap').title('NAP')),
               S.listItem()
-                .title('GMB Listings')
+                .title('GMBs')
                 .icon(iconGMB)
                 .schemaType('gmb')
                 .child(S.documentTypeList('gmb').title('GMBs')),
               S.listItem()
-                .title('Social Accounts')
+                .title('Socials')
                 .icon(iconSocials)
                 .schemaType('social')
                 .child(S.documentTypeList('social').title('Socials')),
               S.listItem()
-                .title('Team Members')
+                .title('Employees')
                 .icon(iconTeam)
                 .schemaType('team')
                 .child(S.documentTypeList('team').title('Team')),
@@ -151,19 +133,26 @@ export default () =>
                 .title('Navbars')
                 .icon(iconLayouts)
                 .child(
-                  S.document().schemaType('navbars').documentId('navbars')
+                  S.document()
+                    .title('Navbars')
+                    .schemaType('navbars')
+                    .documentId('navbars')
                 ),
               S.listItem()
                 .title('Footers')
                 .icon(iconLayouts)
                 .child(
-                  S.document().schemaType('footers').documentId('footers')
+                  S.document()
+                    .title('Footers')
+                    .schemaType('footers')
+                    .documentId('footers')
                 ),
               S.listItem()
                 .title('Sidebars')
                 .icon(iconLayouts)
                 .child(
                   S.document()
+                    .title('Sidebars')
                     .schemaType('navbarMobile')
                     .documentId('navbarMobile')
                 ),
@@ -207,7 +196,7 @@ export default () =>
             'page',
             'post',
             'settingsMetadata',
-            'settingsWebsite',
+            'businessSeo',
             'social',
             'tag',
             'team',

@@ -32,8 +32,8 @@ export default {
       type: 'string',
     },
     {
-      name: 'bgImg',
-      title: 'Background Image',
+      name: 'authorImg',
+      title: 'Author Image',
       type: 'imageAlt',
     },
   ],

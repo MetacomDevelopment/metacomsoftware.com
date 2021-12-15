@@ -5,7 +5,7 @@ import { Section, Flex, AnchorText } from '.';
 import { useSanity } from '../hooks';
 
 const LinkFooter = () => {
-  const { logo, footers, website, primary, secondary, accent, neutral, hero } =
+  const { logo, footers, siteSEO, primary, secondary, accent, neutral, hero } =
     useSanity();
 
   return (
@@ -15,8 +15,8 @@ const LinkFooter = () => {
           <div className="space-y-6">
             <div className="mx-auto text-center">
               <GatsbyImage
-                image={logo.footer.asset.gatsbyImageData}
-                alt={`${website.name} company logo`}
+                image={logo.footer?.asset?.gatsbyImageData}
+                alt={`${siteSEO.name} company logo`}
                 loading="lazy"
                 className="w-56 transition hover:scale-110"
               />
@@ -38,7 +38,7 @@ const LinkFooter = () => {
                     colorHover={primary.dark.color}
                     key={social.id}
                     href={social.url}
-                    rel="noreferrer noopener"
+                    rel="noopener"
                   >
                     <i className={`${social.icon} fa-2x`} />
                     <span className="text-md font-thin sr-only">
@@ -53,7 +53,7 @@ const LinkFooter = () => {
             {footers.map((footer) =>
               footer.footerItem.map((item) => (
                 <div key={item._key} className="mt-12 xl:mt-0">
-                  <h4 className="text-md font-semibold text-gray-800 tracking-tight uppercase">
+                  <h4 className="text-md font-semibold text-zinc-800 tracking-tight uppercase">
                     {item.headline}
                   </h4>
                   <ul className="mt-4 space-y-4">
@@ -79,7 +79,7 @@ const LinkFooter = () => {
               ))
             )}
             <div className="mt-12 xl:mt-0">
-              <h4 className="text-md font-semibold text-gray-800 tracking-wider uppercase">
+              <h4 className="text-md font-semibold text-zinc-800 tracking-wider uppercase">
                 Get In Touch
               </h4>
               <ul className="mt-4 space-y-4">
@@ -91,7 +91,7 @@ const LinkFooter = () => {
                         color={neutral.default.color}
                         colorHover={accent.default.color}
                         href={contact.url}
-                        rel="noreferrer noopener"
+                        rel="noopener"
                         target="_blank"
                         className="text-base break-all"
                       >

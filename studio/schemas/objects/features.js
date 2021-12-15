@@ -1,20 +1,16 @@
 import { FaListAlt as icon } from 'react-icons/fa';
+import Tabs from 'sanity-plugin-tabs';
 
 export default {
   title: 'Features',
   name: 'features',
   type: 'object',
-  options: {
-    collapsible: false, // Makes the whole fieldset collapsible
-    collapsed: false, // Defines if the fieldset should be collapsed by default or not
-    columns: 1, // Defines a grid for the fields and how many columns it should have
-  },
   icon,
+  inputComponent: Tabs,
   fieldsets: [
-    {
-      title: 'Features',
-      name: 'featuresSet',
-    },
+    { title: 'Layout', name: 'layoutSet' },
+    { title: 'Section ID', name: 'sectionIdSet' },
+    { title: 'Features', name: 'featuresSet' },
   ],
   fields: [
     {
@@ -22,16 +18,28 @@ export default {
       name: 'layout',
       type: 'string',
       options: {
-        list: [{ title: 'Alternating', value: 'alternating' }],
+        list: [
+          { title: 'Alternating (No CTA)', value: 'alternatingNoCta' },
+          { title: 'Alternating (With CTA)', value: 'alternatingCta' },
+        ],
         layout: 'radio',
         direction: 'horizontal',
       },
+      fieldset: 'layoutSet',
+    },
+    {
+      title: 'ID Name',
+      description: 'Pick an ID name for the section (Example: "features")',
+      name: 'idName',
+      type: 'string',
+      fieldset: 'sectionIdSet',
     },
     {
       title: 'Feature',
       name: 'feature',
       type: 'array',
       of: [{ type: 'feature' }],
+      fieldset: 'featuresSet',
     },
   ],
   preview: {

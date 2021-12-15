@@ -1,29 +1,43 @@
 import { FaFileInvoice as icon } from 'react-icons/fa';
+import Tabs from 'sanity-plugin-tabs';
 
 export default {
   title: 'Navbars',
   name: 'navbars',
   type: 'document',
-  options: {
-    collapsible: true, // Makes the whole fieldset collapsible
-    collapsed: true, // Defines if the fieldset should be collapsed by default or not
-    columns: 1, // Defines a grid for the fields and how many columns it should have
-  },
   icon,
+  inputComponent: Tabs,
   fieldsets: [
-    {
-      title: 'Navbars',
-      name: 'navbarsSet',
-    },
+    { title: 'CTA', name: 'primaryNavCtaSet' },
+    { title: 'Menu', name: 'primaryNavLinksSet' },
+    { title: 'NAP', name: 'secondaryNavSet' },
   ],
   fields: [
     {
-      title: 'Navbar Items',
+      title: 'Button Label',
+      description:
+        'Enter the label for the primary call to action button (Example: "Request Appointment")',
+      name: 'primaryNavCtaButtonLabel',
+      type: 'string',
+      fieldset: 'primaryNavCtaSet',
+    },
+    {
+      title: 'Button Link',
+      description:
+        'Select the internal link for the primary call to action button (Most likely the contact page)',
+      name: 'primaryNavCtaButtonLink',
+      type: 'reference',
+      to: [{ type: 'page' }],
+      fieldset: 'primaryNavCtaSet',
+    },
+    {
+      title: 'Page Links',
       description:
         'Add items to the primary navbar: dropdown menus with links and/or single links.',
       name: 'navItem',
       type: 'array',
       of: [{ type: 'navItem' }],
+      fieldset: 'primaryNavLinksSet',
     },
     {
       title: 'Contact Links',
@@ -40,6 +54,7 @@ export default {
           ],
         },
       ],
+      fieldset: 'secondaryNavSet',
     },
     {
       title: 'Social Media Links',
@@ -56,6 +71,7 @@ export default {
           ],
         },
       ],
+      fieldset: 'secondaryNavSet',
     },
   ],
 };

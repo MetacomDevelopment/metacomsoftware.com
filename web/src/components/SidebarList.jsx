@@ -6,7 +6,7 @@ import { useSanity } from '../hooks';
 import { AnchorText } from '.';
 
 const StyledLink = styled.a`
-  color: ${(props) => props.color} !important;
+  color: ${(props) => props.$color} !important;
   font-weight: 500;
 `;
 
@@ -70,7 +70,7 @@ const SidebarList = ({ type }) => {
                       to={link.link}
                     >
                       <h3>
-                        <span className="text-gray-50 font-bold text-lg mr-2">
+                        <span className="text-zinc-50 font-bold text-lg mr-2">
                           >
                         </span>
                         {link.anchor}
@@ -105,7 +105,7 @@ const SidebarList = ({ type }) => {
                       to={link.link}
                     >
                       <h3>
-                        <span className="text-gray-50 font-bold text-lg mr-2">
+                        <span className="text-zinc-50 font-bold text-lg mr-2">
                           >
                         </span>
                         {link.anchor}
@@ -140,7 +140,7 @@ const SidebarList = ({ type }) => {
                       to={link.link}
                     >
                       <h3>
-                        <span className="text-gray-50 font-bold text-lg mr-2">
+                        <span className="text-zinc-50 font-bold text-lg mr-2">
                           >
                         </span>
                         {link.anchor}

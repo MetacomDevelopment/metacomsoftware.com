@@ -16,14 +16,14 @@ import {
 import { useSanity } from '../hooks';
 
 const StyledServices = styled((props) => <Link {...props} />)`
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.$bgColor};
   &:hover {
-    background-color: ${(props) => props.bgColorHover};
+    background-color: ${(props) => props.$bgColorHover};
   }
 `;
 
 const StyledCol = styled((props) => <Col {...props} />)`
-  order: ${(props) => props.classes};
+  order: ${(props) => props.$classes};
 `;
 
 const StyledHeadline = styled.span`
@@ -34,13 +34,20 @@ const StyledHeadline = styled.span`
 `;
 
 const StyledLink = styled((props) => <Link {...props} />)`
-  color: ${(props) => props.color} !important;
+  color: ${(props) => props.$color} !important;
   &:hover {
-    color: ${(props) => props.colorHover} !important;
+    color: ${(props) => props.$colorHover} !important;
   }
 `;
 
-const ContactMap = ({ block, raw, index, contact, socialLinks }) => {
+const ContactMap = ({
+  block,
+  raw,
+  rawMetadata,
+  index,
+  contact,
+  socialLinks,
+}) => {
   const { primary, secondary, accent, neutral, hero } = useSanity();
 
   return (
@@ -55,7 +62,7 @@ const ContactMap = ({ block, raw, index, contact, socialLinks }) => {
             <Col key={item._key} classes="relative bg-white shadow-xl">
               <h2 className="sr-only">{item.headline}</h2>
               <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="relative overflow-hidden py-10 px-6 bg-gray-700 sm:px-10 xl:p-12">
+                <div className="relative overflow-hidden py-10 px-6 bg-zinc-700 sm:px-10 xl:p-12">
                   <div
                     className="absolute inset-0 pointer-events-none sm:hidden"
                     aria-hidden="true"
@@ -162,7 +169,7 @@ const ContactMap = ({ block, raw, index, contact, socialLinks }) => {
                     <SanityBlockContent blocks={item._rawDescription} />
                   </div>
                   {item.gmb.map((gmb) => (
-                    <div>
+                    <div key={gmb._id}>
                       <dl className="mt-8 space-y-6">
                         <dt>
                           <span className="sr-only">Phone number</span>
@@ -196,7 +203,7 @@ const ContactMap = ({ block, raw, index, contact, socialLinks }) => {
                               classes="flex"
                             >
                               <i className="fas fa-2x fa-envelope mr-4 text-yellow-500 hover:text-yellow-400" />
-                              <span className="text-yellow-100 hover:text-yellow-600 text-lg">
+                              <span className="text-yellow-100 hover:text-yellow-600 text-lg break-all">
                                 {gmb.emailAddress}
                               </span>
                             </AnchorText>
@@ -247,9 +254,9 @@ const ContactMap = ({ block, raw, index, contact, socialLinks }) => {
                       </dl>
                     </div>
                   ))}
-                  <ul className="mt-12 ml-1 flex space-x-6">
+                  <ul className="mt-12 flex space-x-6">
                     {socialLinks.map((social) => (
-                      <li key={social.id}>
+                      <li key={social._id}>
                         <AnchorText
                           type="external"
                           color={neutral.light.color}
@@ -264,8 +271,8 @@ const ContactMap = ({ block, raw, index, contact, socialLinks }) => {
                     {/* <li>
                       <a
                         href="#"
-                        rel="noreferrer noopener"
-                        className="text-gray-400 hover:text-gray-500"
+                        rel="noopener"
+                        className="text-zinc-400 hover:text-zinc-500"
                       >
                         <span className="sr-only">Instagram</span>
                         <i className="fab fa-2x fa-instagram" />
@@ -274,8 +281,8 @@ const ContactMap = ({ block, raw, index, contact, socialLinks }) => {
                     <li>
                       <a
                         href="#"
-                        rel="noreferrer noopener"
-                        className="text-gray-400 hover:text-gray-500"
+                        rel="noopener"
+                        className="text-zinc-400 hover:text-zinc-500"
                       >
                         <span className="sr-only">Twitter</span>
                         <i className="fab fa-2x fa-twitter" />
@@ -284,8 +291,8 @@ const ContactMap = ({ block, raw, index, contact, socialLinks }) => {
                     <li>
                       <a
                         href="#"
-                        rel="noreferrer noopener"
-                        className="text-gray-400 hover:text-gray-500"
+                        rel="noopener"
+                        className="text-zinc-400 hover:text-zinc-500"
                       >
                         <span className="sr-only">YouTube</span>
                         <i className="fab fa-2x fa-youtube" />
@@ -294,8 +301,8 @@ const ContactMap = ({ block, raw, index, contact, socialLinks }) => {
                     <li>
                       <a
                         href="#"
-                        rel="noreferrer noopener"
-                        className="text-gray-400 hover:text-gray-500"
+                        rel="noopener"
+                        className="text-zinc-400 hover:text-zinc-500"
                       >
                         <span className="sr-only">LinkedIn</span>
                         <i className="fab fa-2x fa-linkedin" />
@@ -304,7 +311,7 @@ const ContactMap = ({ block, raw, index, contact, socialLinks }) => {
                   </ul>
                 </div>
                 {item.gmb.map((gmb) => (
-                  <div>
+                  <div key={gmb._id}>
                     <iframe
                       title={`Google Map of ${gmb.name}`}
                       src={gmb.gmbEmbed}

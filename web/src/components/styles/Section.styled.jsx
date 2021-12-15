@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 export const StyledSection = styled.section`
-  background-color: ${({ bgColor }) => bgColor};
+  background-color: ${(props) => props.$bgColor};
   h2 {
-    color: ${({ h2Color }) => h2Color};
+    color: ${(props) => props.$h2Color};
   }
   h3 {
-    color: ${({ h3Color }) => h3Color};
+    color: ${(props) => props.$h3Color};
   }
 `;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 
 import { Layout, SEO, PageBuilder } from '../components';
 import { useSanity } from '../hooks';
@@ -7,9 +8,11 @@ import { useSanity } from '../hooks';
 export const query = graphql`
   query PageTemplateQ($id: String!) {
     page: sanityPage(id: { eq: $id }) {
+      ...PageBuilder
       id
       layout
       metadata {
+        isIndexed
         title
         slug {
           current
@@ -19,7 +22,6 @@ export const query = graphql`
           code
         }
       }
-      ...PageBuilder
     }
   }
 `;
@@ -31,20 +33,34 @@ const PageTemplate = (props) => {
 
   const sanity = data.page;
 
-  const { website, primary, secondary, accent, neutral, hero } = useSanity();
+  const { siteSEO, primary, secondary, accent, neutral, hero } = useSanity();
 
-  const seo = {
+  const pageSEO = {
     title: sanity.metadata.title,
     description: sanity.metadata.description,
-    slug: `${website.url}/${sanity.metadata.slug.current}/`,
+    slug: `${siteSEO.url}/${sanity.metadata.slug.current}/`,
     schema: sanity.metadata.schema.code,
   };
 
   return (
     <Layout layout={sanity.layout}>
-      <SEO title={seo.title} description={seo.description} canonical={seo.slug}>
-        <script type="application/ld+json">{`${seo.schema}`}</script>
+      <SEO
+        title={pageSEO.title}
+        description={pageSEO.description}
+        canonical={pageSEO.slug}
+      >
+        <script type="application/ld+json">{`${pageSEO.schema}`}</script>
       </SEO>
+      <Helmet>
+        <meta
+          name="robots"
+          content={
+            sanity.metadata.isIndexed === true
+              ? 'index, follow'
+              : 'noindex, nofollow'
+          }
+        />
+      </Helmet>
       <PageBuilder
         pageBuilder={pageBuilder}
         _rawPageBuilder={_rawPageBuilder}

@@ -1,48 +1,54 @@
 import { FaListAlt as icon } from 'react-icons/fa';
+import Tabs from 'sanity-plugin-tabs';
 
 export default {
   title: 'Rich Text',
   name: 'richText',
   type: 'object',
-  options: {
-    collapsible: false, // Makes the whole fieldset collapsible
-    collapsed: false, // Defines if the fieldset should be collapsed by default or not
-    columns: 1, // Defines a grid for the fields and how many columns it should have
-  },
   icon,
+  inputComponent: Tabs,
   fieldsets: [
-    {
-      title: 'Rich Text',
-      name: 'richTextSet',
-    },
+    { title: 'Alignment', name: 'alignmentSet' },
+    { title: 'Section ID', name: 'sectionIdSet' },
+    { title: 'Rich Text', name: 'richTextSet' },
   ],
   fields: [
     {
-      title: 'Layout',
-      description: 'Choose a layout for the rich text section...',
-      name: 'layout',
+      title: 'Text Alignment',
+      description: 'Choose an alignment for the rich text section...',
+      name: 'alignment',
       type: 'string',
       options: {
         list: [
-          { title: 'Brand', value: 'brand' },
-          { title: 'Service', value: 'service' },
-          { title: 'Location', value: 'location' },
-          { title: 'Post', value: 'post' },
+          { title: 'Left', value: 'left' },
+          { title: 'Center', value: 'center' },
+          { title: 'Right', value: 'right' },
+          { title: 'Justify', value: 'justify' },
         ],
         layout: 'radio',
         direction: 'horizontal',
       },
+      initialValue: 'left',
+      fieldset: 'alignmentSet',
+    },
+    {
+      title: 'ID Name',
+      description: 'Pick an ID name for the section (Example: "features")',
+      name: 'idName',
+      type: 'string',
+      fieldset: 'sectionIdSet',
     },
     {
       title: 'Editor',
       description: 'Use the editor to create a rich text section.',
       name: 'body',
       type: 'portableTextBody',
+      fieldset: 'richTextSet',
     },
   ],
   preview: {
     select: {
-      title: 'layout',
+      title: 'alignment',
       media: 'icon',
     },
     prepare(selection) {

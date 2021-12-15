@@ -5,21 +5,21 @@ import { Col, Grid, AnchorText } from '.';
 import { useSanity } from '../hooks';
 
 const StyledForm = styled.form`
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.$bgColor};
 `;
 
 const StyledHeadline = styled.h2`
-  color: ${(props) => props.color} !important;
+  color: ${(props) => props.$color} !important;
 `;
 
 const StyledBorder = styled.p`
-  border-color: ${(props) => props.borderColor};
+  border-color: ${(props) => props.$borderColor};
 `;
 
 const StyledButton = styled.button`
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.$bgColor};
   &:hover {
-    background-color: ${(props) => props.bgColorHover};
+    background-color: ${(props) => props.$bgColorHover};
   }
 `;
 
@@ -59,18 +59,18 @@ const FormSidebar = () => {
       data-netlify-honeypot="bot-field"
       className="p-3 lg:p-5 rounded-xl shadow-xl mx-auto"
       id="form-sidebar"
-      bgColor={primary.dark.color}
+      $bgColor={primary.dark.color}
     >
       <div className="space-y-6 mb-16">
         <StyledHeadline
           className="text-4xl font-bold text-center mb-1 mt-4 mt-md-0"
-          color={secondary.light.color}
+          $color={secondary.light.color}
         >
           Request Talent
         </StyledHeadline>
         <StyledBorder
-          className="text-xl font-italic text-gray-100 text-center"
-          borderColor={accent.light.color}
+          className="text-xl font-italic text-zinc-100 text-center"
+          $borderColor={accent.light.color}
         >
           Send us a request or give us a call today at{' '}
           {/* <AnchorText type="external" light weight="500" href={info.phoneHref}>
@@ -90,7 +90,7 @@ const FormSidebar = () => {
             onChange={handleChange}
             placeholder="First Name"
             required
-            className="shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md"
+            className="shadow-sm focus:ring-zinc-500 focus:border-zinc-500 block w-full sm:text-sm border-zinc-300 rounded-md"
           />
         </Col>
         <Col>
@@ -101,7 +101,7 @@ const FormSidebar = () => {
             onChange={handleChange}
             placeholder="Last Name"
             required
-            className="shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md"
+            className="shadow-sm focus:ring-zinc-500 focus:border-zinc-500 block w-full sm:text-sm border-zinc-300 rounded-md"
           />
         </Col>
         <Col>
@@ -112,7 +112,7 @@ const FormSidebar = () => {
             onChange={handleChange}
             placeholder="Email"
             required
-            className="shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md"
+            className="shadow-sm focus:ring-zinc-500 focus:border-zinc-500 block w-full sm:text-sm border-zinc-300 rounded-md"
           />
         </Col>
         <Col>
@@ -123,7 +123,7 @@ const FormSidebar = () => {
             onChange={handleChange}
             placeholder="Phone Number"
             required
-            className="shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md"
+            className="shadow-sm focus:ring-zinc-500 focus:border-zinc-500 block w-full sm:text-sm border-zinc-300 rounded-md"
           />
         </Col>
         <Col>
@@ -134,7 +134,7 @@ const FormSidebar = () => {
             onChange={handleChange}
             placeholder="Company"
             required
-            className="shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md"
+            className="shadow-sm focus:ring-zinc-500 focus:border-zinc-500 block w-full sm:text-sm border-zinc-300 rounded-md"
           />
         </Col>
         <Col>
@@ -144,7 +144,7 @@ const FormSidebar = () => {
             value={industry}
             onChange={handleChange}
             required
-            className="shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md"
+            className="shadow-sm focus:ring-zinc-500 focus:border-zinc-500 block w-full sm:text-sm border-zinc-300 rounded-md"
           >
             <option value="" disabled hidden>
               Industry
@@ -169,7 +169,7 @@ const FormSidebar = () => {
             value={findUs}
             onChange={handleChange}
             required
-            className="shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md"
+            className="shadow-sm focus:ring-zinc-500 focus:border-zinc-500 block w-full sm:text-sm border-zinc-300 rounded-md"
           >
             <option value="" disabled hidden>
               How Did You Find Us?
@@ -200,12 +200,12 @@ const FormSidebar = () => {
             onChange={handleChange}
             placeholder="Message"
             required
-            className="shadow-sm focus:ring-gray-500 focus:border-gray-500 block w-full sm:text-sm border-gray-300 rounded-md"
+            className="shadow-sm focus:ring-zinc-500 focus:border-zinc-500 block w-full sm:text-sm border-zinc-300 rounded-md"
           />
         </Col>
       </Grid>
 
-      <div className="text-gray-100 text-sm my-10">
+      <div className="text-zinc-100 text-sm my-10">
         <p className="italic">
           <span className="text-red-500">*</span> All fields required
         </p>
@@ -216,11 +216,11 @@ const FormSidebar = () => {
       </div>
       <div className="text-center mt-10 mb-6">
         <StyledButton
-          className="inline-flex items-center py-3 px-6 hover:bg-gray-700 text-lg font-medium text-white hover:text-white border border-gray-50 hover:border-gray-100 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform"
+          className="inline-flex items-center py-3 px-6 hover:bg-zinc-700 text-lg font-medium text-white hover:text-white border border-zinc-50 hover:border-zinc-100 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500 hover:-translate-y-0.5 translate transform"
           type="submit"
           value="Submit"
-          bgColor={accent.default.color}
-          bgColorHover={accent.dark.color}
+          $bgColor={accent.default.color}
+          $bgColorHover={accent.dark.color}
         >
           <span>Submit Inquiry</span>
         </StyledButton>

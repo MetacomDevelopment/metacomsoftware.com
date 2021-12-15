@@ -26,7 +26,7 @@ const Footer = ({ layout }) => {
                   loading="eager"
                 />
                 <div
-                  className="absolute inset-0 bg-coolGray-600"
+                  className="absolute inset-0 bg-zinc-600"
                   style={{ mixBlendMode: 'multiply' }}
                   aria-hidden="true"
                 />
@@ -53,7 +53,7 @@ const Footer = ({ layout }) => {
                   loading="eager"
                 />
                 <div
-                  className="absolute inset-0 bg-coolGray-600"
+                  className="absolute inset-0 bg-zinc-600"
                   style={{ mixBlendMode: 'multiply' }}
                   aria-hidden="true"
                 />
@@ -81,7 +81,7 @@ const Footer = ({ layout }) => {
                   loading="eager"
                 />
                 <div
-                  className="absolute inset-0 bg-coolGray-600"
+                  className="absolute inset-0 bg-zinc-600"
                   style={{ mixBlendMode: 'multiply' }}
                   aria-hidden="true"
                 />

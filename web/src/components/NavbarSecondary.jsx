@@ -6,18 +6,18 @@ import { useSanity } from '../hooks';
 
 const StyledCustomAnchorText = styled.a`
   & i {
-    color: ${(props) => props.iconColor};
+    color: ${(props) => props.$iconColor};
     transition: all 0.25s;
     &:hover {
-      color: ${(props) => props.iconColorHover};
+      color: ${(props) => props.$iconColorHover};
       transition: all 0.25s;
     }
   }
   & span {
-    color: ${(props) => props.textColor};
+    color: ${(props) => props.$textColor};
     transition: all 0.25s;
     &:hover {
-      color: ${(props) => props.textColorHover};
+      color: ${(props) => props.$textColorHover};
       transition: all 0.25s;
     }
   }
@@ -48,15 +48,15 @@ const NavbarSecondary = () => {
         <Flex classes="justify-end align-items-center h-12">
           {navbars.map((item) =>
             item.contactLinks.map((contact) => (
-              <Flex key={contact._key} classes="my-auto px-6">
+              <Flex key={contact.id} classes="my-auto px-6">
                 <StyledCustomAnchorText
-                  iconColor={accent.default.color}
-                  iconColorHover={accent.light.color}
-                  textColor={neutral.white.color}
-                  textColorHover={accent.light.color}
+                  $iconColor={accent.default.color}
+                  $iconColorHover={accent.light.color}
+                  $textColor={neutral.white.color}
+                  $textColorHover={accent.light.color}
                   href={contact.url}
                   target="_blank"
-                  rel="noreferrer noopener"
+                  rel="noopener"
                 >
                   <i className={`${contact.icon} mr-3`} />
                   <span className="text-md font-thin">{contact.anchor}</span>
@@ -66,15 +66,15 @@ const NavbarSecondary = () => {
           )}
           {navbars.map((item) =>
             item.socialLinks.map((social) => (
-              <Flex key={social._key} classes="my-auto pl-3">
+              <Flex key={social.id} classes="my-auto pl-3">
                 <StyledCustomAnchorText
-                  iconColor={accent.default.color}
-                  iconColorHover={accent.light.color}
-                  textColor={neutral.white.color}
-                  textColorHover={accent.light.color}
+                  $iconColor={accent.default.color}
+                  $iconColorHover={accent.light.color}
+                  $textColor={neutral.white.color}
+                  $textColorHover={accent.light.color}
                   href={social.url}
                   target="_blank"
-                  rel="noreferrer noopener"
+                  rel="noopener"
                 >
                   <i className={`text-2xl ${social.icon}`} />
                   <span className="text-md font-thin sr-only">

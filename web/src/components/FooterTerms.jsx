@@ -4,20 +4,20 @@ import { Section, Container, AnchorText } from '.';
 import { useSanity } from '../hooks';
 
 const FooterTerms = () => {
-  const { website, primary, secondary, accent, neutral, hero } = useSanity();
+  const { siteSEO, primary, secondary, accent, neutral, hero } = useSanity();
 
   return (
     <Section
       bgColor={neutral.darker.color}
       padding="sm"
-      classes="border-t border-gray-200"
+      classes="border-t border-zinc-200"
     >
       <Container padding="sm">
-        <p className="text-base text-gray-200 text-center">
-          © {new Date().getFullYear()} {website.name}, All Rights Reserved
+        <p className="text-base text-zinc-200 text-center">
+          © {new Date().getFullYear()} {siteSEO.name}, All Rights Reserved
           {` `}
         </p>
-        <p className="text-sm text-gray-200 text-center">
+        <p className="text-sm text-zinc-200 text-center">
           <AnchorText
             type="internal"
             color={accent.default.color}

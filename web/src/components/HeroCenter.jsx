@@ -8,14 +8,24 @@ import { useSanity } from '../hooks';
 import { Section, SanityBlockContent, Button, Grid, Flex, Overlay } from '.';
 
 const StyledHeroHeadline = styled(motion.h1)`
-  color: ${(props) => props.headline};
+  color: ${(props) => props.$headline};
 `;
 
-const StyledHeroSubheadline = styled(motion.p)`
-  color: ${(props) => props.subheadline};
+const StyledHeroSubheadline = styled(motion.div)`
+  color: ${(props) => props.$subheadline};
 `;
 
-const HeroCenter = ({ block, raw, index, headline, bgImg }) => {
+const HeroCenter = ({
+  block,
+  raw,
+  index,
+  headline,
+  primaryCtaButtonLabel,
+  primaryCtaButtonLink,
+  secondaryCtaButtonLabel,
+  secondaryCtaButtonLink,
+  bgImg,
+}) => {
   // const { headline, bgImg, alt } = block;
 
   const variants = {
@@ -42,7 +52,7 @@ const HeroCenter = ({ block, raw, index, headline, bgImg }) => {
       <Flex classes="relative flex-col place-content-center place-items-center lg:h-screen">
         <div className="absolute inset-0">
           <GatsbyImage
-            image={bgImg.asset.gatsbyImageData}
+            image={bgImg?.asset?.gatsbyImageData}
             alt={bgImg.alt}
             className="w-full h-full object-cover"
           />
@@ -57,7 +67,7 @@ const HeroCenter = ({ block, raw, index, headline, bgImg }) => {
               animate={controls}
               transition={{ duration: 0.5, delay: 0 }}
               className="mx-auto text-5xl font-extrabold tracking-tight drop-shadow-text-darker sm:text-5xl lg:text-6xl capitalize mb-10 max-w-3xl"
-              headline={hero.headline.color}
+              $headline={hero.headline.color}
             >
               {headline}
             </StyledHeroHeadline>
@@ -68,25 +78,51 @@ const HeroCenter = ({ block, raw, index, headline, bgImg }) => {
               animate={controls}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mx-auto mt-6 text-xl lg:text-2xl max-w-3xl drop-shadow-darker space-y-6"
-              subheadline={hero.tagline.color}
+              $subheadline={hero.tagline.color}
             >
               <SanityBlockContent blocks={raw.tagline} />
             </StyledHeroSubheadline>
-            <motion.div
-              ref={ref}
-              variants={variants}
-              initial="hidden"
-              animate={controls}
-              transition={{
-                duration: 0.5,
-                delay: 0.6,
-              }}
-              className="flex justify-center mt-10"
-            >
-              <div className="mx-auto lg:mx-0">
-                <Button btn="internal" />
-              </div>
-            </motion.div>
+            <Flex classes="flex-col lg:flex-row mx-auto justify-center gap-8">
+              <motion.div
+                ref={ref}
+                variants={variants}
+                initial="hidden"
+                animate={controls}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.6,
+                }}
+                className="flex justify-center mt-10"
+              >
+                <div className="mx-auto lg:mx-0">
+                  <Button
+                    linkType="internal"
+                    internalLink={primaryCtaButtonLink.metadata.slug.current}
+                    label={primaryCtaButtonLabel}
+                  />
+                </div>
+              </motion.div>
+              <motion.div
+                ref={ref}
+                variants={variants}
+                initial="hidden"
+                animate={controls}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.6,
+                }}
+                className="flex justify-center lg:mt-10"
+              >
+                <div className="mx-auto lg:mx-0">
+                  <Button
+                    linkType="anchor"
+                    secondaryBtn
+                    jumpLink={secondaryCtaButtonLink}
+                    label={secondaryCtaButtonLabel}
+                  />
+                </div>
+              </motion.div>
+            </Flex>
           </div>
         </div>
       </Flex>

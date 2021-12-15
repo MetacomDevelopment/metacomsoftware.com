@@ -9,11 +9,11 @@ import { useSanity } from '../hooks';
 import { SanityBlockContent, Button, FormHero, Grid, Flex, Overlay } from '.';
 
 const StyledHeroHeadline = styled(motion.h1)`
-  color: ${(props) => props.headline};
+  color: ${(props) => props.$headline};
 `;
 
 const StyledHeroSubheadline = styled(motion.p)`
-  color: ${(props) => props.subheadline};
+  color: ${(props) => props.$subheadline};
 `;
 
 const HeroForm = ({ block, raw, index, headline, bgImg }) => {
@@ -42,7 +42,7 @@ const HeroForm = ({ block, raw, index, headline, bgImg }) => {
     <div className="relative flex flex-col place-content-center place-items-center lg:h-screen">
       <div className="absolute inset-0">
         <GatsbyImage
-          image={bgImg.asset.gatsbyImageData}
+          image={bgImg?.asset?.gatsbyImageData}
           alt={bgImg.alt}
           className="w-full h-full object-cover"
         />
@@ -57,7 +57,7 @@ const HeroForm = ({ block, raw, index, headline, bgImg }) => {
             animate={controls}
             transition={{ duration: 0.5, delay: 0 }}
             className="text-5xl font-extrabold tracking-tight drop-shadow-text-darker sm:text-5xl lg:text-6xl capitalize mb-10"
-            headline={hero.headline.color}
+            $headline={hero.headline.color}
           >
             {headline}
           </StyledHeroHeadline>
@@ -68,7 +68,7 @@ const HeroForm = ({ block, raw, index, headline, bgImg }) => {
             animate={controls}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-6 text-xl lg:text-2xl max-w-3xl drop-shadow-darker space-y-6"
-            subheadline={hero.tagline.color}
+            $subheadline={hero.tagline.color}
           >
             <SanityBlockContent blocks={raw.tagline} />
           </StyledHeroSubheadline>
@@ -84,7 +84,7 @@ const HeroForm = ({ block, raw, index, headline, bgImg }) => {
             className="flex mt-10"
           >
             <div className="mx-auto lg:mx-0 max">
-              <Button btn="internal" />
+              <Button linkType="internal" />
             </div>
           </motion.div> */}
         </Flex>

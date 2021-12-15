@@ -10,14 +10,14 @@ import { Section, Container, Col, Grid, SanityBlockContent } from '.';
 import { useSanity } from '../hooks';
 
 const StyledLink = styled((props) => <Link {...props} />)`
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.$bgColor};
   &:hover {
-    background-color: ${(props) => props.bgColorHover};
+    background-color: ${(props) => props.$bgColorHover};
   }
   & p {
-    color: ${(props) => props.textColor} !important;
+    color: ${(props) => props.$textColor} !important;
     &:hover {
-      color: ${(props) => props.textColorHover} !important;
+      color: ${(props) => props.$textColorHover} !important;
     }
   }
 `;
@@ -70,7 +70,7 @@ const ServicesImages = ({
   return (
     <Section
       type="my"
-      bgColor={secondary.lighter.color}
+      bgColor={neutral.lighter.color}
       h2Color={neutral.darker.color}
       h3Color={secondary.dark.color}
     >
@@ -81,7 +81,7 @@ const ServicesImages = ({
         <h2 className="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">
           {headline}
         </h2>
-        <div className="mt-5 max-w-prose mx-auto text-xl text-gray-600">
+        <div className="mt-5 max-w-prose mx-auto text-xl text-zinc-600">
           <SanityBlockContent blocks={raw.description} />
         </div>
         <div className="mt-24">
@@ -100,16 +100,16 @@ const ServicesImages = ({
                         : `/${item.link.metadata.slug.current}/`
                     }
                     className="relative py-24 px-4 rounded-xl shadow-2xl overflow-hidden lg:px-8 flex md:h-full lg:flex-col justify-between"
-                    bgColor={neutral.default.color}
-                    bgColorHover={neutral.dark.color}
-                    textColor={accent.default.color}
-                    textColorHover={accent.light.color}
+                    $bgColor={neutral.default.color}
+                    $bgColorHover={neutral.dark.color}
+                    $textColor={accent.default.color}
+                    $textColorHover={accent.light.color}
                   >
                     <div className="absolute inset-0 opacity-90 filter saturate-90 mix-blend-multiply">
                       <GatsbyImage
-                        image={item.image.asset.gatsbyImageData}
+                        image={item.image?.asset?.gatsbyImageData}
                         className="w-full h-full object-cover rounded-xl transition hover:scale-125"
-                        alt={item.image.alt}
+                        alt={item.image?.alt}
                       />
                     </div>
                     <div className="relative z-10 m-auto text-center">

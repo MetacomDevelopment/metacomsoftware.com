@@ -35,6 +35,9 @@
         "tryExtensions": [".js", ".jsx", ".json", ".node"]
       }
     ],
+    "no-underscore-dangle": "off",
+    "import/prefer-default-export": "off",
+    "no-nested-ternary": "off",
     "no-unused-vars": "warn",
     "no-console": "warn",
     "func-names": "warn",

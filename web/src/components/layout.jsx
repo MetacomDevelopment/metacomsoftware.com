@@ -8,26 +8,26 @@ import './layout.css';
 
 const GlobalStyles = styled.div`
   h2 {
-    color: ${(props) => props.h2Color};
+    color: ${(props) => props.$h2Color};
   }
   h3 {
-    color: ${(props) => props.h3Color};
+    color: ${(props) => props.$h3Color};
   }
   h4 {
-    color: ${(props) => props.h4Color};
+    color: ${(props) => props.$h4Color};
   }
   h5 {
-    color: ${(props) => props.h5Color};
+    color: ${(props) => props.$h5Color};
   }
   h6 {
-    color: ${(props) => props.h6Color};
+    color: ${(props) => props.$h6Color};
   }
   a {
-    color: ${(props) => props.linkColor};
+    color: ${(props) => props.$linkColor};
     font-weight: bold;
     transition: all 0.25s;
     &:hover {
-      color: ${(props) => props.linkColorHover};
+      color: ${(props) => props.$linkColorHover};
       transition: all 0.25s;
     }
   }
@@ -43,7 +43,7 @@ const Layout = ({ layout, children }) => {
           <Header />
           <GlobalStyles
             linkColor={accent.default.color}
-            linkColorHover={accent.light.color}
+            link$colorHover={accent.light.color}
             h2Color={primary.dark.color}
             h3Color={neutral.dark.color}
             h4Color={neutral.default.color}
@@ -61,7 +61,7 @@ const Layout = ({ layout, children }) => {
           <Header />
           <GlobalStyles
             linkColor={accent.default.color}
-            linkColorHover={accent.light.color}
+            link$colorHover={accent.light.color}
             h2Color={secondary.default.color}
             h3Color={secondary.dark.color}
             h4Color={neutral.dark.color}
@@ -79,7 +79,7 @@ const Layout = ({ layout, children }) => {
           <Header />
           <GlobalStyles
             linkColor={accent.default.color}
-            linkColorHover={accent.light.color}
+            link$colorHover={accent.light.color}
             h2Color={secondary.default.color}
             h3Color={secondary.dark.color}
             h4Color={neutral.dark.color}
@@ -97,7 +97,7 @@ const Layout = ({ layout, children }) => {
           <Header />
           <GlobalStyles
             linkColor={accent.default.color}
-            linkColorHover={accent.light.color}
+            link$colorHover={accent.light.color}
             h2Color={secondary.default.color}
             h3Color={secondary.dark.color}
             h4Color={neutral.dark.color}
@@ -115,7 +115,7 @@ const Layout = ({ layout, children }) => {
           <Header />
           <GlobalStyles
             linkColor={accent.default.color}
-            linkColorHover={accent.light.color}
+            link$colorHover={accent.light.color}
             h2Color={secondary.default.color}
             h3Color={secondary.dark.color}
             h4Color={neutral.dark.color}

@@ -97,7 +97,7 @@
 //             </Container>
 //           </Col>
 //           <Col classes="order-2 lg:order-1">
-//             <div className="text-lg text-gray-500 max-w-prose mx-auto lg:max-w-none space-y-10">
+//             <div className="text-lg text-zinc-500 max-w-prose mx-auto lg:max-w-none space-y-10">
 //               <div className="space-y-6">
 //                 <h2 className="text-3xl text-primary font-extrabold tracking-wide capitalize">
 //                   Hire Top Talent On-Demand
@@ -138,7 +138,7 @@
 //             </Container>
 //           </Col>
 //           <Col classes="order-4 lg:order-4">
-//             <div className="text-lg text-gray-500 max-w-prose mx-auto lg:max-w-none space-y-10">
+//             <div className="text-lg text-zinc-500 max-w-prose mx-auto lg:max-w-none space-y-10">
 //               <div className="space-y-6">
 //                 <h2 className="text-3xl text-primary font-extrabold tracking-wide capitalize">
 //                   Placement Sustainability is Our #1 Goal
@@ -187,7 +187,7 @@
 //             </Container>
 //           </Col>
 //           <Col classes="order-6 lg:order-5">
-//             <div className="text-lg text-gray-500 max-w-prose mx-auto lg:max-w-none space-y-10">
+//             <div className="text-lg text-zinc-500 max-w-prose mx-auto lg:max-w-none space-y-10">
 //               <div className="space-y-6">
 //                 <h2 className="text-3xl text-primary font-extrabold tracking-wide capitalize">
 //                   Engineering Is Our Primary Focus

@@ -1,16 +1,24 @@
 import { FaShareAlt as icon } from 'react-icons/fa';
+import Tabs from 'sanity-plugin-tabs';
 
 export default {
   title: 'Social Media Account',
   name: 'social',
   type: 'document',
   icon,
+  inputComponent: Tabs,
+  fieldsets: [
+    { title: 'Anchor Text', name: 'anchorTextSet' },
+    { title: 'Link', name: 'linkSet' },
+    { title: 'Icon', name: 'iconSet' },
+  ],
   fields: [
     {
       title: 'Anchor Text',
       description: 'Enter the navbar anchor text.',
       name: 'anchor',
       type: 'string',
+      fieldset: 'anchorTextSet',
     },
     {
       title: 'URL',
@@ -21,6 +29,7 @@ export default {
         Rule.uri({
           scheme: ['http', 'https', 'mailto', 'tel'],
         }),
+      fieldset: 'linkSet',
     },
     {
       name: 'icon',
@@ -53,6 +62,7 @@ export default {
         layout: 'dropdown',
         direction: 'vertical',
       },
+      fieldset: 'iconSet',
     },
   ],
   preview: {

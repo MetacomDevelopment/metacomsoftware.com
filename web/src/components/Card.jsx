@@ -28,7 +28,7 @@ const Card = ({
     case 'header':
       return (
         <div
-          className={`${cardStyling} overflow-hidden shadow rounded-lg divide-y divide-gray-200`}
+          className={`${cardStyling} overflow-hidden shadow rounded-lg divide-y divide-zinc-200`}
         >
           <CardHeader
             headerContent={headerContent}
@@ -40,7 +40,7 @@ const Card = ({
     case 'footer':
       return (
         <div
-          className={`${cardStyling} overflow-hidden shadow rounded-lg divide-y divide-gray-200`}
+          className={`${cardStyling} overflow-hidden shadow rounded-lg divide-y divide-zinc-200`}
         >
           <div className="px-4 py-5 sm:p-6">{children}</div>
           <CardFooter
@@ -52,7 +52,7 @@ const Card = ({
     case 'both':
       return (
         <div
-          className={`${cardStyling} overflow-hidden shadow rounded-lg divide-y divide-gray-200`}
+          className={`${cardStyling} overflow-hidden shadow rounded-lg divide-y divide-zinc-200`}
         >
           <CardHeader
             headerContent={headerContent}

@@ -23,7 +23,8 @@
     "order-documents",
     "@sanity/code-input",
     "media",
-    "seo-tools"
+    "seo-tools",
+    "tabs"
   ],
   "env": {
     "development": {

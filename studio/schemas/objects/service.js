@@ -1,20 +1,16 @@
 import { FaListAlt as icon } from 'react-icons/fa';
+import Tabs from 'sanity-plugin-tabs';
 
 export default {
   title: 'Service',
   name: 'service',
   type: 'object',
-  options: {
-    collapsible: false, // Makes the whole fieldset collapsible
-    collapsed: false, // Defines if the fieldset should be collapsed by default or not
-    columns: 1, // Defines a grid for the fields and how many columns it should have
-  },
   icon,
+  inputComponent: Tabs,
   fieldsets: [
-    {
-      title: 'Service',
-      name: 'serviceSet',
-    },
+    { title: 'Service', name: 'serviceSet' },
+    { title: 'Link', name: 'linkSet' },
+    { title: 'Image', name: 'imageSet' },
   ],
   fields: [
     {
@@ -22,12 +18,7 @@ export default {
       description: 'Enter the title of the service.',
       name: 'title',
       type: 'string',
-    },
-    {
-      title: 'Image',
-      description: 'Select the background image.',
-      name: 'image',
-      type: 'imageAlt',
+      fieldset: 'serviceSet',
     },
     {
       title: 'Internal Link',
@@ -39,6 +30,14 @@ export default {
           type: 'page',
         },
       ],
+      fieldset: 'linkSet',
+    },
+    {
+      title: 'Image',
+      description: 'Select the background image.',
+      name: 'image',
+      type: 'imageAlt',
+      fieldset: 'imageSet',
     },
   ],
 };

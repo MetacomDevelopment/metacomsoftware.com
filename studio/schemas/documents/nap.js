@@ -1,17 +1,25 @@
 import { FaAddressCard as icon } from 'react-icons/fa';
+import Tabs from 'sanity-plugin-tabs';
 
 export default {
   title: 'NAP Information',
   name: 'nap',
   type: 'document',
   icon,
+  inputComponent: Tabs,
+  fieldsets: [
+    { title: 'Anchor Text', name: 'anchorTextSet' },
+    { title: 'Link', name: 'linkSet' },
+    { title: 'Icon', name: 'iconSet' },
+  ],
   fields: [
     {
       title: 'Anchor Text',
-      description: 'Enter the navbar anchor text.',
+      description:
+        'Enter a phone number, email address, physical address, or open hours (visible in secondary navbar & footer)',
       name: 'anchor',
       type: 'string',
-      initialValue: '30 Roosevelt Rd, Plymouth MA 02360',
+      fieldset: 'anchorTextSet',
     },
     {
       title: 'External URL',
@@ -23,6 +31,7 @@ export default {
         Rule.uri({
           scheme: ['http', 'https', 'mailto', 'tel'],
         }),
+      fieldset: 'linkSet',
     },
     {
       title: 'Internal URL',
@@ -30,6 +39,7 @@ export default {
       name: 'page',
       type: 'reference',
       to: [{ type: 'page' }],
+      fieldset: 'linkSet',
     },
     {
       name: 'icon',
@@ -47,6 +57,7 @@ export default {
         layout: 'dropdown',
         direction: 'vertical',
       },
+      fieldset: 'iconSet',
     },
   ],
   preview: {

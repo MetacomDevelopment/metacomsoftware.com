@@ -1,14 +1,27 @@
 import React from 'react';
 
-import { FeaturesAlt } from '.';
+import { FeaturesAltNoCta, FeaturesAltCta } from '.';
 
 const Features = ({ block, raw, index }) => {
-  const { layout, feature, headline, _rawDescription, image } = block;
+  const {
+    layout,
+    feature,
+    headline,
+    _rawDescription,
+    image,
+    ctaButton,
+    idName,
+    linkType,
+    label,
+    internalLink,
+    externalLink,
+    jumpLink,
+  } = block;
 
   switch (layout) {
     default:
       return (
-        <FeaturesAlt
+        <FeaturesAltNoCta
           block={block}
           raw={raw}
           index={index}
@@ -16,11 +29,13 @@ const Features = ({ block, raw, index }) => {
           headline={headline}
           _rawDescription={_rawDescription}
           image={image}
+          ctaButton={ctaButton}
+          idName={idName}
         />
       );
-    case 'alternating':
+    case 'alternatingNoCta':
       return (
-        <FeaturesAlt
+        <FeaturesAltNoCta
           block={block}
           raw={raw}
           index={index}
@@ -28,6 +43,27 @@ const Features = ({ block, raw, index }) => {
           headline={headline}
           _rawDescription={_rawDescription}
           image={image}
+          ctaButton={ctaButton}
+          idName={idName}
+        />
+      );
+    case 'alternatingCta':
+      return (
+        <FeaturesAltCta
+          block={block}
+          raw={raw}
+          index={index}
+          feature={feature}
+          headline={headline}
+          _rawDescription={_rawDescription}
+          image={image}
+          ctaButton={ctaButton}
+          idName={idName}
+          linkType={linkType}
+          label={label}
+          internalLink={internalLink}
+          externalLink={externalLink}
+          jumpLink={jumpLink}
         />
       );
   }

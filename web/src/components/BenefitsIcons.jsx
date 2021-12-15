@@ -5,21 +5,21 @@ import { SanityBlockContent, Section, Container, Grid, Col } from '.';
 import { useSanity } from '../hooks';
 
 const StyledBenefits = styled((props) => <Section {...props} />)`
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.$bgColor};
   & h2 {
-    color: ${(props) => props.h2Color};
+    color: ${(props) => props.$h2Color};
   }
   & h3 {
-    color: ${(props) => props.h3Color};
+    color: ${(props) => props.$h3Color};
   }
 `;
 
 const StyledIcon = styled.div`
-  color: ${(props) => props.color};
+  color: ${(props) => props.$color};
 `;
 
 const StyledAuthor = styled.p`
-  color: ${(props) => props.color};
+  color: ${(props) => props.$color};
 `;
 
 function useDynamicSVGImport(name, options = {}) {
@@ -37,9 +37,11 @@ function useDynamicSVGImport(name, options = {}) {
             `!!@svgr/webpack?-svgo,+titleProp,+ref!../assets/graphics/${name}.svg`
           )
         ).default;
+
         // ImportedIconRef.current = (
         //   await import(`../assets/graphics/${name}.svg`)
         // ).ReactComponent;
+
         if (onCompleted) {
           onCompleted(name, ImportedIconRef.current);
         }
@@ -123,10 +125,10 @@ const BenefitsIcons = ({
             >
               <StyledIcon
                 className="h-40 w-40 mx-auto"
-                color={primary.dark.color}
+                $color={primary.dark.color}
               >
                 <Icon
-                  name={item.icon}
+                  name={item?.icon}
                   fill="currentColor"
                   height="10rem"
                   width="10rem"
@@ -136,19 +138,19 @@ const BenefitsIcons = ({
                 />
               </StyledIcon>
               <div className="relative z-10">
-                <h3 className="mt-8 text-3xl font-medium text-gray-800">
+                <h3 className="mt-8 text-3xl font-medium text-zinc-800">
                   <span className="">{item.title}</span>
                 </h3>
-                <p className="mt-5 mb-8 text-xl text-gray-500 italic">
+                <p className="mt-5 mb-8 text-xl text-zinc-500 italic">
                   <SanityBlockContent blocks={item._rawDescription} />
                 </p>
                 <StyledAuthor
                   className="mt-5 text-base font-bold"
-                  color={primary.dark.color}
+                  $color={primary.dark.color}
                 >
                   <span>{item.author}</span>
                 </StyledAuthor>
-                <p className="mb-8 text-base text-gray-800 font-semibold">
+                <p className="mb-8 text-base text-zinc-800 font-semibold">
                   <span>{item.info}</span>
                 </p>
               </div>

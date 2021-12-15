@@ -2,43 +2,69 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 import { useSanity } from '../hooks';
 
 const StyledButtonInternal = styled((props) => <Link {...props} />)`
   color: rgba(250, 250, 250) !important;
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.$bgColor};
   &:hover {
-    background-color: ${(props) => props.bgColorHover};
+    background-color: ${(props) => props.$bgColorHover};
+  }
+`;
+
+const StyledButtonExternal = styled.a`
+  color: rgba(250, 250, 250) !important;
+  background-color: ${(props) => props.$bgColor};
+  &:hover {
+    background-color: ${(props) => props.$bgColorHover};
   }
 `;
 
 const StyledButtonForm = styled.button`
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.$bgColor};
   &:hover {
-    background-color: ${(props) => props.bgColorHover};
+    background-color: ${(props) => props.$bgColorHover};
   }
 `;
 
-const Button = ({ btn, bgColor, secondaryBtn, link, label }) => {
+const StyledAnchorLink = styled((props) => <AnchorLink {...props} />)`
+  color: rgba(250, 250, 250);
+  background-color: ${(props) => props.$bgColor};
+  &:hover {
+    color: ${(props) => props.$colorHover};
+    background-color: ${(props) => props.$bgColorHover};
+  }
+`;
+
+const Button = ({
+  linkType,
+  label,
+  internalLink,
+  externalLink,
+  jumpLink,
+  secondaryBtn,
+}) => {
   const { website, primary, secondary, accent, neutral, hero } = useSanity();
 
-  switch (btn) {
+  switch (linkType === null || undefined ? 'internal' : linkType) {
     default:
       return (
         <StyledButtonInternal
           to={
-            website.ctaUrl.metadata.slug.current !== null
-              ? `/${website.ctaUrl.metadata.slug.current}/`
-              : link
+            internalLink === null || undefined
+              ? '/'
+              : internalLink === 'home'
+              ? '/'
+              : `/${internalLink}/`
           }
-          className="inline-flex items-center py-3 px-6 text-lg font-bold text-gray-50 hover:text-white border border-gray-50 hover:border-gray-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform transition-all"
-          secondaryBtn={secondaryBtn}
-          bgColor={secondaryBtn ? 'transparent' : accent.default.color}
-          bgColorHover={secondaryBtn ? accent.default.color : accent.dark.color}
+          className="inline-flex items-center py-3 px-6 text-lg font-bold text-zinc-50 hover:text-white border border-zinc-50 hover:border-zinc-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500 hover:-translate-y-0.5 translate transform transition-all"
+          $bgColor={accent.default.color}
+          $bgColorHover={accent.dark.color}
         >
           <span className="drop-shadow-text-cta">
-            {website.cta !== null ? website.cta : label}
+            {label === null || undefined ? 'Call Now' : label}
           </span>
         </StyledButtonInternal>
       );
@@ -46,63 +72,96 @@ const Button = ({ btn, bgColor, secondaryBtn, link, label }) => {
       return (
         <StyledButtonInternal
           to={
-            website.ctaUrl.metadata.slug.current !== null
-              ? `/${website.ctaUrl.metadata.slug.current}/`
-              : link
+            internalLink === null || undefined
+              ? '/'
+              : internalLink === 'home'
+              ? '/'
+              : `/${internalLink}/`
           }
-          className="inline-flex items-center py-3 px-6 text-lg font-bold text-gray-50 hover:text-white border border-gray-50 hover:border-gray-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform transition-all"
-          secondaryBtn={secondaryBtn}
-          bgColor={secondaryBtn ? 'transparent' : accent.default.color}
-          bgColorHover={secondaryBtn ? accent.default.color : accent.dark.color}
+          className="inline-flex items-center py-3 px-6 text-lg font-bold text-zinc-50 hover:text-white border border-zinc-50 hover:border-zinc-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500 hover:-translate-y-0.5 translate transform transition-all"
+          $bgColor={accent.default.color}
+          $bgColorHover={accent.dark.color}
         >
           <span className="drop-shadow-text-cta">
-            {website.cta !== null ? website.cta : label}
+            {label === null || undefined ? 'Call Now' : label}
           </span>
         </StyledButtonInternal>
+      );
+    case 'external':
+      return (
+        <StyledButtonExternal
+          href={externalLink === null || undefined ? '#' : externalLink}
+          target="_blank"
+          rel="noopener"
+          className="inline-flex items-center py-3 px-6 text-lg font-bold text-zinc-50 hover:text-white border border-zinc-50 hover:border-zinc-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500 hover:-translate-y-0.5 translate transform transition-all"
+          secondaryBtn={
+            secondaryBtn === null || undefined ? false : secondaryBtn
+          }
+          $bgColor={secondaryBtn ? 'transparent' : accent.default.color}
+          $bgColorHover={
+            secondaryBtn ? accent.default.color : accent.dark.color
+          }
+        >
+          <span className="drop-shadow-text-cta">
+            {label === null || undefined ? 'Call Now' : label}
+          </span>
+        </StyledButtonExternal>
       );
     case 'form':
       return (
         <StyledButtonForm
           type="submit"
           value="Submit"
-          className="inline-flex items-center py-3 px-6 text-lg font-bold text-gray-50 hover:text-white border border-gray-50 hover:border-gray-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform transition-all"
-          secondaryBtn={secondaryBtn}
-          bgColor={secondaryBtn ? 'transparent' : accent.default.color}
-          bgColorHover={secondaryBtn ? accent.default.color : accent.dark.color}
+          className="inline-flex items-center py-3 px-6 text-lg font-bold text-zinc-50 hover:text-white border border-zinc-50 hover:border-zinc-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500 hover:-translate-y-0.5 translate transform transition-all"
+          secondaryBtn={
+            secondaryBtn === null || undefined ? false : secondaryBtn
+          }
+          $bgColor={secondaryBtn ? 'transparent' : accent.default.color}
+          $bgColorHover={
+            secondaryBtn ? accent.default.color : accent.dark.color
+          }
         >
           <span className="drop-shadow-text-cta">
-            {website.cta !== null ? website.cta : label}
+            {label === null || undefined ? 'Call Now' : label}
           </span>
         </StyledButtonForm>
       );
     case 'anchor':
       return (
-        <AnchorLink
-          to={anchor}
-          title={title}
-          className="inline-flex items-center text-lg font-bold text-gray-50 hover:text-white border border-gray-50 hover:border-gray-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hover:-translate-y-0.5 translate transform transition-all"
-          secondaryBtn={secondaryBtn}
-          bgColor={secondaryBtn ? 'transparent' : accent.default.color}
-          bgColorHover={secondaryBtn ? accent.default.color : accent.dark.color}
+        <StyledAnchorLink
+          to={jumpLink === null || undefined ? '#' : jumpLink}
+          className="inline-flex items-center py-3 px-6 text-lg font-bold text-zinc-50 hover:text-white border border-zinc-50 hover:border-zinc-50 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500 hover:-translate-y-0.5 translate transform transition-all cursor-pointer"
+          secondaryBtn={
+            secondaryBtn === null || undefined ? false : secondaryBtn
+          }
+          $bgColor={secondaryBtn ? 'transparent' : accent.default.color}
+          $bgColorHover={secondaryBtn ? neutral.dark.color : accent.dark.color}
+          $colorHover={secondaryBtn ? accent.default.color : accent.dark.color}
         >
           <span className="drop-shadow-text-cta">
-            {website.cta !== null ? website.cta : label}
+            {label === null || undefined ? 'Call Now' : label}
           </span>
-        </AnchorLink>
+        </StyledAnchorLink>
       );
   }
 };
 
 Button.defaultProps = {
-  btn: `internal`,
-  link: `/contact/`,
-  label: `Schedule Consultation`,
+  linkType: 'internal',
+  label: 'Call Now',
+  internalLink: 'home',
+  externalLink: '#',
+  jumpLink: '#',
+  secondaryBtn: false,
 };
 
 Button.propTypes = {
-  btn: PropTypes.string,
-  link: PropTypes.string,
+  linkType: PropTypes.oneOf(['internal', 'external', 'form', 'anchor']),
   label: PropTypes.string,
+  internalLink: PropTypes.string,
+  externalLink: PropTypes.string,
+  jumpLink: PropTypes.string,
+  secondaryBtn: PropTypes.bool,
 };
 
 export default Button;

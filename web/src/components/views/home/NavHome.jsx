@@ -96,15 +96,15 @@ const NavHome = () => {
           <h2 className="text-base font-semibold tracking-wider text-indigo-600 uppercase">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </h2>
-          <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
+          <p className="mt-2 text-3xl font-extrabold text-zinc-900 tracking-tight sm:text-4xl">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </p>
-          <p className="mt-5 mx-auto text-xl text-gray-500">
+          <p className="mt-5 mx-auto text-xl text-zinc-500">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi optio
             ipsa harum, neque esse iste nam fugit ipsum, veniam vitae rem
             dignissimos nulla ad itaque distinctio repellat vero atque. Quidem.
           </p>
-          <p className="mt-3 max-w-2xl mx-auto text-base lead-7 text-gray-500">
+          <p className="mt-3 max-w-2xl mx-auto text-base lead-7 text-zinc-500">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
             iste laboriosam, exercitationem sapiente eius nihil quidem unde
             dignissimos necessitatibus reprehenderit, animi possimus qui?
@@ -114,7 +114,7 @@ const NavHome = () => {
         <div className="mt-12">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             <motion.div ref={ref} variants={itemVariants} className="pt-6">
-              <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+              <div className="flow-root bg-zinc-50 rounded-lg px-6 pb-8">
                 <div className="-mt-6">
                   <div>
                     <span className="inline-flex items-center justify-center p-1 bg-indigo-400 rounded-md shadow-lg">
@@ -125,10 +125,10 @@ const NavHome = () => {
                       />
                     </span>
                   </div>
-                  <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">
+                  <h3 className="mt-8 text-lg font-medium text-zinc-900 tracking-tight">
                     About Aristocracy
                   </h3>
-                  <p className="mt-5 text-base text-gray-500">
+                  <p className="mt-5 text-base text-zinc-500">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Voluptas, modi accusamus dignissimos vel doloribus
                     blanditiis. Nostrum at veritatis, quis explicabo, excepturi
@@ -148,7 +148,7 @@ const NavHome = () => {
             </motion.div>
 
             <motion.div ref={ref} variants={itemVariants} className="pt-6">
-              <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+              <div className="flow-root bg-zinc-50 rounded-lg px-6 pb-8">
                 <div className="-mt-6">
                   <div>
                     <span className="inline-flex items-center justify-center p-1 bg-indigo-400 rounded-md shadow-lg">
@@ -159,10 +159,10 @@ const NavHome = () => {
                       />
                     </span>
                   </div>
-                  <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">
+                  <h3 className="mt-8 text-lg font-medium text-zinc-900 tracking-tight">
                     See Our Services
                   </h3>
-                  <p className="mt-5 text-base text-gray-500">
+                  <p className="mt-5 text-base text-zinc-500">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Magnam error beatae, tempora quis, facilis asperiores
                     possimus exercitationem cum optio aspernatur recusandae id
@@ -182,7 +182,7 @@ const NavHome = () => {
             </motion.div>
 
             <motion.div ref={ref} variants={itemVariants} className="pt-6">
-              <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+              <div className="flow-root bg-zinc-50 rounded-lg px-6 pb-8">
                 <div className="-mt-6">
                   <div>
                     <span className="inline-flex items-center justify-center p-1 bg-indigo-400 rounded-md shadow-lg overflow-hidden">
@@ -193,10 +193,10 @@ const NavHome = () => {
                       />
                     </span>
                   </div>
-                  <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">
+                  <h3 className="mt-8 text-lg font-medium text-zinc-900 tracking-tight">
                     Buy A Gift Card
                   </h3>
-                  <p className="mt-5 text-base text-gray-500">
+                  <p className="mt-5 text-base text-zinc-500">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Doloremque excepturi, repellat itaque, amet voluptatem
                     laboriosam odio culpa dolorum quae obcaecati quas tenetur

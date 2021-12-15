@@ -53,12 +53,12 @@ const TrustSignalsHome = () => {
     <motion.div
       ref={ref}
       variants={containerVariants}
-      initial={'hidden'}
+      initial="hidden"
       animate={controls}
       className="bg-white"
     >
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-        <p className="text-center text-base font-semibold uppercase text-gray-600 tracking-wider">
+        <p className="text-center text-base font-semibold uppercase text-zinc-600 tracking-wider">
           We use only the industry's finest products because we believe that{' '}
           <em className="text-yellow-600">you deserve the best</em>.
         </p>
@@ -66,66 +66,66 @@ const TrustSignalsHome = () => {
           <motion.div
             ref={ref}
             variants={itemVariants}
-            className="col-span-1 flex justify-center py-8 px-8 bg-gray-50"
+            className="col-span-1 flex justify-center py-8 px-8 bg-zinc-50"
           >
             <img
               className="max-h-12"
-              src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg"
+              src="https://tailwindui.com/img/logos/transistor-logo-zinc-400.svg"
               alt="Workcation"
             />
           </motion.div>
           <motion.div
             ref={ref}
             variants={itemVariants}
-            className="col-span-1 flex justify-center py-8 px-8 bg-gray-50"
+            className="col-span-1 flex justify-center py-8 px-8 bg-zinc-50"
           >
             <img
               className="max-h-12"
-              src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg"
+              src="https://tailwindui.com/img/logos/mirage-logo-zinc-400.svg"
               alt="Mirage"
             />
           </motion.div>
           <motion.div
             ref={ref}
             variants={itemVariants}
-            className="col-span-1 flex justify-center py-8 px-8 bg-gray-50"
+            className="col-span-1 flex justify-center py-8 px-8 bg-zinc-50"
           >
             <img
               className="max-h-12"
-              src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg"
+              src="https://tailwindui.com/img/logos/tuple-logo-zinc-400.svg"
               alt="Tuple"
             />
           </motion.div>
           <motion.div
             ref={ref}
             variants={itemVariants}
-            className="col-span-1 flex justify-center py-8 px-8 bg-gray-50"
+            className="col-span-1 flex justify-center py-8 px-8 bg-zinc-50"
           >
             <img
               className="max-h-12"
-              src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg"
+              src="https://tailwindui.com/img/logos/laravel-logo-zinc-400.svg"
               alt="Laravel"
             />
           </motion.div>
           <motion.div
             ref={ref}
             variants={itemVariants}
-            className="col-span-1 flex justify-center py-8 px-8 bg-gray-50"
+            className="col-span-1 flex justify-center py-8 px-8 bg-zinc-50"
           >
             <img
               className="max-h-12"
-              src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
+              src="https://tailwindui.com/img/logos/statickit-logo-zinc-400.svg"
               alt="StaticKit"
             />
           </motion.div>
           <motion.div
             ref={ref}
             variants={itemVariants}
-            className="col-span-1 flex justify-center py-8 px-8 bg-gray-50"
+            className="col-span-1 flex justify-center py-8 px-8 bg-zinc-50"
           >
             <img
               className="max-h-12"
-              src="https://tailwindui.com/img/logos/statamic-logo-gray-400.svg"
+              src="https://tailwindui.com/img/logos/statamic-logo-zinc-400.svg"
               alt="Statamic"
             />
           </motion.div>

@@ -1,59 +1,64 @@
 import React from 'react';
 
 import {
-  RichTextBrand,
-  RichTextService,
-  RichTextLocation,
-  RichTextPost,
+  RichTextAlignLeft,
+  RichTextAlignCenter,
+  RichTextAlignRight,
+  RichTextAlignJustify,
 } from '.';
 
 const RichText = ({ block, raw, index }) => {
-  const { layout, _rawBody } = block;
+  const { alignment, idName, _rawBody } = block;
 
-  switch (layout) {
+  switch (alignment) {
     default:
       return (
-        <RichTextBrand
+        <RichTextAlignLeft
           block={block}
           raw={raw}
           index={index}
           _rawBody={_rawBody}
+          idName={idName}
         />
       );
-    case 'brand':
+    case 'left':
       return (
-        <RichTextBrand
+        <RichTextAlignLeft
           block={block}
           raw={raw}
           index={index}
           _rawBody={_rawBody}
+          idName={idName}
         />
       );
-    case 'service':
+    case 'center':
       return (
-        <RichTextService
+        <RichTextAlignCenter
           block={block}
           raw={raw}
           index={index}
           _rawBody={_rawBody}
+          idName={idName}
         />
       );
-    case 'location':
+    case 'right':
       return (
-        <RichTextLocation
+        <RichTextAlignRight
           block={block}
           raw={raw}
           index={index}
           _rawBody={_rawBody}
+          idName={idName}
         />
       );
-    case 'post':
+    case 'justify':
       return (
-        <RichTextPost
+        <RichTextAlignJustify
           block={block}
           raw={raw}
           index={index}
           _rawBody={_rawBody}
+          idName={idName}
         />
       );
   }

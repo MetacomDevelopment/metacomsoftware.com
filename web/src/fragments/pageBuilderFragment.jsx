@@ -9,6 +9,16 @@ export const query = graphql`
         _key
         _type
         headline
+        primaryCtaButtonLabel
+        primaryCtaButtonLink {
+          metadata {
+            slug {
+              current
+            }
+          }
+        }
+        secondaryCtaButtonLabel
+        secondaryCtaButtonLink
         bgImg {
           alt
           asset {
@@ -20,6 +30,17 @@ export const query = graphql`
           asset {
             gatsbyImageData(placeholder: BLURRED, formats: WEBP)
           }
+        }
+        testimonial {
+          _rawQuote
+          author
+          authorImg {
+            alt
+            asset {
+              gatsbyImageData(placeholder: BLURRED, formats: WEBP)
+            }
+          }
+          info
         }
         layout
       }
@@ -43,11 +64,26 @@ export const query = graphql`
         _key
         _type
         layout
+        idName
         feature {
+          _rawDescription(resolveReferences: { maxDepth: 10 })
           _key
           _type
           headline
-          _rawDescription
+
+          ctaButton {
+            label
+            linkType
+            internalLink {
+              metadata {
+                slug {
+                  current
+                }
+              }
+            }
+            externalLink
+            jumpLink
+          }
           image {
             alt
             asset {
@@ -64,6 +100,14 @@ export const query = graphql`
         subheadline
         tagline
         _rawDescription
+        ctaButtonLabel
+        ctaButtonLink {
+          metadata {
+            slug {
+              current
+            }
+          }
+        }
         image {
           alt
           asset {
@@ -117,6 +161,7 @@ export const query = graphql`
           _rawDescription
           headline
           gmb {
+            _id
             address
             city
             cityState
@@ -147,7 +192,38 @@ export const query = graphql`
         _key
         _type
         _rawBody
+        alignment
+        idName
+      }
+      ... on SanitySpacer {
+        _key
+        _type
+        heightMobile
+        heightDesktop
+      }
+      ... on SanityMenuSection {
+        _key
+        _type
         layout
+        idName
+        category {
+          _key
+          _rawDescription
+          headline
+          images {
+            _key
+            alt
+            asset {
+              gatsbyImageData
+            }
+          }
+          items {
+            _key
+            name
+            price
+            _rawDescription
+          }
+        }
       }
     }
   }

@@ -3,8 +3,16 @@ import React from 'react';
 import { CtaFull, CtaHalf } from '.';
 
 const Cta = ({ block, raw, index }) => {
-  const { layout, headline, subheadline, tagline, _rawDescription, image } =
-    block;
+  const {
+    layout,
+    headline,
+    subheadline,
+    tagline,
+    _rawDescription,
+    ctaButtonLabel,
+    ctaButtonLink,
+    image,
+  } = block;
 
   switch (layout) {
     default:
@@ -18,6 +26,8 @@ const Cta = ({ block, raw, index }) => {
           tagline={tagline}
           _rawDescription={_rawDescription}
           image={image}
+          ctaButtonLabel={ctaButtonLabel}
+          ctaButtonLink={ctaButtonLink}
         />
       );
     case 'full':
@@ -31,6 +41,8 @@ const Cta = ({ block, raw, index }) => {
           tagline={tagline}
           _rawDescription={_rawDescription}
           image={image}
+          ctaButtonLabel={ctaButtonLabel}
+          ctaButtonLink={ctaButtonLink}
         />
       );
     case 'half':
@@ -44,6 +56,8 @@ const Cta = ({ block, raw, index }) => {
           tagline={tagline}
           _rawDescription={_rawDescription}
           image={image}
+          ctaButtonLabel={ctaButtonLabel}
+          ctaButtonLink={ctaButtonLink}
         />
       );
   }
