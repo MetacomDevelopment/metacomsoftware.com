@@ -66,10 +66,11 @@ export const query = graphql`
         layout
         idName
         feature {
+          _rawDescription(resolveReferences: { maxDepth: 10 })
           _key
           _type
           headline
-          _rawDescription
+
           ctaButton {
             label
             linkType

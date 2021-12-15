@@ -66,6 +66,8 @@ const AnchorText = ({
           $sizeHover={sizeHover}
           $lineHeight={lineHeight}
           $lineHeightHover={lineHeightHover}
+          target="_blank"
+          rel="noopener noreferrer"
         >
           {children}
         </StyledAnchorTextExternal>

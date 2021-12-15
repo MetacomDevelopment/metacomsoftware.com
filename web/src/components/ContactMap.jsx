@@ -40,7 +40,14 @@ const StyledLink = styled((props) => <Link {...props} />)`
   }
 `;
 
-const ContactMap = ({ block, raw, index, contact, socialLinks }) => {
+const ContactMap = ({
+  block,
+  raw,
+  rawMetadata,
+  index,
+  contact,
+  socialLinks,
+}) => {
   const { primary, secondary, accent, neutral, hero } = useSanity();
 
   return (

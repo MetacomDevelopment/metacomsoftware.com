@@ -3,7 +3,14 @@ import React from 'react';
 import { Section, Container, SanityBlockContent } from '.';
 import { useSanity } from '../hooks';
 
-const RichTextAlignLeft = ({ block, raw, index, idName, _rawBody }) => {
+const RichTextAlignLeft = ({
+  block,
+  raw,
+  rawMetadata,
+  index,
+  idName,
+  _rawBody,
+}) => {
   const { primary, secondary, accent, neutral, hero } = useSanity();
 
   return (

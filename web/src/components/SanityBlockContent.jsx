@@ -1,26 +1,43 @@
 import React, { useEffect } from 'react';
-// import PropTypes from 'prop-types';
 import BlockContent from '@sanity/block-content-to-react';
-
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { AnchorText } from '.';
+import { useSanity } from '../hooks';
 
 const SanityBlockContent = ({ blocks, classes }) => {
+  const { primary, secondary, accent, neutral, hero } = useSanity();
+
   const serializers = {
     marks: {
       internalLink: ({ mark, children }) => {
-        const { metadata = {} } = mark;
+        const { reference = {} } = mark;
         const href =
-          metadata.slug.current === 'home' ? '/' : `/${metadata.slug.current}/`;
-        return <a href={href}>{children}</a>;
+          reference.metadata.slug.current === 'home'
+            ? '/'
+            : `/${reference.metadata.slug.current}/`;
+        return (
+          <AnchorText
+            type="internal"
+            to={href}
+            color={accent.default.color}
+            colorHover={accent.dark.color}
+          >
+            {children}
+          </AnchorText>
+        );
       },
       externalLink: ({ mark, children }) => {
-        // Read https://css-tricks.com/use-target_blank/
         const { blank, href } = mark;
         return blank ? (
-          <a href={href} target="_blank" rel="noopener noreferrer">
+          <AnchorText
+            type="external"
+            href={href}
+            color={accent.default.color}
+            colorHover={accent.dark.color}
+          >
             {children}
-          </a>
+          </AnchorText>
         ) : (
           <a href={href}>{children}</a>
         );
@@ -67,15 +84,5 @@ const SanityBlockContent = ({ blocks, classes }) => {
     </motion.div>
   );
 };
-
-// SanityBlockContent.defaultProps = {
-//   classes: ``,
-//   blocks: `sanity._rawBody`,
-// };
-
-// SanityBlockContent.propTypes = {
-//   classes: PropTypes.string,
-//   blocks: PropTypes.string,
-// };
 
 export default SanityBlockContent;

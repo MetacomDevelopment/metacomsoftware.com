@@ -16,14 +16,14 @@ import {
 import { useSanity } from '../hooks';
 
 const StyledServices = styled((props) => <Link {...props} />)`
-  background-color: ${(props) => props.$bgColor};
+  background-color: ${(props) => props.bgColor};
   &:hover {
-    background-color: ${(props) => props.$bgColorHover};
+    background-color: ${(props) => props.bgColorHover};
   }
 `;
 
 const StyledCol = styled((props) => <Col {...props} />)`
-  order: ${(props) => props.$classes};
+  order: ${(props) => props.classes};
 `;
 
 const StyledHeadline = styled.span`
@@ -34,13 +34,14 @@ const StyledHeadline = styled.span`
 `;
 
 const StyledLink = styled((props) => <Link {...props} />)`
-  color: ${(props) => props.$color} !important;
+  color: ${(props) => props.color} !important;
   &:hover {
-    color: ${(props) => props.$colorHover} !important;
+    color: ${(props) => props.colorHover} !important;
   }
 `;
 
 const RowTextLeft = ({
+  raw,
   _key,
   headline,
   _rawDescription,

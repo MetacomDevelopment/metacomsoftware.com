@@ -8,6 +8,7 @@ import { useSanity } from '../hooks';
 export const query = graphql`
   query PageTemplateQ($id: String!) {
     page: sanityPage(id: { eq: $id }) {
+      ...PageBuilder
       id
       layout
       metadata {
@@ -21,7 +22,6 @@ export const query = graphql`
           code
         }
       }
-      ...PageBuilder
     }
   }
 `;
