@@ -43,7 +43,7 @@
   [headers.values]
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
-    Content-Security-Policy = "default-src 'self'; font-src 'self'; script-src 'self'; connect-src 'self'; img-src 'self'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'; cloudfront.net *.cloudfront.net; app.netlify.com *.app.netlify.com; google-analytics.com *.google-analytics.com; googletagmanager.com *.googletagmanager.com; cdn.sanity.io *.cdn.sanity.io; fontawesome.com *.fontawesome.com"
+    Content-Security-Policy = "default-src 'self'; font-src 'self'; script-src 'unsafe-inline'; connect-src 'self'; img-src 'self'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'; cloudfront.net *.cloudfront.net; app.netlify.com *.app.netlify.com; google-analytics.com *.google-analytics.com; googletagmanager.com *.googletagmanager.com; cdn.sanity.io *.cdn.sanity.io; fontawesome.com *.fontawesome.com"
 
 # [[headers]]
 #   for = "/*"
