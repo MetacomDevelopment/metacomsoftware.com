@@ -19,6 +19,7 @@ const useDynamicSVGImport = ({ name, options = {} }) => {
         // ImportedIconRef.current = (
         //   await import(`../assets/graphics/${name}.svg`)
         // ).ReactComponent;
+
         if (onCompleted) {
           onCompleted(name, ImportedIconRef.current);
         }

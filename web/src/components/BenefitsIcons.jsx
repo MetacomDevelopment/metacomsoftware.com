@@ -37,9 +37,11 @@ function useDynamicSVGImport(name, options = {}) {
             `!!@svgr/webpack?-svgo,+titleProp,+ref!../assets/graphics/${name}.svg`
           )
         ).default;
+
         // ImportedIconRef.current = (
         //   await import(`../assets/graphics/${name}.svg`)
         // ).ReactComponent;
+
         if (onCompleted) {
           onCompleted(name, ImportedIconRef.current);
         }
@@ -126,7 +128,7 @@ const BenefitsIcons = ({
                 $color={primary.dark.color}
               >
                 <Icon
-                  name={item.icon}
+                  name={item?.icon}
                   fill="currentColor"
                   height="10rem"
                   width="10rem"
