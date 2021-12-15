@@ -48,7 +48,7 @@ const NavbarSecondary = () => {
         <Flex classes="justify-end align-items-center h-12">
           {navbars.map((item) =>
             item.contactLinks.map((contact) => (
-              <Flex key={contact.id} classes="my-auto px-6">
+              <Flex key={contact._id} classes="my-auto px-6">
                 <StyledCustomAnchorText
                   $iconColor={accent.default.color}
                   $iconColorHover={accent.light.color}
@@ -66,7 +66,7 @@ const NavbarSecondary = () => {
           )}
           {navbars.map((item) =>
             item.socialLinks.map((social) => (
-              <Flex key={social.id} classes="my-auto pl-3">
+              <Flex key={social._id} classes="my-auto pl-3">
                 <StyledCustomAnchorText
                   $iconColor={accent.default.color}
                   $iconColorHover={accent.light.color}

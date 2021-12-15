@@ -36,7 +36,7 @@ const LinkFooter = () => {
                     type="external"
                     color={accent.default.color}
                     colorHover={primary.dark.color}
-                    key={social.id}
+                    key={social._id}
                     href={social.url}
                     rel="noopener"
                   >
@@ -85,7 +85,7 @@ const LinkFooter = () => {
               <ul className="mt-4 space-y-4">
                 {footers.map((item) =>
                   item.contactLinks.map((contact) => (
-                    <li key={contact.id}>
+                    <li key={contact._id}>
                       <AnchorText
                         type="external"
                         color={neutral.default.color}

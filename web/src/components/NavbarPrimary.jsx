@@ -406,7 +406,7 @@ const NavbarPrimary = () => {
                   <Grid classes="pt-10 pb-4 grid-cols-3">
                     {navbars.map((item) =>
                       item.contactLinks.map((contact) => (
-                        <Col key={contact._key} classes="mx-auto">
+                        <Col key={contact._id} classes="mx-auto">
                           <div className="flex my-auto px-6">
                             <a
                               href={contact.url}
