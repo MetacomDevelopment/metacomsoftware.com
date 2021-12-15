@@ -31,6 +31,7 @@ module.exports = {
     `gatsby-plugin-force-trailing-slashes`,
     `gatsby-plugin-advanced-sitemap`,
     `gatsby-transformer-json`,
+    `gatsby-plugin-fontawesome-css`,
     // 'gatsby-plugin-loadable-components-ssr',
     {
       resolve: `gatsby-plugin-styled-components`,
