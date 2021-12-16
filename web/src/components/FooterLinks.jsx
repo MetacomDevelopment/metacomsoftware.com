@@ -38,7 +38,6 @@ const LinkFooter = () => {
                     colorHover={primary.dark.color}
                     key={social.id}
                     href={social.url}
-                    rel="noopener"
                   >
                     <i className={`${social.icon} fa-2x`} />
                     <span className="text-md font-thin sr-only">
@@ -91,8 +90,6 @@ const LinkFooter = () => {
                         color={neutral.default.color}
                         colorHover={accent.default.color}
                         href={contact.url}
-                        rel="noopener"
-                        target="_blank"
                         className="text-base break-all"
                       >
                         {contact.anchor}

@@ -5,7 +5,7 @@ import {
   StyledAnchorTextExternal,
 } from './styles/AnchorText.styled';
 
-const AnchorText = ({
+const AnchorText = function ({
   type,
   to,
   href,
@@ -18,7 +18,7 @@ const AnchorText = ({
   sizeHover,
   lineHeight,
   lineHeightHover,
-}) => {
+}) {
   switch (type) {
     default:
       return (
@@ -67,7 +67,7 @@ const AnchorText = ({
           $lineHeight={lineHeight}
           $lineHeightHover={lineHeightHover}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
         >
           {children}
         </StyledAnchorTextExternal>

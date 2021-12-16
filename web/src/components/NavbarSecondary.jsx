@@ -24,16 +24,7 @@ const StyledCustomAnchorText = styled.a`
 `;
 
 const NavbarSecondary = function () {
-  const {
-    navbars,
-    navContacts,
-    navSocials,
-    primary,
-    secondary,
-    accent,
-    neutral,
-    hero,
-  } = useSanity();
+  const { navbars, primary, secondary, accent, neutral, hero } = useSanity();
 
   return (
     <Section
@@ -63,7 +54,7 @@ const NavbarSecondary = function () {
           )}
           {navbars.map((item) =>
             item.socialLinks.map((social) => (
-              <Flex key={social.id} classes="my-auto pl-3">
+              <Flex key={social._id} classes="my-auto pl-3">
                 <StyledCustomAnchorText
                   $iconColor={accent.default.color}
                   $iconColorHover={accent.light.color}
@@ -73,7 +64,7 @@ const NavbarSecondary = function () {
                   target="_blank"
                   rel="noopener"
                 >
-                  <i className={`${social.icon}`} />
+                  <i className={`${social.icon} text-2xl`} />
                   <span className="text-md font-thin sr-only">
                     {social.anchor}
                   </span>

@@ -3,14 +3,13 @@ import React from 'react';
 import { Section, Container, SanityBlockContent } from '.';
 import { useSanity } from '../hooks';
 
-const RichTextAlignJustify = ({
+const RichTextAlignJustify = function ({
   block,
   raw,
-  rawMetadata,
   index,
   idName,
   _rawBody,
-}) => {
+}) {
   const { primary, secondary, accent, neutral, hero } = useSanity();
 
   return (

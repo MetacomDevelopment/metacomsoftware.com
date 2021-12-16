@@ -18,6 +18,14 @@ const useSanitySettings = () => {
           }
         }
       }
+      allSanitySocial {
+        nodes {
+          _id
+          anchor
+          url
+          icon
+        }
+      }
       allSanityNavbars {
         nodes {
           _key
@@ -65,8 +73,7 @@ const useSanitySettings = () => {
             icon
           }
           socialLinks {
-            _key
-            id
+            _id
             anchor
             url
             icon
@@ -220,10 +227,8 @@ const useSanitySettings = () => {
   `);
 
   // const info = data.sanityBusinessInfo;
-  // const logos = data.sanityBusinessLogos;
-  // const locations = data.allSanityBusinessLocations.nodes;
-  // const socials = data.allSanityBusinessSocials.nodes;
   // const metadata = data.sanityBusinessMetadata;
+  const socials = data.allSanitySocial.nodes;
   const siteSEO = data.sanityBusinessSeo;
   const logo = data.sanityBusinessLogo;
   const navbars = data.allSanityNavbars.nodes;
@@ -238,8 +243,8 @@ const useSanitySettings = () => {
     // info,
     // logos,
     // locations,
-    // socials,
     // metadata,
+    socials,
     siteSEO,
     logo,
     navbars,
