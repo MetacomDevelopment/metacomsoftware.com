@@ -74,6 +74,7 @@ const useSanitySettings = () => {
           }
           socialLinks {
             _id
+            id
             anchor
             url
             icon
