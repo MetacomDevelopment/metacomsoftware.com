@@ -73,7 +73,7 @@ const NavbarSecondary = function () {
                   target="_blank"
                   rel="noopener"
                 >
-                  <i className={`text-2xl ${social.icon}`} />
+                  <i className={`${social.icon}`} />
                   <span className="text-md font-thin sr-only">
                     {social.anchor}
                   </span>
