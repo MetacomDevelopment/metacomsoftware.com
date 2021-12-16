@@ -23,7 +23,7 @@ const StyledCustomAnchorText = styled.a`
   }
 `;
 
-const NavbarSecondary = () => {
+const NavbarSecondary = function () {
   const {
     navbars,
     navContacts,
@@ -40,9 +40,6 @@ const NavbarSecondary = () => {
       padding="none"
       classes="hidden lg:block z-50 w-full"
       bgColor={primary.darker.color}
-      // iconColor={accent.default.color}
-      // iconColorHover={accent.light.color}
-      // textColorHover={accent.light.color}
     >
       <Container padding="sm" classes="max-w-7xl px-4">
         <Flex classes="justify-end align-items-center h-12">
