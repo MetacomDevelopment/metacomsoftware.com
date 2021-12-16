@@ -87,7 +87,7 @@ const NavbarSecondary = function () {
                 >
                   {/* <FontAwesomeIcon icon={social.icon} /> */}
                   <FontAwesomeIcon
-                    className="text-2xl"
+                    className="!text-2xl"
                     icon={['fab', social.icon]}
                   />
                   {/* <FontAwesomeIconLibrary iconName="faTwitter" /> */}
