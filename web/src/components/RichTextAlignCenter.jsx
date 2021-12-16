@@ -3,14 +3,7 @@ import React from 'react';
 import { Section, Container, SanityBlockContent } from '.';
 import { useSanity } from '../hooks';
 
-const RichTextAlignCenter = ({
-  block,
-  raw,
-  rawMetadata,
-  index,
-  idName,
-  _rawBody,
-}) => {
+const RichTextAlignCenter = function ({ block, raw, index, idName, _rawBody }) {
   const { primary, secondary, accent, neutral, hero } = useSanity();
 
   return (

@@ -22,15 +22,7 @@ const StyledTestimonial = styled(motion.div)`
   color: ${(props) => props.$color};
 `;
 
-const Hero = ({
-  block,
-  raw,
-  rawMetadata,
-  index,
-  headline,
-  bgImg,
-  testimonial,
-}) => {
+const Hero = ({ block, raw, index, headline, bgImg, testimonial }) => {
   // const { headline, bgImg, alt } = block;
 
   const variants = {
