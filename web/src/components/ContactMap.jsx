@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../utils/FontAwesomeIconLibrary';
 
 import {
   Section,
@@ -257,7 +259,10 @@ const ContactMap = function ({ block, raw, index, contact, socialLinks }) {
                           href={social.url}
                         >
                           <span className="sr-only">{social.anchor}</span>
-                          <i className={`${social.icon} fa-2x`} />
+                          <FontAwesomeIcon
+                            className="!text-3xl"
+                            icon={['fab', social.icon]}
+                          />
                         </AnchorText>
                       </li>
                     ))}

@@ -1,5 +1,7 @@
 import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../utils/FontAwesomeIconLibrary';
 
 import { Section, Flex, AnchorText } from '.';
 import { useSanity } from '../hooks';
@@ -39,7 +41,10 @@ const LinkFooter = () => {
                     key={social.id}
                     href={social.url}
                   >
-                    <i className={`${social.icon} fa-2x`} />
+                    <FontAwesomeIcon
+                      className="!text-3xl"
+                      icon={['fab', social.icon]}
+                    />
                     <span className="text-md font-thin sr-only">
                       {social.anchor}
                     </span>
