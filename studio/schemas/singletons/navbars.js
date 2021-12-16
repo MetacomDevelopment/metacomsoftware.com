@@ -10,7 +10,8 @@ export default {
   fieldsets: [
     { title: 'CTA', name: 'primaryNavCtaSet' },
     { title: 'Menu', name: 'primaryNavLinksSet' },
-    { title: 'NAP', name: 'secondaryNavSet' },
+    { title: 'NAP', name: 'secondaryNavNapSet' },
+    { title: 'Socials', name: 'secondaryNavSocialSet' },
   ],
   fields: [
     {
@@ -54,7 +55,7 @@ export default {
           ],
         },
       ],
-      fieldset: 'secondaryNavSet',
+      fieldset: 'secondaryNavNapSet',
     },
     {
       title: 'Social Media Links',
@@ -71,7 +72,7 @@ export default {
           ],
         },
       ],
-      fieldset: 'secondaryNavSet',
+      fieldset: 'secondaryNavSocialSet',
     },
   ],
 };
