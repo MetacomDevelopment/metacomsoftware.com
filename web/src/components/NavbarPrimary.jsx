@@ -411,7 +411,7 @@ const NavbarPrimary = () => {
                             <a
                               href={contact.url}
                               target="_blank"
-                              rel="noopener noreferrer"
+                              rel="noopener"
                             >
                               <i
                                 className={`${contact.icon} fa-2x text-white hover:text-accent`}
