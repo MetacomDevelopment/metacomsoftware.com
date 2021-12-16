@@ -26,7 +26,7 @@ export const query = graphql`
   }
 `;
 
-const PageTemplate = (props) => {
+const PageTemplate = function (props) {
   const { data } = props;
   const page = data && data.page;
   const { pageBuilder, _rawPageBuilder } = page;
