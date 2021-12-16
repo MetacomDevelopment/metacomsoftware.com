@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { AnchorText, Section, Container, Flex } from '.';
 import { useSanity } from '../hooks';
+import '../utils/FontAwesomeIconLibrary';
 
 const StyledContactLinks = styled.a`
   & i {
@@ -24,7 +26,7 @@ const StyledContactLinks = styled.a`
 `;
 
 const StyledSocialLinks = styled.a`
-  & i {
+  & path {
     color: ${(props) => props.$iconColor};
     transition: all 0.25s;
     &:hover {
@@ -83,7 +85,13 @@ const NavbarSecondary = function () {
                   target="_blank"
                   rel="noopener"
                 >
-                  <i className={`${social.icon} text-2xl`} />
+                  {/* <FontAwesomeIcon icon={social.icon} /> */}
+                  <FontAwesomeIcon
+                    className="text-2xl"
+                    icon={['fab', social.icon]}
+                  />
+                  {/* <FontAwesomeIconLibrary iconName="faTwitter" /> */}
+                  {/* <i className={`${social.icon} text-2xl`} /> */}
                   <span className="text-md font-thin sr-only">
                     {social.anchor}
                   </span>
