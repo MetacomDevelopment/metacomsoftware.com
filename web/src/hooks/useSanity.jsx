@@ -18,6 +18,31 @@ const useSanitySettings = () => {
           }
         }
       }
+      sanityBusinessLogo {
+        navbar {
+          alt
+          asset {
+            gatsbyImageData(
+              placeholder: BLURRED
+              formats: WEBP
+              layout: FIXED
+              height: 75
+            )
+          }
+        }
+        footer {
+          alt
+          asset {
+            gatsbyImageData(placeholder: BLURRED, formats: WEBP)
+          }
+        }
+        favicon {
+          alt
+          asset {
+            gatsbyImageData(placeholder: BLURRED, formats: WEBP)
+          }
+        }
+      }
       allSanitySocial {
         nodes {
           _id
@@ -116,26 +141,6 @@ const useSanitySettings = () => {
             anchor
             url
             icon
-          }
-        }
-      }
-      sanityBusinessLogo {
-        navbar {
-          alt
-          asset {
-            gatsbyImageData(placeholder: BLURRED, height: 55, layout: FIXED)
-          }
-        }
-        footer {
-          alt
-          asset {
-            gatsbyImageData(placeholder: BLURRED, formats: WEBP)
-          }
-        }
-        favicon {
-          alt
-          asset {
-            gatsbyImageData(placeholder: BLURRED, formats: WEBP)
           }
         }
       }

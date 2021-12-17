@@ -1,64 +1,67 @@
 import React from 'react';
 
-import {
-  RichTextAlignLeft,
-  RichTextAlignCenter,
-  RichTextAlignRight,
-  RichTextAlignJustify,
-} from '.';
+import { RichTextNoSidebar, RichTextSidebar } from '.';
 
 const RichText = ({ block, raw, index }) => {
-  const { alignment, idName, _rawBody } = block;
+  const { sidebarType, alignment, idName, _rawBody } = block;
 
-  switch (alignment) {
+  switch (sidebarType) {
+    case 'none':
+      return (
+        <RichTextNoSidebar
+          block={block}
+          raw={raw}
+          index={index}
+          _rawBody={_rawBody}
+          idName={idName}
+          alignment={alignment}
+        />
+      );
+    case 'service':
+      return (
+        <RichTextSidebar
+          block={block}
+          raw={raw}
+          index={index}
+          _rawBody={_rawBody}
+          idName={idName}
+          alignment={alignment}
+          sidebarType={sidebarType}
+        />
+      );
+    case 'location':
+      return (
+        <RichTextSidebar
+          block={block}
+          raw={raw}
+          index={index}
+          _rawBody={_rawBody}
+          idName={idName}
+          alignment={alignment}
+          sidebarType={sidebarType}
+        />
+      );
+    case 'post':
+      return (
+        <RichTextSidebar
+          block={block}
+          raw={raw}
+          index={index}
+          _rawBody={_rawBody}
+          idName={idName}
+          alignment={alignment}
+          sidebarType={sidebarType}
+        />
+      );
     default:
       return (
-        <RichTextAlignLeft
+        <RichTextNoSidebar
           block={block}
           raw={raw}
           index={index}
           _rawBody={_rawBody}
           idName={idName}
-        />
-      );
-    case 'left':
-      return (
-        <RichTextAlignLeft
-          block={block}
-          raw={raw}
-          index={index}
-          _rawBody={_rawBody}
-          idName={idName}
-        />
-      );
-    case 'center':
-      return (
-        <RichTextAlignCenter
-          block={block}
-          raw={raw}
-          index={index}
-          _rawBody={_rawBody}
-          idName={idName}
-        />
-      );
-    case 'right':
-      return (
-        <RichTextAlignRight
-          block={block}
-          raw={raw}
-          index={index}
-          _rawBody={_rawBody}
-          idName={idName}
-        />
-      );
-    case 'justify':
-      return (
-        <RichTextAlignJustify
-          block={block}
-          raw={raw}
-          index={index}
-          _rawBody={_rawBody}
-          idName={idName}
+          alignment={alignment}
         />
       );
   }

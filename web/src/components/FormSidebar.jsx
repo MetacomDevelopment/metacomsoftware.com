@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import { Col, Grid, AnchorText } from '.';
+import { Col, Grid, AnchorText, Button } from '.';
 import { useSanity } from '../hooks';
 
 const StyledForm = styled.form`
@@ -29,22 +29,14 @@ const FormSidebar = () => {
     lastName: '',
     email: '',
     phone: '',
-    companyName: '',
-    industry: '',
+    service: '',
+    type: '',
     findUs: '',
     message: '',
   });
 
-  const {
-    firstName,
-    lastName,
-    email,
-    phone,
-    companyName,
-    industry,
-    findUs,
-    message,
-  } = contact;
+  const { firstName, lastName, email, phone, service, type, findUs, message } =
+    contact;
 
   const handleChange = (e) =>
     setContact({ ...contact, [e.target.name]: e.target.value });
@@ -64,15 +56,15 @@ const FormSidebar = () => {
       <div className="space-y-6 mb-16">
         <StyledHeadline
           className="text-4xl font-bold text-center mb-1 mt-4 mt-md-0"
-          $color={secondary.light.color}
+          $color={accent.default.color}
         >
-          Request Talent
+          Request Energy Consultation
         </StyledHeadline>
         <StyledBorder
           className="text-xl font-italic text-zinc-100 text-center"
           $borderColor={accent.light.color}
         >
-          Send us a request or give us a call today at{' '}
+          Send us a request or give us a call today
           {/* <AnchorText type="external" light weight="500" href={info.phoneHref}>
             {info.phone}
           </AnchorText> */}
@@ -127,39 +119,57 @@ const FormSidebar = () => {
           />
         </Col>
         <Col>
-          <input
-            name="companyName"
-            type="text"
-            value={companyName}
-            onChange={handleChange}
-            placeholder="Company"
-            required
-            className="shadow-sm focus:ring-zinc-500 focus:border-zinc-500 block w-full sm:text-sm border-zinc-300 rounded-md"
-          />
-        </Col>
-        <Col>
           <select
-            name="industry"
+            name="service"
             as="select"
-            value={industry}
+            value={service}
             onChange={handleChange}
             required
             className="shadow-sm focus:ring-zinc-500 focus:border-zinc-500 block w-full sm:text-sm border-zinc-300 rounded-md"
           >
             <option value="" disabled hidden>
-              Industry
+              Service...
             </option>
-            <option value="Medical Device">Medical Device</option>
-            <option value="Biotechnology" className="bg-light">
-              Biotechnology
+            <option value="HVAC System Design" className="bg-gray-50">
+              HVAC System Design
             </option>
-            <option value="Information Technology">
-              Information Technology
+            <option value="Duct Leakage Testing">Duct Leakage Testing</option>
+            <option
+              value="Preventive Maintenance Program"
+              className="bg-gray-50"
+            >
+              Preventive Maintenance Program
             </option>
-            <option value="Civil & Structural Engineering" className="bg-light">
-              Civil & Structural Engineering
+            <option value="Mass Save HVAC MeasureQuick AC Check">
+              Mass Save HVAC MeasureQuick AC Check
             </option>
-            <option value="Manufacturing">Manufacturing</option>
+            <option
+              value="Mass Save Heat Pump Installer Network"
+              className="bg-gray-50"
+            >
+              Mass Save Heat Pump Installer Network
+            </option>
+          </select>
+        </Col>
+        <Col>
+          <select
+            name="type"
+            as="select"
+            value={type}
+            onChange={handleChange}
+            required
+            className="shadow-sm focus:ring-zinc-500 focus:border-zinc-500 block w-full sm:text-sm border-zinc-300 rounded-md"
+          >
+            <option value="" disabled hidden>
+              Type...
+            </option>
+            <option value="Residential" className="bg-gray-50">
+              Residential
+            </option>
+            <option value="Commercial">Commercial</option>
+            <option value="Industrial" className="bg-gray-50">
+              Industrial
+            </option>
           </select>
         </Col>
         <Col classes="lg:col-span-2">
@@ -174,20 +184,21 @@ const FormSidebar = () => {
             <option value="" disabled hidden>
               How Did You Find Us?
             </option>
-            <option value="LinkedIn" className="bg-light">
-              LinkedIn
+            <option value="Google" className="bg-gray-50">
+              Google
             </option>
-            <option value="Google/Bing">Google/Bing</option>
-            <option value="Facebook" className="bg-light">
+            <option value="Bing">Bing</option>
+            <option value="Facebook" className="bg-gray-50">
               Facebook
             </option>
-            <option value="Referral" className="bg-light">
+            <option value="LinkedIn">LinkedIn</option>
+            <option value="Referral" className="bg-gray-50">
               Referral
             </option>
             <option value="Directory (Yellowpages, etc.)">
               Directory (Yellowpages, etc.)
             </option>
-            <option value="Other" className="bg-light">
+            <option value="Other" className="bg-gray-50">
               Other
             </option>
           </select>
@@ -215,15 +226,7 @@ const FormSidebar = () => {
         </p>
       </div>
       <div className="text-center mt-10 mb-6">
-        <StyledButton
-          className="inline-flex items-center py-3 px-6 hover:bg-zinc-700 text-lg font-medium text-white hover:text-white border border-zinc-50 hover:border-zinc-100 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500 hover:-translate-y-0.5 translate transform"
-          type="submit"
-          value="Submit"
-          $bgColor={accent.default.color}
-          $bgColorHover={accent.dark.color}
-        >
-          <span>Submit Inquiry</span>
-        </StyledButton>
+        <Button linkType="form" label="Submit Inquiry" />
       </div>
     </StyledForm>
   );

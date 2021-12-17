@@ -53,7 +53,7 @@ const HeroCenter = ({
         <div className="absolute inset-0">
           <GatsbyImage
             image={bgImg?.asset?.gatsbyImageData}
-            alt={bgImg.alt}
+            alt={bgImg?.alt}
             className="w-full h-full object-cover"
           />
           <Overlay overlay={hero.overlay.color} />
@@ -77,7 +77,7 @@ const HeroCenter = ({
               initial="hidden"
               animate={controls}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mx-auto mt-6 text-xl lg:text-2xl max-w-3xl drop-shadow-darker space-y-6"
+              className="mx-auto mt-6 text-xl lg:text-2xl max-w-xl drop-shadow-darker space-y-6"
               $subheadline={hero.tagline.color}
             >
               <SanityBlockContent blocks={raw.tagline} />
@@ -117,7 +117,7 @@ const HeroCenter = ({
                   <Button
                     linkType="anchor"
                     secondaryBtn
-                    jumpLink={secondaryCtaButtonLink}
+                    jumpLink={`#${secondaryCtaButtonLink}`}
                     label={secondaryCtaButtonLabel}
                   />
                 </div>

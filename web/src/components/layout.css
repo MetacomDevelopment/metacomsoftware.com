@@ -5,13 +5,13 @@
     @apply capitalize text-2xl;
   }
   h2 {
-    @apply capitalize text-3xl text-primary font-extrabold tracking-tight sm:text-4xl;
+    @apply capitalize text-3xl font-extrabold tracking-tight sm:text-4xl;
   }
   h3 {
-    @apply capitalize text-xl text-secondary font-bold tracking-tight sm:text-2xl;
+    @apply capitalize text-xl font-bold tracking-tight sm:text-2xl;
   }
   h4 {
-    @apply capitalize text-lg text-secondary font-semibold tracking-tight sm:text-xl;
+    @apply capitalize text-lg font-semibold tracking-tight sm:text-xl;
   }
   a {
     @apply cursor-pointer !important;

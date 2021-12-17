@@ -8,7 +8,7 @@ export const query = graphql`
   query ServiceTemplateQ($id: String!) {
     page: sanityPage(id: { eq: $id }) {
       id
-      layout
+      pageType
       metadata {
         title
         slug {
@@ -41,7 +41,7 @@ const ServiceTemplate = (props) => {
   };
 
   return (
-    <Layout layout={sanity.layout}>
+    <Layout layout={sanity.pageType}>
       <SEO title={seo.title} description={seo.description} canonical={seo.slug}>
         <script type="application/ld+json">{`${seo.schema}`}</script>
       </SEO>

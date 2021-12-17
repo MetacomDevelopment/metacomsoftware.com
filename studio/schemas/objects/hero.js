@@ -72,7 +72,7 @@ export default {
     {
       title: 'Secondary CTA Button Link',
       description:
-        'Enter the ID name of the section to jump to (Example: "#features")',
+        'Enter the ID name of the section to jump to (Example: "features")',
       name: 'secondaryCtaButtonLink',
       type: 'string',
       fieldset: 'ctasSet',

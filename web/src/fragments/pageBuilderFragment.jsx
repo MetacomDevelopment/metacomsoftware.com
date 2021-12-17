@@ -192,6 +192,7 @@ export const query = graphql`
         _key
         _type
         _rawBody
+        sidebarType
         alignment
         idName
       }

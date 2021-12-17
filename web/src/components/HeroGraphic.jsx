@@ -54,7 +54,7 @@ const HeroGraphic = ({
       <div className="absolute inset-0">
         <GatsbyImage
           image={bgImg?.asset?.gatsbyImageData}
-          alt={bgImg.alt}
+          alt={bgImg?.alt}
           className="w-full h-full object-cover"
         />
         <Overlay overlay={hero.overlay.color} />

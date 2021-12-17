@@ -6,28 +6,28 @@ export default {
   type: 'document',
   inputComponent: Tabs,
   fieldsets: [
-    { title: 'Layout', name: 'layoutSet' },
+    { title: 'Page Type', name: 'pageTypeSet' },
     { title: 'Anchor Text', name: 'anchorTextSet' },
     { title: 'Metadata', name: 'metadataSet' },
     { title: 'Page Builder', name: 'pageBuilderSet' },
   ],
   fields: [
     {
-      title: 'Page Layout',
-      description: 'Choose a layout for the page...',
-      name: 'layout',
+      title: 'Page Type',
+      description: 'Choose a type for the page...',
+      name: 'pageType',
       type: 'string',
       options: {
         list: [
           { title: 'Brand', value: 'brand' },
           { title: 'Service', value: 'service' },
           { title: 'Location', value: 'location' },
-          { title: 'Post', value: 'Post' },
+          { title: 'Post', value: 'post' },
         ],
         layout: 'radio',
         direction: 'horizontal',
       },
-      fieldset: 'layoutSet',
+      fieldset: 'pageTypeSet',
     },
     {
       title: 'Anchor Text',

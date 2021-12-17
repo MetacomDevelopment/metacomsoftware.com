@@ -10,7 +10,7 @@ export const query = graphql`
     page: sanityPage(id: { eq: $id }) {
       ...PageBuilder
       id
-      layout
+      pageType
       metadata {
         isIndexed
         title
@@ -39,11 +39,11 @@ const PageTemplate = function (props) {
     title: sanity.metadata.title,
     description: sanity.metadata.description,
     slug: `${siteSEO.url}/${sanity.metadata.slug.current}/`,
-    schema: sanity.metadata.schema.code,
+    schema: sanity?.metadata?.schema?.code,
   };
 
   return (
-    <Layout layout={sanity.layout}>
+    <Layout layout={sanity.pageType}>
       <SEO
         title={pageSEO.title}
         description={pageSEO.description}

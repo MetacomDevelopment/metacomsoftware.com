@@ -147,16 +147,16 @@ const NavbarPrimary = () => {
                 </div>
                 <div className="flex-1 flex items-center justify-start sm:items-stretch sm:justify-start">
                   <motion.div
-                    className="flex-shrink-0 flex items-center"
+                    className="flex-shrink-1 flex items-center"
                     variants={variants}
                     initial="initial"
                     animate="animate"
                   >
-                    <div className="flex-shrink-0 flex items-center">
+                    <div className="flex-shrink-1 flex-shrink flex items-center">
                       <Link to="/">
                         <GatsbyImage
                           image={logo.navbar?.asset?.gatsbyImageData}
-                          alt={`${siteSEO.name} company logo`}
+                          alt={`${siteSEO?.name} company logo`}
                           loading="eager"
                           className="transition hover:scale-110"
                         />
@@ -222,9 +222,9 @@ const NavbarPrimary = () => {
                                       >
                                         <Popover.Panel
                                           static
-                                          className="absolute mx-auto z-10 inset-x-0 transform shadow-2xl rounded-2xl w-max"
+                                          className="absolute mx-auto z-10 inset-x-0 transform shadow-2xl rounded-2xl w-max mt-9"
                                         >
-                                          <div className="bg-white">
+                                          <div className="bg-gray-100">
                                             <div className="max-w-max mx-auto grid gap-y-6 px-4 py-6 sm:grid-cols-1 sm:gap-8 sm:px-6 sm:py-8 lg:grid-cols-1 lg:px-8 lg:py-8 xl:py-8">
                                               {dropdown.links.map((link) => (
                                                 <AnchorText

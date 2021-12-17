@@ -1,11 +1,11 @@
 {
   "root": true,
   "api": {
-    "projectId": "ec1ohi1q",
+    "projectId": "5oyu6n98",
     "dataset": "production"
   },
   "project": {
-    "name": "Template - SMB"
+    "name": "Beechtree Energy"
   },
   "plugins": [
     "@sanity/base",
@@ -28,9 +28,7 @@
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [

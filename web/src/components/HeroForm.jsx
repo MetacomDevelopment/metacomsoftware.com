@@ -12,11 +12,21 @@ const StyledHeroHeadline = styled(motion.h1)`
   color: ${(props) => props.$headline};
 `;
 
-const StyledHeroSubheadline = styled(motion.p)`
+const StyledHeroSubheadline = styled(motion.div)`
   color: ${(props) => props.$subheadline};
 `;
 
-const HeroForm = ({ block, raw, index, headline, bgImg }) => {
+const HeroForm = ({
+  block,
+  raw,
+  index,
+  headline,
+  bgImg,
+  primaryCtaButtonLabel,
+  primaryCtaButtonLink,
+  secondaryCtaButtonLabel,
+  secondaryCtaButtonLink,
+}) => {
   // const { headline, bgImg, alt } = block;
 
   const variants = {
@@ -43,7 +53,7 @@ const HeroForm = ({ block, raw, index, headline, bgImg }) => {
       <div className="absolute inset-0">
         <GatsbyImage
           image={bgImg?.asset?.gatsbyImageData}
-          alt={bgImg.alt}
+          alt={bgImg?.alt}
           className="w-full h-full object-cover"
         />
         <Overlay overlay={hero.overlay.color} />
@@ -72,7 +82,7 @@ const HeroForm = ({ block, raw, index, headline, bgImg }) => {
           >
             <SanityBlockContent blocks={raw.tagline} />
           </StyledHeroSubheadline>
-          {/* <motion.div
+          <motion.div
             ref={ref}
             variants={variants}
             initial="hidden"
@@ -84,9 +94,13 @@ const HeroForm = ({ block, raw, index, headline, bgImg }) => {
             className="flex mt-10"
           >
             <div className="mx-auto lg:mx-0 max">
-              <Button linkType="internal" />
+              <Button
+                linkType="internal"
+                internalLink={primaryCtaButtonLink.metadata.slug.current}
+                label={primaryCtaButtonLabel}
+              />
             </div>
-          </motion.div> */}
+          </motion.div>
         </Flex>
         <Flex classes="flex-col justify-center relative mx-auto lg:max-w-lg">
           <div className="overflow-hidden">

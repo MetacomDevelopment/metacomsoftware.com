@@ -81,7 +81,7 @@
 //       <div className="absolute inset-0">
 //         <GatsbyImage
 //           image={sanity.bgImg?.asset?.gatsbyImageData}
-//           alt={sanity.bgImg.alt}
+//           alt={sanity.bgImg?.alt}
 //           className="w-full h-full object-cover"
 //         />
 //         <StyledHeroOverlay

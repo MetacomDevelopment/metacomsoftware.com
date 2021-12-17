@@ -33,40 +33,22 @@ const GlobalStyles = styled.div`
   }
 `;
 
-const Layout = ({ layout, children }) => {
+const Layout = function ({ pageType, children }) {
   const { primary, secondary, accent, neutral, hero } = useSanity();
 
-  switch (layout) {
-    default:
-      return (
-        <div>
-          <Header />
-          <GlobalStyles
-            linkColor={accent.default.color}
-            link$colorHover={accent.light.color}
-            h2Color={primary.dark.color}
-            h3Color={neutral.dark.color}
-            h4Color={neutral.default.color}
-            h5Color={neutral.default.color}
-            h6Color={neutral.default.color}
-          >
-            <main>{children}</main>
-          </GlobalStyles>
-          <Footer type="brand" />
-        </div>
-      );
+  switch (pageType) {
     case 'brand':
       return (
         <div>
           <Header />
           <GlobalStyles
-            linkColor={accent.default.color}
-            link$colorHover={accent.light.color}
-            h2Color={secondary.default.color}
-            h3Color={secondary.dark.color}
-            h4Color={neutral.dark.color}
-            h5Color={neutral.default.color}
-            h6Color={neutral.default.color}
+            $linkColor={accent.default.color}
+            $link$colorHover={accent.light.color}
+            $h2Color={primary.dark.color}
+            $h3Color={secondary.dark.color}
+            $h4Color={neutral.dark.color}
+            $h5Color={neutral.default.color}
+            $h6Color={neutral.default.color}
           >
             <main>{children}</main>
           </GlobalStyles>
@@ -78,13 +60,13 @@ const Layout = ({ layout, children }) => {
         <div>
           <Header />
           <GlobalStyles
-            linkColor={accent.default.color}
-            link$colorHover={accent.light.color}
-            h2Color={secondary.default.color}
-            h3Color={secondary.dark.color}
-            h4Color={neutral.dark.color}
-            h5Color={neutral.default.color}
-            h6Color={neutral.default.color}
+            $linkColor={accent.default.color}
+            $link$colorHover={accent.light.color}
+            $h2Color={primary.dark.color}
+            $h3Color={secondary.dark.color}
+            $h4Color={neutral.dark.color}
+            $h5Color={neutral.default.color}
+            $h6Color={neutral.default.color}
           >
             <main>{children}</main>
           </GlobalStyles>
@@ -96,13 +78,13 @@ const Layout = ({ layout, children }) => {
         <div>
           <Header />
           <GlobalStyles
-            linkColor={accent.default.color}
-            link$colorHover={accent.light.color}
-            h2Color={secondary.default.color}
-            h3Color={secondary.dark.color}
-            h4Color={neutral.dark.color}
-            h5Color={neutral.default.color}
-            h6Color={neutral.default.color}
+            $linkColor={accent.default.color}
+            $link$colorHover={accent.light.color}
+            $h2Color={primary.dark.color}
+            $h3Color={secondary.dark.color}
+            $h4Color={neutral.dark.color}
+            $h5Color={neutral.default.color}
+            $h6Color={neutral.default.color}
           >
             <main>{children}</main>
           </GlobalStyles>
@@ -114,13 +96,31 @@ const Layout = ({ layout, children }) => {
         <div>
           <Header />
           <GlobalStyles
-            linkColor={accent.default.color}
-            link$colorHover={accent.light.color}
-            h2Color={secondary.default.color}
-            h3Color={secondary.dark.color}
-            h4Color={neutral.dark.color}
-            h5Color={neutral.default.color}
-            h6Color={neutral.default.color}
+            $linkColor={accent.default.color}
+            $link$colorHover={accent.light.color}
+            $h2Color={primary.dark.color}
+            $h3Color={secondary.dark.color}
+            $h4Color={neutral.dark.color}
+            $h5Color={neutral.default.color}
+            $h6Color={neutral.default.color}
+          >
+            <main>{children}</main>
+          </GlobalStyles>
+          <Footer type="brand" />
+        </div>
+      );
+    default:
+      return (
+        <div>
+          <Header />
+          <GlobalStyles
+            $linkColor={accent.default.color}
+            $link$colorHover={accent.light.color}
+            $h2Color={primary.dark.color}
+            $h3Color={secondary.dark.color}
+            $h4Color={neutral.dark.color}
+            $h5Color={neutral.default.color}
+            $h6Color={neutral.default.color}
           >
             <main>{children}</main>
           </GlobalStyles>

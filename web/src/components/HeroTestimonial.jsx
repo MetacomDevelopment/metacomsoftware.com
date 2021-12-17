@@ -13,7 +13,7 @@ const StyledHeroHeadline = styled(motion.h1)`
   color: ${(props) => props.$headline};
 `;
 
-const StyledHeroSubheadline = styled(motion.p)`
+const StyledHeroSubheadline = styled(motion.div)`
   color: ${(props) => props.$subheadline};
 `;
 
@@ -22,7 +22,18 @@ const StyledTestimonial = styled(motion.div)`
   color: ${(props) => props.$color};
 `;
 
-const Hero = ({ block, raw, index, headline, bgImg, testimonial }) => {
+const Hero = ({
+  block,
+  raw,
+  index,
+  headline,
+  bgImg,
+  testimonial,
+  primaryCtaButtonLabel,
+  primaryCtaButtonLink,
+  secondaryCtaButtonLabel,
+  secondaryCtaButtonLink,
+}) => {
   // const { headline, bgImg, alt } = block;
 
   const variants = {
@@ -49,7 +60,7 @@ const Hero = ({ block, raw, index, headline, bgImg, testimonial }) => {
       <div className="absolute inset-0">
         <GatsbyImage
           image={bgImg?.asset?.gatsbyImageData}
-          alt={bgImg.alt}
+          alt={bgImg?.alt}
           className="w-full h-full object-cover"
         />
         <Overlay overlay={hero.overlay.color} />
@@ -89,8 +100,12 @@ const Hero = ({ block, raw, index, headline, bgImg, testimonial }) => {
             }}
             className="flex mt-10"
           >
-            <div className="mx-auto lg:mx-0">
-              <Button linkType="internal" />
+            <div className="mx-auto lg:mx-0 max">
+              <Button
+                linkType="internal"
+                internalLink={primaryCtaButtonLink.metadata.slug.current}
+                label={primaryCtaButtonLabel}
+              />
             </div>
           </motion.div>
         </Flex>
@@ -125,10 +140,8 @@ const Hero = ({ block, raw, index, headline, bgImg, testimonial }) => {
                     <Grid classes="grid-cols-12 gap-x-2 content-center">
                       <div className="col-span-3 lg:col-span-2 mr-3">
                         <GatsbyImage
-                          image="../assets/images/testimonials/kate-linkedin-5-star-review-engineering-job-recruiter-agency-all-star-connections.jpg"
-                          // image={testimonial.authorImg?.asset?.gatsbyImageData}
-                          alt="Test"
-                          // alt={testimonial.authorImg.alt}
+                          image={testimonial?.authorImg?.asset?.gatsbyImageData}
+                          alt={testimonial?.authorImg?.alt}
                           className="w-full h-full rounded-full"
                         />
                       </div>

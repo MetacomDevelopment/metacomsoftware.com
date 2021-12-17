@@ -8,11 +8,30 @@ export default {
   icon,
   inputComponent: Tabs,
   fieldsets: [
+    { title: 'Sidebar', name: 'sidebarSet' },
     { title: 'Alignment', name: 'alignmentSet' },
     { title: 'Section ID', name: 'sectionIdSet' },
     { title: 'Rich Text', name: 'richTextSet' },
   ],
   fields: [
+    {
+      title: 'Sidebar',
+      description: 'Choose a sidebar for the rich text section...',
+      name: 'sidebarType',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'None', value: 'none' },
+          { title: 'Service', value: 'service' },
+          { title: 'Location', value: 'location' },
+          { title: 'Post', value: 'post' },
+        ],
+        layout: 'radio',
+        direction: 'horizontal',
+      },
+      initialValue: 'none',
+      fieldset: 'sidebarSet',
+    },
     {
       title: 'Text Alignment',
       description: 'Choose an alignment for the rich text section...',
@@ -20,15 +39,15 @@ export default {
       type: 'string',
       options: {
         list: [
-          { title: 'Left', value: 'left' },
-          { title: 'Center', value: 'center' },
-          { title: 'Right', value: 'right' },
-          { title: 'Justify', value: 'justify' },
+          { title: 'Left', value: 'text-left' },
+          { title: 'Center', value: 'text-center' },
+          { title: 'Right', value: 'text-right' },
+          { title: 'Justify', value: 'text-justify' },
         ],
         layout: 'radio',
         direction: 'horizontal',
       },
-      initialValue: 'left',
+      initialValue: 'text-left',
       fieldset: 'alignmentSet',
     },
     {
