@@ -4,7 +4,8 @@ import { Section, Container, AnchorText } from '.';
 import { useSanity } from '../hooks';
 
 const FooterTerms = () => {
-  const { siteSEO, primary, secondary, accent, neutral, hero } = useSanity();
+  const { siteSEO, primary, secondary, accent, neutral, hero, info } =
+    useSanity();
 
   return (
     <Section
@@ -37,10 +38,10 @@ const FooterTerms = () => {
           </AnchorText>{' '}
           |{' '}
           <AnchorText
-            type="internal"
+            type="external"
             color={accent.default.color}
             colorHover={accent.light.color}
-            to="/"
+            href={`${info.websiteUrl}/sitemap.xml`}
           >
             Website Sitemap
           </AnchorText>

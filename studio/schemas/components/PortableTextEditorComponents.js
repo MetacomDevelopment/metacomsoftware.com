@@ -12,5 +12,5 @@ export const highlightIcon = () => (
 );
 
 export const highlightRender = (props) => (
-  <span style={{ backgroundColor: 'yellow' }}>{props.children}</span>
+  <span style={{ backgroundColor: 'gold !important' }}>{props.children}</span>
 );

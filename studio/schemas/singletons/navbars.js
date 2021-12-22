@@ -8,12 +8,50 @@ export default {
   icon,
   inputComponent: Tabs,
   fieldsets: [
-    { title: 'CTA', name: 'primaryNavCtaSet' },
+    { title: 'Layout', name: 'layoutSet' },
+    { title: 'Theme', name: 'themeSet' },
     { title: 'Menu', name: 'primaryNavLinksSet' },
-    { title: 'NAP', name: 'secondaryNavNapSet' },
+    { title: 'CTA', name: 'primaryNavCtaSet' },
     { title: 'Socials', name: 'secondaryNavSocialSet' },
   ],
   fields: [
+    {
+      title: 'Layout',
+      name: 'layout',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Primary Only', value: 'primaryOnly' },
+          { title: 'Primary + Secondary', value: 'primarySecondary' },
+        ],
+        layout: 'radio',
+        direction: 'horizontal',
+      },
+      fieldset: 'layoutSet',
+    },
+    {
+      title: 'Theme',
+      name: 'theme',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Light', value: 'light' },
+          { title: 'Dark', value: 'dark' },
+        ],
+        layout: 'radio',
+        direction: 'horizontal',
+      },
+      fieldset: 'themeSet',
+    },
+    {
+      title: 'Page Links',
+      description:
+        'Add items to the primary navbar: dropdown menus with links and/or single links.',
+      name: 'navItem',
+      type: 'array',
+      of: [{ type: 'navItem' }],
+      fieldset: 'primaryNavLinksSet',
+    },
     {
       title: 'Button Label',
       description:
@@ -30,32 +68,6 @@ export default {
       type: 'reference',
       to: [{ type: 'page' }],
       fieldset: 'primaryNavCtaSet',
-    },
-    {
-      title: 'Page Links',
-      description:
-        'Add items to the primary navbar: dropdown menus with links and/or single links.',
-      name: 'navItem',
-      type: 'array',
-      of: [{ type: 'navItem' }],
-      fieldset: 'primaryNavLinksSet',
-    },
-    {
-      title: 'Contact Links',
-      description: 'Add contact links to the secondary navbar.',
-      name: 'contactLinks',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [
-            {
-              type: 'nap',
-            },
-          ],
-        },
-      ],
-      fieldset: 'secondaryNavNapSet',
     },
     {
       title: 'Social Media Links',

@@ -52,7 +52,7 @@ const Layout = function ({ pageType, children }) {
           >
             <main>{children}</main>
           </GlobalStyles>
-          <Footer type="brand" />
+          <Footer />
         </div>
       );
     case 'service':
@@ -70,7 +70,7 @@ const Layout = function ({ pageType, children }) {
           >
             <main>{children}</main>
           </GlobalStyles>
-          <Footer type="brand" />
+          <Footer />
         </div>
       );
     case 'location':
@@ -88,7 +88,7 @@ const Layout = function ({ pageType, children }) {
           >
             <main>{children}</main>
           </GlobalStyles>
-          <Footer type="brand" />
+          <Footer />
         </div>
       );
     case 'post':
@@ -106,7 +106,7 @@ const Layout = function ({ pageType, children }) {
           >
             <main>{children}</main>
           </GlobalStyles>
-          <Footer type="brand" />
+          <Footer />
         </div>
       );
     default:
@@ -124,7 +124,7 @@ const Layout = function ({ pageType, children }) {
           >
             <main>{children}</main>
           </GlobalStyles>
-          <Footer type="brand" />
+          <Footer />
         </div>
       );
   }

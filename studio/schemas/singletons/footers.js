@@ -8,17 +8,50 @@ export default {
   icon,
   inputComponent: Tabs,
   fieldsets: [
-    { title: 'First Column', name: 'colFirstSet' },
-    { title: 'Middle Columns', name: 'colMiddleSet' },
-    { title: 'Last Column', name: 'colLastSet' },
+    { title: 'Layout', name: 'layoutSet' },
+    { title: 'Form', name: 'formSet' },
+    { title: 'Map', name: 'mapSet' },
+    { title: 'Brand', name: 'brandSet' },
+    { title: 'Links', name: 'linksSet' },
   ],
   fields: [
+    {
+      title: 'Additional Sections',
+      name: 'layout',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'None', value: 'none' },
+          { title: 'Form Only', value: 'formOnly' },
+          { title: 'Map Only', value: 'mapOnly' },
+          { title: 'Form + Map', value: 'formMap' },
+        ],
+        layout: 'radio',
+        direction: 'horizontal',
+      },
+      fieldset: 'layoutSet',
+    },
+    {
+      title: 'Background Image',
+      description: 'Select a background image for the form section.',
+      name: 'bgImg',
+      type: 'imageAlt',
+      fieldset: 'formSet',
+    },
+    {
+      title: 'Map Location',
+      description: 'Select a GMB.',
+      name: 'gmb',
+      type: 'reference',
+      to: [{ type: 'gmb' }],
+      fieldset: 'mapSet',
+    },
     {
       title: 'Tagline',
       description: 'Add a tagline below the logo.',
       name: 'tagline',
       type: 'string',
-      fieldset: 'colFirstSet',
+      fieldset: 'brandSet',
     },
     {
       title: 'Social Media Links',
@@ -35,7 +68,7 @@ export default {
           ],
         },
       ],
-      fieldset: 'colFirstSet',
+      fieldset: 'brandSet',
     },
     {
       title: 'Middle Columns',
@@ -43,24 +76,7 @@ export default {
       name: 'footerItem',
       type: 'array',
       of: [{ type: 'footerItem' }],
-      fieldset: 'colMiddleSet',
-    },
-    {
-      title: 'Contact Links',
-      description: 'Add contact links to the last column in the footer.',
-      name: 'contactLinks',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [
-            {
-              type: 'nap',
-            },
-          ],
-        },
-      ],
-      fieldset: 'colLastSet',
+      fieldset: 'linksSet',
     },
   ],
 };

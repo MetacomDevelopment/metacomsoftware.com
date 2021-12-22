@@ -6,7 +6,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 import { useSanity } from '../hooks';
-import { SanityBlockContent, Button, FormHero, Grid, Flex, Overlay } from '.';
+import { SanityBlockContent, Button, Form, Grid, Flex, Overlay } from '.';
 
 const StyledHeroHeadline = styled(motion.h1)`
   color: ${(props) => props.$headline};
@@ -104,7 +104,7 @@ const HeroForm = ({
         </Flex>
         <Flex classes="flex-col justify-center relative mx-auto lg:max-w-lg">
           <div className="overflow-hidden">
-            <FormHero />
+            <Form formName="form-hero" />
           </div>
         </Flex>
       </Grid>

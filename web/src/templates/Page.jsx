@@ -55,7 +55,9 @@ const PageTemplate = function (props) {
         <meta
           name="robots"
           content={
-            sanity.metadata.isIndexed === true
+            siteSEO.isIndexed === false
+              ? 'noindex, nofollow'
+              : sanity.metadata.isIndexed === true
               ? 'index, follow'
               : 'noindex, nofollow'
           }

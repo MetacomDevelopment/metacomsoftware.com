@@ -3,18 +3,50 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../utils/FontAwesomeIconLibrary';
 
-import { Section, Flex, AnchorText } from '.';
+import { Section, Container, Flex, Grid, Col, AnchorText } from '.';
 import { useSanity } from '../hooks';
 
-const LinkFooter = () => {
-  const { logo, footers, siteSEO, primary, secondary, accent, neutral, hero } =
-    useSanity();
+const FooterLinks = () => {
+  const {
+    logo,
+    footers,
+    siteSEO,
+    primary,
+    secondary,
+    accent,
+    neutral,
+    hero,
+    info,
+  } = useSanity();
+
+  const nap = [
+    {
+      icon: 'fas fa-phone',
+      anchor: info.phone,
+      url: info.phoneUrl,
+    },
+    {
+      icon: 'fas fa-envelope',
+      anchor: info.emailAddress,
+      url: info.emailUrl,
+    },
+    {
+      icon: 'fas fa-map-marker-alt',
+      anchor: info.address,
+      url: info.addressUrl,
+    },
+    {
+      icon: 'fas fa-clock',
+      anchor: info.hours,
+      url: info.hoursUrl,
+    },
+  ];
 
   return (
     <Section padding="sm" bgColor={neutral.lighter.color}>
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-        <Flex classes="justify-around flex-col lg:flex-row">
-          <div className="space-y-6">
+      <Container padding="sm" classes="py-12 lg:py-16">
+        <Grid classes="grid-cols-1 lg:grid-cols-3 gap-y-12 lg:gap-24 mx-auto justify-center">
+          <Col classes="col-span-1 space-y-6">
             <div className="mx-auto text-center">
               <GatsbyImage
                 image={logo.footer?.asset?.gatsbyImageData}
@@ -26,7 +58,7 @@ const LinkFooter = () => {
             {footers.map((footer) => (
               <p
                 key={footer.id}
-                className="text-primary text-base text-center italic"
+                className="text-primary text-base text-center italic max-w-xs mx-auto gap"
               >
                 {footer.tagline}
               </p>
@@ -52,63 +84,63 @@ const LinkFooter = () => {
                 ))
               )}
             </div>
-          </div>
-          <Flex classes="justify-between grid grid-cols-2 lg:grid-flow-col flex-col lg:flex-row gap-12">
-            {footers.map((footer) =>
-              footer.footerItem.map((item) => (
-                <div key={item._key} className="mt-12 xl:mt-0">
-                  <h4 className="text-md font-semibold text-zinc-800 tracking-tight uppercase">
-                    {item.headline}
-                  </h4>
-                  <ul className="mt-4 space-y-4">
-                    {item.links.map((link) => (
-                      <li key={link.id}>
-                        <AnchorText
-                          type="internal"
-                          color={neutral.default.color}
-                          colorHover={accent.default.color}
-                          to={
-                            link.metadata.slug.current === 'home'
-                              ? '/'
-                              : `/${link.metadata.slug.current}/`
-                          }
-                          className="text-base break-words"
-                        >
-                          <span className="break-words">{link.anchor}</span>
-                        </AnchorText>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))
-            )}
-            <div className="mt-12 xl:mt-0">
-              <h4 className="text-md font-semibold text-zinc-800 tracking-wider uppercase">
-                Get In Touch
-              </h4>
-              <ul className="mt-4 space-y-4">
-                {footers.map((item) =>
-                  item.contactLinks.map((contact) => (
-                    <li key={contact.id}>
+          </Col>
+          <Col classes="col-span-2">
+            <Grid classes="grid-cols-1 lg:grid-cols-3 gap-12 mx-auto justify-end">
+              {footers.map((footer) =>
+                footer.footerItem.map((item) => (
+                  <Col key={item._key} classes="mt-12 xl:mt-0">
+                    <h4 className="text-md font-semibold text-zinc-800 tracking-tight uppercase">
+                      {item.headline}
+                    </h4>
+                    <ul className="mt-4 space-y-4">
+                      {item.links.map((link) => (
+                        <li key={link.id}>
+                          <AnchorText
+                            type="internal"
+                            color={neutral.default.color}
+                            colorHover={accent.default.color}
+                            to={
+                              link.metadata.slug.current === 'home'
+                                ? '/'
+                                : `/${link.metadata.slug.current}/`
+                            }
+                            className="text-base break-words"
+                          >
+                            <span className="break-words">{link.anchor}</span>
+                          </AnchorText>
+                        </li>
+                      ))}
+                    </ul>
+                  </Col>
+                ))
+              )}
+              <Col classes="mt-12 xl:mt-0">
+                <h4 className="text-md font-semibold text-zinc-800 tracking-wider uppercase">
+                  Get In Touch
+                </h4>
+                <ul className="mt-4 space-y-4">
+                  {nap.map((item) => (
+                    <li key={item.anchor}>
                       <AnchorText
                         type="external"
                         color={neutral.default.color}
                         colorHover={accent.default.color}
-                        href={contact.url}
+                        href={item.url}
                         className="text-base break-all"
                       >
-                        {contact.anchor}
+                        {item.anchor}
                       </AnchorText>
                     </li>
-                  ))
-                )}
-              </ul>
-            </div>
-          </Flex>
-        </Flex>
-      </div>
+                  ))}
+                </ul>
+              </Col>
+            </Grid>
+          </Col>
+        </Grid>
+      </Container>
     </Section>
   );
 };
 
-export default LinkFooter;
+export default FooterLinks;

@@ -88,8 +88,35 @@ const StyledDropdownLabelChevron = styled.svg`
 `;
 
 const NavbarPrimary = () => {
-  const { siteSEO, logo, navbars, primary, secondary, accent, neutral, hero } =
-    useSanity();
+  const {
+    siteSEO,
+    logo,
+    navbars,
+    primary,
+    secondary,
+    accent,
+    neutral,
+    hero,
+    info,
+  } = useSanity();
+
+  const nap = [
+    {
+      icon: 'fas fa-map-marker-alt',
+      anchor: info.address,
+      url: info.addressUrl,
+    },
+    {
+      icon: 'fas fa-envelope',
+      anchor: info.emailAddress,
+      url: info.emailUrl,
+    },
+    {
+      icon: 'fas fa-phone',
+      anchor: info.phone,
+      url: info.phoneUrl,
+    },
+  ];
 
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ');
@@ -404,23 +431,17 @@ const NavbarPrimary = () => {
                     ))}
                   </Row>
                   <Grid classes="pt-10 pb-4 grid-cols-3">
-                    {navbars.map((item) =>
-                      item.contactLinks.map((contact) => (
-                        <Col key={contact.id} classes="mx-auto">
-                          <div className="flex my-auto px-6">
-                            <a
-                              href={contact.url}
-                              target="_blank"
-                              rel="noopener"
-                            >
-                              <i
-                                className={`${contact.icon} fa-2x text-white hover:text-accent`}
-                              />
-                            </a>
-                          </div>
-                        </Col>
-                      ))
-                    )}
+                    {nap.map((contact) => (
+                      <Col key={contact.anchor} classes="mx-auto">
+                        <div className="flex my-auto px-6">
+                          <a href={contact.url} target="_blank" rel="noopener">
+                            <i
+                              className={`${contact.icon} fa-2x text-white hover:text-accent`}
+                            />
+                          </a>
+                        </div>
+                      </Col>
+                    ))}
                   </Grid>
                 </StyledMobileNavCtaBg>
               </Grid>

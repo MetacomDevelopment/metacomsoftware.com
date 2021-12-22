@@ -1,8 +1,8 @@
 import { FaUserEdit as icon } from 'react-icons/fa';
 
 export default {
-  name: 'author',
-  title: 'Authors',
+  name: 'employee',
+  title: 'Team Member',
   type: 'document',
   icon,
   fields: [

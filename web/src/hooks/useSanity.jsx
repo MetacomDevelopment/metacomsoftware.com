@@ -18,6 +18,19 @@ const useSanitySettings = () => {
           }
         }
       }
+      sanityBusinessInfo {
+        address
+        addressUrl
+        emailAddress
+        emailUrl
+        hours
+        hoursUrl
+        name
+        owner
+        phone
+        phoneUrl
+        websiteUrl
+      }
       sanityBusinessLogo {
         navbar {
           alt
@@ -54,6 +67,7 @@ const useSanitySettings = () => {
       allSanityNavbars {
         nodes {
           _key
+          layout
           primaryNavCtaButtonLabel
           primaryNavCtaButtonLink {
             metadata {
@@ -90,13 +104,6 @@ const useSanitySettings = () => {
               }
             }
           }
-          contactLinks {
-            _key
-            id
-            anchor
-            url
-            icon
-          }
           socialLinks {
             _id
             id
@@ -109,26 +116,23 @@ const useSanitySettings = () => {
       allSanityFooters {
         nodes {
           id
+          layout
+          gmb {
+            gmbEmbed
+          }
           tagline
+          bgImg {
+            alt
+            asset {
+              gatsbyImageData(placeholder: BLURRED, formats: WEBP)
+            }
+          }
           footerItem {
             _key
             headline
             links {
               id
               anchor
-              metadata {
-                slug {
-                  current
-                }
-              }
-            }
-          }
-          contactLinks {
-            id
-            anchor
-            url
-            icon
-            page {
               metadata {
                 slug {
                   current
@@ -229,37 +233,47 @@ const useSanitySettings = () => {
           color
         }
       }
+      allSanityForms {
+        nodes {
+          id
+          layout
+          headline
+          _rawTagline
+        }
+      }
     }
   `);
 
-  // const info = data.sanityBusinessInfo;
   // const metadata = data.sanityBusinessMetadata;
-  const socials = data.allSanitySocial.nodes;
-  const siteSEO = data.sanityBusinessSeo;
+  const accent = data.sanityColorsAccent;
+  const footers = data.allSanityFooters.nodes;
+  const forms = data.allSanityForms.nodes;
+  const hero = data.sanityColorsHero;
+  const info = data.sanityBusinessInfo;
   const logo = data.sanityBusinessLogo;
   const navbars = data.allSanityNavbars.nodes;
-  const footers = data.allSanityFooters.nodes;
+  const neutral = data.sanityColorsNeutral;
   const primary = data.sanityColorsPrimary;
   const secondary = data.sanityColorsSecondary;
-  const accent = data.sanityColorsAccent;
-  const neutral = data.sanityColorsNeutral;
-  const hero = data.sanityColorsHero;
+  const siteSEO = data.sanityBusinessSeo;
+  const socials = data.allSanitySocial.nodes;
 
   return {
-    // info,
+    info,
     // logos,
     // locations,
     // metadata,
-    socials,
-    siteSEO,
+    accent,
+    footers,
+    forms,
+    hero,
     logo,
     navbars,
-    footers,
+    neutral,
     primary,
     secondary,
-    accent,
-    neutral,
-    hero,
+    siteSEO,
+    socials,
   };
 };
 

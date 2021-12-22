@@ -9,7 +9,20 @@ const SanityBlockContent = ({ blocks, classes }) => {
   const { primary, secondary, accent, neutral, hero } = useSanity();
 
   const serializers = {
+    list: (props) => {
+      const { type } = props;
+      const bullet = type === 'bullet';
+      if (bullet) {
+        return <ul className="sanity-ul">{props.children}</ul>;
+      }
+      return <ol className="sanity-ol">{props.children}</ol>;
+    },
+
+    listItem: ({ children }) => <li className="">{children}</li>,
     marks: {
+      highlight: ({ children }) => (
+        <span className="font-bold bg-yellow-400">{children}</span>
+      ),
       internalLink: ({ mark, children }) => {
         const { reference = {} } = mark;
         const href =
@@ -74,12 +87,12 @@ const SanityBlockContent = ({ blocks, classes }) => {
       variants={variants}
       initial="initial"
       animate={controls}
-      className={`space-y-6 sanity-list ${classes}`}
+      className={`space-y-6 ${classes}`}
     >
       <BlockContent
         blocks={blocks}
         serializers={serializers}
-        className={`space-y-6 sanity-list ${classes}`}
+        className={`space-y-6 sanity-headlines ${classes}`}
       />
     </motion.div>
   );

@@ -16,7 +16,7 @@ export default {
   fields: [
     {
       title: 'Allow Google to index this page?',
-      description: 'OFF = "noindex, nofollow"; ON = "index, follow"',
+      description: `NOTE: The sitewide deindex setting will override this. Otherwise: OFF = "noindex, nofollow"; ON = "index, follow"; `,
       name: 'isIndexed',
       type: 'boolean',
       initialValue: true,

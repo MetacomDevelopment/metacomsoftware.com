@@ -45,7 +45,26 @@ const StyledSocialLinks = styled.a`
 `;
 
 const NavbarSecondary = function () {
-  const { navbars, primary, secondary, accent, neutral, hero } = useSanity();
+  const { navbars, primary, secondary, accent, neutral, hero, info } =
+    useSanity();
+
+  const nap = [
+    {
+      icon: 'fas fa-map-marker-alt',
+      anchor: info.address,
+      url: info.addressUrl,
+    },
+    {
+      icon: 'fas fa-envelope',
+      anchor: info.emailAddress,
+      url: info.emailUrl,
+    },
+    {
+      icon: 'fas fa-phone',
+      anchor: info.phone,
+      url: info.phoneUrl,
+    },
+  ];
 
   return (
     <Section
@@ -55,24 +74,22 @@ const NavbarSecondary = function () {
     >
       <Container padding="sm" classes="max-w-7xl px-4">
         <Flex classes="justify-end align-items-center h-12">
-          {navbars.map((item) =>
-            item.contactLinks.map((contact) => (
-              <Flex key={contact.id} classes="my-auto px-6">
-                <StyledContactLinks
-                  $iconColor={accent.default.color}
-                  $iconColorHover={accent.light.color}
-                  $textColor={neutral.white.color}
-                  $textColorHover={accent.light.color}
-                  href={contact.url}
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <i className={`${contact.icon} mr-3`} />
-                  <span className="text-md font-thin">{contact.anchor}</span>
-                </StyledContactLinks>
-              </Flex>
-            ))
-          )}
+          {nap.map((item) => (
+            <Flex key={item.anchor} classes="my-auto px-6">
+              <StyledContactLinks
+                $iconColor={accent.default.color}
+                $iconColorHover={accent.light.color}
+                $textColor={neutral.white.color}
+                $textColorHover={accent.light.color}
+                href={item.url}
+                target="_blank"
+                rel="noopener"
+              >
+                <i className={`${item.icon} mr-3`} />
+                <span className="text-md font-thin">{item.anchor}</span>
+              </StyledContactLinks>
+            </Flex>
+          ))}
           {navbars.map((item) =>
             item.socialLinks.map((social) => (
               <Flex key={social._id} classes="my-auto pl-3">

@@ -12,44 +12,66 @@ import {
   Row,
   Col,
   Flex,
+  FadeIn,
   SanityBlockContent,
   AnchorText,
 } from '.';
 import { useSanity } from '../hooks';
 
-const StyledServices = styled((props) => <Link {...props} />)`
-  background-color: ${(props) => props.$bgColor};
-  &:hover {
-    background-color: ${(props) => props.$bgColorHover};
+const StyledContactLinks = styled.a`
+  & i {
+    color: ${(props) => props.$iconColor};
+    transition: all 0.25s;
+    &:hover {
+      color: ${(props) => props.$iconColorHover};
+      transition: all 0.25s;
+    }
   }
-`;
-
-const StyledCol = styled((props) => <Col {...props} />)`
-  order: ${(props) => props.$classes};
-`;
-
-const StyledHeadline = styled.span`
-  color: #fff !important;
-  &:hover {
-    color: #ggg !important;
-  }
-`;
-
-const StyledLink = styled((props) => <Link {...props} />)`
-  color: ${(props) => props.$color} !important;
-  &:hover {
-    color: ${(props) => props.$colorHover} !important;
+  & span {
+    color: ${(props) => props.$textColor};
+    transition: all 0.25s;
+    &:hover {
+      color: ${(props) => props.$textColorHover};
+      transition: all 0.25s;
+    }
   }
 `;
 
 const ContactMap = function ({ block, raw, index, contact, socialLinks }) {
-  const { primary, secondary, accent, neutral, hero } = useSanity();
+  const { primary, secondary, accent, neutral, hero, info } = useSanity();
+
+  const nap = [
+    {
+      id: 1,
+      icon: 'fas fa-phone',
+      anchor: info.phone,
+      url: info.phoneUrl,
+    },
+    {
+      id: 2,
+      icon: 'fas fa-envelope',
+      anchor: info.emailAddress,
+      url: info.emailUrl,
+    },
+    {
+      id: 3,
+      icon: 'fas fa-map-marker-alt',
+      anchor: info.address,
+      url: info.addressUrl,
+    },
+    {
+      id: 4,
+      icon: 'fas fa-clock',
+      anchor: info.hours,
+      url: info.hoursUrl,
+    },
+  ];
 
   return (
     <Section
       type="my"
       bgColor={neutral.lighter.color}
-      h2Color={neutral.lighter.color}
+      h2Color={accent.default.color}
     >
       <Container classes="space-y-24">
         <Grid classes="lg:grid-cols-1 gap-x-12 gap-y-32">
@@ -157,156 +179,50 @@ const ContactMap = function ({ block, raw, index, contact, socialLinks }) {
                       </defs>
                     </svg>
                   </div>
-                  <h2 className="text-3xl lg:text-4xl font-bold text-accent">
-                    {item.headline}
-                  </h2>
-                  <div className="mt-6 text-base text-indigo-50 max-w-3xl">
-                    <SanityBlockContent blocks={item._rawDescription} />
-                  </div>
-                  {item.gmb.map((gmb) => (
-                    <div key={gmb._id}>
-                      <dl className="mt-8 space-y-6">
-                        <dt>
-                          <span className="sr-only">Phone number</span>
-                        </dt>
-                        <dd className="flex text-base text-yellow-100">
-                          <div className="flex my-auto">
-                            <AnchorText
-                              type="external"
-                              color={accent.default.color}
-                              colorHover={accent.light.color}
-                              href={gmb.phoneUrl}
-                              classes="flex"
-                            >
-                              <i className="fas fa-2x fa-phone mr-4 text-yellow-500 hover:text-yellow-400" />
-                              <span className="text-yellow-100 hover:text-yellow-600 text-lg">
-                                {gmb.phone}
-                              </span>
-                            </AnchorText>
-                          </div>
-                        </dd>
-                        <dt>
-                          <span className="sr-only">Email</span>
-                        </dt>
-                        <dd className="flex text-base">
-                          <div className="flex my-auto">
-                            <AnchorText
-                              type="external"
-                              color={accent.default.color}
-                              colorHover={accent.light.color}
-                              href={gmb.emailUrl}
-                              classes="flex"
-                            >
-                              <i className="fas fa-2x fa-envelope mr-4 text-yellow-500 hover:text-yellow-400" />
-                              <span className="text-yellow-100 hover:text-yellow-600 text-lg break-all">
-                                {gmb.emailAddress}
-                              </span>
-                            </AnchorText>
-                          </div>
-                        </dd>
-                        <dt>
-                          <span className="sr-only">Address</span>
-                        </dt>
-                        <dd className="flex text-base text-yellow-100">
-                          <div className="flex my-auto">
-                            <AnchorText
-                              type="external"
-                              color={accent.default.color}
-                              colorHover={accent.light.color}
-                              href={gmb.gmbCid}
-                              className="flex"
-                            >
-                              <i className="fas fa-2x fa-map-marker-alt mr-4 text-yellow-500 hover:text-yellow-400" />
-                              <span className="text-yellow-100 hover:text-yellow-600 text-lg ml-2">
-                                {gmb.address}
-                              </span>
-                            </AnchorText>
-                          </div>
-                        </dd>
-                        <dt>
-                          <span className="sr-only">Website</span>
-                        </dt>
-                        <dd className="flex text-base text-yellow-100">
-                          <div className="flex my-auto">
-                            <AnchorText
-                              type="internal"
-                              color={accent.default.color}
-                              colorHover={accent.light.color}
-                              to={
-                                gmb.website.metadata.slug.current === 'home'
-                                  ? '/'
-                                  : `/${gmb.website.metadata.slug.current}/`
-                              }
-                              classes="flex"
-                            >
-                              <i className="fas fa-2x fa-globe mr-3 text-yellow-500 hover:text-yellow-400" />
-                              <span className="text-yellow-100 hover:text-yellow-600 text-lg ml-2">
-                                {gmb.name}
-                              </span>
-                            </AnchorText>
-                          </div>
-                        </dd>
-                      </dl>
+                  <FadeIn>
+                    <h2 className="text-3xl lg:text-4xl font-bold">
+                      {item.headline}
+                    </h2>
+                    <div className="mt-6 text-base text-white max-w-3xl">
+                      <SanityBlockContent blocks={item._rawDescription} />
                     </div>
-                  ))}
-                  <ul className="mt-12 flex space-x-6">
-                    {socialLinks.map((social) => (
-                      <li key={social._id}>
-                        <AnchorText
-                          type="external"
-                          color={neutral.light.color}
-                          colorHover={accent.light.color}
-                          href={social.url}
-                        >
-                          <span className="sr-only">{social.anchor}</span>
-                          <FontAwesomeIcon
-                            className="!text-3xl"
-                            icon={['fab', social.icon]}
-                          />
-                        </AnchorText>
-                      </li>
-                    ))}
-                    {/* <li>
-                      <a
-                        href="#"
-                        rel="noopener"
-                        className="text-zinc-400 hover:text-zinc-500"
-                      >
-                        <span className="sr-only">Instagram</span>
-                        <i className="fab fa-2x fa-instagram" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        rel="noopener"
-                        className="text-zinc-400 hover:text-zinc-500"
-                      >
-                        <span className="sr-only">Twitter</span>
-                        <i className="fab fa-2x fa-twitter" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        rel="noopener"
-                        className="text-zinc-400 hover:text-zinc-500"
-                      >
-                        <span className="sr-only">YouTube</span>
-                        <i className="fab fa-2x fa-youtube" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        rel="noopener"
-                        className="text-zinc-400 hover:text-zinc-500"
-                      >
-                        <span className="sr-only">LinkedIn</span>
-                        <i className="fab fa-2x fa-linkedin" />
-                      </a>
-                    </li> */}
-                  </ul>
+                    <ul className="mt-10 space-y-4">
+                      {nap.map((contact) => (
+                        <li key={contact.id}>
+                          <StyledContactLinks
+                            $iconColor={accent.default.color}
+                            $iconColorHover={accent.light.color}
+                            $textColor={neutral.white.color}
+                            $textColorHover={accent.light.color}
+                            href={contact.url}
+                            target="_blank"
+                            rel="noopener"
+                          >
+                            <i className={`${contact.icon} mr-3`} />
+                            <span className="text-lg">{contact.anchor}</span>
+                          </StyledContactLinks>
+                        </li>
+                      ))}
+                    </ul>
+                    <ul className="mt-12 flex space-x-6">
+                      {socialLinks.map((social) => (
+                        <li key={social._id}>
+                          <AnchorText
+                            type="external"
+                            color={neutral.light.color}
+                            colorHover={accent.light.color}
+                            href={social.url}
+                          >
+                            <span className="sr-only">{social.anchor}</span>
+                            <FontAwesomeIcon
+                              className="!text-3xl"
+                              icon={['fab', social.icon]}
+                            />
+                          </AnchorText>
+                        </li>
+                      ))}
+                    </ul>
+                  </FadeIn>
                 </div>
                 {item.gmb.map((gmb) => (
                   <div key={gmb._id}>

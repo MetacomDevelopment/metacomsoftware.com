@@ -1,3 +1,4 @@
+export { default as businessInfo } from './businessInfo';
 export { default as businessLogo } from './businessLogo';
 export { default as colorsAccent } from './colorsAccent';
 export { default as colorsHero } from './colorsHero';
@@ -5,5 +6,6 @@ export { default as colorsNeutral } from './colorsNeutral';
 export { default as colorsPrimary } from './colorsPrimary';
 export { default as colorsSecondary } from './colorsSecondary';
 export { default as footers } from './footers';
+export { default as forms } from './forms';
 export { default as navbars } from './navbars';
 export { default as businessSeo } from './businessSeo';

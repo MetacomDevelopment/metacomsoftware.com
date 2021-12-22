@@ -1,16 +1,19 @@
 import S from '@sanity/desk-tool/structure-builder';
 import {
+  FaAddressCard as iconInfo,
+  FaAddressCard as iconNap,
+  FaBrush as iconDesign,
   FaBuilding as iconBusiness,
   FaClone as iconPages,
   FaCode as iconMetadata,
   FaCog as iconSettings,
+  FaCommentDots as iconTestimonials,
   FaGlobe as iconSEO,
-  FaUpload as iconLogo,
-  FaAddressCard as iconNap,
   FaPalette as iconColors,
   FaPencilAlt as iconPosts,
   FaShareAlt as iconSocials,
   FaTag as iconTags,
+  FaUpload as iconLogo,
   FaUserEdit as iconAuthors,
   FaUsers as iconTeam,
 } from 'react-icons/fa';
@@ -29,150 +32,168 @@ export default () =>
             .title('Business')
             .items([
               S.listItem()
-                .title('SEO')
-                .icon(iconSEO)
+                .title('Sitewide Settings')
+                .icon(iconSettings)
                 .child(
                   S.document()
-                    .title('SEO')
+                    .title('Sitewide Settings')
                     .schemaType('businessSeo')
                     .documentId('businessSeo')
                 ),
               S.listItem()
-                .title('Logos')
-                .icon(iconLogo)
+                .title('General Information')
+                .icon(iconInfo)
                 .child(
                   S.document()
-                    .title('Logos')
-                    .schemaType('businessLogo')
-                    .documentId('businessLogo')
+                    .title('General Information')
+                    .schemaType('businessInfo')
+                    .documentId('businessInfo')
                 ),
               S.listItem()
-                .title('NAP')
-                .icon(iconNap)
-                .schemaType('nap')
-                .child(S.documentTypeList('nap').title('NAP')),
-              S.listItem()
-                .title('GMBs')
+                .title('Google Business Profiles')
                 .icon(iconGMB)
                 .schemaType('gmb')
                 .child(S.documentTypeList('gmb').title('GMBs')),
               S.listItem()
-                .title('Socials')
+                .title('Social Media Profiles')
                 .icon(iconSocials)
                 .schemaType('social')
                 .child(S.documentTypeList('social').title('Socials')),
               S.listItem()
-                .title('Employees')
+                .title('Team Members')
                 .icon(iconTeam)
-                .schemaType('team')
-                .child(S.documentTypeList('team').title('Team')),
+                .schemaType('employee')
+                .child(S.documentTypeList('employee').title('Team Members')),
+              S.listItem()
+                .title('Client Testimonials')
+                .icon(iconTestimonials)
+                .schemaType('gmb')
+                .child(S.documentTypeList('gmb').title('GMBs')),
             ])
         ),
       S.listItem()
-        .title('Colors')
-        .icon(iconColors)
+        .title('Design')
+        .icon(iconDesign)
         .child(
           S.list()
-            .title('Colors')
+            .title('Design')
             .items([
               S.listItem()
-                .title('Primary')
-                .icon(iconColors)
+                .title('Company Logos')
+                .icon(iconLogo)
                 .child(
                   S.document()
-                    .title('Primary')
-                    .schemaType('colorsPrimary')
-                    .documentId('colorsPrimary')
+                    .title('Company Logos')
+                    .schemaType('businessLogo')
+                    .documentId('businessLogo')
                 ),
               S.listItem()
-                .title('Secondary')
+                .title('Color Palette')
                 .icon(iconColors)
                 .child(
-                  S.document()
-                    .title('Secondary')
-                    .schemaType('colorsSecondary')
-                    .documentId('colorsSecondary')
+                  S.list()
+                    .title('Color Palette')
+                    .items([
+                      S.listItem()
+                        .title('Primary')
+                        .icon(iconColors)
+                        .child(
+                          S.document()
+                            .title('Primary')
+                            .schemaType('colorsPrimary')
+                            .documentId('colorsPrimary')
+                        ),
+                      S.listItem()
+                        .title('Secondary')
+                        .icon(iconColors)
+                        .child(
+                          S.document()
+                            .title('Secondary')
+                            .schemaType('colorsSecondary')
+                            .documentId('colorsSecondary')
+                        ),
+                      S.listItem()
+                        .title('Accent')
+                        .icon(iconColors)
+                        .child(
+                          S.document()
+                            .title('Accent')
+                            .schemaType('colorsAccent')
+                            .documentId('colorsAccent')
+                        ),
+                      S.listItem()
+                        .title('Neutral')
+                        .icon(iconColors)
+                        .child(
+                          S.document()
+                            .title('Neutral')
+                            .schemaType('colorsNeutral')
+                            .documentId('colorsNeutral')
+                        ),
+                      S.listItem()
+                        .title('Hero')
+                        .icon(iconColors)
+                        .child(
+                          S.document()
+                            .title('Hero')
+                            .schemaType('colorsHero')
+                            .documentId('colorsHero')
+                        ),
+                    ])
                 ),
               S.listItem()
-                .title('Accent')
-                .icon(iconColors)
+                .title('Page Layouts')
+                .icon(iconLayouts)
                 .child(
-                  S.document()
-                    .title('Accent')
-                    .schemaType('colorsAccent')
-                    .documentId('colorsAccent')
-                ),
-              S.listItem()
-                .title('Neutral')
-                .icon(iconColors)
-                .child(
-                  S.document()
-                    .title('Neutral')
-                    .schemaType('colorsNeutral')
-                    .documentId('colorsNeutral')
-                ),
-              S.listItem()
-                .title('Hero')
-                .icon(iconColors)
-                .child(
-                  S.document()
-                    .title('Hero')
-                    .schemaType('colorsHero')
-                    .documentId('colorsHero')
+                  S.list()
+                    .title('Page Layouts')
+                    .items([
+                      S.listItem()
+                        .title('Navbars')
+                        .icon(iconLayouts)
+                        .child(
+                          S.document()
+                            .title('Navbars')
+                            .schemaType('navbars')
+                            .documentId('navbars')
+                        ),
+                      S.listItem()
+                        .title('Footers')
+                        .icon(iconLayouts)
+                        .child(
+                          S.document()
+                            .title('Footers')
+                            .schemaType('footers')
+                            .documentId('footers')
+                        ),
+                      S.listItem()
+                        .title('Sidebars')
+                        .icon(iconLayouts)
+                        .child(
+                          S.document()
+                            .title('Sidebars')
+                            .schemaType('footers')
+                            .documentId('footers')
+                        ),
+                      S.listItem()
+                        .title('Forms')
+                        .icon(iconLayouts)
+                        .child(
+                          S.document()
+                            .title('Forms')
+                            .schemaType('forms')
+                            .documentId('forms')
+                        ),
+                    ])
                 ),
             ])
         ),
-      S.listItem()
-        .title('Layouts')
-        .icon(iconLayouts)
-        .child(
-          S.list()
-            .title('Layouts')
-            .items([
-              S.listItem()
-                .title('Navbars')
-                .icon(iconLayouts)
-                .child(
-                  S.document()
-                    .title('Navbars')
-                    .schemaType('navbars')
-                    .documentId('navbars')
-                ),
-              S.listItem()
-                .title('Footers')
-                .icon(iconLayouts)
-                .child(
-                  S.document()
-                    .title('Footers')
-                    .schemaType('footers')
-                    .documentId('footers')
-                ),
-              S.listItem()
-                .title('Sidebars')
-                .icon(iconLayouts)
-                .child(
-                  S.document()
-                    .title('Sidebars')
-                    .schemaType('navbarMobile')
-                    .documentId('navbarMobile')
-                ),
-            ])
-        ),
+
       S.listItem()
         .title('Pages')
         .icon(iconPages)
         .schemaType('page')
         .child(S.documentTypeList('page').title('Pages')),
-      S.listItem()
-        .title('Posts')
-        .icon(iconPosts)
-        .schemaType('post')
-        .child(S.documentTypeList('post').title('Posts')),
-      S.listItem()
-        .title('Authors')
-        .icon(iconAuthors)
-        .schemaType('author')
-        .child(S.documentTypeList('author').title('Authors')),
       S.listItem()
         .title('Tags')
         .icon(iconTags)
@@ -181,25 +202,25 @@ export default () =>
       ...S.documentTypeListItems().filter(
         (listItem) =>
           ![
-            'author',
+            'businessInfo',
             'businessLogo',
+            'businessSeo',
             'colorsAccent',
             'colorsHero',
             'colorsNeutral',
             'colorsPrimary',
             'colorsSecondary',
+            'employee',
             'footers',
+            'forms',
             'gmb',
             'logo',
-            'nap',
             'navbars',
             'page',
-            'post',
             'settingsMetadata',
-            'businessSeo',
             'social',
             'tag',
-            'team',
+            'media.tag',
           ].includes(listItem.getId())
       ),
     ]);
