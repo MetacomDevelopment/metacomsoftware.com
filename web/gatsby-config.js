@@ -90,7 +90,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/graphics/aristocracy-salon-day-spa-logo-favicon-75-75.png`, // This path is relative to the root of the site.
+        icon: `src/assets/graphics/beechtree-energy-favicon-west-barnstable-ma-cape-cod.png`, // This path is relative to the root of the site.
       },
     },
     {
