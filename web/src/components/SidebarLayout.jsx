@@ -9,9 +9,11 @@ const SidebarLayout = ({ children, sidebarType, idName }) => {
 
   return (
     <Section idName={idName} padding="lg" bgColor={neutral.white.color}>
-      <Container padding="page">
+      <Container padding="none" classes="max-w-7xl">
         <Grid classes="lg:grid-cols-12  gap-x-24">
-          <Col classes="lg:col-span-7">{children}</Col>
+          <Col classes="lg:col-span-7">
+            <article>{children}</article>
+          </Col>
           <Col classes="lg:col-span-5 lg:h-full">
             <Sidebar sidebarType={sidebarType} />
           </Col>

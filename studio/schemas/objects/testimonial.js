@@ -7,7 +7,7 @@ export default {
     collapsed: false, // Defines if the fieldset should be collapsed by default or not
     columns: 1, // Defines a grid for the fields and how many columns it should have
   },
-  fieldsets: [
+  groups: [
     {
       name: 'heroTestimonial',
       title: 'Hero Testimonial',
@@ -18,7 +18,7 @@ export default {
     {
       name: 'quote',
       title: 'Quote',
-      type: 'portableTextBody',
+      type: 'portableText',
     },
     {
       name: 'author',

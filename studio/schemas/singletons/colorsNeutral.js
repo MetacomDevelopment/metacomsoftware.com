@@ -1,11 +1,9 @@
-import Tabs from 'sanity-plugin-tabs';
-
 export default {
   name: `colorsNeutral`,
   title: `Colors: Neutral`,
   type: `document`,
-  inputComponent: Tabs,
-  fieldsets: [
+
+  groups: [
     { title: 'Default', name: 'defaultSet' },
     { title: 'Light', name: 'lightSet' },
     { title: 'Lighter', name: 'lighterSet' },
@@ -16,46 +14,76 @@ export default {
   ],
   fields: [
     {
-      title: 'Default',
       name: 'default',
+      title: 'Default',
       type: 'colors',
-      fieldset: 'defaultSet',
+      group: 'defaultSet',
     },
     {
-      title: 'Light',
+      name: 'defaultCustom',
+      title: 'Custom Color',
+      type: 'color',
+      group: 'defaultSet',
+    },
+    {
       name: 'light',
+      title: 'Light',
       type: 'colors',
-      fieldset: 'lightSet',
+      group: 'lightSet',
     },
     {
-      title: 'Lighter',
+      name: 'lightCustom',
+      title: 'Custom Color',
+      type: 'color',
+      group: 'lightSet',
+    },
+    {
       name: 'lighter',
+      title: 'Lighter',
       type: 'colors',
-      fieldset: 'lighterSet',
+      group: 'lighterSet',
     },
     {
-      title: 'Dark',
+      name: 'lighterCustom',
+      title: 'Custom Color',
+      type: 'color',
+      group: 'lighterSet',
+    },
+    {
       name: 'dark',
+      title: 'Dark',
       type: 'colors',
-      fieldset: 'darkSet',
+      group: 'darkSet',
     },
     {
-      title: 'Darker',
+      name: 'darkCustom',
+      title: 'Custom Color',
+      type: 'color',
+      group: 'darkSet',
+    },
+    {
       name: 'darker',
+      title: 'Darker',
       type: 'colors',
-      fieldset: 'darkerSet',
+      group: 'darkerSet',
+    },
+    {
+      name: 'darkerCustom',
+      title: 'Custom Color',
+      type: 'color',
+      group: 'darkerSet',
     },
     {
       title: 'White',
       name: 'white',
       type: 'colors',
-      fieldset: 'whiteSet',
+      group: 'whiteSet',
     },
     {
       title: 'Black',
       name: 'black',
       type: 'colors',
-      fieldset: 'blackSet',
+      group: 'blackSet',
     },
   ],
 };

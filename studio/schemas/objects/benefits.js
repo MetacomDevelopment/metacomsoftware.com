@@ -4,17 +4,12 @@ export default {
   title: 'Benefits',
   name: 'benefits',
   type: 'object',
-  options: {
-    collapsible: false, // Makes the whole fieldset collapsible
-    collapsed: false, // Defines if the fieldset should be collapsed by default or not
-    columns: 1, // Defines a grid for the fields and how many columns it should have
-  },
   icon,
-  fieldsets: [
-    {
-      title: 'Benefits',
-      name: 'benefitsSet',
-    },
+  groups: [
+    { title: 'Layout', name: 'layoutSet' },
+    { title: 'ID', name: 'idSet' },
+    { title: 'Header', name: 'headerSet' },
+    { title: 'Benefits', name: 'benefitsSet' },
   ],
   fields: [
     {
@@ -26,22 +21,27 @@ export default {
         layout: 'radio',
         direction: 'horizontal',
       },
+      group: 'layoutSet',
     },
     {
-      title: 'Headline',
-      name: 'headline',
+      title: 'ID Name',
+      description: 'Pick an ID name for the section (Example: "features")',
+      name: 'idName',
       type: 'string',
+      group: 'idSet',
     },
     {
-      title: 'Tagline',
-      name: 'tagline',
-      type: 'string',
+      title: 'Header',
+      name: 'header',
+      type: 'header',
+      group: 'headerSet',
     },
     {
       title: 'Benefit',
       name: 'benefit',
       type: 'array',
       of: [{ type: 'benefit' }],
+      group: 'benefitsSet',
     },
   ],
   preview: {

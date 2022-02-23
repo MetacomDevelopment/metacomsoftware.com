@@ -1,11 +1,9 @@
-import Tabs from 'sanity-plugin-tabs';
-
 export default {
   name: `colorsPrimary`,
   title: `Colors: Primary`,
   type: `document`,
-  inputComponent: Tabs,
-  fieldsets: [
+
+  groups: [
     { title: 'Default', name: 'defaultSet' },
     { title: 'Light', name: 'lightSet' },
     { title: 'Lighter', name: 'lighterSet' },
@@ -17,31 +15,61 @@ export default {
       name: 'default',
       title: 'Default',
       type: 'colors',
-      fieldset: 'defaultSet',
+      group: 'defaultSet',
+    },
+    {
+      name: 'defaultCustom',
+      title: 'Custom Color',
+      type: 'color',
+      group: 'defaultSet',
     },
     {
       name: 'light',
       title: 'Light',
       type: 'colors',
-      fieldset: 'lightSet',
+      group: 'lightSet',
+    },
+    {
+      name: 'lightCustom',
+      title: 'Custom Color',
+      type: 'color',
+      group: 'lightSet',
     },
     {
       name: 'lighter',
       title: 'Lighter',
       type: 'colors',
-      fieldset: 'lighterSet',
+      group: 'lighterSet',
+    },
+    {
+      name: 'lighterCustom',
+      title: 'Custom Color',
+      type: 'color',
+      group: 'lighterSet',
     },
     {
       name: 'dark',
       title: 'Dark',
       type: 'colors',
-      fieldset: 'darkSet',
+      group: 'darkSet',
+    },
+    {
+      name: 'darkCustom',
+      title: 'Custom Color',
+      type: 'color',
+      group: 'darkSet',
     },
     {
       name: 'darker',
       title: 'Darker',
       type: 'colors',
-      fieldset: 'darkerSet',
+      group: 'darkerSet',
+    },
+    {
+      name: 'darkerCustom',
+      title: 'Custom Color',
+      type: 'color',
+      group: 'darkerSet',
     },
   ],
 };

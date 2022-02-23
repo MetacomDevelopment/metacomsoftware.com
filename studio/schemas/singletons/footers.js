@@ -1,13 +1,11 @@
 import { FaFileInvoice as icon } from 'react-icons/fa';
-import Tabs from 'sanity-plugin-tabs';
 
 export default {
   title: 'Footers',
   name: 'footers',
   type: 'document',
   icon,
-  inputComponent: Tabs,
-  fieldsets: [
+  groups: [
     { title: 'Layout', name: 'layoutSet' },
     { title: 'Form', name: 'formSet' },
     { title: 'Map', name: 'mapSet' },
@@ -29,14 +27,14 @@ export default {
         layout: 'radio',
         direction: 'horizontal',
       },
-      fieldset: 'layoutSet',
+      group: 'layoutSet',
     },
     {
       title: 'Background Image',
       description: 'Select a background image for the form section.',
       name: 'bgImg',
       type: 'imageAlt',
-      fieldset: 'formSet',
+      group: 'formSet',
     },
     {
       title: 'Map Location',
@@ -44,14 +42,14 @@ export default {
       name: 'gmb',
       type: 'reference',
       to: [{ type: 'gmb' }],
-      fieldset: 'mapSet',
+      group: 'mapSet',
     },
     {
       title: 'Tagline',
       description: 'Add a tagline below the logo.',
       name: 'tagline',
       type: 'string',
-      fieldset: 'brandSet',
+      group: 'brandSet',
     },
     {
       title: 'Social Media Links',
@@ -68,7 +66,7 @@ export default {
           ],
         },
       ],
-      fieldset: 'brandSet',
+      group: 'brandSet',
     },
     {
       title: 'Middle Columns',
@@ -76,7 +74,7 @@ export default {
       name: 'footerItem',
       type: 'array',
       of: [{ type: 'footerItem' }],
-      fieldset: 'linksSet',
+      group: 'linksSet',
     },
   ],
 };

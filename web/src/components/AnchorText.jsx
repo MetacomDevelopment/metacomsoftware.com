@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   StyledAnchorTextInternal,
@@ -10,6 +11,7 @@ const AnchorText = function ({
   to,
   href,
   children,
+  classes,
   color,
   colorHover,
   weight,
@@ -32,6 +34,7 @@ const AnchorText = function ({
           $sizeHover={sizeHover}
           $lineHeight={lineHeight}
           $lineHeightHover={lineHeightHover}
+          className={classes}
           activeClassName="active"
         >
           {children}
@@ -40,7 +43,7 @@ const AnchorText = function ({
     case 'internal':
       return (
         <StyledAnchorTextInternal
-          to={to}
+          to={`${to === 'home' ? '/' : `/${to}/`}`}
           $color={color}
           $colorHover={colorHover}
           $weight={weight}
@@ -49,6 +52,7 @@ const AnchorText = function ({
           $sizeHover={sizeHover}
           $lineHeight={lineHeight}
           $lineHeightHover={lineHeightHover}
+          className={classes}
           activeClassName="active"
         >
           {children}
@@ -73,5 +77,18 @@ const AnchorText = function ({
         </StyledAnchorTextExternal>
       );
   }
+};
+
+AnchorText.defaultProps = {
+  type: 'internal',
+  to: '/',
+  classes: '',
+};
+
+AnchorText.propTypes = {
+  type: PropTypes.string,
+  to: PropTypes.string,
+  classes: PropTypes.string,
+  children: PropTypes.node.isRequired,
 };
 export default AnchorText;

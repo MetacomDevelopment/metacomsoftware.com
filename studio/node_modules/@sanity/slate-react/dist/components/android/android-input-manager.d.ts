@@ -20,10 +20,12 @@ import { ReactEditor } from '../../plugin/react-editor';
  * - Line breaks
  *
  * @param editor
+ * @param restoreDOM
  */
 export declare class AndroidInputManager {
     private editor;
-    constructor(editor: ReactEditor);
+    private restoreDOM;
+    constructor(editor: ReactEditor, restoreDOM: () => void);
     /**
      * Handle MutationObserver flush
      *

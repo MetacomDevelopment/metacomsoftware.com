@@ -1,13 +1,11 @@
 import { FaFileInvoice as icon } from 'react-icons/fa';
-import Tabs from 'sanity-plugin-tabs';
 
 export default {
   title: 'Forms',
   name: 'forms',
   type: 'document',
   icon,
-  inputComponent: Tabs,
-  fieldsets: [
+  groups: [
     { title: 'Layout', name: 'layoutSet' },
     { title: 'Headlines', name: 'headlinesSet' },
   ],
@@ -24,21 +22,21 @@ export default {
         layout: 'radio',
         direction: 'horizontal',
       },
-      fieldset: 'layoutSet',
+      group: 'layoutSet',
     },
     {
       title: 'Headline',
       description: 'Add a headline to the top of the form.',
       name: 'headline',
       type: 'string',
-      fieldset: 'headlinesSet',
+      group: 'headlinesSet',
     },
     {
       title: 'Tagline',
       description: 'Add a tagline below the headline.',
       name: 'tagline',
-      type: 'portableTextBody',
-      fieldset: 'headlinesSet',
+      type: 'portableText',
+      group: 'headlinesSet',
     },
   ],
 };

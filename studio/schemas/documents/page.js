@@ -1,14 +1,16 @@
-import Tabs from 'sanity-plugin-tabs';
+import { RiPagesFill as icon } from 'react-icons/fa';
+import { StringWithLimits } from '../components';
+import { DescriptionWithLimits } from '../components';
 
 export default {
   title: 'Page',
   name: 'page',
   type: 'document',
-  inputComponent: Tabs,
-  fieldsets: [
+  icon,
+  groups: [
     { title: 'Page Type', name: 'pageTypeSet' },
-    { title: 'Anchor Text', name: 'anchorTextSet' },
-    { title: 'Metadata', name: 'metadataSet' },
+    { title: 'Navigation', name: 'navSet' },
+    { title: 'SEO', name: 'seoSet' },
     { title: 'Page Builder', name: 'pageBuilderSet' },
   ],
   fields: [
@@ -21,50 +23,123 @@ export default {
         list: [
           { title: 'Brand', value: 'brand' },
           { title: 'Service', value: 'service' },
+          { title: 'Product', value: 'product' },
           { title: 'Location', value: 'location' },
           { title: 'Post', value: 'post' },
+          { title: 'None', value: 'none' },
         ],
         layout: 'radio',
         direction: 'horizontal',
       },
-      fieldset: 'pageTypeSet',
+      group: 'pageTypeSet',
+    },
+    {
+      title: 'Index Status',
+      description: `WARNING: This page-specific index setting can be overridden by the global index setting.`,
+      name: 'indexStatus',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Index', value: 'index' },
+          { title: 'No Index', value: 'noIndex' },
+        ],
+        layout: 'radio',
+        direction: 'horizontal',
+      },
+      group: 'seoSet',
+      initialValue: 'index',
     },
     {
       title: 'Anchor Text',
-      description: 'Enter the anchor text for navbar links.',
+      description:
+        'Directions: Enter the anchor text for all internal link references.',
       name: 'anchor',
       type: 'string',
-      fieldset: 'anchorTextSet',
+      group: 'navSet',
     },
     {
-      title: 'Metadata',
-      name: 'metadata',
-      type: 'metadata',
+      title: 'Short Description',
+      description:
+        'Directions: Enter a short description for the navigation menu.',
+      name: 'shortDescription',
+      type: 'text',
+      rows: 3,
+      group: 'navSet',
+    },
+    {
+      title: 'Add to Footer?',
+      description:
+        'Directions: Decide if this page should be linked in the footer.',
+      name: 'addToFooter',
+      type: 'boolean',
+      initialValue: true,
+      group: 'navSet',
+    },
+    {
+      title: 'Title',
+      name: 'title',
+      type: 'string',
+      validation: (Rule) =>
+        Rule.required()
+          .error('Title tag must be less than 55 characters.')
+          .min(10)
+          .max(55),
+      inputComponent: StringWithLimits,
+      group: 'seoSet',
+    },
+    {
+      title: 'Slug',
+      name: 'slug',
+      type: 'slug',
+      validation: (Rule) => Rule.required(),
       options: {
-        collapsible: true, // Makes the whole fieldset collapsible
-        collapsed: true, // Defines if the fieldset should be collapsed by default or not
-        columns: 1, // Defines a grid for the fields and how many columns it should have
+        source: 'title',
+        maxLength: 200, // will be ignored if slugify is set
+        slugify: (input) =>
+          input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
       },
-      fieldset: 'metadataSet',
+      group: 'seoSet',
+    },
+    {
+      title: 'Description',
+      name: 'description',
+      type: 'text',
+      validation: (Rule) =>
+        Rule.required()
+          .error('Meta description must be less than 155 characters.')
+          .min(10)
+          .max(155),
+      inputComponent: DescriptionWithLimits,
+      group: 'seoSet',
+      rows: 3,
+    },
+    {
+      title: 'Schema',
+      name: 'schema',
+      type: 'code',
+      options: {
+        language: 'js',
+      },
+      group: 'seoSet',
     },
     {
       title: 'Page Builder',
       name: 'pageBuilder',
       type: 'pageBuilder',
-      fieldset: 'pageBuilderSet',
+      group: 'pageBuilderSet',
     },
   ],
   preview: {
     select: {
       title: 'anchor',
-      slug: 'metadata.slug.current',
+      slug: 'slug.current',
       media: 'pageBuilder.0.bgImg',
     },
     prepare(selection) {
       const { title, slug, media } = selection;
       return {
         title: title,
-        subtitle: `Path: /${slug ? slug : 'unknown'}/`,
+        subtitle: slug ? `/${slug}/` : 'Error in slug',
         media: media,
       };
     },

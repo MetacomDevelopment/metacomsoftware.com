@@ -6,7 +6,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 import { useSanity } from '../hooks';
-import { SanityBlockContent, Button, Form, Grid, Flex, Overlay } from '.';
+import { SanityBlockContent, Button, FormHero, Grid, Flex, Overlay } from '.';
 
 const StyledHeroHeadline = styled(motion.h1)`
   color: ${(props) => props.$headline};
@@ -58,15 +58,14 @@ const HeroForm = ({
         />
         <Overlay overlay={hero.overlay.color} />
       </div>
-      <Grid classes="lg:grid-cols-2 gap-4 max-w-7xl mx-auto mt-16 lg:mt-32 py-12 lg:py-24">
-        <Flex classes="flex-col justify-center relative text-center lg:text-left pt-5 pb-5 px-4 sm:pt-10 sm:pb-12 sm:px-6 lg:px-8">
+      <Grid classes="lg:grid-cols-2 gap-8 max-w-7xl">
+        <Flex classes="bg-gray-900/60 bg-clipping-path backdrop-filter backdrop-blur-lg mt-12 lg:mt-24 p-6 lg:p-10 space-y-6 flex-col justify-center relative text-center lg:text-left rounded-xl shadow-xl">
           <StyledHeroHeadline
             ref={ref}
             variants={variants}
             initial="hidden"
             animate={controls}
             transition={{ duration: 0.5, delay: 0 }}
-            className="text-5xl font-extrabold tracking-tight drop-shadow-text-darker sm:text-5xl lg:text-6xl capitalize mb-10"
             $headline={hero.headline.color}
           >
             {headline}
@@ -77,34 +76,56 @@ const HeroForm = ({
             initial="hidden"
             animate={controls}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-6 text-xl lg:text-2xl max-w-3xl drop-shadow-darker space-y-6"
+            className="text-lg lg:text-xl max-w-3xl space-y-4"
             $subheadline={hero.tagline.color}
           >
             <SanityBlockContent blocks={raw.tagline} />
           </StyledHeroSubheadline>
-          <motion.div
-            ref={ref}
-            variants={variants}
-            initial="hidden"
-            animate={controls}
-            transition={{
-              duration: 0.5,
-              delay: 0.6,
-            }}
-            className="flex mt-10"
-          >
-            <div className="mx-auto lg:mx-0 max">
-              <Button
-                linkType="internal"
-                internalLink={primaryCtaButtonLink.metadata.slug.current}
-                label={primaryCtaButtonLabel}
-              />
-            </div>
-          </motion.div>
+          <Flex classes="flex-col lg:flex-row mx-auto lg:mx-0 gap-8">
+            <motion.div
+              ref={ref}
+              variants={variants}
+              initial="hidden"
+              animate={controls}
+              transition={{
+                duration: 0.5,
+                delay: 0.6,
+              }}
+              className="flex"
+            >
+              <div className="mx-auto lg:mx-0 max lg:mt-6">
+                <Button
+                  linkType="internal"
+                  internalLink={primaryCtaButtonLink.slug.current}
+                  label={primaryCtaButtonLabel}
+                />
+              </div>
+            </motion.div>
+            <motion.div
+              ref={ref}
+              variants={variants}
+              initial="hidden"
+              animate={controls}
+              transition={{
+                duration: 0.5,
+                delay: 0.6,
+              }}
+              className="flex justify-center lg:mt-6"
+            >
+              <div className="mx-auto lg:mx-0">
+                <Button
+                  linkType="anchor"
+                  secondaryBtn
+                  jumpLink={`#${secondaryCtaButtonLink}`}
+                  label={secondaryCtaButtonLabel}
+                />
+              </div>
+            </motion.div>
+          </Flex>
         </Flex>
-        <Flex classes="flex-col justify-center relative mx-auto lg:max-w-lg">
+        <Flex classes="flex-col justify-center relative mx-auto lg:max-w-lg mt-24">
           <div className="overflow-hidden">
-            <Form formName="form-hero" />
+            <FormHero formName="form-hero" />
           </div>
         </Flex>
       </Grid>

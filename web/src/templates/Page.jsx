@@ -11,53 +11,50 @@ export const query = graphql`
       ...PageBuilder
       id
       pageType
-      metadata {
-        isIndexed
-        title
-        slug {
-          current
-        }
-        description
-        schema {
-          code
-        }
+      indexStatus
+      title
+      slug {
+        current
+      }
+      description
+      schema {
+        code
       }
     }
   }
 `;
 
 const PageTemplate = function (props) {
+  const { siteSEO, info } = useSanity();
   const { data } = props;
   const page = data && data.page;
   const { pageBuilder, _rawPageBuilder } = page;
 
   const sanity = data.page;
 
-  const { siteSEO, primary, secondary, accent, neutral, hero } = useSanity();
-
   const pageSEO = {
-    title: sanity.metadata.title,
-    description: sanity.metadata.description,
-    slug: `${siteSEO.url}/${sanity.metadata.slug.current}/`,
-    schema: sanity?.metadata?.schema?.code,
+    title: sanity?.title,
+    description: sanity?.description,
+    slug: `${info?.websiteUrl}/${sanity?.slug?.current}/`,
+    schema: sanity?.schema?.code,
   };
 
   return (
-    <Layout layout={sanity.pageType}>
+    <Layout layout={sanity?.pageType}>
       <SEO
-        title={pageSEO.title}
-        description={pageSEO.description}
-        canonical={pageSEO.slug}
+        title={pageSEO?.title}
+        description={pageSEO?.description}
+        canonical={pageSEO?.slug}
       >
-        <script type="application/ld+json">{`${pageSEO.schema}`}</script>
+        <script type="application/ld+json">{`${pageSEO?.schema}`}</script>
       </SEO>
       <Helmet>
         <meta
           name="robots"
           content={
-            siteSEO.isIndexed === false
+            siteSEO?.indexStatus === 'noIndex'
               ? 'noindex, nofollow'
-              : sanity.metadata.isIndexed === true
+              : sanity?.indexStatus === 'index'
               ? 'index, follow'
               : 'noindex, nofollow'
           }

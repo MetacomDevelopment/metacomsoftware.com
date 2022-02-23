@@ -5,9 +5,7 @@ const useSanitySettings = () => {
   const data = useStaticQuery(graphql`
     query useSanitySettingsQ {
       sanityBusinessSeo {
-        isIndexed
-        name
-        url
+        indexStatus
         title
         description
         author
@@ -23,8 +21,16 @@ const useSanitySettings = () => {
         addressUrl
         emailAddress
         emailUrl
+        established
         hours
         hoursUrl
+        hoursMon
+        hoursTue
+        hoursWed
+        hoursThu
+        hoursFri
+        hoursSat
+        hoursSun
         name
         owner
         phone
@@ -39,7 +45,7 @@ const useSanitySettings = () => {
               placeholder: BLURRED
               formats: WEBP
               layout: FIXED
-              height: 75
+              height: 66
             )
           }
         }
@@ -64,52 +70,102 @@ const useSanitySettings = () => {
           icon
         }
       }
+      sanityNavbars {
+        primaryNavBgColor {
+          color
+        }
+        primaryNavBgColorCustom
+        primaryNavTextColor {
+          color
+        }
+        secondaryNavBgColor {
+          color
+        }
+        secondaryNavBgColorCustom
+        secondaryNavTextColor {
+          color
+        }
+        primaryNavCtaButtonLabel
+        primaryNavCtaButtonLink {
+          anchor
+          slug {
+            current
+          }
+        }
+      }
       allSanityNavbars {
         nodes {
-          _key
           layout
+          primaryNavBgColor {
+            color
+          }
+          primaryNavBgColorCustom
+          primaryNavTextColor {
+            color
+          }
+          secondaryNavBgColor {
+            color
+          }
+          secondaryNavBgColorCustom
+          secondaryNavTextColor {
+            color
+          }
           primaryNavCtaButtonLabel
           primaryNavCtaButtonLink {
-            metadata {
+            slug {
+              current
+            }
+          }
+          socialLinks {
+            anchor
+            icon
+            url
+          }
+          navItem {
+            type
+            singlePageLink {
+              shortDescription
+              anchor
               slug {
                 current
               }
             }
-          }
-          navItem {
-            _key
-            type
+            dropdownTextLabel
             dropdowns {
-              _key
-              label
-              links {
-                _key
+              type
+              singlePageLink {
+                shortDescription
                 anchor
-                metadata {
-                  _key
+                slug {
+                  current
+                }
+                pageBuilder {
+                  ... on SanityHero {
+                    _key
+                    _type
+                    bgImg {
+                      alt
+                      asset {
+                        _id
+                        gatsbyImageData(placeholder: BLURRED, formats: WEBP)
+                      }
+                    }
+                  }
+                }
+              }
+              dropdownTextLabel
+              dropdowns {
+                type
+                singlePageLink {
+                  shortDescription
+                  anchor
                   slug {
                     current
                   }
                 }
+                dropdownTextLabel
               }
             }
-            pageLinks {
-              _key
-              anchor
-              metadata {
-                _key
-                slug {
-                  current
-                }
-              }
-            }
-          }
-          socialLinks {
-            _id
-            id
-            anchor
-            url
-            icon
           }
         }
       }
@@ -133,10 +189,8 @@ const useSanitySettings = () => {
             links {
               id
               anchor
-              metadata {
-                slug {
-                  current
-                }
+              slug {
+                current
               }
             }
           }
@@ -241,6 +295,16 @@ const useSanitySettings = () => {
           _rawTagline
         }
       }
+      allSanityPage(sort: { order: ASC, fields: anchor }) {
+        nodes {
+          pageType
+          addToFooter
+          anchor
+          slug {
+            current
+          }
+        }
+      }
     }
   `);
 
@@ -251,9 +315,11 @@ const useSanitySettings = () => {
   const hero = data.sanityColorsHero;
   const info = data.sanityBusinessInfo;
   const logo = data.sanityBusinessLogo;
+  const navbar = data.sanityNavbars;
   const navbars = data.allSanityNavbars.nodes;
   const neutral = data.sanityColorsNeutral;
   const primary = data.sanityColorsPrimary;
+  const page = data.allSanityPage.nodes;
   const secondary = data.sanityColorsSecondary;
   const siteSEO = data.sanityBusinessSeo;
   const socials = data.allSanitySocial.nodes;
@@ -269,7 +335,9 @@ const useSanitySettings = () => {
     hero,
     logo,
     navbars,
+    navbar,
     neutral,
+    page,
     primary,
     secondary,
     siteSEO,

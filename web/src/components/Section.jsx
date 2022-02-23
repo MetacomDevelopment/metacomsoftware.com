@@ -12,7 +12,7 @@ const Section = ({
   h3Color,
 }) => {
   switch (padding) {
-    default:
+    case 'lg':
       return (
         <StyledSection
           $bgColor={bgColor}
@@ -24,13 +24,13 @@ const Section = ({
           {children}
         </StyledSection>
       );
-    case 'lg':
+    case 'md':
       return (
         <StyledSection
           $bgColor={bgColor}
           $h2Color={h2Color}
           $h3Color={h3Color}
-          className={`relative py-24 ${classes}`}
+          className={`relative py-16 ${classes}`}
           id={idName}
         >
           {children}
@@ -79,6 +79,18 @@ const Section = ({
           $h2Color={h2Color}
           $h3Color={h3Color}
           className={`relative py-0 ${classes}`}
+          id={idName}
+        >
+          {children}
+        </StyledSection>
+      );
+    default:
+      return (
+        <StyledSection
+          $bgColor={bgColor}
+          $h2Color={h2Color}
+          $h3Color={h3Color}
+          className={`relative py-24 ${classes}`}
           id={idName}
         >
           {children}

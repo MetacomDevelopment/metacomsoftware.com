@@ -97,7 +97,7 @@ const HeroGraphic = ({
             <div className="mx-auto lg:mx-0 max">
               <Button
                 linkType="internal"
-                internalLink={primaryCtaButtonLink.metadata.slug.current}
+                internalLink={primaryCtaButtonLink.slug.current}
                 label={primaryCtaButtonLabel}
               />
             </div>

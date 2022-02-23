@@ -54,7 +54,10 @@ const RowTextLeft = ({
   externalLink,
   jumpLink,
 }) => (
-  <Grid key={_key} classes="lg:grid-cols-2 gap-x-12 gap-y-14 lg:gap-y-32">
+  <Grid
+    key={_key}
+    classes="lg:grid-cols-2 gap-x-32 gap-y-14 lg:gap-y-36 lg:max-w-7xl"
+  >
     <Col classes="order-2 lg:order-none">
       <div className="text-lg text-zinc-500 max-w-prose mx-auto lg:max-w-none space-y-10">
         <div className="space-y-6">
@@ -119,9 +122,9 @@ const RowTextRight = ({
   externalLink,
   jumpLink,
 }) => (
-  <Grid key={_key} classes="lg:grid-cols-2 gap-x-12 gap-y-14 lg:gap-y-32">
+  <Grid key={_key} classes="lg:grid-cols-2 gap-x-32 gap-y-14 lg:gap-y-36">
     <Col classes="order-1 lg:order-none">
-      <Container padding="img">
+      <Container padding="none">
         <GatsbyImage
           image={image?.asset?.gatsbyImageData}
           className="aspect-w-12 aspect-h-7 w-full h-full object-cover rounded-xl shadow-2xl transition hover:scale-105"

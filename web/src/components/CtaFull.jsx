@@ -102,7 +102,7 @@ const CtaFull = ({
             initial="hidden"
             animate={controls}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-12 text-3xl font-semibold text-white max-w-3xl mx-auto drop-shadow-darker"
+            className="mt-12 text-3xl font-thin text-white max-w-2xl mx-auto drop-shadow-darker"
           >
             {subheadline}
           </motion.p>
@@ -120,7 +120,7 @@ const CtaFull = ({
             <div className="col-1 gap-4 mx-auto">
               <Button
                 linkType="internal"
-                internalLink={ctaButtonLink.metadata.slug.current}
+                internalLink={ctaButtonLink.slug.current}
                 label={ctaButtonLabel}
               />
             </div>

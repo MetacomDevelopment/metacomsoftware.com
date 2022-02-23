@@ -5,7 +5,7 @@ export default {
   title: 'Links',
   type: 'object',
   icon,
-  fieldsets: [
+  groups: [
     {
       title: 'Links',
       name: 'linksSet',

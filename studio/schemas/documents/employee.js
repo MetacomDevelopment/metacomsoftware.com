@@ -1,35 +1,33 @@
 import { FaUserEdit as icon } from 'react-icons/fa';
 
 export default {
+  title: 'Employee',
   name: 'employee',
-  title: 'Team Member',
   type: 'document',
   icon,
   fields: [
     {
-      name: 'name',
       title: 'Name',
+      name: 'name',
       type: 'string',
     },
     {
-      name: 'slug',
       title: 'Slug',
+      name: 'slug',
       type: 'slug',
       options: {
         source: 'name',
-        maxLength: 96,
       },
     },
     {
-      name: 'image',
-      title: 'Image',
-      type: 'imageAlt',
+      title: 'Position',
+      name: 'position',
+      type: 'string',
     },
     {
-      name: 'bio',
-      title: 'Bio',
-      type: 'array',
-      of: [{ type: 'block' }, { type: 'imageAlt' }],
+      title: 'Image',
+      name: 'image',
+      type: 'imageAlt',
     },
   ],
   preview: {

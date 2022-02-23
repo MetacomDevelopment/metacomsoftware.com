@@ -4,7 +4,7 @@ export default {
   name: 'account',
   title: 'Social Media Account',
   type: 'object',
-  fieldsets: [
+  groups: [
     {
       title: 'Social Media Account',
       name: 'accountSet',

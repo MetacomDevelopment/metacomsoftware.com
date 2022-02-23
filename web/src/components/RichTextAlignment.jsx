@@ -15,10 +15,10 @@ const RichTextAlignment = function ({
 
   return (
     // <Section padding="lg" bgColor={neutral.white.color}>
-    <Container padding="sm">
+    <Container padding="none">
       <article
-        // id={idName}
-        className={`space-y-6 max-w-3xl mx-auto text-lg ${alignment}`}
+        // idName={idName}
+        className={`mx-auto max-w-3xl space-y-6 text-lg ${alignment}`}
       >
         <SanityBlockContent blocks={_rawBody} />
       </article>

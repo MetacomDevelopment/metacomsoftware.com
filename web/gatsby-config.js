@@ -2,7 +2,7 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
-const companyURL = `https://www.beechtreeenergy.com`;
+const companyURL = `https://www.metacomsoftware.com`;
 
 const {
   NODE_ENV,
@@ -42,7 +42,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-anchor-links',
       options: {
-        offset: -144,
+        offset: -96,
       },
     },
     {

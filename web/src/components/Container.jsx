@@ -5,7 +5,17 @@ import { useInView } from 'react-intersection-observer';
 
 import { StyledContainer } from './styles/Container.styled';
 
-const Container = ({ padding, children, classes, bgColor }) => {
+const Container = ({
+  padding,
+  children,
+  classes,
+  bgColor,
+  h2Color,
+  h3Color,
+  h3ColorHover,
+  spanColor,
+  outerClasses,
+}) => {
   const variants = {
     initial: { opacity: 0, scale: 0.8 },
     animate: {
@@ -33,7 +43,14 @@ const Container = ({ padding, children, classes, bgColor }) => {
   switch (padding) {
     default:
       return (
-        <StyledContainer $bgColor={bgColor}>
+        <StyledContainer
+          $bgColor={bgColor}
+          $h2Color={h2Color}
+          $h3Color={h3Color}
+          $h3ColorHover={h3ColorHover}
+          $spanColor={spanColor}
+          className={outerClasses}
+        >
           <motion.div
             ref={ref}
             variants={variants}
@@ -47,7 +64,14 @@ const Container = ({ padding, children, classes, bgColor }) => {
       );
     case 'none':
       return (
-        <StyledContainer $bgColor={bgColor}>
+        <StyledContainer
+          $bgColor={bgColor}
+          $h2Color={h2Color}
+          $h3Color={h3Color}
+          $h3ColorHover={h3ColorHover}
+          $spanColor={spanColor}
+          className={outerClasses}
+        >
           <motion.div
             ref={ref}
             variants={variants}
@@ -61,13 +85,20 @@ const Container = ({ padding, children, classes, bgColor }) => {
       );
     case 'sm':
       return (
-        <StyledContainer $bgColor={bgColor}>
+        <StyledContainer
+          $bgColor={bgColor}
+          $h2Color={h2Color}
+          $h3Color={h3Color}
+          $h3ColorHover={h3ColorHover}
+          $spanColor={spanColor}
+          className={outerClasses}
+        >
           <motion.div
             ref={ref}
             variants={variants}
             initial="initial"
             animate={controls}
-            className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${classes}`}
+            className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ${classes}`}
           >
             {children}
           </motion.div>
@@ -75,21 +106,35 @@ const Container = ({ padding, children, classes, bgColor }) => {
       );
     case 'lg':
       return (
-        <StyledContainer $bgColor={bgColor}>
+        <StyledContainer
+          $bgColor={bgColor}
+          $h2Color={h2Color}
+          $h3Color={h3Color}
+          $h3ColorHover={h3ColorHover}
+          $spanColor={spanColor}
+          className={outerClasses}
+        >
           <motion.div
             ref={ref}
             variants={variants}
             initial="initial"
             animate={controls}
-            className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${classes}`}
+            className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ${classes}`}
           >
-            <motion.div className="max-w-3xl mx-auto">{children}</motion.div>
+            <motion.div className="mx-auto max-w-3xl">{children}</motion.div>
           </motion.div>
         </StyledContainer>
       );
     case 'breaks':
       return (
-        <StyledContainer $bgColor={bgColor}>
+        <StyledContainer
+          $bgColor={bgColor}
+          $h2Color={h2Color}
+          $h3Color={h3Color}
+          $h3ColorHover={h3ColorHover}
+          $spanColor={spanColor}
+          className={outerClasses}
+        >
           <motion.div
             ref={ref}
             variants={variants}

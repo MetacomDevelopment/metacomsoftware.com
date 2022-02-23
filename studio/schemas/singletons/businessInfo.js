@@ -1,11 +1,8 @@
-import Tabs from 'sanity-plugin-tabs';
-
 export default {
   name: 'businessInfo',
   title: 'General Information',
   type: 'document',
-  inputComponent: Tabs,
-  fieldsets: [
+  groups: [
     { title: 'Name', name: 'nameSet' },
     { title: 'Address', name: 'addressSet' },
     { title: 'Phone', name: 'phoneSet' },
@@ -19,20 +16,26 @@ export default {
       description: 'Exactly as it appears on Google Business Profile',
       name: 'name',
       type: 'string',
-      fieldset: 'nameSet',
+      group: 'nameSet',
     },
     {
-      title: "Owner's Name",
+      title: 'Name of Business Owner',
       name: 'owner',
       type: 'string',
-      fieldset: 'nameSet',
+      group: 'nameSet',
+    },
+    {
+      title: 'Year Established',
+      name: 'established',
+      type: 'string',
+      group: 'nameSet',
     },
     {
       title: 'Physical Address',
       description: 'Format: "30 Roosevelt Rd, Plymouth, MA 02360"',
       name: 'address',
       type: 'string',
-      fieldset: 'addressSet',
+      group: 'addressSet',
     },
     {
       title: 'Address URL',
@@ -43,14 +46,14 @@ export default {
         Rule.uri({
           scheme: ['http', 'https'],
         }),
-      fieldset: 'addressSet',
+      group: 'addressSet',
     },
     {
       title: 'Phone Number',
       description: 'Format: "(401) 216-9868"',
       name: 'phone',
       type: 'string',
-      fieldset: 'phoneSet',
+      group: 'phoneSet',
     },
     {
       title: 'Phone URL',
@@ -62,14 +65,14 @@ export default {
         Rule.uri({
           scheme: ['tel'],
         }),
-      fieldset: 'phoneSet',
+      group: 'phoneSet',
     },
     {
       title: 'Email Address',
       description: 'Format: "contact@johngrattan.com"',
       name: 'emailAddress',
       type: 'email',
-      fieldset: 'emailSet',
+      group: 'emailSet',
     },
     {
       title: 'Email URL',
@@ -81,14 +84,63 @@ export default {
         Rule.uri({
           scheme: ['mailto'],
         }),
-      fieldset: 'emailSet',
+      group: 'emailSet',
     },
     {
-      title: 'Open Hours',
+      title: 'Open Hours (Single Line)',
       description: 'Format: "Mon-Sat: 9AM-5PM; Sun: CLOSED"',
       name: 'hours',
       type: 'string',
-      fieldset: 'hoursSet',
+      group: 'hoursSet',
+    },
+    {
+      title: 'Hours: Monday',
+      description: 'Format: "Mon: 9AM-5PM"',
+      name: 'hoursMon',
+      type: 'string',
+      group: 'hoursSet',
+    },
+    {
+      title: 'Hours: Tuesday',
+      description: 'Format: "Tue: 9AM-5PM"',
+      name: 'hoursTue',
+      type: 'string',
+      group: 'hoursSet',
+    },
+    {
+      title: 'Hours: Wednesday',
+      description: 'Format: "Wed: 9AM-5PM"',
+      name: 'hoursWed',
+      type: 'string',
+      group: 'hoursSet',
+    },
+    {
+      title: 'Hours: Thursday',
+      description: 'Format: "Thu: 9AM-5PM"',
+      name: 'hoursThu',
+      type: 'string',
+      group: 'hoursSet',
+    },
+    {
+      title: 'Hours: Friday',
+      description: 'Format: "Fri: 9AM-5PM"',
+      name: 'hoursFri',
+      type: 'string',
+      group: 'hoursSet',
+    },
+    {
+      title: 'Hours: Saturday',
+      description: 'Format: "Sat: 9AM-5PM"',
+      name: 'hoursSat',
+      type: 'string',
+      group: 'hoursSet',
+    },
+    {
+      title: 'Hours: Sunday',
+      description: 'Format: "Sun: 9AM-5PM"',
+      name: 'hoursSun',
+      type: 'string',
+      group: 'hoursSet',
     },
     {
       title: 'Hours URL',
@@ -99,7 +151,7 @@ export default {
         Rule.uri({
           scheme: ['http', 'https'],
         }),
-      fieldset: 'hoursSet',
+      group: 'hoursSet',
     },
     {
       title: 'Website URL',
@@ -110,7 +162,7 @@ export default {
         Rule.uri({
           scheme: ['http', 'https'],
         }),
-      fieldset: 'websiteSet',
+      group: 'websiteSet',
     },
   ],
 };

@@ -11,6 +11,8 @@ import {
   RichText,
   Menus,
   Spacer,
+  Employees,
+  CustomSections,
 } from '.';
 
 const PageBuilder = (props) => {
@@ -27,6 +29,8 @@ const PageBuilder = (props) => {
     richText: RichText,
     menuSection: Menus,
     spacer: Spacer,
+    employees: Employees,
+    customSection: CustomSections,
   };
 
   // 'raw' content needs to be passed in for the PortableText Component

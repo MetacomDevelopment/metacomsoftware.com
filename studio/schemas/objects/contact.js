@@ -10,7 +10,7 @@ export default {
     columns: 1, // Defines a grid for the fields and how many columns it should have
   },
   icon,
-  fieldsets: [
+  groups: [
     {
       title: 'Contact',
       name: 'contactSet',
@@ -27,7 +27,7 @@ export default {
       title: 'Description',
       description: 'Add a description beneath the headline.',
       name: 'description',
-      type: 'portableTextBody',
+      type: 'portableText',
     },
     {
       title: 'GMB Profile',

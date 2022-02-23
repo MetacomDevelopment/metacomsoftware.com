@@ -1,11 +1,11 @@
 {
   "root": true,
   "api": {
-    "projectId": "5oyu6n98",
+    "projectId": "wwqblpf2",
     "dataset": "production"
   },
   "project": {
-    "name": "Beechtree Energy"
+    "name": "Metacom Development"
   },
   "plugins": [
     "@sanity/base",
@@ -22,13 +22,13 @@
     "@sanity/color-input",
     "order-documents",
     "@sanity/code-input",
-    "media",
-    "seo-tools",
-    "tabs"
+    "media"
   ],
   "env": {
     "development": {
-      "plugins": ["@sanity/vision"]
+      "plugins": [
+        "@sanity/vision"
+      ]
     }
   },
   "parts": [

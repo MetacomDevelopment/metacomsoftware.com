@@ -1,13 +1,11 @@
 import { SiGooglemybusiness as icon } from 'react-icons/si';
-import Tabs from 'sanity-plugin-tabs';
 
 export default {
   title: 'Google My Business',
   name: 'gmb',
   type: 'document',
   icon,
-  inputComponent: Tabs,
-  fieldsets: [
+  groups: [
     { title: 'Name', name: 'nameSet' },
     { title: 'Address', name: 'addressSet' },
     { title: 'Phone', name: 'phoneSet' },
@@ -21,7 +19,7 @@ export default {
       name: 'name',
       type: 'string',
       initialValue: 'John Grattan SEO & Web Design',
-      fieldset: 'nameSet',
+      group: 'nameSet',
     },
     {
       title: 'Address',
@@ -29,7 +27,7 @@ export default {
       name: 'address',
       type: 'string',
       initialValue: '30 Roosevelt Rd, Plymouth, MA 02360',
-      fieldset: 'addressSet',
+      group: 'addressSet',
     },
     {
       title: 'Street',
@@ -37,7 +35,7 @@ export default {
       name: 'street',
       type: 'string',
       initialValue: '30 Roosevelt Rd',
-      fieldset: 'addressSet',
+      group: 'addressSet',
     },
     {
       title: 'City',
@@ -45,7 +43,7 @@ export default {
       name: 'city',
       type: 'string',
       initialValue: 'Plymouth',
-      fieldset: 'addressSet',
+      group: 'addressSet',
     },
     {
       title: 'City, State',
@@ -53,7 +51,7 @@ export default {
       name: 'cityState',
       type: 'string',
       initialValue: 'Plymouth, MA',
-      fieldset: 'addressSet',
+      group: 'addressSet',
     },
     {
       title: 'Zip Code',
@@ -61,7 +59,7 @@ export default {
       name: 'zip',
       type: 'string',
       initialValue: '02360',
-      fieldset: 'addressSet',
+      group: 'addressSet',
     },
     {
       title: 'Country',
@@ -69,7 +67,7 @@ export default {
       name: 'country',
       type: 'string',
       initialValue: 'US',
-      fieldset: 'addressSet',
+      group: 'addressSet',
     },
     {
       title: 'Latitude',
@@ -77,7 +75,7 @@ export default {
       name: 'latitude',
       type: 'string',
       initialValue: '41.936646846336444',
-      fieldset: 'addressSet',
+      group: 'addressSet',
     },
     {
       title: 'Longitude',
@@ -85,7 +83,7 @@ export default {
       name: 'longitude',
       type: 'string',
       initialValue: '-70.72298233068685',
-      fieldset: 'addressSet',
+      group: 'addressSet',
     },
     {
       title: 'Phone Number',
@@ -93,7 +91,7 @@ export default {
       name: 'phone',
       type: 'string',
       initialValue: '(401) 216-9868',
-      fieldset: 'phoneSet',
+      group: 'phoneSet',
     },
     {
       title: 'Phone URL',
@@ -105,14 +103,14 @@ export default {
         Rule.uri({
           scheme: ['tel'],
         }),
-      fieldset: 'phoneSet',
+      group: 'phoneSet',
     },
     {
       title: 'Email Address',
       description: 'Format: "contact@johngrattan.com"',
       name: 'emailAddress',
       type: 'email',
-      fieldset: 'emailSet',
+      group: 'emailSet',
     },
     {
       title: 'Email URL',
@@ -126,7 +124,7 @@ export default {
         Rule.uri({
           scheme: ['mailto'],
         }),
-      fieldset: 'emailSet',
+      group: 'emailSet',
     },
     {
       title: 'GMB CID URL',
@@ -138,7 +136,7 @@ export default {
         Rule.uri({
           scheme: ['http', 'https'],
         }),
-      fieldset: 'gmbUrlsSet',
+      group: 'gmbUrlsSet',
     },
     {
       title: 'GMB Map Embed URL',
@@ -151,7 +149,7 @@ export default {
         Rule.uri({
           scheme: ['http', 'https'],
         }),
-      fieldset: 'gmbUrlsSet',
+      group: 'gmbUrlsSet',
     },
     {
       title: 'GMB Reviews URL',
@@ -165,7 +163,7 @@ export default {
         Rule.uri({
           scheme: ['http', 'https'],
         }),
-      fieldset: 'gmbUrlsSet',
+      group: 'gmbUrlsSet',
     },
     {
       title: 'GMB Website URL',
@@ -177,7 +175,7 @@ export default {
           type: 'page',
         },
       ],
-      fieldset: 'gmbUrlsSet',
+      group: 'gmbUrlsSet',
     },
   ],
   preview: {

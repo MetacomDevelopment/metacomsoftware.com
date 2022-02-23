@@ -1,15 +1,14 @@
 import { FaListAlt as icon } from 'react-icons/fa';
-import Tabs from 'sanity-plugin-tabs';
 
 export default {
   title: 'Features',
   name: 'features',
   type: 'object',
   icon,
-  inputComponent: Tabs,
-  fieldsets: [
+  groups: [
     { title: 'Layout', name: 'layoutSet' },
-    { title: 'Section ID', name: 'sectionIdSet' },
+    { title: 'ID', name: 'idSet' },
+    { title: 'Header', name: 'headerSet' },
     { title: 'Features', name: 'featuresSet' },
   ],
   fields: [
@@ -25,21 +24,27 @@ export default {
         layout: 'radio',
         direction: 'horizontal',
       },
-      fieldset: 'layoutSet',
+      group: 'layoutSet',
     },
     {
       title: 'ID Name',
       description: 'Pick an ID name for the section (Example: "features")',
       name: 'idName',
       type: 'string',
-      fieldset: 'sectionIdSet',
+      group: 'idSet',
+    },
+    {
+      title: 'Header',
+      name: 'header',
+      type: 'header',
+      group: 'headerSet',
     },
     {
       title: 'Feature',
       name: 'feature',
       type: 'array',
       of: [{ type: 'feature' }],
-      fieldset: 'featuresSet',
+      group: 'featuresSet',
     },
   ],
   preview: {

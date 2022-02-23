@@ -43,14 +43,16 @@ const Layout = function ({ pageType, children }) {
           <Header />
           <GlobalStyles
             $linkColor={accent.default.color}
-            $link$colorHover={accent.light.color}
+            $linkColorHover={accent.light.color}
             $h2Color={primary.dark.color}
             $h3Color={secondary.dark.color}
             $h4Color={neutral.dark.color}
             $h5Color={neutral.default.color}
             $h6Color={neutral.default.color}
           >
+            {/* <div className="mt-[150px] md:mt-[144px] lg:mt-[144px] xl:mt-[144px]"> */}
             <main>{children}</main>
+            {/* </div> */}
           </GlobalStyles>
           <Footer />
         </div>
@@ -61,14 +63,16 @@ const Layout = function ({ pageType, children }) {
           <Header />
           <GlobalStyles
             $linkColor={accent.default.color}
-            $link$colorHover={accent.light.color}
+            $linkColorHover={accent.light.color}
             $h2Color={primary.dark.color}
             $h3Color={secondary.dark.color}
             $h4Color={neutral.dark.color}
             $h5Color={neutral.default.color}
             $h6Color={neutral.default.color}
           >
+            {/* <div className="mt-[150px] md:mt-[144px] lg:mt-[144px] xl:mt-[144px]"> */}
             <main>{children}</main>
+            {/* </div> */}
           </GlobalStyles>
           <Footer />
         </div>
@@ -79,14 +83,16 @@ const Layout = function ({ pageType, children }) {
           <Header />
           <GlobalStyles
             $linkColor={accent.default.color}
-            $link$colorHover={accent.light.color}
+            $linkColorHover={accent.light.color}
             $h2Color={primary.dark.color}
             $h3Color={secondary.dark.color}
             $h4Color={neutral.dark.color}
             $h5Color={neutral.default.color}
             $h6Color={neutral.default.color}
           >
+            {/* <div className="mt-[150px] md:mt-[144px] lg:mt-[144px] xl:mt-[144px]"> */}
             <main>{children}</main>
+            {/* </div> */}
           </GlobalStyles>
           <Footer />
         </div>
@@ -97,14 +103,16 @@ const Layout = function ({ pageType, children }) {
           <Header />
           <GlobalStyles
             $linkColor={accent.default.color}
-            $link$colorHover={accent.light.color}
+            $linkColorHover={accent.light.color}
             $h2Color={primary.dark.color}
             $h3Color={secondary.dark.color}
             $h4Color={neutral.dark.color}
             $h5Color={neutral.default.color}
             $h6Color={neutral.default.color}
           >
+            {/* <div className="mt-[150px] md:mt-[144px] lg:mt-[144px] xl:mt-[144px]"> */}
             <main>{children}</main>
+            {/* </div> */}
           </GlobalStyles>
           <Footer />
         </div>
@@ -115,14 +123,16 @@ const Layout = function ({ pageType, children }) {
           <Header />
           <GlobalStyles
             $linkColor={accent.default.color}
-            $link$colorHover={accent.light.color}
+            $linkColorHover={accent.light.color}
             $h2Color={primary.dark.color}
             $h3Color={secondary.dark.color}
             $h4Color={neutral.dark.color}
             $h5Color={neutral.default.color}
             $h6Color={neutral.default.color}
           >
+            {/* <div className="mt-[150px] md:mt-[144px] lg:mt-[144px] xl:mt-[144px]"> */}
             <main>{children}</main>
+            {/* </div> */}
           </GlobalStyles>
           <Footer />
         </div>

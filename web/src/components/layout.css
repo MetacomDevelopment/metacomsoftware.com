@@ -2,7 +2,7 @@
 
 @layer base {
   h1 {
-    @apply capitalize text-2xl;
+    @apply capitalize text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight;
   }
   h2 {
     @apply capitalize text-3xl font-extrabold tracking-tight sm:text-4xl;
@@ -22,6 +22,74 @@
 @tailwind utilities;
 
 @layer utilities {
+  .sanity-hero-subheadline-max-w-0 p {
+    @apply max-w-0;
+  }
+
+  .sanity-hero-subheadline-max-w-none p {
+    @apply max-w-none;
+  }
+
+  .sanity-hero-subheadline-max-w-xs p {
+    @apply max-w-xs;
+  }
+
+  .sanity-hero-subheadline-max-w-sm p {
+    @apply max-w-sm;
+  }
+
+  .sanity-hero-subheadline-max-w-md p {
+    @apply max-w-md;
+  }
+
+  .sanity-hero-subheadline-max-w-lg p {
+    @apply max-w-lg;
+  }
+
+  .sanity-hero-subheadline-max-w-xl p {
+    @apply max-w-xl;
+  }
+
+  .sanity-hero-subheadline-max-w-2xl p {
+    @apply max-w-2xl;
+  }
+
+  .sanity-hero-subheadline-max-w-3xl p {
+    @apply max-w-3xl;
+  }
+
+  .sanity-hero-subheadline-max-w-4xl p {
+    @apply max-w-4xl;
+  }
+
+  .sanity-hero-subheadline-max-w-5xl p {
+    @apply max-w-5xl;
+  }
+
+  .sanity-hero-subheadline-max-w-6xl p {
+    @apply max-w-6xl;
+  }
+
+  .sanity-hero-subheadline-max-w-7xl p {
+    @apply max-w-7xl;
+  }
+
+  .sanity-hero-subheadline-max-w-full p {
+    @apply max-w-full;
+  }
+
+  .sanity-hero-subheadline-max-w-min p {
+    @apply max-w-min;
+  }
+
+  .sanity-hero-subheadline-max-w-max p {
+    @apply max-w-max;
+  }
+
+  .sanity-hero-subheadline-max-w-fit p {
+    @apply max-w-fit;
+  }
+
   .sanity-headlines > h2 {
     @apply first:pt-0 pt-12;
   }
@@ -99,6 +167,32 @@
     margin-left: 40px;
     list-style: none;
   }
+
+  .call-btn {
+    position: fixed !important;
+    bottom: 14px !important;
+    right: 8px !important;
+    z-index: 9999;
+    filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5));
+  }
+
+  @media (min-width: 1024px) {
+    .call-btn {
+      display: none !important;
+    }
+  }
+
+  .btn-outline {
+    /* color: transparent !important; */
+    outline-style: hidden !important;
+    -webkit-text-stroke-width: 2px;
+  }
+
+  /* @include media-breakpoint-up(lg) {
+    .call-btn {
+      display: none;
+    }
+  } */
 
   /* .list-check > ul > li {
     padding: 0.3em 0 1em 40px;

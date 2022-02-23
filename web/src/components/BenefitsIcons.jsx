@@ -6,12 +6,13 @@ import { useSanity } from '../hooks';
 
 const StyledBenefits = styled((props) => <Section {...props} />)`
   background-color: ${(props) => props.$bgColor};
-  & h2 {
-    color: ${(props) => props.$h2Color};
+  & span {
+    color: ${(props) => props.$spanColor};
   }
-  & h3 {
-    color: ${(props) => props.$h3Color};
-  }
+`;
+
+const StyledTagline = styled.span`
+  color: ${(props) => props.$spanColor};
 `;
 
 const StyledIcon = styled.div`
@@ -85,8 +86,8 @@ const BenefitsIcons = ({
   block,
   raw,
   index,
-  headline,
-  tagline,
+  idName,
+  header,
   benefit,
   icon,
   title,
@@ -104,18 +105,23 @@ const BenefitsIcons = ({
   const handleIconError = useCallback((err) => console.error(err.message), []);
 
   return (
-    <Section
+    <StyledBenefits
+      idName={idName}
       type="sm"
       bgColor={neutral.light.color}
       h2Color={neutral.darker.color}
       h3Color={primary.dark.color}
+      $spanColor={accent.light.color}
     >
       <Container classes="max-w-md px-4 text-center sm:max-w-3xl lg:max-w-7xl">
-        <h3 className="text-base font-semibold tracking-wider uppercase">
-          {tagline}
-        </h3>
-        <h2 className="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">
-          {headline}
+        <StyledTagline
+          $spanColor={accent.dark.color}
+          className="text-base font-semibold tracking-wider uppercase"
+        >
+          {header.tagline}
+        </StyledTagline>
+        <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight lg:max-w-lg mx-auto">
+          {header.headline}
         </h2>
         <Grid classes="mt-20 gap-3 sm:grid-cols-3 lg:grid-cols-3">
           {benefit.map((item) => (
@@ -125,7 +131,7 @@ const BenefitsIcons = ({
             >
               <StyledIcon
                 className="h-40 w-40 mx-auto"
-                $color={primary.dark.color}
+                $color={accent.dark.color}
               >
                 <Icon
                   name={item?.icon}
@@ -138,10 +144,8 @@ const BenefitsIcons = ({
                 />
               </StyledIcon>
               <div className="relative z-10">
-                <h3 className="mt-8 text-3xl font-medium text-zinc-800">
-                  <span className="">{item.title}</span>
-                </h3>
-                <p className="mt-5 mb-8 text-xl text-zinc-500 italic">
+                <h3 className="mt-8 text-3xl font-medium">{item.title}</h3>
+                <p className="mt-5 mb-8 text-base text-zinc-500 text-left">
                   <SanityBlockContent blocks={item._rawDescription} />
                 </p>
                 <StyledAuthor
@@ -158,7 +162,7 @@ const BenefitsIcons = ({
           ))}
         </Grid>
       </Container>
-    </Section>
+    </StyledBenefits>
   );
 };
 

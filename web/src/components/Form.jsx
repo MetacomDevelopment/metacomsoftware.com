@@ -29,13 +29,12 @@ const Form = ({ formName }) => {
     lastName: '',
     email: '',
     phone: '',
+    company: '',
     service: '',
-    type: '',
-    findUs: '',
     message: '',
   });
 
-  const { firstName, lastName, email, phone, service, type, findUs, message } =
+  const { firstName, lastName, email, phone, company, service, message } =
     contact;
 
   const handleChange = (e) =>
@@ -49,7 +48,7 @@ const Form = ({ formName }) => {
       method="POST"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
-      className="p-3 lg:p-5 rounded-xl shadow-xl mx-auto"
+      className="relative p-3 lg:p-5 rounded-xl shadow-xl max-w-4xl mx-3 lg:mx-auto"
       id={formName}
       $bgColor={primary.dark.color}
     >
@@ -63,7 +62,7 @@ const Form = ({ formName }) => {
               {form.headline}
             </StyledHeadline>
             <StyledBorder
-              className="text-xl font-italic text-zinc-100 text-center"
+              className="text-xl font-italic text-zinc-100 text-center max-w-md mx-auto"
               $borderColor={accent.light.color}
             >
               <SanityBlockContent blocks={form._rawTagline} />
@@ -117,6 +116,17 @@ const Form = ({ formName }) => {
               />
             </Col>
             <Col>
+              <input
+                name="company"
+                type="text"
+                value={company}
+                onChange={handleChange}
+                placeholder="Company"
+                required
+                className="shadow-sm focus:ring-zinc-500 focus:border-zinc-500 block w-full sm:text-sm border-zinc-300 rounded-md"
+              />
+            </Col>
+            <Col>
               <select
                 name="service"
                 as="select"
@@ -128,78 +138,23 @@ const Form = ({ formName }) => {
                 <option value="" disabled hidden>
                   Service...
                 </option>
-                <option value="HVAC System Design" className="bg-gray-50">
-                  HVAC System Design
+                <option value="Healthcare Software Development">
+                  Healthcare Software Development
                 </option>
-                <option value="Duct Leakage Testing">
-                  Duct Leakage Testing
+                <option value="Healthcare Technology Consulting">
+                  Healthcare Technology Consulting
                 </option>
-                <option
-                  value="Preventive Maintenance Program"
-                  className="bg-gray-50"
-                >
-                  Preventive Maintenance Program
+                <option value="Custom Software Development">
+                  Custom Software Development
                 </option>
-                <option value="Mass Save HVAC MeasureQuick AC Check">
-                  Mass Save HVAC MeasureQuick AC Check
+                <option value="Legacy Application Modernization">
+                  Legacy Application Modernization
                 </option>
-                <option
-                  value="Mass Save Heat Pump Installer Network"
-                  className="bg-gray-50"
-                >
-                  Mass Save Heat Pump Installer Network
+                <option value="Website Design & Development">
+                  Website Design & Development
                 </option>
-              </select>
-            </Col>
-            <Col>
-              <select
-                name="type"
-                as="select"
-                value={type}
-                onChange={handleChange}
-                required
-                className="shadow-sm focus:ring-zinc-500 focus:border-zinc-500 block w-full sm:text-sm border-zinc-300 rounded-md"
-              >
-                <option value="" disabled hidden>
-                  Type...
-                </option>
-                <option value="Residential" className="bg-gray-50">
-                  Residential
-                </option>
-                <option value="Commercial">Commercial</option>
-                <option value="Industrial" className="bg-gray-50">
-                  Industrial
-                </option>
-              </select>
-            </Col>
-            <Col classes="lg:col-span-2">
-              <select
-                name="findUs"
-                as="select"
-                value={findUs}
-                onChange={handleChange}
-                required
-                className="shadow-sm focus:ring-zinc-500 focus:border-zinc-500 block w-full sm:text-sm border-zinc-300 rounded-md"
-              >
-                <option value="" disabled hidden>
-                  How Did You Find Us?
-                </option>
-                <option value="Google" className="bg-gray-50">
-                  Google
-                </option>
-                <option value="Bing">Bing</option>
-                <option value="Facebook" className="bg-gray-50">
-                  Facebook
-                </option>
-                <option value="LinkedIn">LinkedIn</option>
-                <option value="Referral" className="bg-gray-50">
-                  Referral
-                </option>
-                <option value="Directory (Yellowpages, etc.)">
-                  Directory (Yellowpages, etc.)
-                </option>
-                <option value="Other" className="bg-gray-50">
-                  Other
+                <option value="Mobile App Development">
+                  Mobile App Development
                 </option>
               </select>
             </Col>
@@ -209,24 +164,14 @@ const Form = ({ formName }) => {
                 rows="3"
                 value={message}
                 onChange={handleChange}
-                placeholder="Message"
+                placeholder="Please leave us a detailed message..."
                 required
                 className="shadow-sm focus:ring-zinc-500 focus:border-zinc-500 block w-full sm:text-sm border-zinc-300 rounded-md"
               />
             </Col>
           </Grid>
-
-          <div className="text-zinc-100 text-sm my-10">
-            <p className="italic">
-              <span className="text-red-500">*</span> All fields required
-            </p>
-            <p className="italic">
-              <span className="text-red-500">*</span> Your information will
-              never be shared.
-            </p>
-          </div>
           <div className="text-center mt-10 mb-6">
-            <Button linkType="form" label="Submit Inquiry" />
+            <Button linkType="form" label="Get My Custom Solution" />
           </div>
         </div>
       ))}

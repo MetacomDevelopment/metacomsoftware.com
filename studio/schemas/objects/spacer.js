@@ -1,13 +1,11 @@
 import { FaListAlt as icon } from 'react-icons/fa';
-import Tabs from 'sanity-plugin-tabs';
 
 export default {
   title: 'Spacer',
   name: 'spacer',
   type: 'object',
   icon,
-  inputComponent: Tabs,
-  fieldsets: [
+  groups: [
     { title: 'Mobile', name: 'mobileSet' },
     { title: 'Desktop', name: 'desktopSet' },
   ],
@@ -17,14 +15,14 @@ export default {
       description: 'Enter the height for the spacer on mobile devices.',
       name: 'heightMobile',
       type: 'string',
-      fieldset: 'mobileSet',
+      group: 'mobileSet',
     },
     {
       title: 'Height',
       description: 'Enter the height for the spacer on desktop computers.',
       name: 'heightDesktop',
       type: 'string',
-      fieldset: 'desktopSet',
+      group: 'desktopSet',
     },
   ],
   preview: {

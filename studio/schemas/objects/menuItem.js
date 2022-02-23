@@ -10,7 +10,7 @@ export default {
     columns: 1, // Defines a grid for the fields and how many columns it should have
   },
   icon,
-  fieldsets: [
+  groups: [
     {
       title: 'Menu Item',
       name: 'menuItemSet',
@@ -25,7 +25,7 @@ export default {
     {
       title: 'Description',
       name: 'description',
-      type: 'portableTextBody',
+      type: 'portableText',
     },
     {
       title: 'Price',

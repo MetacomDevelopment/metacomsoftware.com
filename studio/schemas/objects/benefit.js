@@ -10,7 +10,7 @@ export default {
     columns: 1, // Defines a grid for the fields and how many columns it should have
   },
   icon,
-  fieldsets: [
+  groups: [
     {
       title: 'Benefit',
       name: 'benefitSet',
@@ -31,7 +31,7 @@ export default {
     {
       title: 'Description',
       name: 'description',
-      type: 'portableTextBody',
+      type: 'portableText',
     },
     {
       title: 'Author',

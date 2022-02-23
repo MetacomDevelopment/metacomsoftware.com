@@ -20,7 +20,7 @@ const FooterForm = () => {
               loading="eager"
             />
             <div
-              className="absolute inset-0 bg-zinc-600"
+              className="absolute inset-0 bg-zinc-200"
               style={{ mixBlendMode: 'multiply' }}
               aria-hidden="true"
             />

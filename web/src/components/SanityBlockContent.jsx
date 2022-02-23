@@ -26,9 +26,9 @@ const SanityBlockContent = ({ blocks, classes }) => {
       internalLink: ({ mark, children }) => {
         const { reference = {} } = mark;
         const href =
-          reference.metadata.slug.current === 'home'
+          reference.slug.current === 'home'
             ? '/'
-            : `/${reference.metadata.slug.current}/`;
+            : `/${reference.slug.current}/`;
         return (
           <AnchorText
             type="internal"

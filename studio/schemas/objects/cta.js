@@ -1,13 +1,11 @@
 import { FaListAlt as icon } from 'react-icons/fa';
-import Tabs from 'sanity-plugin-tabs';
 
 export default {
   title: 'CTA',
   name: 'cta',
   type: 'object',
   icon,
-  inputComponent: Tabs,
-  fieldsets: [
+  groups: [
     { title: 'Layout', name: 'layoutSet' },
     { title: 'Text', name: 'textSet' },
     { title: 'CTA', name: 'ctaSet' },
@@ -26,34 +24,34 @@ export default {
         layout: 'radio',
         direction: 'horizontal',
       },
-      fieldset: 'layoutSet',
+      group: 'layoutSet',
     },
     {
       title: 'Headline',
       name: 'headline',
       type: 'string',
-      fieldset: 'textSet',
+      group: 'textSet',
     },
     {
       title: 'Subheadline',
       name: 'subheadline',
       type: 'string',
       hidden: ({ parent }) => !(parent?.layout === 'full'),
-      fieldset: 'textSet',
+      group: 'textSet',
     },
     {
       title: 'Tagline',
       name: 'tagline',
       type: 'string',
       hidden: ({ parent }) => !(parent?.layout === 'half'),
-      fieldset: 'textSet',
+      group: 'textSet',
     },
     {
       title: 'Description',
       name: 'description',
-      type: 'portableTextBody',
+      type: 'portableText',
       hidden: ({ parent }) => !(parent?.layout === 'half'),
-      fieldset: 'textSet',
+      group: 'textSet',
     },
     {
       title: 'CTA Button Label',
@@ -61,7 +59,7 @@ export default {
         'Enter the label for the  call to action button (Example: "Request Appointment")',
       name: 'ctaButtonLabel',
       type: 'string',
-      fieldset: 'ctaSet',
+      group: 'ctaSet',
     },
     {
       title: 'CTA Button Link',
@@ -70,13 +68,13 @@ export default {
       name: 'ctaButtonLink',
       type: 'reference',
       to: [{ type: 'page' }],
-      fieldset: 'ctaSet',
+      group: 'ctaSet',
     },
     {
       title: 'Image',
       name: 'image',
       type: 'imageAlt',
-      fieldset: 'imageSet',
+      group: 'imageSet',
     },
   ],
   preview: {

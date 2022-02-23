@@ -72,7 +72,7 @@ const CtaHalf = ({
               <div className="mx-auto lg:mx-none mt-12 flex justify-center lg:justify-start rounded-md drop-shadow">
                 <Button
                   linkType="internal"
-                  internalLink={ctaButtonLink.metadata.slug.current}
+                  internalLink={ctaButtonLink.slug.current}
                   label={ctaButtonLabel}
                 />
               </div>

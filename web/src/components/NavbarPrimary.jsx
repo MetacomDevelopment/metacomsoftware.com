@@ -1,5 +1,6 @@
 /* This example requires Tailwind CSS v2.0+ */
 import React from 'react';
+import { Fragment } from 'react';
 import styled from 'styled-components';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
@@ -12,18 +13,100 @@ import {
   XIcon,
 } from '@heroicons/react/outline';
 
-import { Button, Col, Container, Grid, Row, AnchorText, Section } from '.';
+import {
+  Button,
+  Col,
+  Container,
+  Grid,
+  Row,
+  AnchorText,
+  Section,
+  NavbarPrimaryMobileMenuSection,
+  NavbarPrimaryMobileCtaSection,
+  NavbarPrimaryMobileIcon,
+  NavbarPrimaryLogo,
+  NavbarPrimaryDesktopCtaButton,
+  NavbarPrimaryMobileCtaButton,
+} from '.';
 import { useSanity } from '../hooks';
+
+const StyledSection = styled.section`
+  color: ${(props) => props.$color};
+  background-color: ${(props) => props.$bgColor};
+  &:hover {
+    color: ${(props) => props.$colorHover};
+    background-color: ${(props) => props.$bgColorHover};
+  }
+`;
+
+const StyledMenuLinks = styled.ul`
+  & li {
+    cursor: pointer !important;
+    color: ${(props) => props.$color} !important;
+    font-size: 1.125rem !important;
+    font-weight: 600 !important;
+    transition: all 0.25s;
+    &:hover {
+      color: ${(props) => props.$colorHover} !important;
+    }
+    & svg {
+      height: 1em !important;
+      width: 1em !important;
+    }
+    & a {
+      color: ${(props) => props.$color} !important;
+      font-size: 1.125rem !important;
+      font-weight: 600 !important;
+      transition: all 0.25s;
+      &:hover {
+        color: ${(props) => props.$colorHover} !important;
+      }
+    }
+  }
+`;
+
+const StyledMobileMenuLinks = styled.ul`
+  & li {
+    cursor: pointer !important;
+    color: ${(props) => props.$color} !important;
+    font-size: 1.125rem !important;
+    font-weight: 600 !important;
+    transition: all 0.25s;
+    &:hover {
+      color: ${(props) => props.$colorHover} !important;
+    }
+    & svg {
+      height: 1em !important;
+      width: 1em !important;
+    }
+    & a {
+      color: ${(props) => props.$color} !important;
+      font-size: 1.125rem !important;
+      font-weight: 600 !important;
+      transition: all 0.25s;
+      &:hover {
+        color: ${(props) => props.$colorHover} !important;
+      }
+    }
+  }
+`;
+
+const StyledDropdownItem = styled.div`
+  color: ${(props) => props.$color};
+  background-color: ${(props) => props.$bgColor};
+  &:hover {
+    color: ${(props) => props.$colorHover};
+    background-color: ${(props) => props.$bgColorHover} !important;
+  }
+`;
 
 const StyledMobileNavCtaBg = styled.div`
   background-color: ${(props) => props.$bgColor};
 `;
 
-const StyledDisclosureButton = styled((props) => (
-  <Disclosure.Button {...props} />
-))`
+const StyledPopoverButton = styled((props) => <Popover.Button {...props} />)`
   color: ${(props) => props.$color};
-  background-color: ${(props) => props.$bgColor};
+  background-color: none !important;
   &:hover {
     color: ${(props) => props.$colorHover};
     background-color: ${(props) => props.$bgColorHover};
@@ -32,7 +115,7 @@ const StyledDisclosureButton = styled((props) => (
 
 const StyledXIcon = styled((props) => <XIcon {...props} />)`
   color: ${(props) => props.$color};
-  background-color: ${(props) => props.$bgColor};
+  background-color: none !important;
   &:hover {
     color: ${(props) => props.$colorHover};
     background-color: ${(props) => props.$bgColorHover};
@@ -41,10 +124,23 @@ const StyledXIcon = styled((props) => <XIcon {...props} />)`
 
 const StyledMenuIcon = styled((props) => <MenuIcon {...props} />)`
   color: ${(props) => props.$color};
-  background-color: ${(props) => props.$bgColor};
+  background-color: none !important;
   &:hover {
     color: ${(props) => props.$colorHover};
     background-color: ${(props) => props.$bgColorHover};
+  }
+`;
+
+const StyledDisclosureButton = styled((props) => (
+  <Disclosure.Button {...props} />
+))`
+  & li {
+    color: ${(props) => props.$color} !important;
+    background-color: ${(props) => props.$bgColor} !important;
+    &:hover {
+      color: ${(props) => props.$colorHover} !important;
+      background-color: ${(props) => props.$bgColorHover} !important;
+    }
   }
 `;
 
@@ -91,6 +187,7 @@ const NavbarPrimary = () => {
   const {
     siteSEO,
     logo,
+    navbar,
     navbars,
     primary,
     secondary,
@@ -134,322 +231,334 @@ const NavbarPrimary = () => {
     },
   };
 
+  const solutions = [
+    {
+      name: 'Insights',
+      description: 'Measure actions your users take',
+      href: '##',
+    },
+    {
+      name: 'Automations',
+      description: 'Create your own targeted content',
+      href: '##',
+    },
+    {
+      name: 'Reports',
+      description: 'Keep track of your growth',
+      href: '##',
+    },
+  ];
+
   return (
-    <Section padding="none" bgColor={neutral.white.color}>
-      <Disclosure as="nav">
-        {({ open }) => (
-          <div>
-            <Container classes="max-w-7xl px-2">
-              <div className="relative flex items-center justify-between h-24">
-                <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
-                  {/* Mobile menu button */}
-                  <StyledDisclosureButton
+    <StyledSection
+      $bgColor={
+        navbar?.primaryNavBgColor?.color
+          ? navbar?.primaryNavBgColor?.color
+          : 'bg-white'
+      }
+      $textColor={
+        navbar?.primaryNavTextColor?.color
+          ? navbar?.primaryNavTextColor?.color
+          : 'text-gray-900'
+      }
+      className={`w-full h-24 ${
+        navbar?.primaryNavBgColorCustom
+          ? navbar?.primaryNavBgColorCustom
+          : 'bg-white'
+      }`}
+    >
+      <Container padding="none" classes="max-w-7xl h-24 m-auto px-4 xl:px-0">
+        <div className="h-24 gap-x-2 flex justify-between">
+          <NavbarPrimaryLogo />
+          <div className="hidden lg:flex justify-center content-center items-center">
+            <StyledMenuLinks
+              $color={navbar.primaryNavTextColor.color}
+              $colorHover={accent.default.color}
+              className="flex space-x-8"
+            >
+              {navbars?.map((primary) =>
+                primary?.navItem?.map((link) =>
+                  link?.singlePageLink ? (
+                    <li>
+                      <AnchorText
+                        type="internal"
+                        color={neutral.default.color}
+                        to={link?.singlePageLink?.slug?.current}
+                      >
+                        {link?.singlePageLink?.anchor}
+                      </AnchorText>
+                    </li>
+                  ) : (
+                    <Popover className="relative">
+                      {({ open }) => (
+                        <>
+                          <Popover.Button>
+                            <li className="flex gap-x-2">
+                              {link?.dropdownTextLabel}{' '}
+                              <ChevronDownIcon
+                                aria-hidden="true"
+                                className={`${
+                                  open ? 'transform rotate-180' : ''
+                                } mt-1`}
+                              />
+                            </li>
+                          </Popover.Button>
+                          <Transition
+                            as={Fragment}
+                            enter="transition ease-out duration-200"
+                            enterFrom="opacity-0 translate-y-1"
+                            enterTo="opacity-100 translate-y-0"
+                            leave="transition ease-in duration-150"
+                            leaveFrom="opacity-100 translate-y-0"
+                            leaveTo="opacity-0 translate-y-1"
+                          >
+                            <Popover.Panel
+                              className={`absolute z-10 w-screen max-w-sm px-4 mt-3 transform -translate-x-1/2 left-1/2 sm:px-0 ${
+                                link?.dropdowns?.length < 4
+                                  ? 'lg:max-w-md'
+                                  : 'lg:max-w-4xl'
+                              }`}
+                            >
+                              <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-gray-800 ring-opacity-5">
+                                <div
+                                  className={`relative grid gap-8 bg-white p-7 ${
+                                    link?.dropdowns?.length < 4
+                                      ? 'lg:grid-cols-1'
+                                      : 'lg:grid-cols-2'
+                                  }`}
+                                >
+                                  {link?.dropdowns?.map((dropdownLink) =>
+                                    dropdownLink?.singlePageLink ? (
+                                      <AnchorText
+                                        type="internal"
+                                        color={neutral.default.color}
+                                        key={
+                                          dropdownLink?.singlePageLink?.slug
+                                            ?.current
+                                        }
+                                        to={
+                                          dropdownLink?.singlePageLink?.slug
+                                            ?.current
+                                        }
+                                        classes="flex items-start p-2 -m-3 transition duration-150 ease-in-out rounded-lg focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
+                                      >
+                                        <StyledDropdownItem
+                                          className="flex p-2 transition duration-150 ease-in-out rounded-lg"
+                                          $bgColorHover={accent.lighter.color}
+                                        >
+                                          {dropdownLink?.singlePageLink?.pageBuilder?.map(
+                                            (hero) => (
+                                              <div>
+                                                <GatsbyImage
+                                                  image={
+                                                    hero?.bgImg?.asset
+                                                      ?.gatsbyImageData
+                                                  }
+                                                  alt={`${hero?.bgImg?.alt} company logo`}
+                                                  loading="eager"
+                                                  className="w-16 h-16 rounded-lg shadow-lg flex justify-start content-center items-center"
+                                                />
+                                              </div>
+                                            )
+                                          )}
+                                          <div className="ml-4">
+                                            <p className="text-lg font-medium text-gray-900">
+                                              {
+                                                dropdownLink?.singlePageLink
+                                                  ?.anchor
+                                              }
+                                            </p>
+                                            <p className="text-sm text-gray-500">
+                                              {
+                                                dropdownLink?.singlePageLink
+                                                  ?.shortDescription
+                                              }
+                                            </p>
+                                          </div>
+                                        </StyledDropdownItem>
+                                      </AnchorText>
+                                    ) : (
+                                      <Disclosure>
+                                        {({ open }) => (
+                                          <>
+                                            <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-purple-900 bg-purple-100 rounded-lg hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                                              {dropdownLink.dropdownTextLabel}
+                                              <ChevronUpIcon
+                                                className={`${
+                                                  open
+                                                    ? 'transform rotate-180'
+                                                    : ''
+                                                } w-5 h-5 text-purple-500`}
+                                              />
+                                            </Disclosure.Button>
+                                            <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
+                                              {dropdownLink.dropdowns.map(
+                                                (dropdownLink) =>
+                                                  dropdownLink.singlePageLink
+                                                    .anchor
+                                              )}
+                                            </Disclosure.Panel>
+                                          </>
+                                        )}
+                                      </Disclosure>
+                                    )
+                                  )}
+                                </div>
+                                {/* <div className="p-4 bg-gray-50">
+                                  <AnchorText
+                                  type="internal"
+                                  color={neutral.default.color}
+                                    to={}
+                                    className="flow-root px-2 py-2 transition duration-150 ease-in-out rounded-md hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
+                                  >
+                                    <span className="flex items-center">
+                                      <span className="text-sm font-medium text-gray-900">
+                                        Documentation
+                                      </span>
+                                    </span>
+                                    <span className="block text-sm text-gray-500">
+                                      Start integrating products and tools
+                                    </span>
+                                  </AnchorText>
+                                </div> */}
+                              </div>
+                            </Popover.Panel>
+                          </Transition>
+                        </>
+                      )}
+                    </Popover>
+                  )
+                )
+              )}
+            </StyledMenuLinks>
+          </div>
+          <div className="flex justify-end content-center items-center">
+            <NavbarPrimaryDesktopCtaButton />
+            <Popover className="flex lg:hidden relative">
+              {({ open }) => (
+                <>
+                  <StyledPopoverButton
                     $color={primary.dark.color}
                     $colorHover={primary.dark.color}
                     $bgColor={neutral.white.color}
                     $bgColorHover={neutral.white.color}
-                    className="inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                    className="inline-flex items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                   >
                     <span className="sr-only">Open main menu</span>
                     {open ? (
                       <StyledXIcon
-                        $color={primary.dark.color}
-                        $colorHover={primary.dark.color}
-                        $bgColor={neutral.white.color}
-                        $bgColorHover={neutral.white.color}
+                        $color={accent.default.color}
+                        $colorHover={accent.dark.color}
                         className="block h-10 w-10"
                         aria-hidden="true"
                       />
                     ) : (
                       <StyledMenuIcon
-                        $color={primary.dark.color}
-                        $colorHover={primary.dark.color}
-                        $bgColor={neutral.white.color}
-                        $bgColorHover={neutral.white.color}
+                        $color={accent.default.color}
+                        $colorHover={accent.dark.color}
                         className="block h-10 w-10"
                         aria-hidden="true"
                       />
                     )}
-                  </StyledDisclosureButton>
-                </div>
-                <div className="flex-1 flex items-center justify-start sm:items-stretch sm:justify-start">
-                  <motion.div
-                    className="flex-shrink-1 flex items-center"
-                    variants={variants}
-                    initial="initial"
-                    animate="animate"
+                  </StyledPopoverButton>
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-200"
+                    enterFrom="opacity-0 -translate-y-10"
+                    enterTo="opacity-100 translate-y-0"
+                    leave="transition ease-in duration-150"
+                    leaveFrom="opacity-100 translate-y-0"
+                    leaveTo="opacity-0 translate-y-1"
                   >
-                    <div className="flex-shrink-1 flex-shrink flex items-center">
-                      <Link to="/">
-                        <GatsbyImage
-                          image={logo.navbar?.asset?.gatsbyImageData}
-                          alt={`${siteSEO?.name} company logo`}
-                          loading="eager"
-                          className="transition hover:scale-110"
-                        />
-                      </Link>
-                    </div>
-                  </motion.div>
-                  {/* Desktop Nav Links & CTA Button */}
-                  <div className="hidden sm:block sm:ml-6 lg:mx-auto self-center justify-center">
-                    <div className="flex space-x-8">
-                      {navbars.map((item) =>
-                        item.navItem.map((itemType) =>
-                          itemType.type === 'dropdown'
-                            ? itemType.dropdowns.map((dropdown) => (
-                                <Popover
-                                  key={dropdown._key}
-                                  className="z-0 relative"
-                                >
-                                  {({ open }) => (
-                                    <div>
-                                      <div className="relative z-10">
-                                        <div className="max-w-7xl flex">
-                                          <Popover.Button
-                                            className={classNames(
-                                              open
-                                                ? `${accent.default.color}`
-                                                : `${neutral.dark.color}`,
-                                              `border-transparent inline-flex items-center px-1 focus:outline-none text-lg font-medium`
-                                            )}
-                                          >
-                                            <StyledDropdownLabelText
-                                              $color={neutral.dark.color}
-                                              $colorHover={accent.default.color}
-                                              $weight={500}
-                                              $size="1.125rem"
-                                              $lineHeight="1.75rem"
-                                            >
-                                              {dropdown.label}
-                                            </StyledDropdownLabelText>
-                                            <StyledDropdownLabelChevron
-                                              $color={neutral.dark.color}
-                                              $colorHover={accent.default.color}
-                                              $weight={500}
-                                              $size="1.125rem"
-                                              $lineHeight="1.75rem"
-                                              $height="1.25rem"
-                                              $width="1.25rem"
-                                              $marginLeft="0.5rem"
-                                            >
-                                              <ChevronDownIcon aria-hidden="true" />
-                                            </StyledDropdownLabelChevron>
-                                          </Popover.Button>
-                                        </div>
-                                      </div>
-                                      <Transition
-                                        show={open}
-                                        as="div"
-                                        enter="transition-all ease-in-out duration-300"
-                                        enterFrom="opacity-0 -translate-y-1"
-                                        enterTo="opacity-100 translate-y-0"
-                                        leave="transition ease-in duration-150"
-                                        leaveFrom="opacity-100 translate-y-0"
-                                        leaveTo="opacity-0 -translate-y-1"
-                                      >
-                                        <Popover.Panel
-                                          static
-                                          className="absolute mx-auto z-10 inset-x-0 transform shadow-2xl rounded-2xl w-max mt-9"
+                    <Popover.Panel className="absolute top-[4.7rem] -right-4 z-10 w-screen transform overflow-y-auto touch-pan-y max-h-[75vh] shadow-2xl">
+                      <div className="shadow-lg ring-1 ring-black ring-opacity-5">
+                        <div className="relative grid grid-cols-1 gap-8 bg-white p-7">
+                          <StyledMobileMenuLinks
+                            $color={neutral.darker.color}
+                            $colorHover={accent.default.color}
+                            className="flex flex-col space-y-8"
+                          >
+                            {navbars?.map((primary) =>
+                              primary?.navItem?.map((link) =>
+                                link?.singlePageLink ? (
+                                  <li>
+                                    <AnchorText
+                                      type="internal"
+                                      color={neutral.default.color}
+                                      to={link?.singlePageLink?.slug?.current}
+                                    >
+                                      {link?.singlePageLink?.anchor}
+                                    </AnchorText>
+                                  </li>
+                                ) : (
+                                  <Disclosure>
+                                    {({ open }) => (
+                                      <>
+                                        <Disclosure.Button className="flex flex-col space-y-8 justify-between w-full py-2 text-lg font-medium text-left rounded-lg">
+                                          <li className="flex gap-x-2">
+                                            {link?.dropdownTextLabel}{' '}
+                                            <ChevronDownIcon
+                                              aria-hidden="true"
+                                              className={`${
+                                                open
+                                                  ? 'transform rotate-180'
+                                                  : ''
+                                              } mt-1`}
+                                            />
+                                          </li>
+                                        </Disclosure.Button>
+                                        <Transition
+                                          enter="transition duration-100 ease-out"
+                                          enterFrom="transform scale-95 opacity-0 duration-100"
+                                          enterTo="transform scale-100 opacity-100"
+                                          leave="transition duration-75 ease-out"
+                                          leaveFrom="transform scale-100 opacity-100"
+                                          leaveTo="transform scale-95 opacity-0"
                                         >
-                                          <div className="bg-gray-100">
-                                            <div className="max-w-max mx-auto grid gap-y-6 px-4 py-6 sm:grid-cols-1 sm:gap-8 sm:px-6 sm:py-8 lg:grid-cols-1 lg:px-8 lg:py-8 xl:py-8">
-                                              {dropdown.links.map((link) => (
+                                          <Disclosure.Panel className="flex flex-col ml-4 space-y-8 text-lg font-medium text-left">
+                                            {link.dropdowns.map(
+                                              (dropdownLink) => (
                                                 <AnchorText
                                                   type="internal"
-                                                  color={neutral.dark.color}
-                                                  colorHover={
-                                                    accent.default.color
-                                                  }
-                                                  weight={500}
-                                                  size="1.125rem"
-                                                  lineHeight="1.75rem"
-                                                  key={link._key}
+                                                  color={neutral.default.color}
                                                   to={
-                                                    link.metadata.slug
-                                                      .current === 'home'
-                                                      ? '/'
-                                                      : `/${link.metadata.slug.current}/`
+                                                    dropdownLink.singlePageLink
+                                                      .slug.current
                                                   }
-                                                  classes="border-transparent inline-flex items-center px-2"
-                                                  activeClassName="active"
                                                 >
-                                                  {link.anchor}
+                                                  {
+                                                    dropdownLink.singlePageLink
+                                                      .anchor
+                                                  }
                                                 </AnchorText>
-                                              ))}
-                                            </div>
-                                          </div>
-                                        </Popover.Panel>
-                                      </Transition>
-                                    </div>
-                                  )}
-                                </Popover>
-                              ))
-                            : itemType.type === 'single'
-                            ? itemType.pageLinks.map((page) => (
-                                <AnchorText
-                                  type="internal"
-                                  color={neutral.dark.color}
-                                  colorHover={accent.default.color}
-                                  weight={500}
-                                  size="1.125rem"
-                                  lineHeight="1.75rem"
-                                  key={page._key}
-                                  to={
-                                    page.metadata.slug.current === 'home'
-                                      ? '/'
-                                      : `/${page.metadata.slug.current}/`
-                                  }
-                                  classes="border-transparent inline-flex items-center px-2"
-                                  activeClassName="active"
-                                >
-                                  {page.anchor}
-                                </AnchorText>
-                              ))
-                            : null
-                        )
-                      )}
-                    </div>
-                  </div>
-                  <motion.div
-                    className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:pr-0"
-                    variants={variants}
-                    initial="initial"
-                    animate="animate"
-                  >
-                    {navbars.map((item) => (
-                      <div
-                        key={item._key}
-                        className="hidden sm:flex sm:items-center"
-                      >
-                        <Button
-                          linkType="internal"
-                          internalLink={
-                            item.primaryNavCtaButtonLink?.metadata?.slug
-                              ?.current
-                          }
-                          label={item?.primaryNavCtaButtonLabel}
-                        />
-                      </div>
-                    ))}
-                  </motion.div>
-                </div>
-              </div>
-            </Container>
-            <Disclosure.Panel className="sm:hidden">
-              <Grid classes="gap-y-2 px-6 py-6">
-                <Col classes="space-y-6">
-                  {navbars.map((item) =>
-                    item.navItem.map((itemType) =>
-                      itemType.type === 'dropdown'
-                        ? itemType.dropdowns.map((dropdown) => (
-                            <Disclosure key={dropdown._key}>
-                              {({ open }) => (
-                                <div>
-                                  <Disclosure.Button className="flex justify-between w-full bg-zinc-50 text-lg font-medium text-zinc-800 hover:text-zinc-800 focus:text-zinc-800">
-                                    <span className="pr-1 hover:text-zinc-800 focus:text-zinc-800">
-                                      {dropdown.label}
-                                    </span>
-                                    <ChevronUpIcon
-                                      className={`${
-                                        open ? 'transform rotate-180' : ''
-                                      } w-6 h-6 text-accent`}
-                                    />
-                                  </Disclosure.Button>
-                                  <Disclosure.Panel className="p-4 bg-zinc-200 space-y-6">
-                                    {dropdown.links.map((link) => (
-                                      <Col key={link._key} classes="ml-3">
-                                        <AnchorText
-                                          type="internal"
-                                          color={neutral.dark.color}
-                                          colorHover={accent.default.color}
-                                          weight={500}
-                                          size="1.125rem"
-                                          lineHeight="1.75rem"
-                                          key={link.id}
-                                          to={
-                                            link.metadata.slug.current ===
-                                            'home'
-                                              ? '/'
-                                              : `/${link.metadata.slug.current}/`
-                                          }
-                                          classes="border-transparent inline-flex items-center"
-                                          activeClassName="border-transparent inline-flex items-center px-1"
-                                        >
-                                          {link.anchor}
-                                        </AnchorText>
-                                      </Col>
-                                    ))}
-                                  </Disclosure.Panel>
-                                </div>
-                              )}
-                            </Disclosure>
-                          ))
-                        : itemType.type === 'single'
-                        ? itemType.pageLinks.map((page) => (
-                            <div key={page._key}>
-                              <AnchorText
-                                type="internal"
-                                color={neutral.dark.color}
-                                colorHover={accent.default.color}
-                                weight={500}
-                                size="1.125rem"
-                                lineHeight="1.75rem"
-                                to={
-                                  page.metadata.slug.current === 'home'
-                                    ? '/'
-                                    : `/${page.metadata.slug.current}/`
-                                }
-                                classes="border-transparent inline-flex items-center px-1"
-                                activeClassName="border-transparent inline-flex items-center px-1"
-                              >
-                                {page.anchor}
-                              </AnchorText>
-                            </div>
-                          ))
-                        : null
-                    )
-                  )}
-                </Col>
-              </Grid>
-              <Grid>
-                <StyledMobileNavCtaBg
-                  $bgColor={primary.dark.color}
-                  className="pt-8 pb-4"
-                >
-                  <Row classes="text-center">
-                    {navbars.map((item) => (
-                      <div key={item._key}>
-                        <Button
-                          linkType="internal"
-                          internalLink={
-                            item.primaryNavCtaButtonLink?.metadata?.slug
-                              ?.current
-                          }
-                          label={item?.primaryNavCtaButtonLabel}
-                        />
-                      </div>
-                    ))}
-                  </Row>
-                  <Grid classes="pt-10 pb-4 grid-cols-3">
-                    {nap.map((contact) => (
-                      <Col key={contact.anchor} classes="mx-auto">
-                        <div className="flex my-auto px-6">
-                          <a href={contact.url} target="_blank" rel="noopener">
-                            <i
-                              className={`${contact.icon} fa-2x text-white hover:text-accent`}
-                            />
-                          </a>
+                                              )
+                                            )}
+                                          </Disclosure.Panel>
+                                        </Transition>
+                                      </>
+                                    )}
+                                  </Disclosure>
+                                )
+                              )
+                            )}
+                          </StyledMobileMenuLinks>
                         </div>
-                      </Col>
-                    ))}
-                  </Grid>
-                </StyledMobileNavCtaBg>
-              </Grid>
-            </Disclosure.Panel>
+                        <StyledMobileNavCtaBg
+                          $bgColor={primary.darker.color}
+                          className="p-6 flex justify-center"
+                        >
+                          <NavbarPrimaryMobileCtaButton />
+                        </StyledMobileNavCtaBg>
+                      </div>
+                    </Popover.Panel>
+                  </Transition>
+                </>
+              )}
+            </Popover>
           </div>
-        )}
-      </Disclosure>
-    </Section>
+        </div>
+      </Container>
+    </StyledSection>
   );
 };
 

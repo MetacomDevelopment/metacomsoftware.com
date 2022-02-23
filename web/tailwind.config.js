@@ -28,7 +28,15 @@ const heroHeadline = {
 module.exports = {
   future: {},
   // purge: ["./src/**/*.js", "./src/**/*.jsx", "./src/**/*.ts", "./src/**/*.tsx"],
-  content: ['./public/**/*.html', './src/**/*.{js,jsx,ts,tsx,vue}'],
+  // content: ['./public/**/*.html', './src/**/*.{js,jsx,ts,tsx,vue}'],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  safelist: [
+    {
+      pattern: /^bg.*/,
+      // pattern:
+      //   /^bg-gradient-to-[a-z]*\sfrom-\w*-(\d*|\d*\/\d*)\svia-\w*-(\d*|\d*\/\d*)\sto-\w*-(\d*|\d*\/\d*)$/,
+    },
+  ],
   theme: {
     colors: {
       current: 'currentColor',

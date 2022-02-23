@@ -6,8 +6,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { useSanity } from '../hooks';
 
 const SEO = ({ lang, title, description, canonical, image, children }) => {
-  const { siteSEO, metadata, primary, secondary, accent, neutral, hero } =
-    useSanity();
+  const { siteSEO, info } = useSanity();
   const metaDescription = description || siteSEO.description;
 
   return (
@@ -15,21 +14,21 @@ const SEO = ({ lang, title, description, canonical, image, children }) => {
       htmlAttributes={{
         lang,
       }}
-      title={`${title} | ${siteSEO.name}`}
+      title={`${title} | ${info.name}`}
     >
       <link
         rel="canonical"
         href={`${
-          canonical === 'https://www.aristocracysalon.com/home/'
-            ? 'https://www.aristocracysalon.com/'
-            : canonical
+          canonical === `${info.websiteUrl}/home/` ? info.websiteUrl : canonical
         }`}
       />
 
       <meta
         name="robots"
         content={
-          siteSEO.isIndexed === true ? 'index, follow' : 'noindex, nofollow'
+          siteSEO.indexStatus === 'index'
+            ? 'index, follow'
+            : 'noindex, nofollow'
         }
       />
 

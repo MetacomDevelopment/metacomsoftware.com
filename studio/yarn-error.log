@@ -1,0 +1,91 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\JohnG\AppData\Roaming\npm\node_modules\@sanity\cli\vendor\yarn add sanity-plugin-sanity-super-pane --json --non-interactive --ignore-engines --network-timeout 60000 --registry https://registry.npmjs.org
+
+PATH: 
+  C:\Users\JohnG\AppData\Roaming\npm\node_modules\vendor;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\JohnG\bin;C:\Python39\Scripts;C:\Python39;C:\Python37\Scripts;C:\Python37;C:\Python27;C:\Python27\Scripts;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Program Files\OpenSSH-Win64;C:\Program Files\Java\jdk1.8.0_211\bin;C:\tools\php73;C:\Program Files\Microsoft VS Code\bin;C:\Program Files (x86)\vim\vim80;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\dotnet;C:\Program Files\Microsoft SQL Server\130\Tools\Binn;C:\Program Files\nodejs;C:\Users\JohnG\AppData\Local\Microsoft\WindowsApps;C:\tools\cygwin\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.3.3\bin;C:\Users\JohnG\.dotnet\tools;C:\Program Files\nodejs;C:\Users\JohnG\AppData\Roaming\npm;C:\Users\JohnG\AppData\Local\Robomotion\bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  14.17.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.npmjs.org/sanity-plugin-sanity-super-pane: Not found
+      at Request.params.callback [as _callback] (C:\Users\JohnG\AppData\Roaming\npm\node_modules\@sanity\cli\vendor\yarn:78587:18)
+      at Request.self.callback (C:\Users\JohnG\AppData\Roaming\npm\node_modules\@sanity\cli\vendor\yarn:135318:22)
+      at Request.emit (events.js:376:20)
+      at Request.<anonymous> (C:\Users\JohnG\AppData\Roaming\npm\node_modules\@sanity\cli\vendor\yarn:136290:10)
+      at Request.emit (events.js:376:20)
+      at IncomingMessage.<anonymous> (C:\Users\JohnG\AppData\Roaming\npm\node_modules\@sanity\cli\vendor\yarn:136212:12)
+      at Object.onceWrapper (events.js:482:28)
+      at IncomingMessage.emit (events.js:388:22)
+      at endReadableNT (internal/streams/readable.js:1336:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21)
+
+npm manifest: 
+  {
+    "name": "template-smb",
+    "private": true,
+    "version": "1.0.0",
+    "description": "",
+    "main": "package.json",
+    "author": "John Grattan <contact@johngrattan.com>",
+    "license": "UNLICENSED",
+    "scripts": {
+      "start": "sanity start",
+      "build": "sanity build"
+    },
+    "keywords": [
+      "sanity"
+    ],
+    "dependencies": {
+      "@sanity/base": "^2.25.1",
+      "@sanity/code-input": "^2.25.1",
+      "@sanity/color-input": "^2.25.1",
+      "@sanity/components": "^2.14.0",
+      "@sanity/core": "^2.25.0",
+      "@sanity/dashboard": "^2.25.1",
+      "@sanity/default-layout": "^2.25.1",
+      "@sanity/default-login": "^2.24.1",
+      "@sanity/desk-tool": "^2.25.3",
+      "@sanity/vision": "^2.25.1",
+      "prop-types": "^15.7",
+      "react": "^17.0",
+      "react-dom": "^17.0",
+      "react-icons": "^4.2.0",
+      "sanity-plugin-content-calendar": "^1.1.2",
+      "sanity-plugin-content-model-graph": "^1.1.1",
+      "sanity-plugin-dashboard-widget-netlify": "^1.1.0",
+      "sanity-plugin-dashboard-widget-notes": "^0.4.1",
+      "sanity-plugin-icon-picker": "^2.0.1",
+      "sanity-plugin-media": "^1.4.0",
+      "sanity-plugin-netlify-deploy-status-badge": "^0.0.3",
+      "sanity-plugin-order-documents": "^0.0.20",
+      "sanity-plugin-tabs": "^2.0.1",
+      "sanity-super-pane": "^1.0.0-alpha.11",
+      "styled-components": "^5.3.1"
+    },
+    "devDependencies": {
+      "eslint": "^7.2.0",
+      "eslint-config-airbnb": "^18.2.1",
+      "eslint-config-node": "^4.1.0",
+      "eslint-config-prettier": "^8.3.0",
+      "eslint-plugin-import": "^2.22.1",
+      "eslint-plugin-jsx-a11y": "^6.4.1",
+      "eslint-plugin-node": "^11.1.0",
+      "eslint-plugin-prettier": "^4.0.0",
+      "eslint-plugin-react": "^7.26.1",
+      "eslint-plugin-react-hooks": "^4.2.0",
+      "prettier": "^2.4.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

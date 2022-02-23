@@ -1,15 +1,13 @@
 import { FaListAlt as icon } from 'react-icons/fa';
-import Tabs from 'sanity-plugin-tabs';
 
 export default {
   title: 'Services',
   name: 'services',
   type: 'object',
   icon,
-  inputComponent: Tabs,
-  fieldsets: [
+  groups: [
     { title: 'Layout', name: 'layoutSet' },
-    { title: 'Headlines', name: 'headlinesSet' },
+    { title: 'Header', name: 'headerSet' },
     { title: 'Services', name: 'servicesSet' },
   ],
   fields: [
@@ -22,32 +20,25 @@ export default {
         layout: 'radio',
         direction: 'horizontal',
       },
-      fieldset: 'layoutSet',
+      group: 'layoutSet',
     },
     {
-      title: 'Headline',
-      name: 'headline',
-      type: 'string',
-      fieldset: 'headlinesSet',
-    },
-    {
-      title: 'Tagline',
-      name: 'tagline',
-      type: 'string',
-      fieldset: 'headlinesSet',
-    },
-    {
-      title: 'Description',
-      name: 'description',
-      type: 'portableTextBody',
-      fieldset: 'headlinesSet',
+      title: 'Header',
+      name: 'header',
+      type: 'header',
+      group: 'headerSet',
     },
     {
       title: 'Service',
       name: 'service',
       type: 'array',
-      of: [{ type: 'service' }],
-      fieldset: 'servicesSet',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'service' }],
+        },
+      ],
+      group: 'servicesSet',
     },
   ],
   preview: {

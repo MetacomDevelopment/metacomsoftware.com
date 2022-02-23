@@ -1,44 +1,30 @@
 import { FaGlobe as icon } from 'react-icons/fa';
-import Tabs from 'sanity-plugin-tabs';
 
 export default {
   title: 'SEO',
   name: 'businessSeo',
   type: 'document',
-  inputComponent: Tabs,
   icon,
-  fieldsets: [
+  groups: [
     { title: 'Indexing', name: 'indexingSet' },
-    { title: 'Domain', name: 'domainSet' },
     { title: 'Metadata', name: 'metadataSet' },
   ],
   fields: [
     {
-      title: 'Allow Google to index this website?',
-      description: 'OFF = "noindex, nofollow"; ON = "index, follow"',
-      name: 'isIndexed',
-      type: 'boolean',
-      initialValue: false,
-      fieldset: 'indexingSet',
-    },
-    {
-      title: 'Business Name',
-      description: 'Exactly as written on Google Business Profile',
-      name: 'name',
+      title: 'Index Status',
+      description: `WARNING: This is a global setting for all pages. If you want to set a page-specific setting, use the page's "Metadata > Index Status" fieldset.`,
+      name: 'indexStatus',
       type: 'string',
-      fieldset: 'domainSet',
-    },
-    {
-      title: 'Business URL',
-      description:
-        'Enter full domain URL (no "/" at the end). Example: "https://johngrattan.com"',
-      name: 'url',
-      type: 'url',
-      validation: (Rule) =>
-        Rule.uri({
-          scheme: ['http', 'https'],
-        }),
-      fieldset: 'domainSet',
+      options: {
+        list: [
+          { title: 'Index', value: 'index' },
+          { title: 'No Index', value: 'noIndex' },
+        ],
+        layout: 'radio',
+        direction: 'horizontal',
+      },
+      group: 'indexingSet',
+      initialValue: 'index',
     },
     {
       title: 'Title',
@@ -50,7 +36,7 @@ export default {
           .max(55)
           .error('Title tag must be less than 155 characters.'),
       ],
-      fieldset: 'metadataSet',
+      group: 'metadataSet',
     },
     {
       title: 'Description',
@@ -64,19 +50,19 @@ export default {
           .max(155)
           .error('Meta description must be less than 155 characters.'),
       ],
-      fieldset: 'metadataSet',
+      group: 'metadataSet',
     },
     {
       title: 'Author',
       name: 'author',
       type: 'string',
-      fieldset: 'metadataSet',
+      group: 'metadataSet',
     },
     {
       title: 'Image',
       name: 'image',
       type: 'imageAlt',
-      fieldset: 'metadataSet',
+      group: 'metadataSet',
     },
   ],
 };

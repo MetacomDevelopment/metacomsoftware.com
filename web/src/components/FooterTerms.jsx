@@ -14,16 +14,17 @@ const FooterTerms = () => {
       classes="border-t border-zinc-200"
     >
       <Container padding="sm">
-        <p className="text-base text-zinc-200 text-center">
-          © {new Date().getFullYear()} {siteSEO.name}, All Rights Reserved
+        <p className="text-center text-base text-zinc-200">
+          © {info.established} - {new Date().getFullYear()} {info.name}, All
+          Rights Reserved
           {` `}
         </p>
-        <p className="text-sm text-zinc-200 text-center">
+        <p className="text-center text-sm text-zinc-200">
           <AnchorText
             type="internal"
             color={accent.default.color}
             colorHover={accent.light.color}
-            to="/privacy/"
+            to="privacy"
           >
             Privacy Policy
           </AnchorText>{' '}
@@ -32,7 +33,7 @@ const FooterTerms = () => {
             type="internal"
             color={accent.default.color}
             colorHover={accent.light.color}
-            to="/accessibility/"
+            to="accessibility"
           >
             Website Accessibility
           </AnchorText>{' '}

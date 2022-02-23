@@ -8,13 +8,13 @@ export const query = graphql`
       ... on SanityHero {
         _key
         _type
+        headlineWidth
+        subheadlineWidth
         headline
         primaryCtaButtonLabel
         primaryCtaButtonLink {
-          metadata {
-            slug {
-              current
-            }
+          slug {
+            current
           }
         }
         secondaryCtaButtonLabel
@@ -22,6 +22,7 @@ export const query = graphql`
         bgImg {
           alt
           asset {
+            _id
             gatsbyImageData(placeholder: BLURRED, formats: WEBP)
           }
         }
@@ -48,8 +49,12 @@ export const query = graphql`
         _key
         _type
         layout
-        headline
-        tagline
+        idName
+        header {
+          _rawDescription
+          headline
+          tagline
+        }
         benefit {
           _key
           _type
@@ -58,6 +63,28 @@ export const query = graphql`
           title
           info
           icon
+        }
+      }
+      ... on SanityEmployees {
+        _key
+        _type
+        layout
+        idName
+        headline
+        tagline
+        _rawDescription
+        employee {
+          name
+          position
+          slug {
+            current
+          }
+          image {
+            alt
+            asset {
+              gatsbyImageData(placeholder: BLURRED, formats: WEBP)
+            }
+          }
         }
       }
       ... on SanityFeatures {
@@ -75,10 +102,8 @@ export const query = graphql`
             label
             linkType
             internalLink {
-              metadata {
-                slug {
-                  current
-                }
+              slug {
+                current
               }
             }
             externalLink
@@ -102,10 +127,8 @@ export const query = graphql`
         _rawDescription
         ctaButtonLabel
         ctaButtonLink {
-          metadata {
-            slug {
-              current
-            }
+          slug {
+            current
           }
         }
         image {
@@ -118,28 +141,42 @@ export const query = graphql`
       ... on SanityServices {
         _key
         _type
-        _rawDescription
-        headline
-        layout
-        service {
+        ... on SanityServices {
           _key
           _type
-          title
-          image {
-            alt
-            asset {
-              gatsbyImageData(placeholder: BLURRED, formats: WEBP)
-            }
+          layout
+          header {
+            _rawDescription
+            headline
+            tagline
           }
-          link {
-            metadata {
+          service {
+            _id
+            _key
+            headline
+            shortDescription
+            _rawLongDescription
+            link {
+              anchor
               slug {
                 current
+              }
+              pageBuilder {
+                ... on SanityHero {
+                  _key
+                  _type
+                  bgImg {
+                    alt
+                    asset {
+                      _id
+                      gatsbyImageData(placeholder: BLURRED, formats: WEBP)
+                    }
+                  }
+                }
               }
             }
           }
         }
-        tagline
       }
       ... on SanityTestimonials {
         _key
@@ -178,10 +215,8 @@ export const query = graphql`
             phoneUrl
             street
             website {
-              metadata {
-                slug {
-                  current
-                }
+              slug {
+                current
               }
             }
             zip
@@ -224,6 +259,42 @@ export const query = graphql`
             price
             _rawDescription
           }
+        }
+      }
+      ... on SanityCustomSection {
+        _key
+        _type
+        _rawColOneContentText
+        _rawColTwoContentText
+        _rawColThreeContentText
+        _rawColFourContentText
+        _rawSubheadline
+        bg
+        bgImg {
+          alt
+          asset {
+            gatsbyImageData
+          }
+        }
+        content
+        contentImg {
+          alt
+          asset {
+            gatsbyImageData
+          }
+        }
+        contentSvg
+        customColor {
+          hex
+        }
+        headline
+        idName
+        layout
+        paddingPosition
+        paddingSize
+        tagline
+        twColor {
+          color
         }
       }
     }

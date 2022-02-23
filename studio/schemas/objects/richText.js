@@ -1,19 +1,24 @@
 import { FaListAlt as icon } from 'react-icons/fa';
-import Tabs from 'sanity-plugin-tabs';
 
 export default {
   title: 'Rich Text',
   name: 'richText',
   type: 'object',
   icon,
-  inputComponent: Tabs,
-  fieldsets: [
+  groups: [
+    { title: 'ID', name: 'sectionIdSet' },
     { title: 'Sidebar', name: 'sidebarSet' },
     { title: 'Alignment', name: 'alignmentSet' },
-    { title: 'Section ID', name: 'sectionIdSet' },
     { title: 'Rich Text', name: 'richTextSet' },
   ],
   fields: [
+    {
+      title: 'ID Name',
+      description: 'Pick an ID name for the section (Example: "features")',
+      name: 'idName',
+      type: 'string',
+      group: 'sectionIdSet',
+    },
     {
       title: 'Sidebar',
       description: 'Choose a sidebar for the rich text section...',
@@ -30,7 +35,7 @@ export default {
         direction: 'horizontal',
       },
       initialValue: 'none',
-      fieldset: 'sidebarSet',
+      group: 'sidebarSet',
     },
     {
       title: 'Text Alignment',
@@ -48,21 +53,14 @@ export default {
         direction: 'horizontal',
       },
       initialValue: 'text-left',
-      fieldset: 'alignmentSet',
-    },
-    {
-      title: 'ID Name',
-      description: 'Pick an ID name for the section (Example: "features")',
-      name: 'idName',
-      type: 'string',
-      fieldset: 'sectionIdSet',
+      group: 'alignmentSet',
     },
     {
       title: 'Editor',
       description: 'Use the editor to create a rich text section.',
       name: 'body',
-      type: 'portableTextBody',
-      fieldset: 'richTextSet',
+      type: 'portableText',
+      group: 'richTextSet',
     },
   ],
   preview: {
